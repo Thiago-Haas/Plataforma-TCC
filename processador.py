@@ -9,16 +9,20 @@
 
 import sys
 import configparser
-
+import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Processador(object):
     def tipo_processador(self, Processador):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+
         qtd_nucleos = self.spinBox.text()
         tipo = self.comboBox.currentText()
 
         config = configparser.ConfigParser()
-        config.read('/home/carlos/plataforma/config.ini')
+        config.read(caminho_dir + '/config.ini')
 
         if self.checkBox.isChecked():
             config['Harv']['check_harv'] = 'TRUE'

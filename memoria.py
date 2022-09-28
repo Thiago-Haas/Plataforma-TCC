@@ -9,13 +9,17 @@
 
 import sys
 import configparser
-
+import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Memoria(object):
     def config_memoria(self, Memoria):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+
         config = configparser.ConfigParser()
-        config.read('/home/carlos/plataforma/config.ini')
+        config.read(caminho_dir + '/config.ini')
 
         if self.radioButton.isChecked():
             endereco_memoria = self.textEdit.toPlainText()

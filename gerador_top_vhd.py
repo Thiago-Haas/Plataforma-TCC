@@ -266,7 +266,7 @@ class Gerador_Vhdl(object):
                     texto += "end architecture;\n"
         return texto
 
-    def gera_ini_library(self, vhdl_texto):
+    def gera_ini_library(self, vhdl_texto, caminho_dir):
         self.contador = 0
         for linha in vhdl_texto:
             if linha[:7] == 'library':
@@ -281,11 +281,11 @@ class Gerador_Vhdl(object):
         self.criar_ini += "\n"
         self.criar_ini = self.criar_ini.replace(";", "")
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_generic(self, vhdl_texto, config):
+    def gera_ini_generic(self, vhdl_texto, config, caminho_dir):
         self.contador = 0
         for linha in vhdl_texto:
             if linha[2:9] == 'generic':
@@ -322,11 +322,11 @@ class Gerador_Vhdl(object):
         self.criar_ini = self.criar_ini.replace("  ", "")
         self.criar_ini = self.criar_ini.replace(":=", "")
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_port(self, vhdl_texto):
+    def gera_ini_port(self, vhdl_texto, caminho_dir):
         self.contador = 0
         for linha in vhdl_texto:
             self.temp = linha.find(':')
@@ -357,11 +357,11 @@ class Gerador_Vhdl(object):
         self.criar_ini = self.criar_ini.replace(";", "")
         self.contador = 0
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_signal(self, vhdl_texto):
+    def gera_ini_signal(self, vhdl_texto, caminho_dir):
         for linha in vhdl_texto:
             self.temp = linha.find(':')
             self.ini = str(linha[:self.temp])
@@ -378,11 +378,11 @@ class Gerador_Vhdl(object):
         self.criar_ini += "\n"
         self.criar_ini = self.criar_ini.replace(";", "")
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_signal_bus(self, vhdl_texto):
+    def gera_ini_signal_bus(self, vhdl_texto, caminho_dir):
         for linha in vhdl_texto:
             self.temp = linha.find(':')
             self.ini = str(linha[:self.temp])
@@ -399,11 +399,11 @@ class Gerador_Vhdl(object):
         self.criar_ini += "\n"
         self.criar_ini = self.criar_ini.replace(";", "")
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_signal_manual(self):
+    def gera_ini_signal_manual(self, caminho_dir):
         self.criar_ini += f"[Sinal {self.contador}]\nnome: mem_ev_rdata_valid_w\ntype= no vector\n"
         self.contador +=1
         self.criar_ini += f"[Sinal {self.contador}]\nnome: mem_ev_sb_error_w\ntype= no vector\n"
@@ -419,11 +419,11 @@ class Gerador_Vhdl(object):
         self.criar_ini += f"[Sinal {self.contador}]\nnome: mem_ev_event_w\ntype= no vector\n"
         self.contador +=1
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_map_no_generic(self, vhdl_texto):
+    def gera_ini_map_no_generic(self, vhdl_texto, caminho_dir):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Map {self.contador}]\nnome: {linha[7:]}"
@@ -443,11 +443,11 @@ class Gerador_Vhdl(object):
 
         self.criar_ini = self.criar_ini.replace("  ", "")
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_map_generic(self, vhdl_texto):
+    def gera_ini_map_generic(self, vhdl_texto, caminho_dir):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Map {self.contador}]\nnome: {linha[7:]}"
@@ -468,11 +468,11 @@ class Gerador_Vhdl(object):
         self.criar_ini += f"acabougen:\n"
         self.criar_ini = self.criar_ini.replace("  ", "")
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
-    def gera_ini_map_memory(self, vhdl_texto):
+    def gera_ini_map_memory(self, vhdl_texto, caminho_dir):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Elif {self.contador}]\nnome: {linha[7:]}"
@@ -493,7 +493,7 @@ class Gerador_Vhdl(object):
         self.criar_ini += f"acabougen:\n"
         self.criar_ini = self.criar_ini.replace("  ", "")
 
-        destino_arq = open('/home/carlos/plataforma/barramento.ini', 'w')
+        destino_arq = open(caminho_dir + '/barramento.ini', 'w')
         destino_arq.write(self.criar_ini)
         destino_arq.close()
 
@@ -801,20 +801,24 @@ class Gerador_Vhdl(object):
             config_axi.write(configfile)
 
     def gera_vhdl(self, arq_vhd, arq_ini): # Função para controlar criação de cada etapa
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+
         config = configparser.ConfigParser()
         config.read(arq_ini)
 
         config_path = configparser.ConfigParser()
-        config_path.read('/home/carlos/plataforma/path.ini')
+        config_path.read(caminho_dir + '/path.ini')
         
         config_axi = configparser.SafeConfigParser()
-        config_axi.read('/home/carlos/plataforma/barramento.ini')
+        config_axi.read(caminho_dir + '/barramento.ini')
 
-        top_vhd = open(config_path['Path']['harv'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['harv'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
 
-        top_vhd_aux = open(config_path['Path']['barramento'], 'r')
+        top_vhd_aux = open(caminho_dir + config_path['Path']['barramento'], 'r')
         vhdl_axi = top_vhd_aux.readlines()
         top_vhd_aux.close()
 
@@ -822,106 +826,106 @@ class Gerador_Vhdl(object):
         del vhdl_axi[:65]
         del vhdl_axi[18:]
 
-        self.gera_ini_library(vhdl_texto[:10])
-        self.gera_ini_generic(vhdl_texto[10:23], config)
-        self.gera_ini_port(vhdl_texto[26:55])
-        self.gera_ini_signal(vhdl_texto[55:])
-        self.gera_ini_signal_bus(vhdl_axi)
-        self.gera_ini_signal_manual()
+        self.gera_ini_library(vhdl_texto[:10], caminho_dir)
+        self.gera_ini_generic(vhdl_texto[10:23], config, caminho_dir)
+        self.gera_ini_port(vhdl_texto[26:55], caminho_dir)
+        self.gera_ini_signal(vhdl_texto[55:], caminho_dir)
+        self.gera_ini_signal_bus(vhdl_axi, caminho_dir)
+        self.gera_ini_signal_manual(caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['reset'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['reset'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[20:]
-        self.gera_ini_map_no_generic(vhdl_texto)
+        self.gera_ini_map_no_generic(vhdl_texto, caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['harv_u'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['harv_u'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[45:]
-        self.gera_ini_map_generic(vhdl_texto[:15])
-        self.gera_ini_map_no_generic(vhdl_texto[16:])
+        self.gera_ini_map_generic(vhdl_texto[:15], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[16:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['interconnect'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['interconnect'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[52:]
-        self.gera_ini_map_generic(vhdl_texto[:9])
-        self.gera_ini_map_no_generic(vhdl_texto[10:])
+        self.gera_ini_map_generic(vhdl_texto[:9], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[10:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['axi4l_master'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['axi4l_master'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[36:]
-        self.gera_ini_map_no_generic(vhdl_texto)
+        self.gera_ini_map_no_generic(vhdl_texto, caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['axi4l_interconnect_4'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['axi4l_interconnect_4'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[47:]
-        self.gera_ini_map_generic(vhdl_texto[:18])
-        self.gera_ini_map_no_generic(vhdl_texto[19:])
+        self.gera_ini_map_generic(vhdl_texto[:18], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[19:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['axi4l_rom'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['axi4l_rom'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[26:]
-        self.gera_ini_map_generic(vhdl_texto[:17])
-        self.gera_ini_map_no_generic(vhdl_texto[18:])
+        self.gera_ini_map_generic(vhdl_texto[:17], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[18:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['uart'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['uart'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[31:]
-        self.gera_ini_map_generic(vhdl_texto[:12])
-        self.gera_ini_map_no_generic(vhdl_texto[13:])
+        self.gera_ini_map_generic(vhdl_texto[:12], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[13:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['axi4l_wdt_slave'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['axi4l_wdt_slave'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[31:]
-        self.gera_ini_map_generic(vhdl_texto[:14])
-        self.gera_ini_map_no_generic(vhdl_texto[15:])
+        self.gera_ini_map_generic(vhdl_texto[:14], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[15:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['gpio'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['gpio'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[30:]
-        self.gera_ini_map_generic(vhdl_texto[:14])
-        self.gera_ini_map_no_generic(vhdl_texto[15:])
+        self.gera_ini_map_generic(vhdl_texto[:14], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[15:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['acelerador'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['acelerador'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[48:]
-        self.gera_ini_map_generic(vhdl_texto[:16])
-        self.gera_ini_map_no_generic(vhdl_texto[17:])
+        self.gera_ini_map_generic(vhdl_texto[:16], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[17:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['memoria'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['memoria'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[26:]
-        self.gera_ini_map_memory(vhdl_texto[:9])
-        self.gera_ini_map_no_generic(vhdl_texto[10:])
+        self.gera_ini_map_memory(vhdl_texto[:9], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[10:], caminho_dir)
 
         vhdl_texto.clear()
-        top_vhd = open(config_path['Path']['memoria'], 'r')
+        top_vhd = open(caminho_dir + config_path['Path']['memoria'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
         del vhdl_texto[26:]
-        self.gera_ini_map_memory(vhdl_texto[:9])
-        self.gera_ini_map_no_generic(vhdl_texto[10:])
+        self.gera_ini_map_memory(vhdl_texto[:9], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[10:], caminho_dir)
 
         self.criar_reset(config_axi, config)
         self.criar_processador(config_axi, config)

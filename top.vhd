@@ -11,8 +11,8 @@ use work.axi4l_pkg.all;
 entity harv_soc is
   generic (
     PROGRAM_START_ADDR   :  std_logic_vector(31 downto 0) := x"00000000";
-    HARV_TMR             :  boolean := FALSE;
-    HARV_ECC             :  boolean := FALSE;
+    HARV_TMR             :  boolean := TRUE;
+    HARV_ECC             :  boolean := TRUE;
     ENABLE_ROM           :  boolean := TRUE;
     ENABLE_DMEM          :  boolean := TRUE;
     ENABLE_DMEM_ECC      :  boolean := FALSE;

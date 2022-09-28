@@ -9,20 +9,24 @@
 
 import sys
 import configparser
-
+import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Software(object):
     def config_software(self, Software):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+
         software_escolhido = self.comboBox.currentText()
 
         config = configparser.ConfigParser()
-        config.read('/home/carlos/plataforma/config.ini')
+        config.read(caminho_dir + '/config.ini')
 
         if self.checkBox.isChecked():
             config['Software']['check_software'] = 'TRUE'
             config['Software']['software_escolhido'] = software_escolhido
-            config['Software']['caminho'] = '/home/carlos/plataforma/software/' + software_escolhido
+            config['Software']['caminho'] = caminho_dir + '/software/' + software_escolhido
         else:
             config['Software']['check_software'] = 'FALSE'
             
