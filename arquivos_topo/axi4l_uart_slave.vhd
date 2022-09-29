@@ -9,6 +9,7 @@ entity axi4l_uart_slave is
   generic (
     BASE_ADDR : std_logic_vector(31 downto 0);
     HIGH_ADDR : std_logic_vector(31 downto 0);
+    FIFO_SIZE : integer
   );
   port (
 
@@ -195,7 +196,7 @@ begin
 
   rec_fifo_u : entity work.fifo
   generic map (
-    FIFO_SIZE  => 32,
+    FIFO_SIZE  => FIFO_SIZE,
     DATA_WIDTH => 8
   )
   port map (
