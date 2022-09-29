@@ -11,8 +11,8 @@ use work.axi4l_pkg.all;
 entity harv_soc is
   generic (
     PROGRAM_START_ADDR   :  std_logic_vector(31 downto 0) := x"00000000";
-    HARV_TMR             :  boolean := TRUE;
-    HARV_ECC             :  boolean := TRUE;
+    HARV_TMR             :  boolean := FALSE;
+    HARV_ECC             :  boolean := FALSE;
     ENABLE_ROM           :  boolean := TRUE;
     ENABLE_DMEM          :  boolean := TRUE;
     ENABLE_DMEM_ECC      :  boolean := FALSE;
@@ -86,6 +86,8 @@ architecture arch of harv_soc is
   signal axi_slave2_slave_w    :  AXI4L_SLAVE_TO_MASTER;
   signal axi_slave3_master_w   :  AXI4L_MASTER_TO_SLAVE;
   signal axi_slave3_slave_w    :  AXI4L_SLAVE_TO_MASTER;
+  signal axi_slave4_master_w   :  AXI4L_MASTER_TO_SLAVE;
+  signal axi_slave4_slave_w    :  AXI4L_SLAVE_TO_MASTER;
   signal mem_ev_rdata_valid_w  :  std_logic;
   signal mem_ev_sb_error_w     :  std_logic;
   signal mem_ev_db_error_w     :  std_logic;
@@ -198,7 +200,7 @@ begin
     timeout_o           =>  axi4l_timeout_w
   );
 
-  axi4l_interconnect_4_u : entity work.axi4l_interconnect_4 
+  axi4l_interconnect_5_u : axi4l_interconnect_5 
   generic map ( 
     slave0_base_addr    =>  x"00000000", 
     slave0_high_addr    =>  x"00000FFF", 
@@ -207,7 +209,9 @@ begin
     slave2_base_addr    =>  x"80000100", 
     slave2_high_addr    =>  x"80000103", 
     slave3_base_addr    =>  x"80000200", 
-    slave3_high_addr    =>  x"80000207"
+    slave3_high_addr    =>  x"80000207", 
+    slave4_base_addr    =>  x"80000300", 
+    slave4_high_addr    =>  x"80000303"
   )
   port map ( 
     rstn_i              =>  periph_rstn_w, 
@@ -222,6 +226,8 @@ begin
     slave2_i            =>  axi_slave2_slave_w, 
     master3_o           =>  axi_slave3_master_w, 
     slave3_i            =>  axi_slave3_slave_w, 
+    master4_o           =>  axi_slave4_master_w, 
+    slave4_i            =>  axi_slave4_slave_w, 
     ext_master_o        =>  open, 
     ext_slave_i         =>  AXI4L_S2M_DECERR
   );
@@ -240,9 +246,9 @@ begin
 
   axi4l_uart_slave_u   : axi4l_uart_slave 
   generic map ( 
-    base_addr           =>  x"80000000", 
+    base_addr           =>  x"00000000", 
     high_addr           =>  x"8000001F", 
-    fifo_size           =>  1
+    fifo_size           =>  3
   )
   port map ( 
     master_i            =>  axi_slave1_master_w, 
@@ -271,7 +277,7 @@ begin
 
   axi4l_gpio_slave_u   : axi4l_gpio_slave 
   generic map ( 
-    base_addr           =>  x"00000000", 
+    base_addr           =>  13, 
     high_addr           =>  x"80000207", 
     gpio_size           =>  GPIO_SIZE
   )
@@ -293,25 +299,25 @@ begin
   port map ( 
     s00_axi_aclk        =>  clk_i, 
     s00_axi_aresetn     =>  periph_rstn_w, 
-    s00_axi_awaddr      =>  mem0_addr_w, 
-    s00_axi_awprot      =>  mem0_prot_w, 
-    s00_axi_awvalid     =>  mem_ev_rdata_valid_w, 
-    s00_axi_awready     =>  open, 
-    s00_axi_wdata       =>  mem0_wdata_w, 
-    s00_axi_wstrb       =>  mem0_wstrb_w, 
-    s00_axi_wvalid      =>  mem_ev_rdata_valid_w, 
-    s00_axi_wready      =>  open, 
-    s00_axi_bresp       =>  open, 
-    s00_axi_bvalid      =>  mem_ev_rdata_valid_w, 
-    s00_axi_bready      =>  open, 
-    s00_axi_araddr      =>  mem0_addr_w, 
-    s00_axi_arprot      =>  mem0_prot_w, 
-    s00_axi_arvalid     =>  mem_ev_rdata_valid_w, 
-    s00_axi_arready     =>  open, 
-    s00_axi_rdata       =>  mem0_wdata_w, 
-    s00_axi_rresp       =>  open, 
-    s00_axi_rvalid      =>  mem_ev_rdata_valid_w, 
-    s00_axi_rready      =>  open
+    s00_axi_awaddr      =>  axi_slave4_master_w.awaddr, 
+    s00_axi_awprot      =>  axi_slave4_master_w.awprot, 
+    s00_axi_awvalid     =>  axi_slave4_master_w.awvalid, 
+    s00_axi_awready     =>  axi_slave4_slave_w.awready, 
+    s00_axi_wdata       =>  axi_slave4_master_w.wdata, 
+    s00_axi_wstrb       =>  axi_slave4_master_w.wstrb, 
+    s00_axi_wvalid      =>  axi_slave4_master_w.wvalid, 
+    s00_axi_wready      =>  axi_slave4_slave_w.wready, 
+    s00_axi_bresp       =>  axi_slave4_slave_w.bresp, 
+    s00_axi_bvalid      =>  axi_slave4_slave_w.bvalid, 
+    s00_axi_bready      =>  axi_slave4_master_w.bready, 
+    s00_axi_araddr      =>  axi_slave4_master_w.araddr, 
+    s00_axi_arprot      =>  axi_slave4_master_w.arprot, 
+    s00_axi_arvalid     =>  axi_slave4_master_w.arvalid, 
+    s00_axi_arready     =>  axi_slave4_slave_w.arready, 
+    s00_axi_rdata       =>  axi_slave4_slave_w.rdata, 
+    s00_axi_rresp       =>  axi_slave4_slave_w.rresp, 
+    s00_axi_rvalid      =>  axi_slave4_slave_w.rvalid, 
+    s00_axi_rready      =>  axi_slave4_master_w.rready
   );
 
   disabled_dmem_g : if not ENABLE_DMEM generate
@@ -319,7 +325,7 @@ begin
     mem0_gnt_w <= '0';
     mem0_err_w <= '1';
     mem0_rdata_w <= x"deadbeef";
-    mem_ev_event_w <= '0';
+    mem_ev_ecc_addr_w <= '0';
   end generate;
   enable_dmem_g : if ENABLE_DMEM and not ENABLE_DMEM_ECC generate
   begin
@@ -342,11 +348,11 @@ begin
      s_wstrb_i           =>  mem0_wstrb_w, 
      s_rdata_o           =>  mem0_rdata_w
     );
-    mem_ev_event_w  <= '0';
+    mem_ev_ecc_addr_w  <= '0';
   end generate;
   enable_dmem_g : if ENABLE_DMEM and ENABLE_DMEM_ECC generate
   begin
-    unaligned_memory_u   : unaligned_memory 
+    unaligned_memory_ecc_u : unaligned_memory 
     generic map ( 
       base_addr           =>  DMEM_BASE_ADDR, 
       high_addr           =>  DMEM_HIGH_ADDR

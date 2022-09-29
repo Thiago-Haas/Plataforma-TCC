@@ -10,6 +10,7 @@
 import sys
 import configparser
 import os
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_UART(object):
@@ -21,11 +22,13 @@ class Ui_UART(object):
         config = configparser.ConfigParser()
         config.read(caminho_dir + '/config.ini')
 
-        if self.radioButton.isChecked():
+        if self.checkBox.isChecked():
             profundidade_fifo = self.spinBox.text()
+            endereco = self.textEdit.toPlainText()
 
             config['UART']['check_uart'] = 'TRUE'
             config['UART']['profundidade_fifo'] = profundidade_fifo
+            config['UART']['endereco'] = endereco
         else:
             config['UART']['check_uart'] = 'FALSE'
 
@@ -36,14 +39,14 @@ class Ui_UART(object):
 
     def setupUi(self, UART):
         UART.setObjectName("UART")
-        UART.resize(328, 192)
+        UART.resize(328, 240)
         self.centralwidget = QtWidgets.QWidget(UART)
         self.centralwidget.setObjectName("centralwidget")
         self.Voltar = QtWidgets.QPushButton(self.centralwidget, clicked = lambda: self.config_uart(UART))
-        self.Voltar.setGeometry(QtCore.QRect(10, 120, 301, 25))
+        self.Voltar.setGeometry(QtCore.QRect(10, 160, 301, 25))
         self.Voltar.setObjectName("Voltar")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(10, 90, 221, 21))
+        self.label_3.setGeometry(QtCore.QRect(10, 90, 231, 21))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label_3.setFont(font)
@@ -204,18 +207,27 @@ class Ui_UART(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton.setGeometry(QtCore.QRect(10, 60, 281, 23))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.radioButton.setFont(font)
-        self.radioButton.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.radioButton.setObjectName("radioButton")
         self.spinBox = QtWidgets.QSpinBox(self.centralwidget)
         self.spinBox.setGeometry(QtCore.QRect(250, 90, 61, 26))
         self.spinBox.setMinimum(1)
         self.spinBox.setMaximum(32)
         self.spinBox.setObjectName("spinBox")
+        self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
+        self.checkBox.setGeometry(QtCore.QRect(10, 60, 151, 23))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.checkBox.setFont(font)
+        self.checkBox.setObjectName("checkBox")
+        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
+        self.textEdit.setGeometry(QtCore.QRect(180, 120, 131, 31))
+        self.textEdit.setObjectName("textEdit")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(10, 120, 161, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_4.setFont(font)
+        self.label_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_4.setObjectName("label_4")
         UART.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(UART)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 328, 22))
@@ -232,9 +244,10 @@ class Ui_UART(object):
         _translate = QtCore.QCoreApplication.translate
         UART.setWindowTitle(_translate("UART", "UART"))
         self.Voltar.setText(_translate("UART", "Voltar"))
-        self.label_3.setText(_translate("UART", "Profundidade FIFO UART"))
+        self.label_3.setText(_translate("UART", "Profundidade FIFO leitura"))
         self.label.setText(_translate("UART", "UART"))
-        self.radioButton.setText(_translate("UART", "Habilitar console UART              "))
+        self.checkBox.setText(_translate("UART", "Habilitar UART"))
+        self.label_4.setText(_translate("UART", "Endereço da UART"))
 
 
 if __name__ == "__main__":

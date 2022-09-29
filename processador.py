@@ -10,6 +10,7 @@
 import sys
 import configparser
 import os
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Processador(object):
@@ -41,11 +42,6 @@ class Ui_Processador(object):
         else:
             config['Harv']['check_harv'] = 'FALSE'
 
-        if self.checkBox_2.isChecked():
-            config['Harv']['check_wdt'] = 'TRUE'
-        else:
-            config['Harv']['check_wdt'] = 'FALSE'
-
         with open('config.ini', 'w') as configfile:
             config.write(configfile)
 
@@ -53,11 +49,11 @@ class Ui_Processador(object):
 
     def setupUi(self, Processador):
         Processador.setObjectName("Processador")
-        Processador.resize(335, 266)
+        Processador.resize(335, 252)
         self.centralwidget = QtWidgets.QWidget(Processador)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 20, 301, 32))
+        self.label.setGeometry(QtCore.QRect(10, 20, 321, 32))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -212,25 +208,25 @@ class Ui_Processador(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(0, 100, 231, 41))
+        self.label_2.setGeometry(QtCore.QRect(0, 80, 231, 41))
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setWordWrap(True)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(20, 150, 151, 31))
+        self.label_3.setGeometry(QtCore.QRect(20, 130, 151, 21))
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setWordWrap(True)
         self.label_3.setObjectName("label_3")
         self.spinBox = QtWidgets.QSpinBox(self.centralwidget)
-        self.spinBox.setGeometry(QtCore.QRect(230, 100, 51, 31))
+        self.spinBox.setGeometry(QtCore.QRect(220, 80, 51, 31))
         self.spinBox.setMinimum(1)
-        self.spinBox.setMaximum(4)
+        self.spinBox.setMaximum(1)
         self.spinBox.setObjectName("spinBox")
         self.Voltar = QtWidgets.QPushButton(self.centralwidget, clicked = lambda: self.tipo_processador(Processador))
-        self.Voltar.setGeometry(QtCore.QRect(20, 190, 291, 31))
+        self.Voltar.setGeometry(QtCore.QRect(20, 170, 291, 31))
         self.Voltar.setObjectName("Voltar")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(190, 150, 91, 25))
+        self.comboBox.setGeometry(QtCore.QRect(190, 130, 91, 25))
         self.comboBox.setPlaceholderText("")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
@@ -238,9 +234,6 @@ class Ui_Processador(object):
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
         self.checkBox.setGeometry(QtCore.QRect(30, 60, 171, 23))
         self.checkBox.setObjectName("checkBox")
-        self.checkBox_2 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox_2.setGeometry(QtCore.QRect(30, 80, 201, 23))
-        self.checkBox_2.setObjectName("checkBox_2")
         Processador.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Processador)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 335, 22))
@@ -263,7 +256,6 @@ class Ui_Processador(object):
         self.comboBox.setItemText(0, _translate("Processador", "Padrão"))
         self.comboBox.setItemText(1, _translate("Processador", "Protegido"))
         self.checkBox.setText(_translate("Processador", "Habilitar Processador"))
-        self.checkBox_2.setText(_translate("Processador", "Habilitar Watchdog Timer"))
 
 
 if __name__ == "__main__":

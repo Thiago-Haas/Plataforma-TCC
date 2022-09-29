@@ -72,7 +72,7 @@ class Ui_Plataforma(object):
 
     def setupUi(self, Plataforma):
         Plataforma.setObjectName("Plataforma")
-        Plataforma.resize(509, 288)
+        Plataforma.resize(509, 313)
         self.centralwidget = QtWidgets.QWidget(Plataforma)
         self.centralwidget.setObjectName("centralwidget")
         self.Processador = QtWidgets.QPushButton(self.centralwidget, clicked = lambda: self.openProcessador())
@@ -93,6 +93,12 @@ class Ui_Plataforma(object):
         self.Sair = QtWidgets.QPushButton(self.centralwidget, clicked = lambda: self.gerar_vhdl(Plataforma))
         self.Sair.setGeometry(QtCore.QRect(270, 170, 221, 71))
         self.Sair.setObjectName("Sair")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(40, 250, 431, 17))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
         Plataforma.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Plataforma)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 509, 22))
@@ -114,6 +120,7 @@ class Ui_Plataforma(object):
         self.Software.setText(_translate("Plataforma", "Configurações do Software"))
         self.save_load.setText(_translate("Plataforma", "Carregar Arquivo"))
         self.Sair.setText(_translate("Plataforma", "Gerar Vhdl"))
+        self.label.setText(_translate("Plataforma", "As configurações estão sendo salvas no arquivo \"config.ini\" "))
 
 
 if __name__ == "__main__":
