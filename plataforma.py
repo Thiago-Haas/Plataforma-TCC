@@ -49,24 +49,24 @@ class Ui_Plataforma(object):
         self.path = nomeload[0]
 
     def gerar_vhdl(self, Plataforma):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+        
         if not self.path:
-            caminho_arq = sys.argv[0]
-            caminho_arq = os.path.abspath(caminho_arq)
-            caminho_dir = os.path.dirname(caminho_arq)
-
             nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
             nome_arq = nomesave[0] + '.vhd'
             destino_arq = open(nome_arq, 'w')
             destino_arq.close()
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(nome_arq, caminho_dir + '/config.ini')
+            self.vhdl.gera_vhdl(nome_arq, caminho_dir + '/config.ini', None)
         else:
             nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
             nome_arq = nomesave[0] + '.vhd'
             destino_arq = open(nome_arq, 'w')
             destino_arq.close()
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(nome_arq, self.path)
+            self.vhdl.gera_vhdl(nome_arq, caminho_dir + '/config.ini', self.path)
 
         Plataforma.close()
 

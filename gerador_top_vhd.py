@@ -189,6 +189,41 @@ class Gerador_Vhdl(object):
                 texto += f"{' '*2});\n"
         return texto
 
+    def criador_map_customizavel(self, texto, config): # Criação do Port Map de arquivo externo
+        temp = ""
+        for nome in config.sections():
+            if nome[:3] == 'Map':
+                for n, v in config.items(nome):
+                    if n == 'nome':
+                        temp += f"\n{' '*2}{v:<20} : "
+                    elif n == 'entity' and v[:2] == 'no':
+                        temp += f"{v[3:]} \n"
+                    elif n == 'entity' and v[:3] == 'yes':
+                        temp += f"entity work.{v[4:]} \n"
+                    elif n == 'temgeneric' and v == 'yes':
+                        temp += f"{' '*2}generic map ( \n"
+                    elif n == 'temgeneric' and v == 'no':
+                        temp += f"{' '*2}port map ( \n"
+                    elif n[:7] == 'generic' and v[:1] != 'x':
+                        temp += f"{' '*4}{n[8:]:<18}  =>  {v}, \n"
+                    elif n[:7] == 'generic' and v[:1] == 'x':
+                        temp += f'    {n[8:]:<18}  =>  {v[:1]}"{v[1:]}", \n'
+                    elif n == 'acabougen':
+                        temp = temp[:-3] + "\n"
+                        temp += f"{' '*2})\n {' '*1}port map ( \n"
+                    else:
+                        if v[:5] == 'Porta' or v[:5] == 'Sinal': 
+                            temp += f"{' '*4}{n:<18}  =>  {config[v]['nome']}, \n"
+                        elif v[:1] == 'x':
+                            temp += f'    {n:<18}  =>  {v[:1]}"{v[1:]}", \n'
+                        else:
+                            temp += f"{' '*4}{n:<18}  =>  {v}, \n"
+                texto += temp + "\n"
+                temp = ""
+                texto = texto[:-4] + "\n"
+                texto += f"{' '*2});\n"
+        return texto
+
     def criador_ext(self, texto, config): # Criar variaveis externas 
         var = '"deadbeef"'
         enable_ecc = 'enable_dmem_g'
@@ -663,7 +698,7 @@ class Gerador_Vhdl(object):
     def criar_axi4l_rom(self, config_axi, config):
         config_axi['Map 60']['nome'] = str(config_axi['Map 60']['nome']).replace(" is","_u")
         config_axi['Map 60']['entity'] = str(config_axi['Map 60']['entity']).replace(" is","")
-        config_axi['Map 60']['generic base_addr'] = 'x00000000'
+        config_axi['Map 60']['generic base_addr'] = config['Barramento']['endereco']
         config_axi['Map 60']['generic high_addr'] = 'x00000FFF'
         config_axi['Map 60']['clk_i'] = config_axi['Porta 2']['nome']
         config_axi['Map 60']['master_i'] = config_axi['Sinal 38']['nome']
@@ -845,11 +880,12 @@ class Gerador_Vhdl(object):
         config_axi['Generic']['valor7'] = config['Memoria']['tamanho']
         config_axi['Map 61']['generic fifo_size'] = config['UART']['profundidade_fifo']
         config_axi['Map 61']['generic base_addr'] = config['UART']['endereco']
+        config_axi['Map 60']['generic base_addr'] = config['Barramento']['endereco']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
-    def gera_vhdl(self, arq_vhd, arq_ini): # Função para controlar criação de cada etapa
+    def gera_vhdl(self, arq_vhd, arq_ini, arq_ext): # Função para controlar criação de cada etapa
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
         caminho_dir = os.path.dirname(caminho_arq)
@@ -998,6 +1034,13 @@ class Gerador_Vhdl(object):
         self.vhdl_texto_aux = self.criador_arq(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_sinal(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_map(self.vhdl_texto_aux, config_axi)
+
+        if arq_ext != None:
+            if config['Acelerador']['check_customizavel'] == 'TRUE':
+                config_ext = configparser.ConfigParser()
+                config_ext.read(arq_ext)
+                self.vhdl_texto_aux = self.criador_map_customizavel(self.vhdl_texto_aux, config_ext)
+
         self.vhdl_texto_aux = self.criador_ext(self.vhdl_texto_aux, config_axi)
 
         destino_arq = open(arq_vhd, 'w')

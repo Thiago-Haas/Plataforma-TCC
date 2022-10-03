@@ -34,13 +34,16 @@ class Ui_Barramento(object):
         reset = self.comboBox.currentText()
         config['Barramento']['reset'] = reset
 
+        endereco = self.textEdit.toPlainText()
+        config['Barramento']['endereco'] = endereco
+
         with open('config.ini', 'w') as configfile:
             config.write(configfile)
         Barramento.close()
 
     def setupUi(self, Barramento):
         Barramento.setObjectName("Barramento")
-        Barramento.resize(357, 228)
+        Barramento.resize(357, 262)
         self.centralwidget = QtWidgets.QWidget(Barramento)
         self.centralwidget.setObjectName("centralwidget")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
@@ -199,7 +202,7 @@ class Ui_Barramento(object):
         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.label_4.setObjectName("label_4")
         self.Voltar = QtWidgets.QPushButton(self.centralwidget, clicked = lambda: self.config_barramento(Barramento))
-        self.Voltar.setGeometry(QtCore.QRect(60, 150, 231, 25))
+        self.Voltar.setGeometry(QtCore.QRect(60, 190, 231, 25))
         self.Voltar.setObjectName("Voltar")
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
         self.checkBox.setGeometry(QtCore.QRect(70, 60, 211, 23))
@@ -219,11 +222,20 @@ class Ui_Barramento(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(70, 120, 111, 16))
+        self.label.setGeometry(QtCore.QRect(70, 130, 111, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(70, 160, 111, 17))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
+        self.textEdit.setGeometry(QtCore.QRect(190, 150, 101, 31))
+        self.textEdit.setObjectName("textEdit")
         Barramento.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Barramento)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 357, 22))
@@ -246,6 +258,7 @@ class Ui_Barramento(object):
         self.comboBox.setItemText(0, _translate("Barramento", "Padrão"))
         self.comboBox.setItemText(1, _translate("Barramento", "Periférico"))
         self.label.setText(_translate("Barramento", "Fonte do Reset"))
+        self.label_2.setText(_translate("Barramento", "Endereço base"))
 
 
 if __name__ == "__main__":
