@@ -10,14 +10,6 @@ use work.axi4l_pkg.all;
 
 entity harv_soc is
   generic (
-    PROGRAM_START_ADDR   :  std_logic_vector(31 downto 0) := x"00000000";
-    HARV_TMR             :  boolean := FALSE;
-    HARV_ECC             :  boolean := FALSE;
-    ENABLE_ROM           :  boolean := TRUE;
-    ENABLE_DMEM          :  boolean := TRUE;
-    ENABLE_DMEM_ECC      :  boolean := FALSE;
-    DMEM_BASE_ADDR       :  std_logic_vector(31 downto 0) := x"00000000";
-    DMEM_HIGH_ADDR       :  std_logic_vector(31 downto 0) := x"00000000";
     GPIO_SIZE            :  integer := x"00000000"
   );
   port (
@@ -40,6 +32,14 @@ entity harv_soc is
 end entity;
 
 architecture arch of harv_soc is 
+  constant PROGRAM_START_ADDR  :  std_logic_vector(31 downto 0) := x"00000000";
+  constant HARV_TMR            :  boolean := FALSE;
+  constant HARV_ECC            :  boolean := FALSE;
+  constant ENABLE_ROM          :  boolean := TRUE;
+  constant ENABLE_DMEM         :  boolean := TRUE;
+  constant ENABLE_DMEM_ECC     :  boolean := FALSE;
+  constant DMEM_BASE_ADDR      :  std_logic_vector(31 downto 0) := x"00000000";
+  constant DMEM_HIGH_ADDR      :  std_logic_vector(31 downto 0) := x"00000000";
   signal ext_rstn_w            :  std_logic;
   signal proc_rstn_w           :  std_logic;
   signal periph_rstn_w         :  std_logic;

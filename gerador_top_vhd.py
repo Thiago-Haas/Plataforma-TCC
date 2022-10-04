@@ -66,6 +66,32 @@ class Gerador_Vhdl(object):
         texto += "  );\n"
         return texto
 
+    def criador_generic_2(self, texto, config): # Criação do Generic do arquivo top
+        temp = ""
+        for nome in config.sections():
+            if nome == 'Generic':
+                texto += "  generic (\n"
+                for n, v in config.items(nome):
+                    if n[:5] == 'type8' and v != 'std_logic_vector':
+                        temp += f" {v};\n"
+                    elif n[:5] == 'type8' and v == 'std_logic_vector':
+                        temp += f" {v}"
+                    elif n[:7] == 'vector8':
+                        temp += f"({int(v)-1} downto 0);\n"
+                    elif n[:6] == 'valor8':
+                        if v == 'TRUE' or v == 'FALSE':
+                            temp = temp[:-2] + f" := {v};\n"
+                        elif v[:1] != 'x':
+                            temp = temp[:-2] + f" := {v};\n"
+                        else:
+                           temp = temp[:-2] + f' := {v[:1]}"{v[1:]}";\n'
+                    elif n[:5] == 'nome8':
+                        temp += f"{' '*4}{v:<20} : "
+                texto += temp + "\n"
+        texto = texto[:-3] + "\n"
+        texto += "  );\n"
+        return texto
+
     def criador_portas(self, texto, config): # Criação das portas de entrada e saída
         temp = ""
         texto += "  port (\n"
@@ -96,6 +122,33 @@ class Gerador_Vhdl(object):
 
     def criador_arq(self, texto, config): # Criar arquitetura
         texto = texto + f"\narchitecture {config['Arquitetura']['nome']} of {config['Entidade']['nome']} is \n"
+        return texto
+
+    def criador_constant(self, texto, config): # Criação das constantes
+        temp = ""
+        config.remove_option('Generic','nome8')
+        config.remove_option('Generic','valor8')
+        config.remove_option('Generic','type8')
+
+        for nome in config.sections():
+            if nome == 'Generic':
+                for n, v in config.items(nome):
+                    if n[:4] == 'type' and v != 'std_logic_vector':
+                        temp += f"  {v};\n"
+                    elif n[:4] == 'type' and v == 'std_logic_vector':
+                        temp += f"  {v}"
+                    elif n[:6] == 'vector':
+                        temp += f"({int(v)-1} downto 0);\n"
+                    elif n[:5] == 'valor':
+                        if v == 'TRUE' or v == 'FALSE':
+                            temp = temp[:-2] + f" := {v};\n"
+                        elif v[:1] != 'x':
+                            temp = temp[:-2] + f" := {v};\n"
+                        else:
+                           temp = temp[:-2] + f' := {v[:1]}"{v[1:]}";\n'
+                    else:
+                        temp += f"{' '*2}constant {v:<20}:"
+                texto += temp 
         return texto
 
     def criador_sinal(self, texto, config): # Criação dos sinais
@@ -1029,9 +1082,10 @@ class Gerador_Vhdl(object):
 
         self.vhdl_texto_aux = self.criador_lib(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_entidade(self.vhdl_texto_aux, config_axi)
-        self.vhdl_texto_aux = self.criador_generic(self.vhdl_texto_aux, config_axi)
+        self.vhdl_texto_aux = self.criador_generic_2(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_portas(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_arq(self.vhdl_texto_aux, config_axi)
+        self.vhdl_texto_aux = self.criador_constant(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_sinal(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_map(self.vhdl_texto_aux, config_axi)
 
