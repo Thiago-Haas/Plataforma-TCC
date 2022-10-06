@@ -693,13 +693,13 @@ class Gerador_Vhdl(object):
     def criar_axi4l_interconnect(self, config_axi, config):
         config_axi['Map 59']['nome'] = str(config_axi['Map 59']['nome']).replace(" is","_u")
         config_axi['Map 59']['entity'] = str(config_axi['Map 59']['entity']).replace(" is","")
-        config_axi['Map 59']['generic slave0_base_addr'] = 'x00000000'
+        config_axi['Map 59']['generic slave0_base_addr'] = config['Barramento']['endereco']
         config_axi['Map 59']['generic slave0_high_addr'] = 'x00000FFF'
-        config_axi['Map 59']['generic slave1_base_addr'] = 'x80000000'
+        config_axi['Map 59']['generic slave1_base_addr'] = config['UART']['endereco']
         config_axi['Map 59']['generic slave1_high_addr'] = 'x8000001F'
         config_axi['Map 59']['generic slave2_base_addr'] = 'x80000100'
         config_axi['Map 59']['generic slave2_high_addr'] = 'x80000103'
-        config_axi['Map 59']['generic slave3_base_addr'] = 'x80000200'
+        config_axi['Map 59']['generic slave3_base_addr'] = config['GPIO']['tamanho']
         config_axi['Map 59']['generic slave3_high_addr'] = 'x80000207'
         config_axi['Map 59']['generic slave4_base_addr'] = 'x80000300'
         config_axi['Map 59']['generic slave4_high_addr'] = 'x80000303'

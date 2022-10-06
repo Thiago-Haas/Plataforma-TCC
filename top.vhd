@@ -10,7 +10,7 @@ use work.axi4l_pkg.all;
 
 entity harv_soc is
   generic (
-    GPIO_SIZE            :  integer := x"00000000"
+    GPIO_SIZE            :  integer := 13
   );
   port (
     poweron_rstn_i   :  in   std_logic;
@@ -38,8 +38,8 @@ architecture arch of harv_soc is
   constant ENABLE_ROM          :  boolean := TRUE;
   constant ENABLE_DMEM         :  boolean := TRUE;
   constant ENABLE_DMEM_ECC     :  boolean := FALSE;
-  constant DMEM_BASE_ADDR      :  std_logic_vector(31 downto 0) := x"00000000";
-  constant DMEM_HIGH_ADDR      :  std_logic_vector(31 downto 0) := x"00000000";
+  constant DMEM_BASE_ADDR      :  std_logic_vector(31 downto 0) := x"08000000";
+  constant DMEM_HIGH_ADDR      :  std_logic_vector(31 downto 0) := x"08000FFF";
   signal ext_rstn_w            :  std_logic;
   signal proc_rstn_w           :  std_logic;
   signal periph_rstn_w         :  std_logic;
@@ -140,7 +140,7 @@ begin
     dmem_rdata_i        =>  harv_dmem_rdata_w, 
     ext_interrupt_i     =>  x"00", 
     ext_event_i         =>  mem_ev_event_w, 
-    periph_timeout_i    =>  0
+    periph_timeout_i    =>  axi4l_timeout_w
   );
 
   mem_interconnect_u   : entity work.mem_interconnect 
@@ -193,11 +193,11 @@ begin
     wdata_i             =>  mem1_wdata_w, 
     wstrb_i             =>  mem1_wstrb_w, 
     rdata_o             =>  mem1_rdata_w, 
-    rstn_i              =>  poweron_rstn_i, 
+    rstn_i              =>  periph_rstn_w, 
     clk_i               =>  clk_i, 
     slave_i             =>  axi_slaves2master_w, 
     master_o            =>  axi_master2slaves_w, 
-    timeout_o           =>  open
+    timeout_o           =>  axi4l_timeout_w
   );
 
   axi4l_interconnect_5_u : axi4l_interconnect_5 
@@ -214,7 +214,7 @@ begin
     slave4_high_addr    =>  x"80000303"
   )
   port map ( 
-    rstn_i              =>  poweron_rstn_i, 
+    rstn_i              =>  periph_rstn_w, 
     clk_i               =>  clk_i, 
     master_i            =>  axi_master2slaves_w, 
     slave_o             =>  axi_slaves2master_w, 
@@ -238,7 +238,7 @@ begin
     high_addr           =>  x"00000FFF"
   )
   port map ( 
-    rstn_i              =>  poweron_rstn_i, 
+    rstn_i              =>  periph_rstn_w, 
     clk_i               =>  clk_i, 
     master_i            =>  axi_slave0_master_w, 
     slave_o             =>  axi_slave0_slave_w
@@ -246,14 +246,14 @@ begin
 
   axi4l_uart_slave_u   : axi4l_uart_slave 
   generic map ( 
-    base_addr           =>  x"00000000", 
+    base_addr           =>  x"80000000", 
     high_addr           =>  x"8000001F", 
-    fifo_size           =>  3
+    fifo_size           =>  32
   )
   port map ( 
     master_i            =>  axi_slave1_master_w, 
     slave_o             =>  axi_slave1_slave_w, 
-    rstn_i              =>  poweron_rstn_i, 
+    rstn_i              =>  periph_rstn_w, 
     clk_i               =>  clk_i, 
     uart_rx_i           =>  uart_rx_i, 
     uart_tx_o           =>  uart_tx_o, 
@@ -270,21 +270,21 @@ begin
     master_i            =>  axi_slaves2master_w, 
     slave_o             =>  axi_slave0_master_w, 
     ext_rstn_i          =>  ext_rstn_w, 
-    periph_rstn_i       =>  poweron_rstn_i, 
+    periph_rstn_i       =>  periph_rstn_w, 
     clk_i               =>  clk_i, 
     wdt_rstn_o          =>  wdt_rstn_w
   );
 
   axi4l_gpio_slave_u   : axi4l_gpio_slave 
   generic map ( 
-    base_addr           =>  13, 
+    base_addr           =>  x"80000200", 
     high_addr           =>  x"80000207", 
     gpio_size           =>  GPIO_SIZE
   )
   port map ( 
     master_i            =>  axi_slave3_master_w, 
     slave_o             =>  axi_slave3_slave_w, 
-    rstn_i              =>  poweron_rstn_i, 
+    rstn_i              =>  periph_rstn_w, 
     clk_i               =>  clk_i, 
     tri_o               =>  gpio_tri_o, 
     rports_i            =>  gpio_rd_i, 
@@ -298,7 +298,7 @@ begin
   )
   port map ( 
     s00_axi_aclk        =>  clk_i, 
-    s00_axi_aresetn     =>  poweron_rstn_i, 
+    s00_axi_aresetn     =>  periph_rstn_w, 
     s00_axi_awaddr      =>  axi_slave4_master_w.awaddr, 
     s00_axi_awprot      =>  axi_slave4_master_w.awprot, 
     s00_axi_awvalid     =>  axi_slave4_master_w.awvalid, 
@@ -335,7 +335,7 @@ begin
       high_addr           =>  DMEM_HIGH_ADDR
     )
     port map ( 
-     rstn_i              =>  poweron_rstn_i, 
+     rstn_i              =>  periph_rstn_w, 
      clk_i               =>  clk_i, 
      s_wr_ready_o        =>  open, 
      s_rd_ready_o        =>  open, 
@@ -358,7 +358,7 @@ begin
       high_addr           =>  DMEM_HIGH_ADDR
     )
     port map ( 
-     rstn_i              =>  poweron_rstn_i, 
+     rstn_i              =>  periph_rstn_w, 
      clk_i               =>  clk_i, 
      s_wr_ready_o        =>  open, 
      s_rd_ready_o        =>  open, 

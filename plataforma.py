@@ -9,7 +9,7 @@
 
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QMessageBox
 from processador import Ui_Processador
 from barramento import Ui_Barramento
 from perifericos import Ui_Perifericos
@@ -19,6 +19,7 @@ from gerador_top_vhd import Gerador_Vhdl
 class Ui_Plataforma(object):
     def __init__(self):
         self.path = None
+        self.nome_arq = None
 
     def openProcessador(self):
         self.window = QtWidgets.QMainWindow()
@@ -48,6 +49,9 @@ class Ui_Plataforma(object):
         nomeload = QFileDialog.getOpenFileName(None, 'Open a File', '', 'Ini(*.ini)')
         self.path = nomeload[0]
 
+    def msgButtonClick(self, i):
+        return i.text()
+
     def gerar_vhdl(self, Plataforma):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
@@ -55,18 +59,29 @@ class Ui_Plataforma(object):
         
         if not self.path:
             nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
-            nome_arq = nomesave[0] + '.vhd'
-            destino_arq = open(nome_arq, 'w')
+            self.nome_arq = nomesave[0] + '.vhd'
+            destino_arq = open(self.nome_arq, 'w')
             destino_arq.close()
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(nome_arq, caminho_dir + '/config.ini', None)
+            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', None)
         else:
             nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
-            nome_arq = nomesave[0] + '.vhd'
-            destino_arq = open(nome_arq, 'w')
+            self.nome_arq = nomesave[0] + '.vhd'
+            destino_arq = open(self.nome_arq, 'w')
             destino_arq.close()
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(nome_arq, caminho_dir + '/config.ini', self.path)
+            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', self.path)
+
+        msgBox = QMessageBox()
+        msgBox.setIcon(QMessageBox.Information)
+        msgBox.setText("Arquivo VHDL salvo em: " + self.nome_arq)
+        msgBox.setWindowTitle("Aviso")
+        msgBox.setStandardButtons(QMessageBox.Ok)
+        msgBox.buttonClicked.connect(self.msgButtonClick)
+
+        returnValue = msgBox.exec()
+        if returnValue == QMessageBox.Ok:
+            print('Finalizado com sucesso!')
 
         Plataforma.close()
 
