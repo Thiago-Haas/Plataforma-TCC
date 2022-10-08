@@ -1100,17 +1100,13 @@ class Gerador_Vhdl(object):
         lista = os.listdir()
         if self.pesquisar(lista, 'SoC'):
             diretorio = caminho_dir + '/SoC/'
-            diretorio_harv = diretorio + 'harv-soc'
             diretorio_software = diretorio + 'software'
-            shutil.rmtree(diretorio_harv)
             shutil.rmtree(diretorio_software)
         else:
             diretorio = caminho_dir + '/SoC/'
             os.makedirs(diretorio)
-            diretorio_harv = diretorio + 'harv-soc'
+            shutil.copytree('harv-soc', diretorio + 'harv-soc', dirs_exist_ok = True)
             diretorio_software = diretorio + 'software'
-        
-        shutil.copytree('harv-soc', diretorio_harv, dirs_exist_ok = True)
 
         if config['Software']['check_software'] == 'TRUE':
             shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
