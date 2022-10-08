@@ -1,17 +1,7 @@
-from copyreg import remove_extension
-from curses.ascii import isdigit
-from lib2to3.pytree import convert
-from re import S, search
 import sys
 import os
 import configparser
-import fileinput
-import time
-
-from datetime import datetime
-from getpass import getuser
-from os import listdir
-from os.path import isfile, join
+import shutil
 
 class Gerador_Vhdl(object):
     def __init__(self):
@@ -242,7 +232,7 @@ class Gerador_Vhdl(object):
                 texto += f"{' '*2});\n"
         return texto
 
-    def criador_map_customizavel(self, texto, config): # Criação do Port Map de arquivo externo
+    def criador_map_customizavel(self, texto, config, config_axi): # Criação do Port Map de arquivo externo
         temp = ""
         for nome in config.sections():
             if nome[:3] == 'Map':
@@ -269,6 +259,10 @@ class Gerador_Vhdl(object):
                             temp += f"{' '*4}{n:<18}  =>  {config[v]['nome']}, \n"
                         elif v[:1] == 'x':
                             temp += f'    {n:<18}  =>  {v[:1]}"{v[1:]}", \n'
+                        elif v == 'mestre':
+                            temp += f"    {n:<18}  =>  {config_axi['Sinal 46']['nome']}, \n"
+                        elif v == 'escravo':
+                            temp += f"    {n:<18}  =>  {config_axi['Sinal 47']['nome']}, \n"
                         else:
                             temp += f"{' '*4}{n:<18}  =>  {v}, \n"
                 texto += temp + "\n"
@@ -796,8 +790,8 @@ class Gerador_Vhdl(object):
         config_axi['Map 62']['entity'] = str(config_axi['Map 62']['entity']).replace(" is","")
         config_axi['Map 62']['generic base_addr'] = 'x80000100'
         config_axi['Map 62']['generic high_addr'] = 'x80000103'
-        config_axi['Map 62']['master_i'] = config_axi['Sinal 37']['nome']
-        config_axi['Map 62']['slave_o'] = config_axi['Sinal 38']['nome']
+        config_axi['Map 62']['master_i'] = config_axi['Sinal 42']['nome']
+        config_axi['Map 62']['slave_o'] = config_axi['Sinal 43']['nome']
         config_axi['Map 62']['ext_rstn_i'] = config_axi['Sinal 0']['nome']
         config_axi['Map 62']['clk_i'] = config_axi['Porta 2']['nome']
         config_axi['Map 62']['wdt_rstn_o'] = config_axi['Sinal 3']['nome']
@@ -937,6 +931,12 @@ class Gerador_Vhdl(object):
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
+
+    def pesquisar(self, lista, pasta):
+        for i in range(len(lista)):
+            if lista[i] == pasta:
+                return True
+        return False
 
     def gera_vhdl(self, arq_vhd, arq_ini, arq_ext): # Função para controlar criação de cada etapa
         caminho_arq = sys.argv[0]
@@ -1093,10 +1093,28 @@ class Gerador_Vhdl(object):
             if config['Acelerador']['check_customizavel'] == 'TRUE':
                 config_ext = configparser.ConfigParser()
                 config_ext.read(arq_ext)
-                self.vhdl_texto_aux = self.criador_map_customizavel(self.vhdl_texto_aux, config_ext)
+                self.vhdl_texto_aux = self.criador_map_customizavel(self.vhdl_texto_aux, config_ext, config_axi)
 
         self.vhdl_texto_aux = self.criador_ext(self.vhdl_texto_aux, config_axi)
 
-        destino_arq = open(arq_vhd, 'w')
+        lista = os.listdir()
+        if self.pesquisar(lista, 'SoC'):
+            diretorio = caminho_dir + '/SoC/'
+            diretorio_harv = diretorio + 'harv-soc'
+            diretorio_software = diretorio + 'software'
+            shutil.rmtree(diretorio_harv)
+            shutil.rmtree(diretorio_software)
+        else:
+            diretorio = caminho_dir + '/SoC/'
+            os.makedirs(diretorio)
+            diretorio_harv = diretorio + 'harv-soc'
+            diretorio_software = diretorio + 'software'
+        
+        shutil.copytree('harv-soc', diretorio_harv, dirs_exist_ok = True)
+
+        if config['Software']['check_software'] == 'TRUE':
+            shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
+
+        destino_arq = open(diretorio + arq_vhd, 'w')
         destino_arq.write(self.vhdl_texto_aux)
         destino_arq.close()

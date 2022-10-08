@@ -60,21 +60,17 @@ class Ui_Plataforma(object):
         if not self.path:
             nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
             self.nome_arq = nomesave[0] + '.vhd'
-            destino_arq = open(self.nome_arq, 'w')
-            destino_arq.close()
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', None)
+            self.vhdl.gera_vhdl(self.nome_arq[24:31], caminho_dir + '/config.ini', None)
         else:
             nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
             self.nome_arq = nomesave[0] + '.vhd'
-            destino_arq = open(self.nome_arq, 'w')
-            destino_arq.close()
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', self.path)
+            self.vhdl.gera_vhdl(self.nome_arq[24:31], caminho_dir + '/config.ini', self.path)
 
         msgBox = QMessageBox()
         msgBox.setIcon(QMessageBox.Information)
-        msgBox.setText("Arquivo VHDL salvo em: " + self.nome_arq)
+        msgBox.setText("Arquivo VHDL salvo em: /SoC/" + self.nome_arq[24:31])
         msgBox.setWindowTitle("Aviso")
         msgBox.setStandardButtons(QMessageBox.Ok)
         msgBox.buttonClicked.connect(self.msgButtonClick)
