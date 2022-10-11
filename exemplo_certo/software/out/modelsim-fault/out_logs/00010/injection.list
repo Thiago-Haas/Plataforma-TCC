@@ -1,9 +1,0 @@
-00000019445863 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/mtval_r(3)
-00000022569129 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(4)(29)
-00000028554848 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(26)(29)
-00000028557740 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/mtval_r(15)
-00000040670667 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(19)(16)
-00000041509357 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(21)(25)
-00000045002603 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/mtimecmp0_r(10)
-00000051195502 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(17)(37)
-00000001224898
