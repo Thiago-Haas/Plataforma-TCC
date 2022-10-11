@@ -1,0 +1,9 @@
+90780 ns [HARV] 
+539960 ns [HARV] INIT
+1443080 ns [HARV] 00000001
+2346540 ns [HARV] 00000037
+3471880 ns [HARV] START
+4988740 ns [HARV] rstcause: 0x1
+7486280 ns [HARV] implementation id: 0x33
+8689860 ns [HARV] Hello world
+9640940 ns [HARV] Exited wi

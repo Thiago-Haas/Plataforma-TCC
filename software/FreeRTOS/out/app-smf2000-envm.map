@@ -1,0 +1,1589 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+                              /tmp/cct0Gup2.o (__clzsi2)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+                              /tmp/ccBrcDz1.o (__adddf3)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+                              /tmp/ccBrcDz1.o (__muldf3)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+                              /tmp/ccBrcDz1.o (__fixunsdfsi)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+                              /tmp/ccBrcDz1.o (__floatunsidf)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+                              /tmp/cciYWWn2.o (__mulsi3)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+                              /tmp/ccBrcDz1.o (__divsi3)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o) (__clz_tab)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-init.o)
+                              /tmp/ccmjzeD5.o (__libc_init_array)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memcpy-asm.o)
+                              /tmp/cciYWWn2.o (memcpy)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memset.o)
+                              /tmp/ccLjPlr4.o (memset)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+                              /tmp/ccmjzeD5.o (printf)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+                              /tmp/ccBrcDz1.o (errno)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+                              /tmp/cc1VgIz2.o (sprintf)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-strlen.o)
+                              /tmp/ccf4lMF3.o (strlen)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o) (__sinit)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o) (_fwalk)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o) (_global_impure_ptr)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o) (_free_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o) (_malloc_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o) (_svfprintf_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o) (_printf_i)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o) (_vfprintf_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sbrkr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o) (_sbrk_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o) (__sread)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o) (__swbuf_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-writer.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o) (_write_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o) (__swsetup_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-closer.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o) (_close_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o) (_fflush_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fvwrite.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o) (__sfvwrite_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-lseekr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o) (_lseek_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o) (__smakebuf_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memchr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o) (memchr)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memmove.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o) (memmove)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o) (__malloc_lock)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o) (_realloc_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-readr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o) (_read_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fstatr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o) (_fstat_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-isattyr.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o) (_isatty_r)
+/home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-msizer.o)
+                              /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o) (_malloc_usable_size_r)
+
+Discarded input sections
+
+ .riscv.attributes
+                0x0000000000000000       0x1e /tmp/ccmjzeD5.o
+ .comment       0x0000000000000000       0x13 /tmp/ccBrcDz1.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/ccBrcDz1.o
+ .comment       0x0000000000000000       0x13 /tmp/ccqP0tM5.o
+ .riscv.attributes
+                0x0000000000000000       0x1c /tmp/ccqP0tM5.o
+ .comment       0x0000000000000000       0x13 /tmp/ccAI5TO4.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/ccAI5TO4.o
+ .comment       0x0000000000000000       0x13 /tmp/cc1VgIz2.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/cc1VgIz2.o
+ .comment       0x0000000000000000       0x13 /tmp/ccf4lMF3.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/ccf4lMF3.o
+ .comment       0x0000000000000000       0x13 /tmp/cc13oOH4.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/cc13oOH4.o
+ .comment       0x0000000000000000       0x13 /tmp/ccZqozK5.o
+ .riscv.attributes
+                0x0000000000000000       0x1c /tmp/ccZqozK5.o
+ .comment       0x0000000000000000       0x13 /tmp/cciYWWn2.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/cciYWWn2.o
+ .comment       0x0000000000000000       0x13 /tmp/ccLjPlr4.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/ccLjPlr4.o
+ .comment       0x0000000000000000       0x13 /tmp/cct0Gup2.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/cct0Gup2.o
+ .comment       0x0000000000000000       0x13 /tmp/ccaVHqn1.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/ccaVHqn1.o
+ .comment       0x0000000000000000       0x13 /tmp/ccVOSI91.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/ccVOSI91.o
+ .comment       0x0000000000000000       0x13 /tmp/ccdjyOU3.o
+ .riscv.attributes
+                0x0000000000000000       0x20 /tmp/ccdjyOU3.o
+ .riscv.attributes
+                0x0000000000000000       0x1e /tmp/ccJix5N5.o
+ .debug_info    0x0000000000000000      0x144 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_abbrev  0x0000000000000000       0xca /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_loc     0x0000000000000000       0x6b /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_ranges  0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_line    0x0000000000000000       0xe5 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_str     0x0000000000000000      0x24e /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_frame   0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .debug_info    0x0000000000000000      0x581 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_abbrev  0x0000000000000000      0x173 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_loc     0x0000000000000000     0x11ec /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_ranges  0x0000000000000000      0x248 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_line    0x0000000000000000     0x1013 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_str     0x0000000000000000      0x345 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_frame   0x0000000000000000       0x44 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .debug_info    0x0000000000000000      0x9e6 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_abbrev  0x0000000000000000      0x196 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_loc     0x0000000000000000      0xde7 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_ranges  0x0000000000000000      0x228 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_line    0x0000000000000000     0x1025 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_str     0x0000000000000000      0x46b /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_frame   0x0000000000000000       0x54 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .debug_info    0x0000000000000000      0x1d5 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_abbrev  0x0000000000000000      0x15e /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_loc     0x0000000000000000       0xe7 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_ranges  0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_line    0x0000000000000000      0x1a5 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_str     0x0000000000000000      0x252 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_frame   0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_info    0x0000000000000000      0x28e /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_abbrev  0x0000000000000000      0x164 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_loc     0x0000000000000000      0x14f /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_ranges  0x0000000000000000       0x70 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_line    0x0000000000000000      0x26e /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_str     0x0000000000000000      0x2ef /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_frame   0x0000000000000000       0x34 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .debug_line    0x0000000000000000       0x98 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_info    0x0000000000000000       0x26 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_abbrev  0x0000000000000000       0x14 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_str     0x0000000000000000       0xb7 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .riscv.attributes
+                0x0000000000000000       0x1a /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_line    0x0000000000000000      0x16e /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_info    0x0000000000000000       0x26 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_abbrev  0x0000000000000000       0x14 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_str     0x0000000000000000       0xb4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .riscv.attributes
+                0x0000000000000000       0x1a /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_info    0x0000000000000000       0xd7 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .debug_abbrev  0x0000000000000000       0x70 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .debug_aranges
+                0x0000000000000000       0x18 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .debug_line    0x0000000000000000       0x59 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .debug_str     0x0000000000000000      0x231 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-init.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-init.o)
+ .riscv.attributes
+                0x0000000000000000       0x1a /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memcpy-asm.o)
+ .riscv.attributes
+                0x0000000000000000       0x1a /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memset.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-strlen.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-strlen.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sbrkr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sbrkr.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-writer.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-writer.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-closer.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-closer.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fvwrite.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fvwrite.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-lseekr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-lseekr.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memchr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memchr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1a /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memmove.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-readr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-readr.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fstatr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fstatr.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-isattyr.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-isattyr.o)
+ .comment       0x0000000000000000       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-msizer.o)
+ .riscv.attributes
+                0x0000000000000000       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-msizer.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x0000000060000000 0x000000000003f801 xr
+ram              0x0000000070000000 0x0000000000600000 rw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+START GROUP
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc.a
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libgloss.a
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libsupc++.a
+END GROUP
+                0x0000000060000000                ROM_BASE_ADDR = 0x60000000
+                0x000000006003f800                ROM_HIGH_ADDR = 0x6003f800
+                0x0000000070000000                RAM_BASE_ADDR = 0x70000000
+                0x00000000705fffff                RAM_HIGH_ADDR = DEFINED (RAM_HIGH_ADDR)?RAM_HIGH_ADDR:0x705fffff
+                0x000000000003f801                ROM_SIZE = ((ROM_HIGH_ADDR - ROM_BASE_ADDR) + 0x1)
+                0x0000000000600000                RAM_SIZE = ((RAM_HIGH_ADDR - RAM_BASE_ADDR) + 0x1)
+                0x0000000000060000                STACK_SIZE = (RAM_SIZE / 0x10)
+
+.init           0x0000000060000000      0x258
+                0x0000000060000000                __init_start = .
+                0x0000000060000000                . = ALIGN (0x8)
+ *(.init*)
+ .init          0x0000000060000000      0x258 /tmp/ccmjzeD5.o
+                0x0000000060000000                _start
+
+.text           0x0000000060000300    0x101bc
+ *(.text*)
+ .text          0x0000000060000300        0x0 /tmp/ccmjzeD5.o
+ .text          0x0000000060000300        0x0 /tmp/ccBrcDz1.o
+ .text._putchar
+                0x0000000060000300       0x64 /tmp/ccBrcDz1.o
+                0x0000000060000300                _putchar
+ .text._getchar
+                0x0000000060000364       0x38 /tmp/ccBrcDz1.o
+                0x0000000060000364                _getchar
+ .text._write   0x000000006000039c       0x6c /tmp/ccBrcDz1.o
+                0x000000006000039c                _write
+ .text._read    0x0000000060000408       0xa0 /tmp/ccBrcDz1.o
+                0x0000000060000408                _read
+ .text.exit     0x00000000600004a8      0x11c /tmp/ccBrcDz1.o
+                0x00000000600004a8                exit
+ .text.clock    0x00000000600005c4       0x28 /tmp/ccBrcDz1.o
+                0x00000000600005c4                clock
+ .text.clock_high
+                0x00000000600005ec       0x28 /tmp/ccBrcDz1.o
+                0x00000000600005ec                clock_high
+ .text.usleep   0x0000000060000614      0x110 /tmp/ccBrcDz1.o
+                0x0000000060000614                usleep
+ .text._execve  0x0000000060000724       0x3c /tmp/ccBrcDz1.o
+                0x0000000060000724                _execve
+ .text._fork    0x0000000060000760       0x30 /tmp/ccBrcDz1.o
+                0x0000000060000760                _fork
+ .text._fstat   0x0000000060000790       0x34 /tmp/ccBrcDz1.o
+                0x0000000060000790                _fstat
+ .text._getpid  0x00000000600007c4       0x20 /tmp/ccBrcDz1.o
+                0x00000000600007c4                _getpid
+ .text._isatty  0x00000000600007e4       0x24 /tmp/ccBrcDz1.o
+                0x00000000600007e4                _isatty
+ .text._kill    0x0000000060000808       0x38 /tmp/ccBrcDz1.o
+                0x0000000060000808                _kill
+ .text._link    0x0000000060000840       0x38 /tmp/ccBrcDz1.o
+                0x0000000060000840                _link
+ .text._lseek   0x0000000060000878       0x2c /tmp/ccBrcDz1.o
+                0x0000000060000878                _lseek
+ .text._open    0x00000000600008a4       0x2c /tmp/ccBrcDz1.o
+                0x00000000600008a4                _open
+ .text._close   0x00000000600008d0       0x24 /tmp/ccBrcDz1.o
+                0x00000000600008d0                _close
+ .text._sbrk    0x00000000600008f4       0xc4 /tmp/ccBrcDz1.o
+                0x00000000600008f4                _sbrk
+ .text._stat    0x00000000600009b8       0x34 /tmp/ccBrcDz1.o
+                0x00000000600009b8                _stat
+ .text._times   0x00000000600009ec       0x24 /tmp/ccBrcDz1.o
+                0x00000000600009ec                _times
+ .text._unlink  0x0000000060000a10       0x34 /tmp/ccBrcDz1.o
+                0x0000000060000a10                _unlink
+ .text._wait    0x0000000060000a44       0x34 /tmp/ccBrcDz1.o
+                0x0000000060000a44                _wait
+ .text._write_hex
+                0x0000000060000a78       0xa8 /tmp/ccBrcDz1.o
+                0x0000000060000a78                _write_hex
+ .text          0x0000000060000b20        0x0 /tmp/ccqP0tM5.o
+ .text.uart_init
+                0x0000000060000b20       0x58 /tmp/ccqP0tM5.o
+                0x0000000060000b20                uart_init
+ .text.get_uart_baud_div
+                0x0000000060000b78       0x28 /tmp/ccqP0tM5.o
+                0x0000000060000b78                get_uart_baud_div
+ .text.get_uart_parity
+                0x0000000060000ba0       0x28 /tmp/ccqP0tM5.o
+                0x0000000060000ba0                get_uart_parity
+ .text.get_uart_rtscts
+                0x0000000060000bc8       0x28 /tmp/ccqP0tM5.o
+                0x0000000060000bc8                get_uart_rtscts
+ .text.get_uart_status
+                0x0000000060000bf0       0x28 /tmp/ccqP0tM5.o
+                0x0000000060000bf0                get_uart_status
+ .text.wdt_feed
+                0x0000000060000c18       0x38 /tmp/ccqP0tM5.o
+                0x0000000060000c18                wdt_feed
+ .text.wdt_read
+                0x0000000060000c50       0x30 /tmp/ccqP0tM5.o
+                0x0000000060000c50                wdt_read
+ .text.wdt_reset
+                0x0000000060000c80       0x30 /tmp/ccqP0tM5.o
+                0x0000000060000c80                wdt_reset
+ .text.gpio_get_configuration
+                0x0000000060000cb0       0x30 /tmp/ccqP0tM5.o
+                0x0000000060000cb0                gpio_get_configuration
+ .text.gpio_configure
+                0x0000000060000ce0       0x38 /tmp/ccqP0tM5.o
+                0x0000000060000ce0                gpio_configure
+ .text.gpio_read
+                0x0000000060000d18       0x40 /tmp/ccqP0tM5.o
+                0x0000000060000d18                gpio_read
+ .text.gpio_write
+                0x0000000060000d58       0x68 /tmp/ccqP0tM5.o
+                0x0000000060000d58                gpio_write
+ .text          0x0000000060000dc0        0x0 /tmp/ccAI5TO4.o
+ .text.mvendorid_info
+                0x0000000060000dc0       0x28 /tmp/ccAI5TO4.o
+                0x0000000060000dc0                mvendorid_info
+ .text.marchid_info
+                0x0000000060000de8       0x28 /tmp/ccAI5TO4.o
+                0x0000000060000de8                marchid_info
+ .text.mimpid_info
+                0x0000000060000e10       0x28 /tmp/ccAI5TO4.o
+                0x0000000060000e10                mimpid_info
+ .text.mhartid_info
+                0x0000000060000e38       0x28 /tmp/ccAI5TO4.o
+                0x0000000060000e38                mhartid_info
+ .text.harden_conf
+                0x0000000060000e60       0x28 /tmp/ccAI5TO4.o
+                0x0000000060000e60                harden_conf
+ .text.set_harden_conf
+                0x0000000060000e88       0x28 /tmp/ccAI5TO4.o
+                0x0000000060000e88                set_harden_conf
+ .text.rstcause_info
+                0x0000000060000eb0       0x28 /tmp/ccAI5TO4.o
+                0x0000000060000eb0                rstcause_info
+ .text          0x0000000060000ed8        0x0 /tmp/cc1VgIz2.o
+ .text.vApplicationMallocFailedHook
+                0x0000000060000ed8       0x14 /tmp/cc1VgIz2.o
+                0x0000000060000ed8                vApplicationMallocFailedHook
+ .text.vApplicationIdleHook
+                0x0000000060000eec       0x1c /tmp/cc1VgIz2.o
+                0x0000000060000eec                vApplicationIdleHook
+ .text.vApplicationStackOverflowHook
+                0x0000000060000f08       0x1c /tmp/cc1VgIz2.o
+                0x0000000060000f08                vApplicationStackOverflowHook
+ .text.vApplicationTickHook
+                0x0000000060000f24       0x1c /tmp/cc1VgIz2.o
+                0x0000000060000f24                vApplicationTickHook
+ .text.vAssertCalled
+                0x0000000060000f40       0x3c /tmp/cc1VgIz2.o
+                0x0000000060000f40                vAssertCalled
+ .text.prvSetupHardware
+                0x0000000060000f7c       0x28 /tmp/cc1VgIz2.o
+ .text.prvQueueSendTask
+                0x0000000060000fa4       0xe8 /tmp/cc1VgIz2.o
+ .text.prvQueueReceiveTask
+                0x000000006000108c       0xf0 /tmp/cc1VgIz2.o
+ .text.IdleTask
+                0x000000006000117c       0x24 /tmp/cc1VgIz2.o
+ .text.main     0x00000000600011a0       0xe4 /tmp/cc1VgIz2.o
+                0x00000000600011a0                main
+ .text          0x0000000060001284        0x0 /tmp/ccf4lMF3.o
+ .text.xGetCoreID
+                0x0000000060001284       0x28 /tmp/ccf4lMF3.o
+                0x0000000060001284                xGetCoreID
+ .text.vSendString
+                0x00000000600012ac       0xc0 /tmp/ccf4lMF3.o
+                0x00000000600012ac                vSendString
+ .text.handle_trap
+                0x000000006000136c       0x10 /tmp/ccf4lMF3.o
+                0x000000006000136c                handle_trap
+ .text          0x000000006000137c        0x0 /tmp/cc13oOH4.o
+ .text.xEventGroupCreate
+                0x000000006000137c       0x54 /tmp/cc13oOH4.o
+                0x000000006000137c                xEventGroupCreate
+ .text.xEventGroupSync
+                0x00000000600013d0      0x20c /tmp/cc13oOH4.o
+                0x00000000600013d0                xEventGroupSync
+ .text.xEventGroupWaitBits
+                0x00000000600015dc      0x24c /tmp/cc13oOH4.o
+                0x00000000600015dc                xEventGroupWaitBits
+ .text.xEventGroupClearBits
+                0x0000000060001828       0xd0 /tmp/cc13oOH4.o
+                0x0000000060001828                xEventGroupClearBits
+ .text.xEventGroupGetBitsFromISR
+                0x00000000600018f8       0x3c /tmp/cc13oOH4.o
+                0x00000000600018f8                xEventGroupGetBitsFromISR
+ .text.xEventGroupSetBits
+                0x0000000060001934      0x1b0 /tmp/cc13oOH4.o
+                0x0000000060001934                xEventGroupSetBits
+ .text.vEventGroupDelete
+                0x0000000060001ae4       0x94 /tmp/cc13oOH4.o
+                0x0000000060001ae4                vEventGroupDelete
+ .text.vEventGroupSetBitsCallback
+                0x0000000060001b78       0x38 /tmp/cc13oOH4.o
+                0x0000000060001b78                vEventGroupSetBitsCallback
+ .text.vEventGroupClearBitsCallback
+                0x0000000060001bb0       0x38 /tmp/cc13oOH4.o
+                0x0000000060001bb0                vEventGroupClearBitsCallback
+ .text.prvTestWaitCondition
+                0x0000000060001be8       0x70 /tmp/cc13oOH4.o
+ .text          0x0000000060001c58        0x0 /tmp/ccZqozK5.o
+ .text.vListInitialise
+                0x0000000060001c58       0x64 /tmp/ccZqozK5.o
+                0x0000000060001c58                vListInitialise
+ .text.vListInitialiseItem
+                0x0000000060001cbc       0x28 /tmp/ccZqozK5.o
+                0x0000000060001cbc                vListInitialiseItem
+ .text.vListInsertEnd
+                0x0000000060001ce4       0x88 /tmp/ccZqozK5.o
+                0x0000000060001ce4                vListInsertEnd
+ .text.vListInsert
+                0x0000000060001d6c       0xd4 /tmp/ccZqozK5.o
+                0x0000000060001d6c                vListInsert
+ .text.uxListRemove
+                0x0000000060001e40       0x98 /tmp/ccZqozK5.o
+                0x0000000060001e40                uxListRemove
+ .text          0x0000000060001ed8        0x0 /tmp/cciYWWn2.o
+ .text.xQueueGenericReset
+                0x0000000060001ed8      0x2d8 /tmp/cciYWWn2.o
+                0x0000000060001ed8                xQueueGenericReset
+ .text.xQueueGenericCreate
+                0x00000000600021b0      0x1e4 /tmp/cciYWWn2.o
+                0x00000000600021b0                xQueueGenericCreate
+ .text.prvInitialiseNewQueue
+                0x0000000060002394       0x84 /tmp/cciYWWn2.o
+ .text.prvInitialiseMutex
+                0x0000000060002418       0x5c /tmp/cciYWWn2.o
+ .text.xQueueCreateMutex
+                0x0000000060002474       0x5c /tmp/cciYWWn2.o
+                0x0000000060002474                xQueueCreateMutex
+ .text.xQueueGetMutexHolder
+                0x00000000600024d0       0xb0 /tmp/cciYWWn2.o
+                0x00000000600024d0                xQueueGetMutexHolder
+ .text.xQueueGetMutexHolderFromISR
+                0x0000000060002580       0x58 /tmp/cciYWWn2.o
+                0x0000000060002580                xQueueGetMutexHolderFromISR
+ .text.xQueueGiveMutexRecursive
+                0x00000000600025d8       0xa0 /tmp/cciYWWn2.o
+                0x00000000600025d8                xQueueGiveMutexRecursive
+ .text.xQueueTakeMutexRecursive
+                0x0000000060002678       0xac /tmp/cciYWWn2.o
+                0x0000000060002678                xQueueTakeMutexRecursive
+ .text.xQueueCreateCountingSemaphore
+                0x0000000060002724       0x80 /tmp/cciYWWn2.o
+                0x0000000060002724                xQueueCreateCountingSemaphore
+ .text.xQueueGenericSend
+                0x00000000600027a4      0x300 /tmp/cciYWWn2.o
+                0x00000000600027a4                xQueueGenericSend
+ .text.xQueueGenericSendFromISR
+                0x0000000060002aa4      0x168 /tmp/cciYWWn2.o
+                0x0000000060002aa4                xQueueGenericSendFromISR
+ .text.xQueueGiveFromISR
+                0x0000000060002c0c      0x144 /tmp/cciYWWn2.o
+                0x0000000060002c0c                xQueueGiveFromISR
+ .text.xQueueReceive
+                0x0000000060002d50      0x2d8 /tmp/cciYWWn2.o
+                0x0000000060002d50                xQueueReceive
+ .text.xQueueSemaphoreTake
+                0x0000000060003028      0x3d4 /tmp/cciYWWn2.o
+                0x0000000060003028                xQueueSemaphoreTake
+ .text.xQueuePeek
+                0x00000000600033fc      0x2e0 /tmp/cciYWWn2.o
+                0x00000000600033fc                xQueuePeek
+ .text.xQueueReceiveFromISR
+                0x00000000600036dc      0x138 /tmp/cciYWWn2.o
+                0x00000000600036dc                xQueueReceiveFromISR
+ .text.xQueuePeekFromISR
+                0x0000000060003814       0xb0 /tmp/cciYWWn2.o
+                0x0000000060003814                xQueuePeekFromISR
+ .text.uxQueueMessagesWaiting
+                0x00000000600038c4       0x94 /tmp/cciYWWn2.o
+                0x00000000600038c4                uxQueueMessagesWaiting
+ .text.uxQueueSpacesAvailable
+                0x0000000060003958       0xa8 /tmp/cciYWWn2.o
+                0x0000000060003958                uxQueueSpacesAvailable
+ .text.uxQueueMessagesWaitingFromISR
+                0x0000000060003a00       0x4c /tmp/cciYWWn2.o
+                0x0000000060003a00                uxQueueMessagesWaitingFromISR
+ .text.vQueueDelete
+                0x0000000060003a4c       0x4c /tmp/cciYWWn2.o
+                0x0000000060003a4c                vQueueDelete
+ .text.prvGetDisinheritPriorityAfterTimeout
+                0x0000000060003a98       0x50 /tmp/cciYWWn2.o
+ .text.prvCopyDataToQueue
+                0x0000000060003ae8      0x18c /tmp/cciYWWn2.o
+ .text.prvCopyDataFromQueue
+                0x0000000060003c74       0x98 /tmp/cciYWWn2.o
+ .text.prvUnlockQueue
+                0x0000000060003d0c      0x190 /tmp/cciYWWn2.o
+ .text.prvIsQueueEmpty
+                0x0000000060003e9c       0x90 /tmp/cciYWWn2.o
+ .text.xQueueIsQueueEmptyFromISR
+                0x0000000060003f2c       0x5c /tmp/cciYWWn2.o
+                0x0000000060003f2c                xQueueIsQueueEmptyFromISR
+ .text.prvIsQueueFull
+                0x0000000060003f88       0x98 /tmp/cciYWWn2.o
+ .text.xQueueIsQueueFullFromISR
+                0x0000000060004020       0x64 /tmp/cciYWWn2.o
+                0x0000000060004020                xQueueIsQueueFullFromISR
+ .text.vQueueAddToRegistry
+                0x0000000060004084       0xfc /tmp/cciYWWn2.o
+                0x0000000060004084                vQueueAddToRegistry
+ .text.pcQueueGetName
+                0x0000000060004180       0x9c /tmp/cciYWWn2.o
+                0x0000000060004180                pcQueueGetName
+ .text.vQueueUnregisterQueue
+                0x000000006000421c       0xac /tmp/cciYWWn2.o
+                0x000000006000421c                vQueueUnregisterQueue
+ .text.vQueueWaitForMessageRestricted
+                0x00000000600042c8       0xf4 /tmp/cciYWWn2.o
+                0x00000000600042c8                vQueueWaitForMessageRestricted
+ .text          0x00000000600043bc        0x0 /tmp/ccLjPlr4.o
+ .text.xStreamBufferGenericCreate
+                0x00000000600043bc       0xe8 /tmp/ccLjPlr4.o
+                0x00000000600043bc                xStreamBufferGenericCreate
+ .text.vStreamBufferDelete
+                0x00000000600044a4       0x68 /tmp/ccLjPlr4.o
+                0x00000000600044a4                vStreamBufferDelete
+ .text.xStreamBufferReset
+                0x000000006000450c       0xe0 /tmp/ccLjPlr4.o
+                0x000000006000450c                xStreamBufferReset
+ .text.xStreamBufferSetTriggerLevel
+                0x00000000600045ec       0x80 /tmp/ccLjPlr4.o
+                0x00000000600045ec                xStreamBufferSetTriggerLevel
+ .text.xStreamBufferSpacesAvailable
+                0x000000006000466c       0xb8 /tmp/ccLjPlr4.o
+                0x000000006000466c                xStreamBufferSpacesAvailable
+ .text.xStreamBufferBytesAvailable
+                0x0000000060004724       0x4c /tmp/ccLjPlr4.o
+                0x0000000060004724                xStreamBufferBytesAvailable
+ .text.xStreamBufferSend
+                0x0000000060004770      0x280 /tmp/ccLjPlr4.o
+                0x0000000060004770                xStreamBufferSend
+ .text.xStreamBufferSendFromISR
+                0x00000000600049f0       0xfc /tmp/ccLjPlr4.o
+                0x00000000600049f0                xStreamBufferSendFromISR
+ .text.prvWriteMessageToBuffer
+                0x0000000060004aec       0xe0 /tmp/ccLjPlr4.o
+ .text.xStreamBufferReceive
+                0x0000000060004bcc      0x1c8 /tmp/ccLjPlr4.o
+                0x0000000060004bcc                xStreamBufferReceive
+ .text.xStreamBufferNextMessageLengthBytes
+                0x0000000060004d94       0xac /tmp/ccLjPlr4.o
+                0x0000000060004d94                xStreamBufferNextMessageLengthBytes
+ .text.xStreamBufferReceiveFromISR
+                0x0000000060004e40       0xec /tmp/ccLjPlr4.o
+                0x0000000060004e40                xStreamBufferReceiveFromISR
+ .text.prvReadMessageFromBuffer
+                0x0000000060004f2c       0xdc /tmp/ccLjPlr4.o
+ .text.xStreamBufferIsEmpty
+                0x0000000060005008       0x6c /tmp/ccLjPlr4.o
+                0x0000000060005008                xStreamBufferIsEmpty
+ .text.xStreamBufferIsFull
+                0x0000000060005074       0x84 /tmp/ccLjPlr4.o
+                0x0000000060005074                xStreamBufferIsFull
+ .text.xStreamBufferSendCompletedFromISR
+                0x00000000600050f8       0x8c /tmp/ccLjPlr4.o
+                0x00000000600050f8                xStreamBufferSendCompletedFromISR
+ .text.xStreamBufferReceiveCompletedFromISR
+                0x0000000060005184       0x8c /tmp/ccLjPlr4.o
+                0x0000000060005184                xStreamBufferReceiveCompletedFromISR
+ .text.prvWriteBytesToBuffer
+                0x0000000060005210      0x128 /tmp/ccLjPlr4.o
+ .text.prvReadBytesFromBuffer
+                0x0000000060005338      0x11c /tmp/ccLjPlr4.o
+ .text.prvBytesInBuffer
+                0x0000000060005454       0x74 /tmp/ccLjPlr4.o
+ .text.prvInitialiseNewStreamBuffer
+                0x00000000600054c8       0xa4 /tmp/ccLjPlr4.o
+ .text          0x000000006000556c        0x0 /tmp/cct0Gup2.o
+ .text.xTaskCreate
+                0x000000006000556c       0xec /tmp/cct0Gup2.o
+                0x000000006000556c                xTaskCreate
+ .text.prvInitialiseNewTask
+                0x0000000060005658      0x1c8 /tmp/cct0Gup2.o
+ .text.prvAddNewTaskToReadyList
+                0x0000000060005820      0x268 /tmp/cct0Gup2.o
+ .text.vTaskDelete
+                0x0000000060005a88      0x208 /tmp/cct0Gup2.o
+                0x0000000060005a88                vTaskDelete
+ .text.xTaskDelayUntil
+                0x0000000060005c90      0x124 /tmp/cct0Gup2.o
+                0x0000000060005c90                xTaskDelayUntil
+ .text.vTaskDelay
+                0x0000000060005db4       0x6c /tmp/cct0Gup2.o
+                0x0000000060005db4                vTaskDelay
+ .text.eTaskGetState
+                0x0000000060005e20      0x1a0 /tmp/cct0Gup2.o
+                0x0000000060005e20                eTaskGetState
+ .text.uxTaskPriorityGet
+                0x0000000060005fc0       0xa0 /tmp/cct0Gup2.o
+                0x0000000060005fc0                uxTaskPriorityGet
+ .text.uxTaskPriorityGetFromISR
+                0x0000000060006060       0x54 /tmp/cct0Gup2.o
+                0x0000000060006060                uxTaskPriorityGetFromISR
+ .text.vTaskPrioritySet
+                0x00000000600060b4      0x320 /tmp/cct0Gup2.o
+                0x00000000600060b4                vTaskPrioritySet
+ .text.vTaskSuspend
+                0x00000000600063d4      0x25c /tmp/cct0Gup2.o
+                0x00000000600063d4                vTaskSuspend
+ .text.prvTaskIsTaskSuspended
+                0x0000000060006630       0x80 /tmp/cct0Gup2.o
+ .text.vTaskResume
+                0x00000000600066b0      0x1f8 /tmp/cct0Gup2.o
+                0x00000000600066b0                vTaskResume
+ .text.xTaskResumeFromISR
+                0x00000000600068a8      0x1d8 /tmp/cct0Gup2.o
+                0x00000000600068a8                xTaskResumeFromISR
+ .text.vTaskStartScheduler
+                0x0000000060006a80       0xc4 /tmp/cct0Gup2.o
+                0x0000000060006a80                vTaskStartScheduler
+ .text.vTaskEndScheduler
+                0x0000000060006b44       0x38 /tmp/cct0Gup2.o
+                0x0000000060006b44                vTaskEndScheduler
+ .text.vTaskSuspendAll
+                0x0000000060006b7c       0x38 /tmp/cct0Gup2.o
+                0x0000000060006b7c                vTaskSuspendAll
+ .text.xTaskResumeAll
+                0x0000000060006bb4      0x398 /tmp/cct0Gup2.o
+                0x0000000060006bb4                xTaskResumeAll
+ .text.xTaskGetTickCount
+                0x0000000060006f4c       0x30 /tmp/cct0Gup2.o
+                0x0000000060006f4c                xTaskGetTickCount
+ .text.xTaskGetTickCountFromISR
+                0x0000000060006f7c       0x34 /tmp/cct0Gup2.o
+                0x0000000060006f7c                xTaskGetTickCountFromISR
+ .text.uxTaskGetNumberOfTasks
+                0x0000000060006fb0       0x28 /tmp/cct0Gup2.o
+                0x0000000060006fb0                uxTaskGetNumberOfTasks
+ .text.pcTaskGetName
+                0x0000000060006fd8       0x5c /tmp/cct0Gup2.o
+                0x0000000060006fd8                pcTaskGetName
+ .text.prvSearchForNameWithinSingleList
+                0x0000000060007034      0x180 /tmp/cct0Gup2.o
+ .text.xTaskGetHandle
+                0x00000000600071b4      0x128 /tmp/cct0Gup2.o
+                0x00000000600071b4                xTaskGetHandle
+ .text.xTaskCatchUpTicks
+                0x00000000600072dc       0xbc /tmp/cct0Gup2.o
+                0x00000000600072dc                xTaskCatchUpTicks
+ .text.xTaskAbortDelay
+                0x0000000060007398      0x230 /tmp/cct0Gup2.o
+                0x0000000060007398                xTaskAbortDelay
+ .text.xTaskIncrementTick
+                0x00000000600075c8      0x414 /tmp/cct0Gup2.o
+                0x00000000600075c8                xTaskIncrementTick
+ .text.vTaskSwitchContext
+                0x00000000600079dc      0x1b4 /tmp/cct0Gup2.o
+                0x00000000600079dc                vTaskSwitchContext
+ .text.vTaskPlaceOnEventList
+                0x0000000060007b90       0x60 /tmp/cct0Gup2.o
+                0x0000000060007b90                vTaskPlaceOnEventList
+ .text.vTaskPlaceOnUnorderedEventList
+                0x0000000060007bf0      0x10c /tmp/cct0Gup2.o
+                0x0000000060007bf0                vTaskPlaceOnUnorderedEventList
+ .text.vTaskPlaceOnEventListRestricted
+                0x0000000060007cfc       0xec /tmp/cct0Gup2.o
+                0x0000000060007cfc                vTaskPlaceOnEventListRestricted
+ .text.xTaskRemoveFromEventList
+                0x0000000060007de8      0x30c /tmp/cct0Gup2.o
+                0x0000000060007de8                xTaskRemoveFromEventList
+ .text.vTaskRemoveFromUnorderedEventList
+                0x00000000600080f4      0x28c /tmp/cct0Gup2.o
+                0x00000000600080f4                vTaskRemoveFromUnorderedEventList
+ .text.vTaskSetTimeOutState
+                0x0000000060008380       0xac /tmp/cct0Gup2.o
+                0x0000000060008380                vTaskSetTimeOutState
+ .text.vTaskInternalSetTimeOutState
+                0x000000006000842c       0x48 /tmp/cct0Gup2.o
+                0x000000006000842c                vTaskInternalSetTimeOutState
+ .text.xTaskCheckForTimeOut
+                0x0000000060008474      0x188 /tmp/cct0Gup2.o
+                0x0000000060008474                xTaskCheckForTimeOut
+ .text.vTaskMissedYield
+                0x00000000600085fc       0x2c /tmp/cct0Gup2.o
+                0x00000000600085fc                vTaskMissedYield
+ .text.prvIdleTask
+                0x0000000060008628       0x1c /tmp/cct0Gup2.o
+ .text.prvInitialiseTaskLists
+                0x0000000060008644       0xd0 /tmp/cct0Gup2.o
+ .text.prvCheckTasksWaitingTermination
+                0x0000000060008714       0xf0 /tmp/cct0Gup2.o
+ .text.prvDeleteTCB
+                0x0000000060008804       0x40 /tmp/cct0Gup2.o
+ .text.prvResetNextTaskUnblockTime
+                0x0000000060008844       0x64 /tmp/cct0Gup2.o
+ .text.xTaskGetCurrentTaskHandle
+                0x00000000600088a8       0x30 /tmp/cct0Gup2.o
+                0x00000000600088a8                xTaskGetCurrentTaskHandle
+ .text.xTaskGetSchedulerState
+                0x00000000600088d8       0x5c /tmp/cct0Gup2.o
+                0x00000000600088d8                xTaskGetSchedulerState
+ .text.xTaskPriorityInherit
+                0x0000000060008934      0x274 /tmp/cct0Gup2.o
+                0x0000000060008934                xTaskPriorityInherit
+ .text.xTaskPriorityDisinherit
+                0x0000000060008ba8      0x224 /tmp/cct0Gup2.o
+                0x0000000060008ba8                xTaskPriorityDisinherit
+ .text.vTaskPriorityDisinheritAfterTimeout
+                0x0000000060008dcc      0x270 /tmp/cct0Gup2.o
+                0x0000000060008dcc                vTaskPriorityDisinheritAfterTimeout
+ .text.uxTaskResetEventItemValue
+                0x000000006000903c       0x5c /tmp/cct0Gup2.o
+                0x000000006000903c                uxTaskResetEventItemValue
+ .text.pvTaskIncrementMutexHeldCount
+                0x0000000060009098       0x50 /tmp/cct0Gup2.o
+                0x0000000060009098                pvTaskIncrementMutexHeldCount
+ .text.ulTaskGenericNotifyTake
+                0x00000000600090e8      0x1d0 /tmp/cct0Gup2.o
+                0x00000000600090e8                ulTaskGenericNotifyTake
+ .text.xTaskGenericNotifyWait
+                0x00000000600092b8      0x23c /tmp/cct0Gup2.o
+                0x00000000600092b8                xTaskGenericNotifyWait
+ .text.xTaskGenericNotify
+                0x00000000600094f4      0x3e4 /tmp/cct0Gup2.o
+                0x00000000600094f4                xTaskGenericNotify
+ .text.xTaskGenericNotifyFromISR
+                0x00000000600098d8      0x44c /tmp/cct0Gup2.o
+                0x00000000600098d8                xTaskGenericNotifyFromISR
+ .text.vTaskGenericNotifyGiveFromISR
+                0x0000000060009d24      0x320 /tmp/cct0Gup2.o
+                0x0000000060009d24                vTaskGenericNotifyGiveFromISR
+ .text.xTaskGenericNotifyStateClear
+                0x000000006000a044       0xe8 /tmp/cct0Gup2.o
+                0x000000006000a044                xTaskGenericNotifyStateClear
+ .text.ulTaskGenericNotifyValueClear
+                0x000000006000a12c       0xf4 /tmp/cct0Gup2.o
+                0x000000006000a12c                ulTaskGenericNotifyValueClear
+ .text.prvAddCurrentTaskToDelayedList
+                0x000000006000a220      0x20c /tmp/cct0Gup2.o
+ .text          0x000000006000a42c        0x0 /tmp/ccaVHqn1.o
+ .text.xTimerCreateTimerTask
+                0x000000006000a42c       0x78 /tmp/ccaVHqn1.o
+                0x000000006000a42c                xTimerCreateTimerTask
+ .text.xTimerCreate
+                0x000000006000a4a4       0x74 /tmp/ccaVHqn1.o
+                0x000000006000a4a4                xTimerCreate
+ .text.prvInitialiseNewTimer
+                0x000000006000a518       0xac /tmp/ccaVHqn1.o
+ .text.xTimerGenericCommand
+                0x000000006000a5c4      0x110 /tmp/ccaVHqn1.o
+                0x000000006000a5c4                xTimerGenericCommand
+ .text.xTimerGetTimerDaemonTaskHandle
+                0x000000006000a6d4       0x44 /tmp/ccaVHqn1.o
+                0x000000006000a6d4                xTimerGetTimerDaemonTaskHandle
+ .text.xTimerGetPeriod
+                0x000000006000a718       0x44 /tmp/ccaVHqn1.o
+                0x000000006000a718                xTimerGetPeriod
+ .text.vTimerSetReloadMode
+                0x000000006000a75c       0xcc /tmp/ccaVHqn1.o
+                0x000000006000a75c                vTimerSetReloadMode
+ .text.xTimerGetReloadMode
+                0x000000006000a828       0xb0 /tmp/ccaVHqn1.o
+                0x000000006000a828                xTimerGetReloadMode
+ .text.uxTimerGetReloadMode
+                0x000000006000a8d8       0x34 /tmp/ccaVHqn1.o
+                0x000000006000a8d8                uxTimerGetReloadMode
+ .text.xTimerGetExpiryTime
+                0x000000006000a90c       0x4c /tmp/ccaVHqn1.o
+                0x000000006000a90c                xTimerGetExpiryTime
+ .text.pcTimerGetName
+                0x000000006000a958       0x44 /tmp/ccaVHqn1.o
+                0x000000006000a958                pcTimerGetName
+ .text.prvReloadTimer
+                0x000000006000a99c       0x88 /tmp/ccaVHqn1.o
+ .text.prvProcessExpiredTimer
+                0x000000006000aa24       0xa0 /tmp/ccaVHqn1.o
+ .text.prvTimerTask
+                0x000000006000aac4       0x3c /tmp/ccaVHqn1.o
+ .text.prvProcessTimerOrBlockTask
+                0x000000006000ab00       0xdc /tmp/ccaVHqn1.o
+ .text.prvGetNextExpireTime
+                0x000000006000abdc       0x78 /tmp/ccaVHqn1.o
+ .text.prvSampleTimeNow
+                0x000000006000ac54       0x74 /tmp/ccaVHqn1.o
+ .text.prvInsertTimerInActiveList
+                0x000000006000acc8       0xec /tmp/ccaVHqn1.o
+ .text.prvProcessReceivedCommands
+                0x000000006000adb4      0x260 /tmp/ccaVHqn1.o
+ .text.prvSwitchTimerLists
+                0x000000006000b014       0x98 /tmp/ccaVHqn1.o
+ .text.prvCheckForValidListAndQueue
+                0x000000006000b0ac      0x110 /tmp/ccaVHqn1.o
+ .text.xTimerIsTimerActive
+                0x000000006000b1bc       0xb0 /tmp/ccaVHqn1.o
+                0x000000006000b1bc                xTimerIsTimerActive
+ .text.pvTimerGetTimerID
+                0x000000006000b26c       0x9c /tmp/ccaVHqn1.o
+                0x000000006000b26c                pvTimerGetTimerID
+ .text.vTimerSetTimerID
+                0x000000006000b308       0x9c /tmp/ccaVHqn1.o
+                0x000000006000b308                vTimerSetTimerID
+ .text.xTimerPendFunctionCallFromISR
+                0x000000006000b3a4       0x80 /tmp/ccaVHqn1.o
+                0x000000006000b3a4                xTimerPendFunctionCallFromISR
+ .text.xTimerPendFunctionCall
+                0x000000006000b424       0x94 /tmp/ccaVHqn1.o
+                0x000000006000b424                xTimerPendFunctionCall
+ .text          0x000000006000b4b8        0x0 /tmp/ccVOSI91.o
+ .text.pvPortMalloc
+                0x000000006000b4b8      0x258 /tmp/ccVOSI91.o
+                0x000000006000b4b8                pvPortMalloc
+ .text.vPortFree
+                0x000000006000b710      0x104 /tmp/ccVOSI91.o
+                0x000000006000b710                vPortFree
+ .text.xPortGetFreeHeapSize
+                0x000000006000b814       0x28 /tmp/ccVOSI91.o
+                0x000000006000b814                xPortGetFreeHeapSize
+ .text.xPortGetMinimumEverFreeHeapSize
+                0x000000006000b83c       0x28 /tmp/ccVOSI91.o
+                0x000000006000b83c                xPortGetMinimumEverFreeHeapSize
+ .text.vPortInitialiseBlocks
+                0x000000006000b864       0x1c /tmp/ccVOSI91.o
+                0x000000006000b864                vPortInitialiseBlocks
+ .text.pvPortCalloc
+                0x000000006000b880       0xac /tmp/ccVOSI91.o
+                0x000000006000b880                pvPortCalloc
+ .text.prvHeapInit
+                0x000000006000b92c      0x14c /tmp/ccVOSI91.o
+ .text.prvInsertBlockIntoFreeList
+                0x000000006000ba78      0x144 /tmp/ccVOSI91.o
+ .text.vPortGetHeapStats
+                0x000000006000bbbc      0x180 /tmp/ccVOSI91.o
+                0x000000006000bbbc                vPortGetHeapStats
+ .text          0x000000006000bd3c        0x0 /tmp/ccdjyOU3.o
+ .text.vPortSetupTimerInterrupt
+                0x000000006000bd3c      0x174 /tmp/ccdjyOU3.o
+                0x000000006000bd3c                vPortSetupTimerInterrupt
+ .text.xPortStartScheduler
+                0x000000006000beb0       0x68 /tmp/ccdjyOU3.o
+                0x000000006000beb0                xPortStartScheduler
+ .text.vPortEndScheduler
+                0x000000006000bf18       0x10 /tmp/ccdjyOU3.o
+                0x000000006000bf18                vPortEndScheduler
+ .text          0x000000006000bf28      0x120 /tmp/ccJix5N5.o
+                0x000000006000bf28                pxPortInitialiseStack
+                0x000000006000bf88                xPortStartFirstTask
+                0x000000006000c028                freertos_risc_v_application_exception_handler
+                0x000000006000c038                freertos_risc_v_application_interrupt_handler
+ .text.freertos_risc_v_exception_handler
+                0x000000006000c048      0x204 /tmp/ccJix5N5.o
+                0x000000006000c048                freertos_risc_v_exception_handler
+ .text.freertos_risc_v_interrupt_handler
+                0x000000006000c24c      0x150 /tmp/ccJix5N5.o
+                0x000000006000c24c                freertos_risc_v_interrupt_handler
+ .text.freertos_risc_v_mtimer_interrupt_handler
+                0x000000006000c39c      0x18c /tmp/ccJix5N5.o
+                0x000000006000c39c                freertos_risc_v_mtimer_interrupt_handler
+ *fill*         0x000000006000c528       0xd8 
+ .text.freertos_risc_v_trap_handler
+                0x000000006000c600      0x1f0 /tmp/ccJix5N5.o
+                0x000000006000c600                freertos_risc_v_trap_handler
+ .text          0x000000006000c7f0       0x4c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+                0x000000006000c7f0                __clzsi2
+ .text          0x000000006000c83c      0x7d8 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+                0x000000006000c83c                __adddf3
+ .text          0x000000006000d014      0x688 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+                0x000000006000d014                __muldf3
+ .text          0x000000006000d69c       0x7c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+                0x000000006000d69c                __fixunsdfsi
+ .text          0x000000006000d718       0x80 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+                0x000000006000d718                __floatunsidf
+ .text          0x000000006000d798       0x24 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+                0x000000006000d798                __mulsi3
+ .text          0x000000006000d7bc       0xb4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+                0x000000006000d7bc                __divsi3
+                0x000000006000d7c4                __udivsi3
+                0x000000006000d80c                __umodsi3
+                0x000000006000d840                __modsi3
+ .text          0x000000006000d870        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .text          0x000000006000d870        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x000000006000d870       0x9c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-init.o)
+                0x000000006000d870                __libc_init_array
+ .text          0x000000006000d90c       0x24 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memcpy-asm.o)
+                0x000000006000d90c                memcpy
+ .text          0x000000006000d930       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memset.o)
+                0x000000006000d930                memset
+ .text          0x000000006000d94c        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+ .text._printf_r
+                0x000000006000d94c       0x6c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+                0x000000006000d94c                _printf_r
+                0x000000006000d94c                _iprintf_r
+ .text.printf   0x000000006000d9b8       0x70 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+                0x000000006000d9b8                printf
+                0x000000006000d9b8                iprintf
+ .text          0x000000006000da28        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+ .text.cleanup_glue
+                0x000000006000da28       0x40 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+                0x000000006000da28                cleanup_glue
+ .text._reclaim_reent
+                0x000000006000da68      0x16c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+                0x000000006000da68                _reclaim_reent
+ .text          0x000000006000dbd4        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+ .text._sprintf_r
+                0x000000006000dbd4       0x64 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+                0x000000006000dbd4                _siprintf_r
+                0x000000006000dbd4                _sprintf_r
+ .text.sprintf  0x000000006000dc38       0x74 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+                0x000000006000dc38                sprintf
+                0x000000006000dc38                siprintf
+ .text          0x000000006000dcac        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-strlen.o)
+ .text.strlen   0x000000006000dcac       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-strlen.o)
+                0x000000006000dcac                strlen
+ .text          0x000000006000dcc8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .text.__fp_lock
+                0x000000006000dcc8        0x8 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .text.std      0x000000006000dcd0       0x88 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .text._cleanup_r
+                0x000000006000dd58        0xc /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000dd58                _cleanup_r
+ .text.__fp_unlock
+                0x000000006000dd64        0x8 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .text.__sfmoreglue
+                0x000000006000dd6c       0x78 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000dd6c                __sfmoreglue
+ .text._cleanup
+                0x000000006000dde4        0xc /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000dde4                _cleanup
+ .text.__sinit  0x000000006000ddf0       0xb4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000ddf0                __sinit
+ .text.__sfp    0x000000006000dea4       0xec /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000dea4                __sfp
+ .text.__sfp_lock_acquire
+                0x000000006000df90        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000df90                __sfp_lock_acquire
+ .text.__sfp_lock_release
+                0x000000006000df94        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000df94                __sfp_lock_release
+ .text.__sinit_lock_acquire
+                0x000000006000df98        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000df98                __sinit_lock_acquire
+ .text.__sinit_lock_release
+                0x000000006000df9c        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000df9c                __sinit_lock_release
+ .text.__fp_lock_all
+                0x000000006000dfa0       0x14 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000dfa0                __fp_lock_all
+ .text.__fp_unlock_all
+                0x000000006000dfb4       0x14 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x000000006000dfb4                __fp_unlock_all
+ .text          0x000000006000dfc8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+ .text._fwalk   0x000000006000dfc8       0xa0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+                0x000000006000dfc8                _fwalk
+ .text._fwalk_reent
+                0x000000006000e068       0xb0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+                0x000000006000e068                _fwalk_reent
+ .text          0x000000006000e118        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+ .text          0x000000006000e118        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o)
+ .text._free_r  0x000000006000e118      0x104 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o)
+                0x000000006000e118                _free_r
+ .text          0x000000006000e21c        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+ .text._malloc_r
+                0x000000006000e21c      0x158 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+                0x000000006000e21c                _malloc_r
+ .text          0x000000006000e374        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+ .text.__ssputs_r
+                0x000000006000e374      0x16c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000006000e374                __ssputs_r
+ .text.__ssprint_r
+                0x000000006000e4e0      0x1bc /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000006000e4e0                __ssprint_r
+ .text._svfprintf_r
+                0x000000006000e69c      0x3a8 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000006000e69c                _svfprintf_r
+                0x000000006000e69c                _svfiprintf_r
+ .text          0x000000006000ea44        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .text._printf_common
+                0x000000006000ea44      0x1b0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000006000ea44                _printf_common
+ .text._printf_i
+                0x000000006000ebf4      0x3c4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000006000ebf4                _printf_i
+ .text          0x000000006000efb8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+ .text.__sfputc_r
+                0x000000006000efb8       0x3c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+ .text.__sfputs_r
+                0x000000006000eff4       0x74 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000006000eff4                __sfputs_r
+ .text.__sprint_r
+                0x000000006000f068       0x40 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000006000f068                __sprint_r
+ .text._vfprintf_r
+                0x000000006000f0a8      0x3d8 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000006000f0a8                _vfiprintf_r
+                0x000000006000f0a8                _vfprintf_r
+ .text.vfprintf
+                0x000000006000f480       0x18 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000006000f480                vfiprintf
+                0x000000006000f480                vfprintf
+ .text          0x000000006000f498        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sbrkr.o)
+ .text._sbrk_r  0x000000006000f498       0x4c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sbrkr.o)
+                0x000000006000f498                _sbrk_r
+ .text          0x000000006000f4e4        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+ .text.__sread  0x000000006000f4e4       0x50 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+                0x000000006000f4e4                __sread
+ .text.__seofread
+                0x000000006000f534        0x8 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+                0x000000006000f534                __seofread
+ .text.__swrite
+                0x000000006000f53c       0x84 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+                0x000000006000f53c                __swrite
+ .text.__sseek  0x000000006000f5c0       0x58 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+                0x000000006000f5c0                __sseek
+ .text.__sclose
+                0x000000006000f618        0x8 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+                0x000000006000f618                __sclose
+ .text          0x000000006000f620        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+ .text.__swbuf_r
+                0x000000006000f620      0x138 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+                0x000000006000f620                __swbuf_r
+ .text.__swbuf  0x000000006000f758       0x14 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+                0x000000006000f758                __swbuf
+ .text          0x000000006000f76c        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-writer.o)
+ .text._write_r
+                0x000000006000f76c       0x54 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-writer.o)
+                0x000000006000f76c                _write_r
+ .text          0x000000006000f7c0        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o)
+ .text.__swsetup_r
+                0x000000006000f7c0      0x178 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o)
+                0x000000006000f7c0                __swsetup_r
+ .text          0x000000006000f938        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-closer.o)
+ .text._close_r
+                0x000000006000f938       0x4c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-closer.o)
+                0x000000006000f938                _close_r
+ .text          0x000000006000f984        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+ .text.__sflush_r
+                0x000000006000f984      0x1f4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+                0x000000006000f984                __sflush_r
+ .text._fflush_r
+                0x000000006000fb78       0xa0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+                0x000000006000fb78                _fflush_r
+ .text.fflush   0x000000006000fc18       0x28 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+                0x000000006000fc18                fflush
+ .text          0x000000006000fc40        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fvwrite.o)
+ .text.__sfvwrite_r
+                0x000000006000fc40      0x460 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fvwrite.o)
+                0x000000006000fc40                __sfvwrite_r
+ .text          0x00000000600100a0        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-lseekr.o)
+ .text._lseek_r
+                0x00000000600100a0       0x54 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-lseekr.o)
+                0x00000000600100a0                _lseek_r
+ .text          0x00000000600100f4        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+ .text.__swhatbuf_r
+                0x00000000600100f4       0x90 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+                0x00000000600100f4                __swhatbuf_r
+ .text.__smakebuf_r
+                0x0000000060010184       0xf0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+                0x0000000060010184                __smakebuf_r
+ .text          0x0000000060010274        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memchr.o)
+ .text.memchr   0x0000000060010274       0x24 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memchr.o)
+                0x0000000060010274                memchr
+ .text          0x0000000060010298       0x3c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memmove.o)
+                0x0000000060010298                memmove
+ .text          0x00000000600102d4        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+ .text.__malloc_lock
+                0x00000000600102d4        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+                0x00000000600102d4                __malloc_lock
+ .text.__malloc_unlock
+                0x00000000600102d8        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+                0x00000000600102d8                __malloc_unlock
+ .text          0x00000000600102dc        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o)
+ .text._realloc_r
+                0x00000000600102dc       0xd4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o)
+                0x00000000600102dc                _realloc_r
+ .text          0x00000000600103b0        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-readr.o)
+ .text._read_r  0x00000000600103b0       0x54 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-readr.o)
+                0x00000000600103b0                _read_r
+ .text          0x0000000060010404        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fstatr.o)
+ .text._fstat_r
+                0x0000000060010404       0x50 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fstatr.o)
+                0x0000000060010404                _fstat_r
+ .text          0x0000000060010454        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-isattyr.o)
+ .text._isatty_r
+                0x0000000060010454       0x4c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-isattyr.o)
+                0x0000000060010454                _isatty_r
+ .text          0x00000000600104a0        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-msizer.o)
+ .text._malloc_usable_size_r
+                0x00000000600104a0       0x1c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-msizer.o)
+                0x00000000600104a0                _malloc_usable_size_r
+ *(.vector*)
+                0x00000000600104bc                __lma_ram_start = .
+
+.preinit_array  0x0000000070000000        0x0 load address 0x00000000600104bc
+                0x0000000070000000                __vma_ram_start = .
+                0x0000000070000000                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                0x0000000070000000                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000070000000        0x0 load address 0x00000000600104bc
+                0x0000000070000000                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+                0x0000000070000000                PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000070000000        0x0 load address 0x00000000600104bc
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.rodata         0x0000000070000000      0x36c load address 0x00000000600104bc
+                0x0000000070000000                _start_rodata = .
+ *(.rodata*)
+ .rodata        0x0000000070000000        0x7 /tmp/ccmjzeD5.o
+ *fill*         0x0000000070000007        0x1 
+ .rodata        0x0000000070000008       0x38 /tmp/ccBrcDz1.o
+ .rodata        0x0000000070000040       0x82 /tmp/cc1VgIz2.o
+ *fill*         0x00000000700000c2        0x2 
+ .rodata        0x00000000700000c4        0x5 /tmp/cct0Gup2.o
+ *fill*         0x00000000700000c9        0x3 
+ .rodata.xTaskGenericNotify
+                0x00000000700000cc       0x14 /tmp/cct0Gup2.o
+ .rodata.xTaskGenericNotifyFromISR
+                0x00000000700000e0       0x14 /tmp/cct0Gup2.o
+ .rodata        0x00000000700000f4        0xd /tmp/ccaVHqn1.o
+ *fill*         0x0000000070000101        0x3 
+ .rodata.prvProcessReceivedCommands
+                0x0000000070000104       0x28 /tmp/ccaVHqn1.o
+ .rodata        0x000000007000012c       0x3c /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .rodata        0x0000000070000168      0x100 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+                0x0000000070000168                __clz_tab
+ .rodata.__sf_fake_stderr
+                0x0000000070000268       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x0000000070000268                __sf_fake_stderr
+ .rodata.__sf_fake_stdin
+                0x0000000070000288       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x0000000070000288                __sf_fake_stdin
+ .rodata.__sf_fake_stdout
+                0x00000000700002a8       0x20 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+                0x00000000700002a8                __sf_fake_stdout
+ .rodata._svfprintf_r.str1.4
+                0x00000000700002c8       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+ *fill*         0x00000000700002db        0x1 
+ .rodata._printf_i.str1.4
+                0x00000000700002dc       0x25 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ *fill*         0x0000000070000301        0x3 
+ .rodata._printf_i
+                0x0000000070000304       0x58 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .rodata._vfprintf_r.str1.4
+                0x000000007000035c       0x13 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+ *(.rodata.*)
+ *(.srodata.*)
+ .srodata.xHeapStructSize
+                0x000000007000035c        0x4 /tmp/ccVOSI91.o
+ .srodata.xISRStackTop
+                0x0000000070000360        0x4 /tmp/ccdjyOU3.o
+                0x0000000070000360                xISRStackTop
+ .srodata.uxTimerIncrementsForOneTick
+                0x0000000070000364        0x4 /tmp/ccdjyOU3.o
+                0x0000000070000364                uxTimerIncrementsForOneTick
+ .srodata._global_impure_ptr
+                0x0000000070000368        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+                0x0000000070000368                _global_impure_ptr
+                0x000000007000036c                _end_rodata = .
+
+.eh_frame       0x000000007000036c       0x2c load address 0x0000000060010828
+                0x000000007000036c                . = ALIGN (0x4)
+ *(.eh_frame*)
+ .eh_frame      0x000000007000036c       0x2c /tmp/ccmjzeD5.o
+
+.rela.dyn       0x0000000070000398        0x0 load address 0x0000000060010854
+ .rela.init     0x0000000070000398        0x0 /tmp/ccmjzeD5.o
+ .rela.text._sbrk
+                0x0000000070000398        0x0 /tmp/ccmjzeD5.o
+ .rela.text.__libc_init_array
+                0x0000000070000398        0x0 /tmp/ccmjzeD5.o
+ .rela.text._svfprintf_r
+                0x0000000070000398        0x0 /tmp/ccmjzeD5.o
+ .rela.text._vfprintf_r
+                0x0000000070000398        0x0 /tmp/ccmjzeD5.o
+
+.data.impure_data
+                0x0000000070000398       0x60 load address 0x0000000060010854
+                0x0000000070000398                . = ALIGN (0x4)
+ *(.data.impure_data)
+ .data.impure_data
+                0x0000000070000398       0x60 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+
+.data           0x00000000700003f8       0x18 load address 0x00000000600108b4
+ *(.data .data.*)
+ .data          0x00000000700003f8        0x0 /tmp/ccmjzeD5.o
+ .data          0x00000000700003f8        0x0 /tmp/ccBrcDz1.o
+ .data          0x00000000700003f8        0x0 /tmp/ccqP0tM5.o
+ .data          0x00000000700003f8        0x0 /tmp/ccAI5TO4.o
+ .data          0x00000000700003f8        0x0 /tmp/cc1VgIz2.o
+ .data          0x00000000700003f8        0x0 /tmp/ccf4lMF3.o
+ .data          0x00000000700003f8        0x0 /tmp/cc13oOH4.o
+ .data          0x00000000700003f8        0x0 /tmp/ccZqozK5.o
+ .data          0x00000000700003f8        0x0 /tmp/cciYWWn2.o
+ .data          0x00000000700003f8        0x0 /tmp/ccLjPlr4.o
+ .data          0x00000000700003f8        0x0 /tmp/cct0Gup2.o
+ .data          0x00000000700003f8        0x0 /tmp/ccaVHqn1.o
+ .data          0x00000000700003f8        0x0 /tmp/ccVOSI91.o
+ .data          0x00000000700003f8        0x0 /tmp/ccdjyOU3.o
+ .data          0x00000000700003f8        0x0 /tmp/ccJix5N5.o
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-init.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memcpy-asm.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memset.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-strlen.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sbrkr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-writer.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-closer.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fvwrite.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-lseekr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memchr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memmove.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-readr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fstatr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-isattyr.o)
+ .data          0x00000000700003f8        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-msizer.o)
+ *(.gnu.linkonce.d.*)
+                0x00000000700003f8                . = ALIGN (0x4)
+                0x00000000700003f8                _start_data = .
+ *(.sdata .sdata.*)
+ .sdata.environ
+                0x00000000700003f8        0x4 /tmp/ccBrcDz1.o
+                0x00000000700003f8                environ
+ .sdata.uxTopUsedPriority
+                0x00000000700003fc        0x4 /tmp/cct0Gup2.o
+                0x00000000700003fc                uxTopUsedPriority
+ .sdata.pullNextTime
+                0x0000000070000400        0x4 /tmp/ccdjyOU3.o
+                0x0000000070000400                pullNextTime
+ .sdata.xCriticalNesting
+                0x0000000070000404        0x4 /tmp/ccdjyOU3.o
+                0x0000000070000404                xCriticalNesting
+ .sdata.pxCriticalNesting
+                0x0000000070000408        0x4 /tmp/ccdjyOU3.o
+                0x0000000070000408                pxCriticalNesting
+ .sdata._impure_ptr
+                0x000000007000040c        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+                0x000000007000040c                _impure_ptr
+ *(.sdata2 .sdata2.*)
+ *(.gnu.linkonce.s.*)
+ *(.srodata .srodata.*)
+                0x0000000070000410                _edata = .
+                0x0000000070000410                __vma_ram_end = .
+
+.custom.crc     0x00000000600108cc        0x4
+                0x00000000600108cc                __app_crc = .
+                0x00000000600108cc        0x4 LONG 0x0
+
+.bss            0x0000000070000410    0x11de0
+                0x0000000070000410                . = ALIGN (0x4)
+                0x0000000070000410                _bss_lma = .
+ *(.bss .bss.*)
+ .bss           0x0000000070000410        0x0 /tmp/ccmjzeD5.o
+ .bss           0x0000000070000410        0x0 /tmp/ccBrcDz1.o
+ .bss           0x0000000070000410        0x0 /tmp/ccqP0tM5.o
+ .bss           0x0000000070000410        0x0 /tmp/ccAI5TO4.o
+ .bss           0x0000000070000410        0x0 /tmp/cc1VgIz2.o
+ .bss           0x0000000070000410        0x0 /tmp/ccf4lMF3.o
+ .bss           0x0000000070000410        0x0 /tmp/cc13oOH4.o
+ .bss           0x0000000070000410        0x0 /tmp/ccZqozK5.o
+ .bss           0x0000000070000410        0x0 /tmp/cciYWWn2.o
+ .bss.xQueueRegistry
+                0x0000000070000410       0x40 /tmp/cciYWWn2.o
+                0x0000000070000410                xQueueRegistry
+ .bss           0x0000000070000450        0x0 /tmp/ccLjPlr4.o
+ .bss           0x0000000070000450        0x0 /tmp/cct0Gup2.o
+ .bss.pxReadyTasksLists
+                0x0000000070000450       0x8c /tmp/cct0Gup2.o
+ .bss.xDelayedTaskList1
+                0x00000000700004dc       0x14 /tmp/cct0Gup2.o
+ .bss.xDelayedTaskList2
+                0x00000000700004f0       0x14 /tmp/cct0Gup2.o
+ .bss.xPendingReadyList
+                0x0000000070000504       0x14 /tmp/cct0Gup2.o
+ .bss.xTasksWaitingTermination
+                0x0000000070000518       0x14 /tmp/cct0Gup2.o
+ .bss.xSuspendedTaskList
+                0x000000007000052c       0x14 /tmp/cct0Gup2.o
+ .bss           0x0000000070000540        0x0 /tmp/ccaVHqn1.o
+ .bss.xActiveTimerList1
+                0x0000000070000540       0x14 /tmp/ccaVHqn1.o
+ .bss.xActiveTimerList2
+                0x0000000070000554       0x14 /tmp/ccaVHqn1.o
+ .bss           0x0000000070000568        0x0 /tmp/ccVOSI91.o
+ .bss.ucHeap    0x0000000070000568     0xfbf4 /tmp/ccVOSI91.o
+ .bss           0x000000007001015c        0x0 /tmp/ccdjyOU3.o
+ *fill*         0x000000007001015c        0x4 
+ .bss.xISRStack
+                0x0000000070010160     0x2000 /tmp/ccdjyOU3.o
+ .bss           0x0000000070012160        0x0 /tmp/ccJix5N5.o
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clzsi2.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(adddf3.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldf3.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(fixunsdfsi.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(floatunsidf.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(div.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a(_clz.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-init.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memcpy-asm.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memset.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-printf.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sprintf.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-strlen.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-findfp.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fwalk.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-impure.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-freer.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-svfprintf.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-vfprintf.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-sbrkr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-stdio.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wbuf.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-writer.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-wsetup.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-closer.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fflush.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fvwrite.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-lseekr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-makebuf.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memchr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-memmove.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-mlock.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-reallocr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-readr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-fstatr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-isattyr.o)
+ .bss           0x0000000070012160        0x0 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-msizer.o)
+ *(.sbss .sbss.*)
+ .sbss.__env    0x0000000070012160        0x4 /tmp/ccBrcDz1.o
+                0x0000000070012160                __env
+ .sbss.heap.0   0x0000000070012164        0x4 /tmp/ccBrcDz1.o
+ .sbss.xQueue   0x0000000070012168        0x4 /tmp/cc1VgIz2.o
+ .sbss.pxCurrentTCB
+                0x000000007001216c        0x4 /tmp/cct0Gup2.o
+                0x000000007001216c                pxCurrentTCB
+ .sbss.pxDelayedTaskList
+                0x0000000070012170        0x4 /tmp/cct0Gup2.o
+ .sbss.pxOverflowDelayedTaskList
+                0x0000000070012174        0x4 /tmp/cct0Gup2.o
+ .sbss.uxDeletedTasksWaitingCleanUp
+                0x0000000070012178        0x4 /tmp/cct0Gup2.o
+ .sbss.uxCurrentNumberOfTasks
+                0x000000007001217c        0x4 /tmp/cct0Gup2.o
+ .sbss.xTickCount
+                0x0000000070012180        0x4 /tmp/cct0Gup2.o
+ .sbss.uxTopReadyPriority
+                0x0000000070012184        0x4 /tmp/cct0Gup2.o
+ .sbss.xSchedulerRunning
+                0x0000000070012188        0x4 /tmp/cct0Gup2.o
+ .sbss.xPendedTicks
+                0x000000007001218c        0x4 /tmp/cct0Gup2.o
+ .sbss.xYieldPending
+                0x0000000070012190        0x4 /tmp/cct0Gup2.o
+ .sbss.xNumOfOverflows
+                0x0000000070012194        0x4 /tmp/cct0Gup2.o
+ .sbss.uxTaskNumber
+                0x0000000070012198        0x4 /tmp/cct0Gup2.o
+ .sbss.xNextTaskUnblockTime
+                0x000000007001219c        0x4 /tmp/cct0Gup2.o
+ .sbss.xIdleTaskHandle
+                0x00000000700121a0        0x4 /tmp/cct0Gup2.o
+ .sbss.uxSchedulerSuspended
+                0x00000000700121a4        0x4 /tmp/cct0Gup2.o
+ .sbss.pxCurrentTimerList
+                0x00000000700121a8        0x4 /tmp/ccaVHqn1.o
+ .sbss.pxOverflowTimerList
+                0x00000000700121ac        0x4 /tmp/ccaVHqn1.o
+ .sbss.xTimerQueue
+                0x00000000700121b0        0x4 /tmp/ccaVHqn1.o
+ .sbss.xTimerTaskHandle
+                0x00000000700121b4        0x4 /tmp/ccaVHqn1.o
+ .sbss.xLastTime.0
+                0x00000000700121b8        0x4 /tmp/ccaVHqn1.o
+ .sbss.xStart   0x00000000700121bc        0x8 /tmp/ccVOSI91.o
+ .sbss.pxEnd    0x00000000700121c4        0x4 /tmp/ccVOSI91.o
+ .sbss.xFreeBytesRemaining
+                0x00000000700121c8        0x4 /tmp/ccVOSI91.o
+ .sbss.xMinimumEverFreeBytesRemaining
+                0x00000000700121cc        0x4 /tmp/ccVOSI91.o
+ .sbss.xNumberOfSuccessfulAllocations
+                0x00000000700121d0        0x4 /tmp/ccVOSI91.o
+ .sbss.xNumberOfSuccessfulFrees
+                0x00000000700121d4        0x4 /tmp/ccVOSI91.o
+ .sbss.ullNextTime
+                0x00000000700121d8        0x8 /tmp/ccdjyOU3.o
+                0x00000000700121d8                ullNextTime
+ .sbss.xTaskReturnAddress
+                0x00000000700121e0        0x4 /tmp/ccdjyOU3.o
+                0x00000000700121e0                xTaskReturnAddress
+ .sbss.errno    0x00000000700121e4        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-reent.o)
+                0x00000000700121e4                errno
+ .sbss.__malloc_free_list
+                0x00000000700121e8        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+                0x00000000700121e8                __malloc_free_list
+ .sbss.__malloc_sbrk_start
+                0x00000000700121ec        0x4 /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a(lib_a-nano-mallocr.o)
+                0x00000000700121ec                __malloc_sbrk_start
+ *(.shbss .shbss.*)
+ *(COMMON)
+                0x00000000700129f0                __global_pointer = (. + 0x800)
+                0x00000000700121f0                _ebss = .
+                0x00000000700121f0                . = ALIGN (0x4)
+
+.stack          0x00000000700121f0    0x5fffc
+                0x00000000700121f0                . = ALIGN (0x4)
+                0x00000000700121f0                _stack_lma = .
+                0x00000000700721ec                . = ((. + STACK_SIZE) - 0x4)
+ *fill*         0x00000000700121f0    0x5fffc 
+                0x00000000700721ec                _estack = .
+                0x00000000700721f0                . = (. + 0x4)
+                0x00000000700721f0                _heap_lma = .
+
+/DISCARD/
+ *(.riscv.*)
+ *(.comment)
+ *(.debug_*)
+LOAD /tmp/ccmjzeD5.o
+LOAD /tmp/ccBrcDz1.o
+LOAD /tmp/ccqP0tM5.o
+LOAD /tmp/ccAI5TO4.o
+LOAD /tmp/cc1VgIz2.o
+LOAD /tmp/ccf4lMF3.o
+LOAD /tmp/cc13oOH4.o
+LOAD /tmp/ccZqozK5.o
+LOAD /tmp/cciYWWn2.o
+LOAD /tmp/ccLjPlr4.o
+LOAD /tmp/cct0Gup2.o
+LOAD /tmp/ccaVHqn1.o
+LOAD /tmp/ccVOSI91.o
+LOAD /tmp/ccdjyOU3.o
+LOAD /tmp/ccJix5N5.o
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a
+START GROUP
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/rv32i/ilp32/libgcc.a
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libc_nano.a
+LOAD /home/douglas/rv32i/lib/gcc/riscv32-unknown-elf/10.1.0/../../../../riscv32-unknown-elf/lib/rv32i/ilp32/libgloss_nano.a
+END GROUP
+OUTPUT(/home/douglas/Projects/harv-soc/src/freertos-queue/out/app-smf2000-envm.o elf32-littleriscv)

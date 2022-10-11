@@ -6,6 +6,7 @@ use ieee.math_real.ceil;
 library work;
 use work.harv_pkg.all;
 use work.axi4l_pkg.all;
+use work.axi4l_slaves_pkg.all;
 
 entity harv_soc is
   generic (

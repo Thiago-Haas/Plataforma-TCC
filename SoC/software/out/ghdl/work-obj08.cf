@@ -1,0 +1,164 @@
+v 4
+file / "/home/douglas/Projects/harv-soc/sim/ahx_tb.vhd" "603642cd3c9d2af876ddbc922b95c629d56728c7" "20220917012311.597":
+  entity ahx_tb at 1( 0) + 0 on 223;
+  architecture arch of ahx_tb at 22( 535) + 0 on 224;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4l_top.vhd" "ccbb91e39782047a9fab321178a8826216388ca1" "20220917012311.559":
+  entity axi4l_top at 1( 0) + 0 on 219;
+  architecture arch of axi4l_top at 65( 1817) + 0 on 220;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_bram.vhd" "50023871683a92126f276e39b9bc996439e81617" "20220917012311.534":
+  entity axi4l_bram at 1( 0) + 0 on 215;
+  architecture arch of axi4l_bram at 34( 794) + 0 on 216;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/unaligned_ecc_memory.vhd" "6ddeeb506b6f123b165d932d38f8a60d69d99592" "20220917012311.513":
+  entity unaligned_ecc_memory at 1( 0) + 0 on 212;
+  architecture arch of unaligned_ecc_memory at 37( 1039) + 0 on 213;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/memory.vhd" "868c7be3a643182a096621362b1d44e00d06643b" "20220917012311.482":
+  entity memory at 1( 0) + 0 on 208;
+  architecture arch of memory at 29( 683) + 0 on 209;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter.vhd" "9081a4ac97f1db31af53d4c7f219fa633201f97d" "20220917012311.456":
+  entity mem_ecc_adapter at 1( 0) + 0 on 204;
+  architecture arch of mem_ecc_adapter at 46( 1370) + 0 on 205;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_datapath.vhd" "d5dd970cb3fba565bdb399c18ff86b87653f2f55" "20220917012311.430":
+  entity mem_ecc_adapter_datapath at 1( 0) + 0 on 200;
+  architecture arch of mem_ecc_adapter_datapath at 49( 1365) + 0 on 201;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_control.vhd" "1980432f04d058ed3e7781ea110cb1f7c8b920f0" "20220917012311.402":
+  entity mem_unaligned_adapter_control at 1( 0) + 0 on 196;
+  architecture arch of mem_unaligned_adapter_control at 31( 640) + 0 on 197;
+file / "/home/douglas/Projects/harv-soc/hdl/bus/axi4l_axi_bridge.vhd" "67d6ea10a332be054bc52b9ae556cad93b29aa1a" "20220917012311.376":
+  entity axi4l_axi_bridge at 1( 0) + 0 on 192;
+  architecture arch of axi4l_axi_bridge at 67( 2711) + 0 on 193;
+file / "/home/douglas/Projects/harv-soc/hdl/bus/apb3_mux.vhd" "a1ce3a4186273f349ed0e426fab5f67b63db3b0f" "20220917012311.352":
+  entity apb3_mux at 1( 0) + 0 on 188;
+  architecture arch of apb3_mux at 40( 1132) + 0 on 189;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_4.vhd" "942db47b49514959121149d5c96a203af1684136" "20220917012311.328":
+  entity axi4l_interconnect_4 at 1( 0) + 0 on 184;
+  architecture arch of axi4l_interconnect_4 at 48( 1535) + 0 on 185;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_2.vhd" "2eb8715a12cc19cf13693eecffa322eee819b1d7" "20220917012311.303":
+  entity axi4l_interconnect_2 at 1( 0) + 0 on 180;
+  architecture arch of axi4l_interconnect_2 at 36( 1031) + 0 on 181;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_master.vhd" "4b67cfad5f35b640a21cf5a85ef80f9f87e6c2b7" "20220917012311.279":
+  entity axi4l_master at 1( 0) + 0 on 176;
+  architecture arch of axi4l_master at 37( 845) + 0 on 177;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_gpio_slave.vhd" "036ca22a7a4c48e476b88ec923582e2211bac5e2" "20220917012311.252":
+  entity axi4l_gpio_slave at 1( 0) + 0 on 172;
+  architecture arch of axi4l_gpio_slave at 31( 735) + 0 on 173;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_uart_slave.vhd" "77fb572f0f6072d8ba797bd65d07acc1fdbdfef1" "20220917012311.227":
+  entity axi4l_uart_slave at 1( 0) + 0 on 168;
+  architecture arch of axi4l_uart_slave at 32( 612) + 0 on 169;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/fifo.vhd" "a1b50377d542cbd9acbf13932691162267c3c572" "20220917012311.197":
+  entity fifo at 1( 0) + 0 on 164;
+  architecture arch_fifo of fifo at 27( 581) + 0 on 165;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/qspi.vhd" "2d958ea71f157a5298227eb13e23229ca740b549" "20220917012311.172":
+  entity qspi at 1( 0) + 0 on 160;
+  architecture arch of qspi at 26( 690) + 0 on 161;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/bootloader_rom.vhd" "d842671dfea82cd74135ec411c5f585a7d787460" "20220917012311.140":
+  package bootloader_rom at 1( 0) + 0 on 157;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_pkg.vhd" "d9a7d1bac540c1c0287375cfad0fbe7924c6817d" "20220917012311.120":
+  package axi4l_pkg at 1( 0) + 0 on 155;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/regfile_wdata_selector.vhd" "53747645e15af6dac931c02dd07dfd0e94464089" "20220917012311.101":
+  entity regfile_wdata_selector at 1( 0) + 0 on 151;
+  architecture arch of regfile_wdata_selector at 22( 605) + 0 on 152;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/mem_interface.vhd" "a0c42a30e6ab64308270f555e40f23157f9cf499" "20220917012311.076":
+  entity mem_interface at 1( 0) + 0 on 147;
+  architecture arch of mem_interface at 37( 1216) + 0 on 148;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/immediate_selector.vhd" "d25dadf5d8364e120ad1bf4092fa31396930bc8b" "20220917012311.051":
+  entity immediate_selector at 1( 0) + 0 on 143;
+  architecture arch of immediate_selector at 17( 424) + 0 on 144;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/event_handler.vhd" "be8480ebef9a3b5311b1bc8286e5c40df23b880f" "20220917012311.024":
+  entity event_handler at 1( 0) + 0 on 139;
+  architecture arch of event_handler at 73( 2047) + 0 on 140;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/control.vhd" "735c4886d8b704fee511bd7828939569df0bcce5" "20220917012310.995":
+  entity control at 1( 0) + 0 on 135;
+  architecture arch of control at 80( 2153) + 0 on 136;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/alu_data_selector.vhd" "f25ba3b2215e013a1b26b67e8812565f7ad8d75d" "20220917012310.966":
+  entity alu_data_selector at 1( 0) + 0 on 131;
+  architecture arch of alu_data_selector at 22( 621) + 0 on 132;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_encoder.vhd" "951f31cd2a9ddfbfd28bdc0421a91bcb4a18e070" "20220917012310.941":
+  entity hamming_encoder at 1( 0) + 0 on 127;
+  architecture arch of hamming_encoder at 19( 445) + 0 on 128;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/ft_components/control_tmr.vhd" "fbbaf46de75bc1feaed47f2e4304fd3cd9ed5b5f" "20220917012310.917":
+  entity control_tmr at 1( 0) + 0 on 123;
+  architecture arch of control_tmr at 82( 2119) + 0 on 124;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_pkg.vhd" "816bd155fee322ef2c1493d47cb0422156ed4118" "20220917012310.883":
+  package hamming_pkg at 1( 0) + 0 on 119 body;
+  package body hamming_pkg at 90( 4373) + 0 on 120;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/harv_pkg.vhd" "c20e3070f80aacdb47737a4ee6b23b3f89b1e5a9" "20220917012310.873":
+  package harv_pkg at 1( 0) + 0 on 118;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/ft_components/alu_tmr.vhd" "751ed3dc362764d462b873bc74dbe42237a6547f" "20220917012310.898":
+  entity alu_tmr at 1( 0) + 0 on 121;
+  architecture arch of alu_tmr at 23( 544) + 0 on 122;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_decoder.vhd" "77d76ec987e64f00e7924a61e6bba2a792ce26a2" "20220917012310.931":
+  entity hamming_decoder at 1( 0) + 0 on 125;
+  architecture arch of hamming_decoder at 23( 587) + 0 on 126;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_register.vhd" "d799c8d6f74e82352ee309d4c712d98caae0dba6" "20220917012310.954":
+  entity hamming_register at 1( 0) + 0 on 129;
+  architecture arch of hamming_register at 32( 900) + 0 on 130;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/alu.vhd" "618bc92d2ecac151f22aec23c252e1b2aa2d45b6" "20220917012310.979":
+  entity alu at 1( 0) + 0 on 133;
+  architecture arch of alu at 20( 433) + 0 on 134;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/csr.vhd" "556911d2062dba2ad058d342be4ab81b7cff5ff4" "20220917012311.009":
+  entity csr at 1( 0) + 0 on 137;
+  architecture arch of csr at 74( 2558) + 0 on 138;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/harv.vhd" "9782593c4b8c5f8c77ad77fc901d881b948d5305" "20220917012311.039":
+  entity harv at 1( 0) + 0 on 141;
+  architecture arch of harv at 46( 1336) + 0 on 142;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/instr_fetch.vhd" "976e71f221ba53f553e23272dfccd563fcc6f1bc" "20220917012311.064":
+  entity instr_fetch at 1( 0) + 0 on 145;
+  architecture arch of instr_fetch at 50( 1521) + 0 on 146;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/regfile.vhd" "711d1bae0da8b065f8fa8aaa212dffc08c299c9b" "20220917012311.090":
+  entity regfile at 1( 0) + 0 on 149;
+  architecture arch of regfile at 37( 960) + 0 on 150;
+file / "/home/douglas/Projects/harv-soc/harv/hdl/trap_encoder.vhd" "1a5eda9a5805f0c3dd163888c469ca03bebe68bf" "20220917012311.113":
+  entity trap_encoder at 1( 0) + 0 on 153;
+  architecture arch of trap_encoder at 51( 1643) + 0 on 154;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slaves_pkg.vhd" "266b8d7cb2b8b00524f302df6263b01adb67eb1b" "20220917012311.128":
+  package axi4l_slaves_pkg at 1( 0) + 0 on 156;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_rom.vhd" "79074358ad2746892f0c3dcc994c13dfc09eddda" "20220917012311.159":
+  entity axi4l_rom_slave at 1( 0) + 0 on 158;
+  architecture arch of axi4l_rom_slave at 27( 545) + 0 on 159;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_qspi_slave.vhd" "d96297f489426b517834874a4accb850e54bfabd" "20220917012311.185":
+  entity axi4l_qspi_slave at 1( 0) + 0 on 162;
+  architecture arch of axi4l_qspi_slave at 29( 723) + 0 on 163;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/uart.vhd" "c4d245e18d178c41b943a0fba45e630a01538961" "20220917012311.211":
+  entity uart at 1( 0) + 0 on 166;
+  architecture arch of uart at 42( 897) + 0 on 167;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_wdt_slave.vhd" "e287dde15651d8e5e770ed43cfeffa4fb39b056c" "20220917012311.240":
+  entity axi4l_wdt_slave at 1( 0) + 0 on 170;
+  architecture arch of axi4l_wdt_slave at 32( 653) + 0 on 171;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slave.vhd" "a6f2771647d346179a030a72e4d3772ac8b0d20f" "20220917012311.265":
+  entity axi4l_slave at 1( 0) + 0 on 174;
+  architecture arch of axi4l_slave at 38( 914) + 0 on 175;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_1.vhd" "d2bf939fbcd3436e01ab82ec95b6056a9b6aea47" "20220917012311.291":
+  entity axi4l_interconnect_1 at 1( 0) + 0 on 178;
+  architecture arch of axi4l_interconnect_1 at 30( 779) + 0 on 179;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_3.vhd" "2f6f7e567ab1cf7c74ea7da55adaa603bac5751e" "20220917012311.315":
+  entity axi4l_interconnect_3 at 1( 0) + 0 on 182;
+  architecture arch of axi4l_interconnect_3 at 42( 1283) + 0 on 183;
+file / "/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_5.vhd" "40731aefec8befa2b8ddcf138c80f18a1d2c2c19" "20220917012311.341":
+  entity axi4l_interconnect_5 at 1( 0) + 0 on 186;
+  architecture arch of axi4l_interconnect_5 at 54( 1787) + 0 on 187;
+file / "/home/douglas/Projects/harv-soc/hdl/bus/axi4l_apb3_bridge.vhd" "9022823737139260e8a174e3578c527960bc6198" "20220917012311.365":
+  entity axi4l_apb3_bridge at 1( 0) + 0 on 190;
+  architecture arch of axi4l_apb3_bridge at 28( 649) + 0 on 191;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_datapath.vhd" "d6bc8054201b7f4dbf16a852dca4d743c2802e84" "20220917012311.388":
+  entity mem_unaligned_adapter_datapath at 1( 0) + 0 on 194;
+  architecture arch of mem_unaligned_adapter_datapath at 34( 911) + 0 on 195;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter.vhd" "9dfeb9d89bc55c90525cc1affa8826b72c6f4769" "20220917012311.416":
+  entity mem_unaligned_adapter at 1( 0) + 0 on 198;
+  architecture arch of mem_unaligned_adapter at 35( 1016) + 0 on 199;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_control.vhd" "68ce4eea65c81cba1d94511fdaca99a5b08e8fae" "20220917012311.441":
+  entity mem_ecc_adapter_control at 1( 0) + 0 on 202;
+  architecture arch of mem_ecc_adapter_control at 30( 684) + 0 on 203;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/mem_interconnect.vhd" "8930d32c224276be8447ae32ae35791822fec5a3" "20220917012311.467":
+  entity mem_interconnect at 1( 0) + 0 on 206;
+  architecture arch of mem_interconnect at 53( 1751) + 0 on 207;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/unaligned_memory.vhd" "80466890ff891c7cc8a2764e87c0e65b13e70a1f" "20220917012311.497":
+  entity unaligned_memory at 1( 0) + 0 on 210;
+  architecture arch of unaligned_memory at 27( 730) + 0 on 211;
+file / "/home/douglas/Projects/harv-soc/hdl/memory/memory_pkg.vhd" "e2b888769ebbfe85f4644b94da9e65470852d4b7" "20220917012311.521":
+  package memory_pkg at 1( 0) + 0 on 214;
+file / "/home/douglas/Projects/harv-soc/hdl/reset_controller.vhd" "aca1a93489f798b618f7470745875ab53773b311" "20220917012311.546":
+  entity reset_controller at 1( 0) + 0 on 217;
+  architecture arch of reset_controller at 21( 498) + 0 on 218;
+file / "/home/douglas/Projects/harv-soc/hdl/harv_soc.vhd" "32df534801fe791d331c64133dda3e99087b1d3d" "20220917012311.577":
+  entity harv_soc at 1( 0) + 0 on 221;
+  architecture arch of harv_soc at 56( 1528) + 0 on 222;

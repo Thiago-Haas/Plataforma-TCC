@@ -1,0 +1,7 @@
+Running: xsim.dir/ahx_tb_behav/xsimk -simmode gui -wdb ahx_tb_behav.wdb -simrunnum 0 -socket 39781
+Design successfully loaded
+Design Loading Memory Usage: 158556 KB (Peak: 158564 KB)
+Design Loading CPU Usage: 340 ms
+Simulation completed
+Simulation Memory Usage: 240488 KB (Peak: 297824 KB)
+Simulation CPU Usage: 7350 ms

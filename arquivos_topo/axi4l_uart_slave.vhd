@@ -7,9 +7,9 @@ use work.axi4l_slaves_pkg.axi4l_slave;
 
 entity axi4l_uart_slave is
   generic (
-    BASE_ADDR : std_logic_vector(31 downto 0);
-    HIGH_ADDR : std_logic_vector(31 downto 0);
-    FIFO_SIZE : integer
+    BASE_ADDR    : std_logic_vector(31 downto 0);
+    HIGH_ADDR    : std_logic_vector(31 downto 0);
+    RX_FIFO_SIZE : integer
   );
   port (
 
@@ -196,7 +196,7 @@ begin
 
   rec_fifo_u : entity work.fifo
   generic map (
-    FIFO_SIZE  => FIFO_SIZE,
+    FIFO_SIZE  => RX_FIFO_SIZE,
     DATA_WIDTH => 8
   )
   port map (

@@ -1,0 +1,89 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/axi4l_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/compressor/ccsds123_B2_package.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/compressor/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/harv_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/axi4l_slaves_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/reset_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reset_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/mem_interconnect.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_interconnect'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_6.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'axi4l_interconnect_6'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/ft_components/hamming_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_unaligned_adapter_control'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_datapath.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_unaligned_adapter_datapath'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_unaligned_adapter'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/unaligned_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'unaligned_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_ecc_adapter_control'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_datapath.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_ecc_adapter_datapath'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_ecc_adapter'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/memory/unaligned_ecc_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'unaligned_ecc_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/hdl/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+WARNING: [VRFC 10-3607] overwriting existing primary unit 'top' [/home/carlos/plataforma/SoC/hdl/top.vhd:12]
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/slaves/uart.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uart'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'alu'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/alu_data_selector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'alu_data_selector'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/ft_components/alu_tmr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'alu_tmr'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/slaves/axi4l_gpio_slave.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'axi4l_gpio_slave'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/axi4l_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'axi4l_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/slaves/bootloader_rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/slaves/axi4l_rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'axi4l_rom_slave'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/axi4l_slave.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'axi4l_slave'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/slaves/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fifo'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/slaves/axi4l_uart_slave.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'axi4l_uart_slave'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/hdl/axi4-lite/slaves/axi4l_wdt_slave.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'axi4l_wdt_slave'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'control'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/ft_components/control_tmr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'control_tmr'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/csr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'csr'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/event_handler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'event_handler'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/ft_components/hamming_decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'hamming_decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/ft_components/hamming_encoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'hamming_encoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/ft_components/hamming_register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'hamming_register'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/harv.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'harv'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/immediate_selector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'immediate_selector'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/instr_fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'instr_fetch'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/mem_interface.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_interface'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/regfile.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'regfile'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/regfile_wdata_selector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'regfile_wdata_selector'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/ft_components/tmr_register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tmr_register'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/harv-soc/harv/hdl/trap_encoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'trap_encoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/carlos/plataforma/SoC/sim/ahx_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ahx_tb'

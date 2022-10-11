@@ -1,0 +1,2565 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/douglas/Projects/harv-soc/src/helloworld/out/modelsim-fault
+Eahx_tb
+Z1 w1664442191
+Z2 DPx4 work 9 axi4l_pkg 0 22 B7@1Mz3FJ8ec@o>eK>IdN1
+Z3 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z4 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z5 DPx8 synopsys 10 attributes 0 22 dc>JdEHRM@6GGENe5bZ?D1
+Z6 DPx4 ieee 14 std_logic_misc 0 22 dN]HY6l5ohPcZ:TaC@B;53
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2906
+R0
+Z9 8/home/douglas/Projects/harv-soc/sim/ahx_tb.vhd
+Z10 F/home/douglas/Projects/harv-soc/sim/ahx_tb.vhd
+l0
+Z11 L13 1
+V;1<XK^om=BW8^`W76n=h30
+!s100 `TC:zTQ=z`:eSH@?3i4>83
+Z12 OV;C;2020.1;71
+33
+Z13 !s110 1664538740
+!i10b 1
+Z14 !s108 1664538740.000000
+Z15 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/sim/ahx_tb.vhd|
+Z16 !s107 /home/douglas/Projects/harv-soc/sim/ahx_tb.vhd|
+!i113 1
+Z17 o-suppress -novopt -2008
+Z18 tExplicit 1 CvgOpt 0
+Aarch
+Z19 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+Z20 DEx4 work 4 uart 0 22 <BEez6njYEdWDm@n7Q38X2
+Z21 DPx4 work 10 memory_pkg 0 22 CMi6FB1:I8Zb0QH24JEMn0
+Z22 DPx4 work 8 harv_pkg 0 22 e]oG2ljf4C:66=de<C6Ek0
+Z23 DEx4 work 8 harv_soc 0 22 FhhFdKzgREz@UaNfl9`id3
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z24 DEx4 work 6 ahx_tb 0 22 ;1<XK^om=BW8^`W76n=h30
+!i122 2906
+l46
+Z25 L23 285
+Z26 VZmLd0FX47DTK^JdeQfeQU2
+Z27 !s100 dlR3e@<d]a`Aj3XV]H>Tj1
+R12
+33
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Ealu
+Z28 w1663115646
+R22
+R4
+R7
+R8
+!i122 2859
+R0
+Z29 8/home/douglas/Projects/harv-soc/harv/hdl/alu.vhd
+Z30 F/home/douglas/Projects/harv-soc/harv/hdl/alu.vhd
+l0
+L8 1
+VJLVofPc^M:CYn]CzV5;NN3
+!s100 7CVz>ACO:Y_PI_0bDhEYK3
+R12
+33
+Z31 !s110 1664538737
+!i10b 1
+Z32 !s108 1664538737.000000
+Z33 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/alu.vhd|
+Z34 !s107 /home/douglas/Projects/harv-soc/harv/hdl/alu.vhd|
+!i113 1
+R17
+R18
+Aarch
+R22
+R4
+R7
+R8
+DEx4 work 3 alu 0 22 JLVofPc^M:CYn]CzV5;NN3
+!i122 2859
+l32
+L20 40
+Vid0SLe<z;[=?PzIe3C2LU3
+!s100 fd;gVC<nPzLP:ZI?Zb:5G2
+R12
+33
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R17
+R18
+Ealu_data_selector
+R28
+R4
+R7
+R8
+!i122 2858
+R0
+Z35 8/home/douglas/Projects/harv-soc/harv/hdl/alu_data_selector.vhd
+Z36 F/home/douglas/Projects/harv-soc/harv/hdl/alu_data_selector.vhd
+l0
+L5 1
+V4;HZ09kob1jKGTo[nMW:;2
+!s100 fg1NeWPHl[O2hlAJ8fZWC1
+R12
+33
+R31
+!i10b 1
+R32
+Z37 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/alu_data_selector.vhd|
+Z38 !s107 /home/douglas/Projects/harv-soc/harv/hdl/alu_data_selector.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+DEx4 work 17 alu_data_selector 0 22 4;HZ09kob1jKGTo[nMW:;2
+!i122 2858
+l24
+L22 8
+V<oGhXm2cXOc4@7>2]D@V02
+!s100 b5=;>jn18`EGhiCTKSbB42
+R12
+33
+R31
+!i10b 1
+R32
+R37
+R38
+!i113 1
+R17
+R18
+Ealu_tmr
+R28
+R22
+R5
+R6
+R4
+R7
+R8
+!i122 2852
+R0
+Z39 8/home/douglas/Projects/harv-soc/harv/hdl/ft_components/alu_tmr.vhd
+Z40 F/home/douglas/Projects/harv-soc/harv/hdl/ft_components/alu_tmr.vhd
+l0
+L9 1
+VA>d4LMO_Ze]T;]OlIK=F82
+!s100 Qae`A5WcCa=RGQZIf7QlX3
+R12
+33
+R31
+!i10b 1
+R32
+Z41 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/ft_components/alu_tmr.vhd|
+Z42 !s107 /home/douglas/Projects/harv-soc/harv/hdl/ft_components/alu_tmr.vhd|
+!i113 1
+R17
+R18
+Aarch
+R22
+R5
+R6
+R4
+R7
+R8
+DEx4 work 7 alu_tmr 0 22 A>d4LMO_Ze]T;]OlIK=F82
+!i122 2852
+l34
+Z43 L23 58
+VCHN40QnQ3e<?3fKh^^0:81
+!s100 HVIalkA`BEoLQKGI^O8<N3
+R12
+33
+R31
+!i10b 1
+R32
+R41
+R42
+!i113 1
+R17
+R18
+Eapb3_mux
+Z44 w1661812808
+R4
+R7
+R8
+!i122 2888
+R0
+Z45 8/home/douglas/Projects/harv-soc/hdl/bus/apb3_mux.vhd
+Z46 F/home/douglas/Projects/harv-soc/hdl/bus/apb3_mux.vhd
+l0
+L5 1
+VnKN4ZlJoTGI0@kO_kT7@:2
+!s100 bRA1=YFB@V_UifM?do^KR3
+R12
+33
+Z47 !s110 1664538739
+!i10b 1
+Z48 !s108 1664538739.000000
+Z49 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/bus/apb3_mux.vhd|
+Z50 !s107 /home/douglas/Projects/harv-soc/hdl/bus/apb3_mux.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+DEx4 work 8 apb3_mux 0 22 nKN4ZlJoTGI0@kO_kT7@:2
+!i122 2888
+l41
+L40 22
+VdZem;R`>G;h6G9?kS?b`<2
+!s100 lR<UezfNY8H[QDc<D87?T1
+R12
+33
+R47
+!i10b 1
+R48
+R49
+R50
+!i113 1
+R17
+R18
+Eaxi4l_apb3_bridge
+Z51 w1661812836
+R2
+R4
+R7
+R8
+!i122 2889
+R0
+Z52 8/home/douglas/Projects/harv-soc/hdl/bus/axi4l_apb3_bridge.vhd
+Z53 F/home/douglas/Projects/harv-soc/hdl/bus/axi4l_apb3_bridge.vhd
+l0
+L8 1
+Voc5K0jU7:VIe3e:FR0l`d3
+!s100 4EXH>L=6RAAhe?]LGz_zV0
+R12
+33
+R47
+!i10b 1
+R48
+Z54 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/bus/axi4l_apb3_bridge.vhd|
+Z55 !s107 /home/douglas/Projects/harv-soc/hdl/bus/axi4l_apb3_bridge.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R4
+R7
+R8
+DEx4 work 17 axi4l_apb3_bridge 0 22 oc5K0jU7:VIe3e:FR0l`d3
+!i122 2889
+l52
+L28 175
+V>Xl>fAPV6kbW]fEWVA`n01
+!s100 FY<[JIB]@0fMo9CCoOo:;2
+R12
+33
+R47
+!i10b 1
+R48
+R54
+R55
+!i113 1
+R17
+R18
+Eaxi4l_axi_bridge
+R44
+R4
+R7
+R8
+!i122 2890
+R0
+Z56 8/home/douglas/Projects/harv-soc/hdl/bus/axi4l_axi_bridge.vhd
+Z57 F/home/douglas/Projects/harv-soc/hdl/bus/axi4l_axi_bridge.vhd
+l0
+L5 1
+VNV5HIn[ijIVL1J:X4b30M1
+!s100 g:=8iPe]2hbMFCj5@A3S_0
+R12
+33
+R47
+!i10b 1
+R48
+Z58 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/bus/axi4l_axi_bridge.vhd|
+Z59 !s107 /home/douglas/Projects/harv-soc/hdl/bus/axi4l_axi_bridge.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+DEx4 work 16 axi4l_axi_bridge 0 22 NV5HIn[ijIVL1J:X4b30M1
+!i122 2890
+l68
+L67 33
+VaG]2hFR35O7Z[P1ZVAQzO3
+!s100 8ASLZTJH2iE6:aKE=nABn1
+R12
+33
+R47
+!i10b 1
+R48
+R58
+R59
+!i113 1
+R17
+R18
+Eaxi4l_bram
+R51
+Z60 DPx4 work 16 axi4l_slaves_pkg 0 22 CjY;o3410I5_Y6Xg?X`i00
+R2
+R4
+R7
+R8
+!i122 2902
+R0
+Z61 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_bram.vhd
+Z62 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_bram.vhd
+l0
+L9 1
+V64CYUDz??=`R6fQ@IGg1F1
+!s100 BR?c9[6hdVj840_1Hm=F83
+R12
+33
+R47
+!i10b 1
+R48
+Z63 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_bram.vhd|
+Z64 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_bram.vhd|
+!i113 1
+R17
+R18
+Aarch
+Z65 DEx4 work 16 unaligned_memory 0 22 DLjG<?of=TF?eePOF7zN]3
+Z66 DEx4 work 20 unaligned_ecc_memory 0 22 ;Ad1n1oR>hgQjl[AYkYk:1
+R60
+R2
+R4
+R7
+R8
+DEx4 work 10 axi4l_bram 0 22 64CYUDz??=`R6fQ@IGg1F1
+!i122 2902
+l48
+L34 96
+VN49chfEa69`<3aI4o<?4`1
+!s100 FE<VL<1I1i4RgmLA9F?S<2
+R12
+33
+R47
+!i10b 1
+R48
+R63
+R64
+!i113 1
+R17
+R18
+Eaxi4l_gpio_slave
+R44
+R60
+R2
+R4
+R7
+R8
+!i122 2880
+R0
+Z67 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_gpio_slave.vhd
+Z68 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_gpio_slave.vhd
+l0
+L9 1
+VjiC]c=037@aPMEd6_M0zN1
+!s100 iV@<n1c>ERShi?Mzi=FQH1
+R12
+33
+Z69 !s110 1664538738
+!i10b 1
+Z70 !s108 1664538738.000000
+Z71 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_gpio_slave.vhd|
+Z72 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_gpio_slave.vhd|
+!i113 1
+R17
+R18
+Aarch
+R60
+R2
+R4
+R7
+R8
+DEx4 work 16 axi4l_gpio_slave 0 22 jiC]c=037@aPMEd6_M0zN1
+!i122 2880
+l46
+L31 65
+VzzHCS;j2cQWAkbSo^`Y3[0
+!s100 h_[0QfGh>;mlNJM?e]fLz1
+R12
+33
+R69
+!i10b 1
+R70
+R71
+R72
+!i113 1
+R17
+R18
+Eaxi4l_interconnect_1
+R51
+R2
+R4
+R7
+R8
+!i122 2883
+R0
+Z73 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_1.vhd
+Z74 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_1.vhd
+l0
+L8 1
+VnTmB9bV_ALPOXnkQoPdB`1
+!s100 g]g>a`8KI4@]n5T;SCR`82
+R12
+33
+R47
+!i10b 1
+R48
+Z75 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_1.vhd|
+Z76 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_1.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R4
+R7
+R8
+DEx4 work 20 axi4l_interconnect_1 0 22 nTmB9bV_ALPOXnkQoPdB`1
+!i122 2883
+l39
+L30 71
+VV87VMLW@cllYn7WcAlO9J0
+!s100 gF7hOLnD:eU9X?oE>Y_U41
+R12
+33
+R47
+!i10b 1
+R48
+R75
+R76
+!i113 1
+R17
+R18
+Eaxi4l_interconnect_2
+R51
+R2
+R4
+R7
+R8
+!i122 2884
+R0
+Z77 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_2.vhd
+Z78 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_2.vhd
+l0
+L8 1
+VM1_z[Q3>34A1fT=kUM?Zk3
+!s100 CmdWH4l9LQ:LL46kZ1Z2Q2
+R12
+33
+R47
+!i10b 1
+R48
+Z79 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_2.vhd|
+Z80 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_2.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R4
+R7
+R8
+DEx4 work 20 axi4l_interconnect_2 0 22 M1_z[Q3>34A1fT=kUM?Zk3
+!i122 2884
+l48
+L36 96
+VDZgW9JJdYHC8]`_59U[2e1
+!s100 W6Cl1T1kkEJ[jdQHCl]g51
+R12
+33
+R47
+!i10b 1
+R48
+R79
+R80
+!i113 1
+R17
+R18
+Eaxi4l_interconnect_3
+R51
+R2
+R4
+R7
+R8
+!i122 2885
+R0
+Z81 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_3.vhd
+Z82 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_3.vhd
+l0
+L8 1
+VH>?Q[0?5i]fiP[?WQAzo62
+!s100 6QSP<l18>9maGGg1;=@0@3
+R12
+33
+R47
+!i10b 1
+R48
+Z83 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_3.vhd|
+Z84 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_3.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R4
+R7
+R8
+DEx4 work 20 axi4l_interconnect_3 0 22 H>?Q[0?5i]fiP[?WQAzo62
+!i122 2885
+l57
+L42 121
+VMPF35L41_bNdBGdfNbQHo1
+!s100 ?n@^dZE4>eU6N1Wifd:d73
+R12
+33
+R47
+!i10b 1
+R48
+R83
+R84
+!i113 1
+R17
+R18
+Eaxi4l_interconnect_4
+R51
+R2
+R4
+R7
+R8
+!i122 2886
+R0
+Z85 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_4.vhd
+Z86 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_4.vhd
+l0
+L8 1
+V`fzOom97>?ZF2CPjb[dDN1
+!s100 d=`DK`KeI57>1V<f:VEBI1
+R12
+33
+R47
+!i10b 1
+R48
+Z87 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_4.vhd|
+Z88 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_4.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R4
+R7
+R8
+Z89 DEx4 work 20 axi4l_interconnect_4 0 22 `fzOom97>?ZF2CPjb[dDN1
+!i122 2886
+l66
+L48 146
+VlKCKD<C3X:md7V14VK0[=3
+!s100 PK>f=hUB`T6iR@?D@2<=V3
+R12
+33
+R47
+!i10b 1
+R48
+R87
+R88
+!i113 1
+R17
+R18
+Eaxi4l_interconnect_5
+R51
+R2
+R4
+R7
+R8
+!i122 2887
+R0
+Z90 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_5.vhd
+Z91 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_5.vhd
+l0
+L8 1
+V?WiK8i0Hd;O1HM86AFbc32
+!s100 noaOfRZXo@_JjWiJWW<H=3
+R12
+33
+R47
+!i10b 1
+R48
+Z92 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_5.vhd|
+Z93 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/interconnect/axi4l_interconnect_5.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R4
+R7
+R8
+DEx4 work 20 axi4l_interconnect_5 0 22 ?WiK8i0Hd;O1HM86AFbc32
+!i122 2887
+l75
+L54 171
+V]lKgkcWQ0MhHETG4eOA[62
+!s100 d]=Sk_J:lWn<;LdiII0li2
+R12
+33
+R47
+!i10b 1
+R48
+R92
+R93
+!i113 1
+R17
+R18
+Eaxi4l_master
+R51
+R2
+R3
+R4
+R7
+R8
+!i122 2882
+R0
+Z94 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_master.vhd
+Z95 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_master.vhd
+l0
+Z96 L10 1
+V_^2OdabQbOCYK=T[AMCZ<0
+!s100 V^P;9WizOU=DN1L1:70D13
+R12
+33
+R47
+!i10b 1
+R70
+Z97 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_master.vhd|
+Z98 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_master.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R3
+R4
+R7
+R8
+DEx4 work 12 axi4l_master 0 22 _^2OdabQbOCYK=T[AMCZ<0
+!i122 2882
+l64
+L37 180
+VX<0iD2==kR_G3;PGc`@a71
+!s100 1Vn7QBi;_B?hZcTdf_2<f2
+R12
+33
+R47
+!i10b 1
+R70
+R97
+R98
+!i113 1
+R17
+R18
+Paxi4l_pkg
+R7
+R8
+!i122 2870
+R51
+R0
+8/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_pkg.vhd
+F/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_pkg.vhd
+l0
+L4 1
+VB7@1Mz3FJ8ec@o>eK>IdN1
+!s100 gLW24NdHbCMJJ[ZMLVDN@3
+R12
+33
+R69
+!i10b 1
+R70
+!s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_pkg.vhd|
+!s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_pkg.vhd|
+!i113 1
+R17
+R18
+Eaxi4l_qspi_slave
+R44
+R60
+R2
+R4
+R7
+R8
+!i122 2875
+R0
+Z99 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_qspi_slave.vhd
+Z100 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_qspi_slave.vhd
+l0
+L9 1
+VF8l>L7W@Sz9PhhaiC1OOZ3
+!s100 G3IJ?;To[@XDm6cjziU?D3
+R12
+33
+R69
+!i10b 1
+R70
+Z101 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_qspi_slave.vhd|
+Z102 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_qspi_slave.vhd|
+!i113 1
+R17
+R18
+Aarch
+Z103 DEx4 work 4 qspi 0 22 BjUO>IBUQ@_Zk[K0<PGI:0
+R60
+R2
+R4
+R7
+R8
+DEx4 work 16 axi4l_qspi_slave 0 22 F8l>L7W@Sz9PhhaiC1OOZ3
+!i122 2875
+l40
+L29 58
+V[@Ol8=RQGc6Mej6AZVk8d0
+!s100 7XD0SZM76KCO4h3i^BIck0
+R12
+33
+R69
+!i10b 1
+R70
+R101
+R102
+!i113 1
+R17
+R18
+Eaxi4l_rom_slave
+R44
+Z104 DPx4 work 14 bootloader_rom 0 22 CzU]b7nV8Td0H;Q1RW=DV3
+R60
+R2
+R3
+R4
+R7
+R8
+!i122 2873
+R0
+Z105 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_rom.vhd
+Z106 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_rom.vhd
+l0
+R11
+VJj_L5T0?>^96c`oZl?zA@2
+!s100 SQbFbOKNbRJYESeWcl7oH0
+R12
+33
+R69
+!i10b 1
+R70
+Z107 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_rom.vhd|
+Z108 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_rom.vhd|
+!i113 1
+R17
+R18
+Aarch
+R104
+R60
+R2
+R3
+R4
+R7
+R8
+DEx4 work 15 axi4l_rom_slave 0 22 Jj_L5T0?>^96c`oZl?zA@2
+!i122 2873
+l35
+L27 35
+V:9aj1PHJ<VQ?11MRFZWPK2
+!s100 VIO9AXCTUB4FHPoMEiV3P3
+R12
+33
+R69
+!i10b 1
+R70
+R107
+R108
+!i113 1
+R17
+R18
+Eaxi4l_slave
+R51
+R2
+R4
+R7
+R8
+!i122 2881
+R0
+Z109 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slave.vhd
+Z110 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slave.vhd
+l0
+L8 1
+VUM_E^aCA0AaiDKiZjWbSj0
+!s100 N3n_fd;VmnH:aZ0<LRnn10
+R12
+33
+R69
+!i10b 1
+R70
+Z111 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slave.vhd|
+Z112 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slave.vhd|
+!i113 1
+R17
+R18
+Aarch
+R2
+R4
+R7
+R8
+DEx4 work 11 axi4l_slave 0 22 UM_E^aCA0AaiDKiZjWbSj0
+!i122 2881
+l76
+L38 177
+VVYjKUhEQ`J0YUaXYB9EVj1
+!s100 PVZ;=HLF3zLV[HGXV`RSI3
+R12
+33
+R69
+!i10b 1
+R70
+R111
+R112
+!i113 1
+R17
+R18
+Paxi4l_slaves_pkg
+R2
+R7
+R8
+!i122 2871
+R51
+R0
+8/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slaves_pkg.vhd
+F/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slaves_pkg.vhd
+l0
+L7 1
+VCjY;o3410I5_Y6Xg?X`i00
+!s100 V]PL?UZE]a?=_2F`nKfWB2
+R12
+33
+R69
+!i10b 1
+R70
+!s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slaves_pkg.vhd|
+!s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/axi4l_slaves_pkg.vhd|
+!i113 1
+R17
+R18
+Eaxi4l_top
+Z113 w1663690778
+R60
+R2
+R4
+R7
+R8
+!i122 2904
+R0
+Z114 8/home/douglas/Projects/harv-soc/hdl/axi4l_top.vhd
+Z115 F/home/douglas/Projects/harv-soc/hdl/axi4l_top.vhd
+l0
+L9 1
+VgH3eRzSmQ9lH0h07SfKT51
+!s100 ?KZK7i3An?;B8D;6JdjC[0
+R12
+33
+R47
+!i10b 1
+R48
+Z116 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4l_top.vhd|
+Z117 !s107 /home/douglas/Projects/harv-soc/hdl/axi4l_top.vhd|
+!i113 1
+R17
+R18
+Aarch
+R89
+R60
+R2
+R4
+R7
+R8
+Z118 DEx4 work 9 axi4l_top 0 22 gH3eRzSmQ9lH0h07SfKT51
+!i122 2904
+l85
+L65 141
+V@mk_fIPA7[Jk4HEh^H76Z2
+!s100 Olm:i_MGcnYj@gMXSZeG01
+R12
+33
+R47
+!i10b 1
+R48
+R116
+R117
+!i113 1
+R17
+R18
+Eaxi4l_uart_slave
+R51
+R60
+R2
+R7
+R8
+!i122 2878
+R0
+Z119 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_uart_slave.vhd
+Z120 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_uart_slave.vhd
+l0
+L8 1
+V3@0L_2gaO?4GB^@lRnG>Q2
+!s100 A>=Im<l6[6kal>]aOKNfI3
+R12
+33
+R69
+!i10b 1
+R70
+Z121 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_uart_slave.vhd|
+Z122 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_uart_slave.vhd|
+!i113 1
+R17
+R18
+Aarch
+Z123 DEx4 work 4 fifo 0 22 CKW]o]S?85@hDoB]ZHciA0
+R3
+R4
+R5
+R6
+R20
+R60
+R2
+R7
+R8
+DEx4 work 16 axi4l_uart_slave 0 22 3@0L_2gaO?4GB^@lRnG>Q2
+!i122 2878
+l82
+L32 182
+Vb1zOm0:0V=X0B[6<5Xbl32
+!s100 FTc@>SLdFMGhdjH6fDj_`0
+R12
+33
+R69
+!i10b 1
+R70
+R121
+R122
+!i113 1
+R17
+R18
+Eaxi4l_wdt_slave
+R51
+R60
+R2
+R4
+R5
+R6
+R7
+R8
+!i122 2879
+R0
+Z124 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_wdt_slave.vhd
+Z125 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_wdt_slave.vhd
+l0
+R96
+VH7EG^fBj?PLWJgS2h>e`=2
+!s100 _9T1_KoSmGTkbhA07URQT3
+R12
+33
+R69
+!i10b 1
+R70
+Z126 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_wdt_slave.vhd|
+Z127 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/axi4l_wdt_slave.vhd|
+!i113 1
+R17
+R18
+Aarch
+R60
+R2
+R4
+R5
+R6
+R7
+R8
+DEx4 work 15 axi4l_wdt_slave 0 22 H7EG^fBj?PLWJgS2h>e`=2
+!i122 2879
+l46
+L32 82
+Vbd9ZeIG0eh=QeILWlFHCY0
+!s100 aIC0D`3AkaVAN6U7R;k8U2
+R12
+33
+R69
+!i10b 1
+R70
+R126
+R127
+!i113 1
+R17
+R18
+Pbootloader_rom
+R7
+R8
+!i122 2872
+w1664395845
+R0
+8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/bootloader_rom.vhd
+F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/bootloader_rom.vhd
+l0
+L4 1
+VCzU]b7nV8Td0H;Q1RW=DV3
+!s100 NY0KFiAm0`bHi]Pf7c:zJ2
+R12
+33
+R69
+!i10b 1
+R70
+!s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/bootloader_rom.vhd|
+!s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/bootloader_rom.vhd|
+!i113 1
+R17
+R18
+Econtrol
+Z128 w1664532452
+R22
+R4
+R7
+R8
+!i122 2860
+R0
+Z129 8/home/douglas/Projects/harv-soc/harv/hdl/control.vhd
+Z130 F/home/douglas/Projects/harv-soc/harv/hdl/control.vhd
+l0
+L8 1
+VGGk58QNmAd3^Gc9FII=;K1
+!s100 Q;Rb3:8BXQ:fE1^6;PQSd0
+R12
+33
+R69
+!i10b 1
+R32
+Z131 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/control.vhd|
+Z132 !s107 /home/douglas/Projects/harv-soc/harv/hdl/control.vhd|
+!i113 1
+R17
+R18
+Aarch
+R22
+R4
+R7
+R8
+DEx4 work 7 control 0 22 GGk58QNmAd3^Gc9FII=;K1
+!i122 2860
+l143
+L81 276
+VTj=YYE`6X_N=3:GEaOToW1
+!s100 Lb?]FUoYkdVilmWGkJE:<1
+R12
+33
+R69
+!i10b 1
+R32
+R131
+R132
+!i113 1
+R17
+R18
+Econtrol_tmr
+Z133 w1664295801
+R22
+R5
+R6
+R4
+R7
+R8
+!i122 2853
+R0
+Z134 8/home/douglas/Projects/harv-soc/harv/hdl/ft_components/control_tmr.vhd
+Z135 F/home/douglas/Projects/harv-soc/harv/hdl/ft_components/control_tmr.vhd
+l0
+L9 1
+V>eG50V^zEd9IkDFGl:[l10
+!s100 9;1L0i:SRGO?8@ifhADi[0
+R12
+33
+R31
+!i10b 1
+R32
+Z136 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/ft_components/control_tmr.vhd|
+Z137 !s107 /home/douglas/Projects/harv-soc/harv/hdl/ft_components/control_tmr.vhd|
+!i113 1
+R17
+R18
+Aarch
+R22
+R5
+R6
+R4
+R7
+R8
+DEx4 work 11 control_tmr 0 22 >eG50V^zEd9IkDFGl:[l10
+!i122 2853
+l192
+L83 295
+VJ05IiIQG^7mOC@g^bzO8F0
+!s100 TG:g<fCB2OS1JT5FC;1h62
+R12
+33
+R31
+!i10b 1
+R32
+R136
+R137
+!i113 1
+R17
+R18
+Ecsr
+Z138 w1664467375
+R22
+R4
+R3
+R7
+R8
+!i122 2861
+R0
+Z139 8/home/douglas/Projects/harv-soc/harv/hdl/csr.vhd
+Z140 F/home/douglas/Projects/harv-soc/harv/hdl/csr.vhd
+l0
+R96
+V=>MnP>;TQVE5K9KlOdA9`0
+!s100 ZL9z29:]I33dKjWmk7L091
+R12
+33
+R69
+!i10b 1
+R70
+Z141 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/csr.vhd|
+Z142 !s107 /home/douglas/Projects/harv-soc/harv/hdl/csr.vhd|
+!i113 1
+R17
+R18
+Aarch
+R22
+R4
+R3
+R7
+R8
+DEx4 work 3 csr 0 22 =>MnP>;TQVE5K9KlOdA9`0
+!i122 2861
+l187
+L78 452
+V@gF@HObUVnR;95A5kR=Ij1
+!s100 @QNQ9RJiPGP:=D]]Z6M;A1
+R12
+33
+R69
+!i10b 1
+R70
+R141
+R142
+!i113 1
+R17
+R18
+Eevent_handler
+R28
+R3
+R5
+R6
+R4
+R7
+R8
+!i122 2862
+R0
+Z143 8/home/douglas/Projects/harv-soc/harv/hdl/event_handler.vhd
+Z144 F/home/douglas/Projects/harv-soc/harv/hdl/event_handler.vhd
+l0
+L8 1
+VTYL?B8QLC<Mzk_c9=1K@o1
+!s100 QXjLGGXKz3MG?n35P_P?i0
+R12
+33
+R69
+!i10b 1
+R70
+Z145 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/event_handler.vhd|
+Z146 !s107 /home/douglas/Projects/harv-soc/harv/hdl/event_handler.vhd|
+!i113 1
+R17
+R18
+Aarch
+R3
+R5
+R6
+R4
+R7
+R8
+DEx4 work 13 event_handler 0 22 TYL?B8QLC<Mzk_c9=1K@o1
+!i122 2862
+l114
+L73 172
+VFcDHznVE^3z;7<1L5IMcM1
+!s100 d76cfc_TVgHY4Gkdh?H<31
+R12
+33
+R69
+!i10b 1
+R70
+R145
+R146
+!i113 1
+R17
+R18
+Efifo
+R44
+R3
+R4
+R7
+R8
+!i122 2876
+R0
+Z147 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/fifo.vhd
+Z148 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/fifo.vhd
+l0
+L7 1
+VCKW]o]S?85@hDoB]ZHciA0
+!s100 i?lzDGCQ9SIZLBZ9S]G3d2
+R12
+33
+R69
+!i10b 1
+R70
+Z149 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/fifo.vhd|
+Z150 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/fifo.vhd|
+!i113 1
+R17
+R18
+Aarch_fifo
+R3
+R4
+R7
+R8
+R123
+!i122 2876
+l45
+L27 63
+Vh=ohYz^M5MeLTj[HEIkXE2
+!s100 F>z4Z4SG;FdV[Zgm[o9TA1
+R12
+33
+R69
+!i10b 1
+R70
+R149
+R150
+!i113 1
+R17
+R18
+Ehamming_decoder
+R28
+Z151 DPx4 work 11 hamming_pkg 0 22 <1Z06AD0cb0[@5YlNgD5[3
+R5
+R6
+R4
+R7
+R8
+!i122 2854
+R0
+Z152 8/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_decoder.vhd
+Z153 F/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_decoder.vhd
+l0
+L9 1
+VcNcHZh0h]YJQTeG:ZaaOd3
+!s100 ]E4g:NA8iHN5S8<ARdHPb2
+R12
+33
+R31
+!i10b 1
+R32
+Z154 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_decoder.vhd|
+Z155 !s107 /home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_decoder.vhd|
+!i113 1
+R17
+R18
+Aarch
+R151
+R5
+R6
+R4
+R7
+R8
+DEx4 work 15 hamming_decoder 0 22 cNcHZh0h]YJQTeG:ZaaOd3
+!i122 2854
+l33
+R43
+VehSB<^B5[HX=Lk=74_K021
+!s100 jgC[JJNXJ0:L?lVTcml2=3
+R12
+33
+R31
+!i10b 1
+R32
+R154
+R155
+!i113 1
+R17
+R18
+Ehamming_encoder
+R28
+R151
+R5
+R6
+R7
+R8
+!i122 2855
+R0
+Z156 8/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_encoder.vhd
+Z157 F/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_encoder.vhd
+l0
+L8 1
+VR?4FUo9X3V^TVbNf`V]TZ0
+!s100 ZdW2fW6:F5;AgV8cgF?Ko1
+R12
+33
+R31
+!i10b 1
+R32
+Z158 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_encoder.vhd|
+Z159 !s107 /home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_encoder.vhd|
+!i113 1
+R17
+R18
+Aarch
+R151
+R5
+R6
+R7
+R8
+DEx4 work 15 hamming_encoder 0 22 R?4FUo9X3V^TVbNf`V]TZ0
+!i122 2855
+l24
+L19 27
+VSgT<PESo[a=24I>lNM1[Z2
+!s100 Zo=HdGLF;0_XK475l<F^L2
+R12
+33
+R31
+!i10b 1
+R32
+R158
+R159
+!i113 1
+R17
+R18
+Phamming_pkg
+R5
+R6
+R7
+R8
+!i122 2851
+R28
+R0
+Z160 8/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_pkg.vhd
+Z161 F/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_pkg.vhd
+l0
+L5 1
+V<1Z06AD0cb0[@5YlNgD5[3
+!s100 Dk7Z>;QL531=B59F=<nRo2
+R12
+33
+b1
+R31
+!i10b 1
+R32
+Z162 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_pkg.vhd|
+Z163 !s107 /home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_pkg.vhd|
+!i113 1
+R17
+R18
+Bbody
+R151
+R5
+R6
+R7
+R8
+!i122 2851
+l0
+L90 1
+V48G4jdEEO`zg>d5A2Yh?L3
+!s100 <5Z@GaCzeiUVR4?GCfN0f1
+R12
+33
+R31
+!i10b 1
+R32
+R162
+R163
+!i113 1
+R17
+R18
+Ehamming_register
+Z164 w1664462662
+R5
+R6
+R151
+R4
+R7
+R8
+!i122 2856
+R0
+Z165 8/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_register.vhd
+Z166 F/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_register.vhd
+l0
+L11 1
+VFE<XS:TR9M86lDd5kHRVC3
+!s100 2Meb7G<oF0V^37Oi;@fGL3
+R12
+33
+R31
+!i10b 1
+R32
+Z167 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_register.vhd|
+Z168 !s107 /home/douglas/Projects/harv-soc/harv/hdl/ft_components/hamming_register.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+R4
+R7
+R8
+DEx4 work 16 hamming_register 0 22 FE<XS:TR9M86lDd5kHRVC3
+!i122 2856
+l33
+L32 106
+V?Wn8T<5c]R4M1NKB^1MFb1
+!s100 WdlbJZZ_`kfGhY@jdhbzm3
+R12
+33
+R31
+!i10b 1
+R32
+R167
+R168
+!i113 1
+R17
+R18
+Eharv
+Z169 w1664467573
+R22
+R4
+R7
+R8
+!i122 2863
+R0
+Z170 8/home/douglas/Projects/harv-soc/harv/hdl/harv.vhd
+Z171 F/home/douglas/Projects/harv-soc/harv/hdl/harv.vhd
+l0
+L8 1
+Vik2ABSB=ZZJJd7eZ?IP??2
+!s100 Y1N>B^gWbW3f0cPmB[DAA3
+R12
+33
+R69
+!i10b 1
+R70
+Z172 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/harv.vhd|
+Z173 !s107 /home/douglas/Projects/harv-soc/harv/hdl/harv.vhd|
+!i113 1
+R17
+R18
+Aarch
+R22
+R4
+R7
+R8
+DEx4 work 4 harv 0 22 ik2ABSB=ZZJJd7eZ?IP??2
+!i122 2863
+l181
+L47 583
+V2hJ`M_^O_i[CTJml7J=b32
+!s100 ^N[IaPX^<^VUhB_8iMDIU2
+R12
+33
+R69
+!i10b 1
+R70
+R172
+R173
+!i113 1
+R17
+R18
+Pharv_pkg
+R4
+R7
+R8
+!i122 2850
+w1664467593
+R0
+8/home/douglas/Projects/harv-soc/harv/hdl/harv_pkg.vhd
+F/home/douglas/Projects/harv-soc/harv/hdl/harv_pkg.vhd
+l0
+L5 1
+Ve]oG2ljf4C:66=de<C6Ek0
+!s100 2nI@:jh:SQZR00mX:W[j<3
+R12
+33
+R31
+!i10b 1
+R32
+!s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/harv_pkg.vhd|
+!s107 /home/douglas/Projects/harv-soc/harv/hdl/harv_pkg.vhd|
+!i113 1
+R17
+R18
+Eharv_soc
+Z174 w1664467615
+R21
+R2
+R22
+R3
+R4
+R7
+R8
+!i122 2905
+R0
+Z175 8/home/douglas/Projects/harv-soc/hdl/harv_soc.vhd
+Z176 F/home/douglas/Projects/harv-soc/hdl/harv_soc.vhd
+l0
+L12 1
+VFhhFdKzgREz@UaNfl9`id3
+!s100 boY2S_Si`fILfhZO8AW2I3
+R12
+33
+R47
+!i10b 1
+R48
+Z177 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/harv_soc.vhd|
+Z178 !s107 /home/douglas/Projects/harv-soc/hdl/harv_soc.vhd|
+!i113 1
+R17
+R18
+Aarch
+R60
+R118
+Z179 DEx4 work 16 mem_interconnect 0 22 G`CP[`GLHb[l1^S6TM3=Z1
+Z180 DEx4 work 16 reset_controller 0 22 mei8P`ZHKVij8kHBbz`nF3
+R21
+R2
+R22
+R3
+R4
+R7
+R8
+R23
+!i122 2905
+l113
+L56 302
+V`1:5oFa>PX2:jNH079gZE2
+!s100 jXnO?<ZjBc[GnZ^z72<af1
+R12
+33
+R47
+!i10b 1
+R48
+R177
+R178
+!i113 1
+R17
+R18
+Eimmediate_selector
+R28
+R4
+R7
+R8
+!i122 2864
+R0
+Z181 8/home/douglas/Projects/harv-soc/harv/hdl/immediate_selector.vhd
+Z182 F/home/douglas/Projects/harv-soc/harv/hdl/immediate_selector.vhd
+l0
+L5 1
+Vm?HVYT^Olli61GB3jD09[2
+!s100 4MIz>UjBia2U`Ia7]z5[k3
+R12
+33
+R69
+!i10b 1
+R70
+Z183 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/immediate_selector.vhd|
+Z184 !s107 /home/douglas/Projects/harv-soc/harv/hdl/immediate_selector.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+DEx4 work 18 immediate_selector 0 22 m?HVYT^Olli61GB3jD09[2
+!i122 2864
+l29
+L17 33
+V1Wb=oYWIn=bnQFj8EO<V63
+!s100 QTfT]Pba5;lEGBg71NZ0d2
+R12
+33
+R69
+!i10b 1
+R70
+R183
+R184
+!i113 1
+R17
+R18
+Einstr_fetch
+Z185 w1663282032
+R5
+R6
+R151
+R4
+R7
+R8
+!i122 2865
+R0
+Z186 8/home/douglas/Projects/harv-soc/harv/hdl/instr_fetch.vhd
+Z187 F/home/douglas/Projects/harv-soc/harv/hdl/instr_fetch.vhd
+l0
+L8 1
+V^AQKhD@MXWUl_KOTj>LFg0
+!s100 C6WGa9[N64RZHPkNPS4>]3
+R12
+33
+R69
+!i10b 1
+R70
+Z188 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/instr_fetch.vhd|
+Z189 !s107 /home/douglas/Projects/harv-soc/harv/hdl/instr_fetch.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+R4
+R7
+R8
+DEx4 work 11 instr_fetch 0 22 ^AQKhD@MXWUl_KOTj>LFg0
+!i122 2865
+l57
+L50 65
+V9z@<B<`h<lUGjb<jEa:d01
+!s100 oU2AeS?i[^5@n]7c_eTEk0
+R12
+33
+R69
+!i10b 1
+R70
+R188
+R189
+!i113 1
+R17
+R18
+Emem_ecc_adapter
+Z190 w1662581882
+R4
+R7
+R8
+!i122 2896
+R0
+Z191 8/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter.vhd
+Z192 F/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter.vhd
+l0
+L5 1
+VjZL3l]83V70i9iLjXWc=P1
+!s100 oGDSzo67meNa2VE^`Lknc0
+R12
+33
+R47
+!i10b 1
+R48
+Z193 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter.vhd|
+Z194 !s107 /home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+Z195 DEx4 work 24 mem_ecc_adapter_datapath 0 22 `2jfDVbnO:0`Sz`^Y2[Pe3
+Z196 DEx4 work 23 mem_ecc_adapter_control 0 22 d:<FO31T[j9AOA9fL?6BE3
+R4
+R7
+R8
+Z197 DEx4 work 15 mem_ecc_adapter 0 22 jZL3l]83V70i9iLjXWc=P1
+!i122 2896
+l58
+L46 75
+VT93XW`U5a53@RIfaIU4Xo1
+!s100 6=T_J3ORj0USm=U1ALzX^2
+R12
+33
+R47
+!i10b 1
+R48
+R193
+R194
+!i113 1
+R17
+R18
+Emem_ecc_adapter_control
+R51
+R4
+R7
+R8
+!i122 2895
+R0
+Z198 8/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_control.vhd
+Z199 F/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_control.vhd
+l0
+L5 1
+Vd:<FO31T[j9AOA9fL?6BE3
+!s100 ^Q;j`NJ9GVaPPigLa@@dm2
+R12
+33
+R47
+!i10b 1
+R48
+Z200 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_control.vhd|
+Z201 !s107 /home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_control.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+R196
+!i122 2895
+l46
+L30 107
+V=`4CU91OgMKW`bCJo3Azb3
+!s100 5b?I]=Z6Y<dP=UaY`0R@k3
+R12
+33
+R47
+!i10b 1
+R48
+R200
+R201
+!i113 1
+R17
+R18
+Emem_ecc_adapter_datapath
+R51
+R5
+R6
+R151
+R4
+R7
+R8
+!i122 2894
+R0
+Z202 8/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_datapath.vhd
+Z203 F/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_datapath.vhd
+l0
+L9 1
+V`2jfDVbnO:0`Sz`^Y2[Pe3
+!s100 ]Lh5^Do:6G8@g2Ug^@NMC3
+R12
+33
+R47
+!i10b 1
+R48
+Z204 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_datapath.vhd|
+Z205 !s107 /home/douglas/Projects/harv-soc/hdl/memory/mem_ecc_adapter/mem_ecc_adapter_datapath.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+R4
+R7
+R8
+R195
+!i122 2894
+l61
+L49 79
+VIWAAnT`;U[R88S36G_PPF3
+!s100 WF2Q@aR0<N7VTJz_b22[g0
+R12
+33
+R47
+!i10b 1
+R48
+R204
+R205
+!i113 1
+R17
+R18
+Emem_interconnect
+R51
+R4
+R7
+R8
+!i122 2897
+R0
+Z206 8/home/douglas/Projects/harv-soc/hdl/memory/mem_interconnect.vhd
+Z207 F/home/douglas/Projects/harv-soc/hdl/memory/mem_interconnect.vhd
+l0
+L5 1
+VG`CP[`GLHb[l1^S6TM3=Z1
+!s100 oSMTO5=J2iiYQfDATT6HR2
+R12
+33
+R47
+!i10b 1
+R48
+Z208 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/mem_interconnect.vhd|
+Z209 !s107 /home/douglas/Projects/harv-soc/hdl/memory/mem_interconnect.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+R179
+!i122 2897
+l68
+L53 68
+VVhH61Vg_HIGZ6H3C`b>f?0
+!s100 A>dCZ2dHXgmU`KO:93jSB3
+R12
+33
+R47
+!i10b 1
+R48
+R208
+R209
+!i113 1
+R17
+R18
+Emem_interface
+R28
+R4
+R7
+R8
+!i122 2866
+R0
+Z210 8/home/douglas/Projects/harv-soc/harv/hdl/mem_interface.vhd
+Z211 F/home/douglas/Projects/harv-soc/harv/hdl/mem_interface.vhd
+l0
+L5 1
+V;C;cJUYlzJ70]BUD4iRN=1
+!s100 hXXZS:hfm]K04;OJ?9:kC0
+R12
+33
+R69
+!i10b 1
+R70
+Z212 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/mem_interface.vhd|
+Z213 !s107 /home/douglas/Projects/harv-soc/harv/hdl/mem_interface.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+DEx4 work 13 mem_interface 0 22 ;C;cJUYlzJ70]BUD4iRN=1
+!i122 2866
+l56
+L37 58
+V_A5zRgSGe7=Qoe]C78PP`1
+!s100 NY<Qd@z:SCbf778=@E79d3
+R12
+33
+R69
+!i10b 1
+R70
+R212
+R213
+!i113 1
+R17
+R18
+Emem_unaligned_adapter
+R51
+R4
+R7
+R8
+!i122 2893
+R0
+Z214 8/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter.vhd
+Z215 F/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter.vhd
+l0
+L5 1
+VRgETMmRdlhoDKZHPgjHdD1
+!s100 SGW7FBSSF6J@Ta29PW=Ni1
+R12
+33
+R47
+!i10b 1
+R48
+Z216 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter.vhd|
+Z217 !s107 /home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter.vhd|
+!i113 1
+R17
+R18
+Aarch
+Z218 DEx4 work 30 mem_unaligned_adapter_datapath 0 22 [KCEMd<gQ9@]MeZIobc0W3
+R5
+R6
+R151
+Z219 DEx4 work 29 mem_unaligned_adapter_control 0 22 ?G2b;8SkEZ7SEQ;AmHOjZ1
+R4
+R7
+R8
+Z220 DEx4 work 21 mem_unaligned_adapter 0 22 RgETMmRdlhoDKZHPgjHdD1
+!i122 2893
+l42
+L35 58
+Vb@ZY5doYRe6O`N<X3nm?N2
+!s100 Yjm]jVW`Le>n?9K;RE;Zz0
+R12
+33
+R47
+!i10b 1
+R48
+R216
+R217
+!i113 1
+R17
+R18
+Emem_unaligned_adapter_control
+R51
+R5
+R6
+R151
+R4
+R7
+R8
+!i122 2892
+R0
+Z221 8/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_control.vhd
+Z222 F/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_control.vhd
+l0
+L8 1
+V?G2b;8SkEZ7SEQ;AmHOjZ1
+!s100 8ozV:L]VJ<]lM0KK1Y<j]1
+R12
+33
+R47
+!i10b 1
+R48
+Z223 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_control.vhd|
+Z224 !s107 /home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_control.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+R4
+R7
+R8
+R219
+!i122 2892
+l49
+L31 129
+VOb<TWZQ`@k;HF[54Je2AJ1
+!s100 E^fio3_A`fHS]5<=ZaEXH2
+R12
+33
+R47
+!i10b 1
+R48
+R223
+R224
+!i113 1
+R17
+R18
+Emem_unaligned_adapter_datapath
+R51
+R4
+R7
+R8
+!i122 2891
+R0
+Z225 8/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_datapath.vhd
+Z226 F/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_datapath.vhd
+l0
+L5 1
+V[KCEMd<gQ9@]MeZIobc0W3
+!s100 Xo959i6]dSQS9_O=<VD:[3
+R12
+33
+R47
+!i10b 1
+R48
+Z227 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_datapath.vhd|
+Z228 !s107 /home/douglas/Projects/harv-soc/hdl/memory/mem_unaligned_adapter/mem_unaligned_adapter_datapath.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+R218
+!i122 2891
+l51
+L34 75
+VBbO7Jk<hP28zdA<SZ=6LJ3
+!s100 0A7]SVYNV6DAPh>YgaoBc1
+R12
+33
+R47
+!i10b 1
+R48
+R227
+R228
+!i113 1
+R17
+R18
+Ememory
+R51
+R5
+R6
+R151
+R3
+R4
+R7
+R8
+!i122 2898
+R0
+Z229 8/home/douglas/Projects/harv-soc/hdl/memory/memory.vhd
+Z230 F/home/douglas/Projects/harv-soc/hdl/memory/memory.vhd
+l0
+R96
+VEb16Lc6[Bdkiff0N6g5<30
+!s100 6jPJ;<[VdVnDWoLeekdT21
+R12
+33
+R47
+!i10b 1
+R48
+Z231 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/memory.vhd|
+Z232 !s107 /home/douglas/Projects/harv-soc/hdl/memory/memory.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+R3
+R4
+R7
+R8
+Z233 DEx4 work 6 memory 0 22 Eb16Lc6[Bdkiff0N6g5<30
+!i122 2898
+l54
+L29 107
+V0SHRIYGWF@heH3_z4`>[F1
+!s100 EaLb9HChZCm6k?3C<FMd43
+R12
+33
+R47
+!i10b 1
+R48
+R231
+R232
+!i113 1
+R17
+R18
+Pmemory_pkg
+R2
+R7
+R8
+!i122 2901
+R51
+R0
+8/home/douglas/Projects/harv-soc/hdl/memory/memory_pkg.vhd
+F/home/douglas/Projects/harv-soc/hdl/memory/memory_pkg.vhd
+l0
+L8 1
+VCMi6FB1:I8Zb0QH24JEMn0
+!s100 ?:S02[9=kW5c`_6[Ei_K?3
+R12
+33
+R47
+!i10b 1
+R48
+!s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/memory_pkg.vhd|
+!s107 /home/douglas/Projects/harv-soc/hdl/memory/memory_pkg.vhd|
+!i113 1
+R17
+R18
+Eqspi
+R44
+R4
+R7
+R8
+!i122 2874
+R0
+Z234 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/qspi.vhd
+Z235 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/qspi.vhd
+l0
+L5 1
+VBjUO>IBUQ@_Zk[K0<PGI:0
+!s100 43Bb:SPOYSj?gGi]71PaU0
+R12
+33
+R69
+!i10b 1
+R70
+Z236 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/qspi.vhd|
+Z237 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/qspi.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+R103
+!i122 2874
+l63
+L26 187
+Ve]FG^N[NU[[0dn4LZ9KeZ1
+!s100 =LL]Oc5BU<:WXS=D4[jnm3
+R12
+33
+R69
+!i10b 1
+R70
+R236
+R237
+!i113 1
+R17
+R18
+Eregfile
+R28
+R151
+R5
+R6
+R4
+R7
+R8
+!i122 2867
+R0
+Z238 8/home/douglas/Projects/harv-soc/harv/hdl/regfile.vhd
+Z239 F/home/douglas/Projects/harv-soc/harv/hdl/regfile.vhd
+l0
+L9 1
+VncJBgT2j0i`HnL6lB8YU72
+!s100 zz8;z5>^CQYWf56WM3zZo1
+R12
+33
+R69
+!i10b 1
+R70
+Z240 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/regfile.vhd|
+Z241 !s107 /home/douglas/Projects/harv-soc/harv/hdl/regfile.vhd|
+!i113 1
+R17
+R18
+Aarch
+R151
+R5
+R6
+R4
+R7
+R8
+DEx4 work 7 regfile 0 22 ncJBgT2j0i`HnL6lB8YU72
+!i122 2867
+l39
+L37 142
+Vm?FeWO6Yc3VjFAo5<n]1E1
+!s100 9=e6XO4=R@1DROXTgUALI3
+R12
+33
+R69
+!i10b 1
+R70
+R240
+R241
+!i113 1
+R17
+R18
+Eregfile_wdata_selector
+R28
+R4
+R7
+R8
+!i122 2868
+R0
+Z242 8/home/douglas/Projects/harv-soc/harv/hdl/regfile_wdata_selector.vhd
+Z243 F/home/douglas/Projects/harv-soc/harv/hdl/regfile_wdata_selector.vhd
+l0
+L5 1
+V[V:?CATbSKAA:M?]mO;HU3
+!s100 XELkNamILgL73IC`[lE?93
+R12
+33
+R69
+!i10b 1
+R70
+Z244 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/regfile_wdata_selector.vhd|
+Z245 !s107 /home/douglas/Projects/harv-soc/harv/hdl/regfile_wdata_selector.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+DEx4 work 22 regfile_wdata_selector 0 22 [V:?CATbSKAA:M?]mO;HU3
+!i122 2868
+l23
+L22 10
+VWG7T>2[2<H8h@4o@@G4>E3
+!s100 0W[3;24zaVD2AV4Lhjg;52
+R12
+33
+R69
+!i10b 1
+R70
+R244
+R245
+!i113 1
+R17
+R18
+Ereset_controller
+R51
+R4
+R7
+R8
+!i122 2903
+R0
+Z246 8/home/douglas/Projects/harv-soc/hdl/reset_controller.vhd
+Z247 F/home/douglas/Projects/harv-soc/hdl/reset_controller.vhd
+l0
+L5 1
+Vmei8P`ZHKVij8kHBbz`nF3
+!s100 [CDzalWNgRFYKo@KCQ4171
+R12
+33
+R47
+!i10b 1
+R48
+Z248 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/reset_controller.vhd|
+Z249 !s107 /home/douglas/Projects/harv-soc/hdl/reset_controller.vhd|
+!i113 1
+R17
+R18
+Aarch
+R4
+R7
+R8
+R180
+!i122 2903
+l27
+L21 47
+VZJ9X_AFRCzA^FnV?EziSC2
+!s100 A5EoM5Lb6RZQ`NG^FbSKS1
+R12
+33
+R47
+!i10b 1
+R48
+R248
+R249
+!i113 1
+R17
+R18
+Etmr_register
+Z250 w1664465425
+R5
+R6
+R4
+R7
+R8
+!i122 2857
+R0
+Z251 8/home/douglas/Projects/harv-soc/harv/hdl/ft_components/tmr_register.vhd
+Z252 F/home/douglas/Projects/harv-soc/harv/hdl/ft_components/tmr_register.vhd
+l0
+L6 1
+V9m<;^5d0CPIgS5g_HB^CS2
+!s100 P_>AhjUeX4WlG5C0bYGI>1
+R12
+33
+R31
+!i10b 1
+R32
+Z253 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/ft_components/tmr_register.vhd|
+Z254 !s107 /home/douglas/Projects/harv-soc/harv/hdl/ft_components/tmr_register.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R4
+R7
+R8
+DEx4 work 12 tmr_register 0 22 9m<;^5d0CPIgS5g_HB^CS2
+!i122 2857
+l26
+L24 74
+Vg?l<4zVT2bAzC8A[ZcQEG0
+!s100 ESgjV6aF3LKa6EnM<P6XV0
+R12
+33
+R31
+!i10b 1
+R32
+R253
+R254
+!i113 1
+R17
+R18
+Etrap_encoder
+Z255 w1664312391
+R5
+R6
+R4
+R7
+R8
+!i122 2869
+R0
+Z256 8/home/douglas/Projects/harv-soc/harv/hdl/trap_encoder.vhd
+Z257 F/home/douglas/Projects/harv-soc/harv/hdl/trap_encoder.vhd
+l0
+L6 1
+Vb^Y=XQm1o:TZ?mD]Kka7g0
+!s100 G>eCfed=G;I^?Wz[4eAzU1
+R12
+33
+R69
+!i10b 1
+R70
+Z258 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/harv/hdl/trap_encoder.vhd|
+Z259 !s107 /home/douglas/Projects/harv-soc/harv/hdl/trap_encoder.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R4
+R7
+R8
+DEx4 work 12 trap_encoder 0 22 b^Y=XQm1o:TZ?mD]Kka7g0
+!i122 2869
+l77
+L52 123
+V7lJEXOH[Zz]cO[h5gaL8Y1
+!s100 H91dN>HX[3cE<2D0D7Y7T2
+R12
+33
+R69
+!i10b 1
+R70
+R258
+R259
+!i113 1
+R17
+R18
+Euart
+R51
+R3
+R4
+R5
+R6
+R7
+R8
+!i122 2877
+R0
+Z260 8/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/uart.vhd
+Z261 F/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/uart.vhd
+l0
+R96
+V<BEez6njYEdWDm@n7Q38X2
+!s100 l=Y@VRaQXYC6=CYjSG49N3
+R12
+33
+R69
+!i10b 1
+R70
+Z262 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/uart.vhd|
+Z263 !s107 /home/douglas/Projects/harv-soc/hdl/axi4-lite/slaves/uart.vhd|
+!i113 1
+R17
+R18
+Aarch
+R3
+R4
+R5
+R6
+R7
+R8
+R20
+!i122 2877
+l96
+L42 291
+VMObc4@=9H?A9IX9dmkTzH3
+!s100 PmcUh0gJ0dz??Fna?JbQa0
+R12
+33
+R69
+!i10b 1
+R70
+R262
+R263
+!i113 1
+R17
+R18
+Eunaligned_ecc_memory
+R51
+R4
+R7
+R8
+!i122 2900
+R0
+Z264 8/home/douglas/Projects/harv-soc/hdl/memory/unaligned_ecc_memory.vhd
+Z265 F/home/douglas/Projects/harv-soc/hdl/memory/unaligned_ecc_memory.vhd
+l0
+L5 1
+V;Ad1n1oR>hgQjl[AYkYk:1
+!s100 =z5gO416^CQYNWNBE<l:02
+R12
+33
+R47
+!i10b 1
+R48
+Z266 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/unaligned_ecc_memory.vhd|
+Z267 !s107 /home/douglas/Projects/harv-soc/hdl/memory/unaligned_ecc_memory.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+R3
+R233
+R197
+R220
+R4
+R7
+R8
+R66
+!i122 2900
+l57
+L37 104
+V_SgFd^99V6ngQO;:mGNfH0
+!s100 ze<S:Qzjhfmhizic5EY1;1
+R12
+33
+R47
+!i10b 1
+R48
+R266
+R267
+!i113 1
+R17
+R18
+Eunaligned_memory
+R51
+R4
+R7
+R8
+!i122 2899
+R0
+Z268 8/home/douglas/Projects/harv-soc/hdl/memory/unaligned_memory.vhd
+Z269 F/home/douglas/Projects/harv-soc/hdl/memory/unaligned_memory.vhd
+l0
+L5 1
+VDLjG<?of=TF?eePOF7zN]3
+!s100 :366iT]K^<SCmiFo63><S0
+R12
+33
+R47
+!i10b 1
+R48
+Z270 !s90 -suppress|-novopt|-2008|/home/douglas/Projects/harv-soc/hdl/memory/unaligned_memory.vhd|
+Z271 !s107 /home/douglas/Projects/harv-soc/hdl/memory/unaligned_memory.vhd|
+!i113 1
+R17
+R18
+Aarch
+R5
+R6
+R151
+R3
+R233
+R220
+R4
+R7
+R8
+R65
+!i122 2899
+l35
+L27 55
+V]klh[bIQYJ48LiJ4NEU_l3
+!s100 8DVbmGPUWB>a]IWAg:MZW3
+R12
+33
+R47
+!i10b 1
+R48
+R270
+R271
+!i113 1
+R17
+R18

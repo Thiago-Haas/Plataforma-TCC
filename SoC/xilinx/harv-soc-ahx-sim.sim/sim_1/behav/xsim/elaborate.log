@@ -1,0 +1,63 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 752e496252dc437bb882993021b1f4a6 --incr --debug off --relax --mt 8 -generic_top AHX_FILEPATH=/home/carlos/plataforma/SoC/software/out/app-sim.ahx -generic_top MEM_SIZE_MB=8 -L xil_defaultlib -L secureip --snapshot ahx_tb_behav xil_defaultlib.ahx_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.axi4l_pkg
+Compiling package std.env
+Compiling package xil_defaultlib.harv_pkg
+Compiling package xil_defaultlib.axi4l_slaves_pkg
+Compiling package xil_defaultlib.hamming_pkg
+Compiling package xil_defaultlib.bootloader_rom
+Compiling architecture arch of entity xil_defaultlib.mem_unaligned_adapter_control [mem_unaligned_adapter_control_de...]
+Compiling architecture arch of entity xil_defaultlib.mem_unaligned_adapter_datapath [mem_unaligned_adapter_datapath_d...]
+Compiling architecture arch of entity xil_defaultlib.mem_unaligned_adapter [mem_unaligned_adapter_default]
+Compiling architecture arch of entity xil_defaultlib.memory [\memory(base_addr="0000100000000...]
+Compiling architecture arch of entity xil_defaultlib.unaligned_memory [\unaligned_memory(base_addr="000...]
+Compiling architecture arch of entity xil_defaultlib.reset_controller [reset_controller_default]
+Compiling architecture arch of entity xil_defaultlib.control [control_default]
+Compiling architecture arch of entity xil_defaultlib.control_tmr [control_tmr_default]
+Compiling architecture arch of entity xil_defaultlib.alu [alu_default]
+Compiling architecture arch of entity xil_defaultlib.alu_tmr [alu_tmr_default]
+Compiling architecture arch of entity xil_defaultlib.hamming_encoder [\hamming_encoder(detect_double=t...]
+Compiling architecture arch of entity xil_defaultlib.hamming_decoder [\hamming_decoder(detect_double=t...]
+Compiling architecture arch of entity xil_defaultlib.hamming_register [\hamming_register(data_width=32,...]
+Compiling architecture arch of entity xil_defaultlib.hamming_register [\hamming_register(data_width=32,...]
+Compiling architecture arch of entity xil_defaultlib.instr_fetch [\instr_fetch(program_start_addr=...]
+Compiling architecture arch of entity xil_defaultlib.regfile_wdata_selector [regfile_wdata_selector_default]
+Compiling architecture arch of entity xil_defaultlib.regfile [\regfile(ecc_enable=true)\]
+Compiling architecture arch of entity xil_defaultlib.immediate_selector [immediate_selector_default]
+Compiling architecture arch of entity xil_defaultlib.alu_data_selector [alu_data_selector_default]
+Compiling architecture arch of entity xil_defaultlib.trap_encoder [trap_encoder_default]
+Compiling architecture arch of entity xil_defaultlib.tmr_register [\tmr_register(data_width=32,tmr_...]
+Compiling architecture arch of entity xil_defaultlib.csr [\csr(tmr_control=true,tmr_alu=tr...]
+Compiling architecture arch of entity xil_defaultlib.mem_interface [mem_interface_default]
+Compiling architecture arch of entity xil_defaultlib.event_handler [event_handler_default]
+Compiling architecture arch of entity xil_defaultlib.harv [\harv(program_start_addr="011100...]
+Compiling architecture arch of entity xil_defaultlib.mem_interconnect [\mem_interconnect(mem0_base_addr...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_master [axi4l_master_default]
+Compiling architecture arch of entity xil_defaultlib.axi4l_interconnect_6 [\axi4l_interconnect_6(slave0_bas...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_slave [\axi4l_slave(base_addr="00000000...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_rom_slave [\axi4l_rom_slave(base_addr="0000...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_slave [\axi4l_slave(base_addr="10000000...]
+Compiling architecture arch of entity xil_defaultlib.uart [uart_default]
+Compiling architecture arch_fifo of entity xil_defaultlib.fifo [\fifo(fifo_size=32,data_width=8)...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_uart_slave [\axi4l_uart_slave(base_addr="100...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_slave [\axi4l_slave(base_addr="10000000...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_wdt_slave [\axi4l_wdt_slave(base_addr="1000...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_slave [\axi4l_slave(base_addr="10000000...]
+Compiling architecture arch of entity xil_defaultlib.axi4l_gpio_slave [\axi4l_gpio_slave(base_addr="100...]
+Compiling architecture arch of entity xil_defaultlib.top [top_default]
+Compiling architecture arch of entity xil_defaultlib.ahx_tb
+Built simulation snapshot ahx_tb_behav

@@ -1,0 +1,1 @@
+--incr --debug "off" --relax --mt "8" -generic_top "AHX_FILEPATH=/home/douglas/Projects/harv-soc/src/helloworld/out/app-sim.ahx" -generic_top "MEM_SIZE_MB=8" -L "xil_defaultlib" -L "secureip" --snapshot "ahx_tb_behav" "xil_defaultlib.ahx_tb" -log "elaborate.log" 

@@ -1,0 +1,13 @@
+00000004661560 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(3)(0)
+00000008559239 /ahx_tb/top_b/harv_soc_u/axi4l_top_u/axi4l_wdt_slave_u/axi4l_slave_u/data_r(10)
+00000016347514 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(12)(16)
+00000016408575 /ahx_tb/top_b/harv_soc_u/axi4l_top_u/axi4l_uart_slave_u/axi4l_slave_u/addr_r(6)
+00000018312215 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/mtime_r(25)
+00000019920217 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(17)(28)
+00000019964281 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(15)(34)
+00000032334908 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(22)(4)
+00000037024920 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(30)(32)
+00000044678100 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(5)(10)
+00000048723500 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/mtval_r(12)
+00000050209810 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(6)(7)
+00000002210590

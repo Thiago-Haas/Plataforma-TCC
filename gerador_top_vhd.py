@@ -116,6 +116,11 @@ class Gerador_Vhdl(object):
 
     def criador_constant(self, texto, config): # Criação das constantes
         temp = ""
+
+        nome8 = config['Generic']['nome8']
+        valor8 = config['Generic']['valor8']
+        type8 = config['Generic']['type8']
+
         config.remove_option('Generic','nome8')
         config.remove_option('Generic','valor8')
         config.remove_option('Generic','type8')
@@ -138,7 +143,14 @@ class Gerador_Vhdl(object):
                            temp = temp[:-2] + f' := {v[:1]}"{v[1:]}";\n'
                     else:
                         temp += f"{' '*2}constant {v:<20}:"
-                texto += temp 
+                texto += temp
+
+        config['Generic']['nome8'] = nome8
+        config['Generic']['valor8'] = valor8
+        config['Generic']['type8'] = type8
+        with open('barramento.ini', 'w') as configfile:
+            config.write(configfile)
+            
         return texto
 
     def criador_sinal(self, texto, config): # Criação dos sinais
@@ -272,9 +284,9 @@ class Gerador_Vhdl(object):
         return texto
 
     def criador_ext(self, texto, config): # Criar variaveis externas 
-        var = '"deadbeef"'
         enable_ecc = 'enable_dmem_g'
         disabled_ecc = 'disabled_dmem_g'
+        enable_dmem_ecc_g = 'enable_dmem_ecc_g'
         enable_dmem = config['Generic']['nome4']
         enable_dmem_ecc = config['Generic']['nome5']
 
@@ -283,8 +295,6 @@ class Gerador_Vhdl(object):
         temp += f"{' '*2}begin\n"
         temp += f"{' '*4}{config['Sinal 19']['nome']} <= '0';\n"
         temp += f"{' '*4}{config['Sinal 20']['nome']} <= '1';\n"
-        temp += f"{' '*4}{config['Sinal 25']['nome']} <= x{var};\n"
-        temp += f"{' '*4}{config['Sinal 54']['nome']} <= '0';\n"
         temp += f"{' '*2}end generate;\n"
         temp += f"{' '*2}{enable_ecc} : if {enable_dmem} and not {enable_dmem_ecc} generate\n{' '*2}begin"
 
@@ -321,9 +331,8 @@ class Gerador_Vhdl(object):
                 texto = texto[:-4] + "\n"
                 texto += f"{' '*4});\n"
                 if aux == 'Elif 67':
-                    texto += f"{' '*4}{config['Sinal 54']['nome']}  <= '0';\n"
                     texto += f"{' '*2}end generate;\n"
-                    texto += f"{' '*2}{enable_ecc} : if {enable_dmem} and {enable_dmem_ecc} generate\n{' '*2}begin"
+                    texto += f"{' '*2}{enable_dmem_ecc_g} : if {enable_dmem} and {enable_dmem_ecc} generate\n{' '*2}begin"
                 else:
                     texto += f"{' '*2}end generate;\n"
                     texto += "end architecture;\n"
@@ -358,10 +367,10 @@ class Gerador_Vhdl(object):
                 self.ini = str(linha[:self.temp])
                 self.fim = str(linha[self.temp:])
                 if self.temp != -1:
-                    if self.fim[2:18] == 'std_logic_vector':
-                        self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:18]}\nvector{self.contador} = {int(self.fim[19:21])+1}\nvalor{self.contador} = x{self.fim[37:45]}\n"
-                        self.contador += 1
-                    elif self.ini[4:13] == 'GPIO_SIZE':
+                    #if self.fim[2:18] == 'std_logic_vector':
+                    #    self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:18]}\nvector{self.contador} = {int(self.fim[19:21])+1}\nvalor{self.contador} = x{self.fim[37:45]}\n"
+                    #    self.contador += 1
+                    if self.ini[4:13] == 'GPIO_SIZE':
                         self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:9]}\nvalor{self.contador} = {config['GPIO']['largura']}\n"
                         self.contador += 1
                     elif self.ini[4:12] == 'HARV_TMR':
@@ -371,10 +380,13 @@ class Gerador_Vhdl(object):
                         self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:9]}\nvalor{self.contador} = {config['Harv']['harv_ecc']}\n"
                         self.contador += 1
                     elif self.ini[4:18] == 'DMEM_BASE_ADDR':
-                        self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:9]}\nvalor{self.contador} = {config['Memoria']['endereco_memoria']}\n"
+                        self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:18]}\nvector{self.contador} = {int(self.fim[19:21])+1}\nvalor{self.contador} = {config['Memoria']['endereco_memoria']}\n"
                         self.contador += 1
                     elif self.ini[4:18] == 'DMEM_HIGH_ADDR':
-                        self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:9]}\nvalor{self.contador} = {config['Memoria']['tamanho']}\n"
+                        self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:18]}\nvector{self.contador} = {int(self.fim[19:21])+1}\nvalor{self.contador} = {config['Memoria']['tamanho']}\n"
+                        self.contador += 1
+                    elif self.ini[4:22] == 'PROGRAM_START_ADDR':
+                        self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:18]}\nvector{self.contador} = {int(self.fim[19:21])+1}\nvalor{self.contador} = x70000000\n"
                         self.contador += 1
                     else:
                         self.criar_ini += f"nome{self.contador} = {self.ini[4:]}\ntype{self.contador} = {self.fim[2:9]}\nvalor{self.contador} = {self.fim[12:]}\n"
@@ -514,7 +526,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Map {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_4" :
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" :
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -539,7 +551,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Elif {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_4" :
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:23] == "unaligned_memory" :
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -774,7 +786,7 @@ class Gerador_Vhdl(object):
         config_axi['Map 63']['entity'] = str(config_axi['Map 63']['entity']).replace(" is","")
         config_axi['Map 63']['generic base_addr'] = config['UART']['endereco']
         config_axi['Map 63']['generic high_addr'] = 'x8000001F'
-        config_axi['Map 63']['generic fifo_size'] = config['UART']['profundidade_fifo']
+        config_axi['Map 63']['generic rx_fifo_size'] = config['UART']['profundidade_fifo']
         config_axi['Map 63']['master_i'] = config_axi['Sinal 40']['nome']
         config_axi['Map 63']['slave_o'] = config_axi['Sinal 41']['nome']
         config_axi['Map 63']['clk_i'] = config_axi['Porta 2']['nome']
@@ -895,8 +907,8 @@ class Gerador_Vhdl(object):
             config_axi.write(configfile)
 
     def criar_memory2(self, config_axi, config):
-        config_axi['Elif 68']['nome'] = str(config_axi['Elif 68']['nome']).replace(" is","_ecc_u")
-        config_axi['Elif 68']['entity'] = str(config_axi['Elif 68']['entity']).replace(" is","")
+        config_axi['Elif 68']['nome'] = str(config_axi['Elif 68']['nome']).replace("unaligned_memory is","unaligned_ecc_memory_u")
+        config_axi['Elif 68']['entity'] = str(config_axi['Elif 68']['entity']).replace("unaligned_memory is","unaligned_ecc_memory")
         config_axi['Elif 68']['generic base_addr'] = config_axi['Generic']['nome6']
         config_axi['Elif 68']['generic high_addr'] = config_axi['Generic']['nome7']
         config_axi['Elif 68']['clk_i'] = config_axi['Porta 2']['nome']
@@ -926,13 +938,14 @@ class Gerador_Vhdl(object):
             config_axi.write(configfile)
 
     def verifica_ini(self, config_axi, config):
+        config_axi['Entidade']['nome'] = 'top'
         config_axi['Generic']['valor1'] = config['Harv']['harv_tmr']
         config_axi['Generic']['valor2'] = config['Harv']['harv_ecc']
         config_axi['Generic']['valor8'] = config['GPIO']['largura']
         config_axi['Map 65']['generic base_addr'] = config['GPIO']['tamanho']
         config_axi['Generic']['valor6'] = config['Memoria']['endereco_memoria']
         config_axi['Generic']['valor7'] = config['Memoria']['tamanho']
-        config_axi['Map 63']['generic fifo_size'] = config['UART']['profundidade_fifo']
+        config_axi['Map 63']['generic rx_fifo_size'] = config['UART']['profundidade_fifo']
         config_axi['Map 63']['generic base_addr'] = config['UART']['endereco']
         config_axi['Map 62']['generic base_addr'] = config['Barramento']['endereco']
 
@@ -971,8 +984,8 @@ class Gerador_Vhdl(object):
         del vhdl_axi[:65]
         del vhdl_axi[26:]
 
-        self.gera_ini_library(vhdl_texto[:10], caminho_dir)
-        self.gera_ini_generic(vhdl_texto[10:23], config, caminho_dir)
+        self.gera_ini_library(vhdl_texto[:11], caminho_dir)
+        self.gera_ini_generic(vhdl_texto[11:24], config, caminho_dir)
         self.gera_ini_port(vhdl_texto[26:55], caminho_dir)
         self.gera_ini_signal(vhdl_texto[55:], caminho_dir)
         self.gera_ini_signal_bus(vhdl_axi, caminho_dir)
@@ -1115,13 +1128,24 @@ class Gerador_Vhdl(object):
             shutil.rmtree(diretorio_software)
         else:
             diretorio = caminho_dir + '/SoC/'
+            diretorio_script = diretorio + 'script'
+            diretorio_sim = diretorio + 'sim'
+            diretorio_hdl = diretorio + 'hdl'
             os.makedirs(diretorio)
+            os.makedirs(diretorio_script)
+            os.makedirs(diretorio_sim)
+            os.makedirs(diretorio_hdl)
             shutil.copytree('harv-soc', diretorio + 'harv-soc', dirs_exist_ok = True)
+            shutil.copytree('compressor_axi', diretorio + 'compressor', dirs_exist_ok = True)
+            shutil.copy('arquivos_topo/vivado-ahx-sim.tcl', diretorio_script)
+            shutil.copy('arquivos_topo/vivado-open-static-simulation.tcl', diretorio_script)
+            shutil.copy('arquivos_topo/ahx_tb.vhd', diretorio_sim)
+            shutil.copy('arquivos_topo/Makefile', diretorio)
             diretorio_software = diretorio + 'software'
 
         if config['Software']['check_software'] == 'TRUE':
             shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
 
-        destino_arq = open(diretorio + arq_vhd, 'w')
+        destino_arq = open(diretorio + "hdl/" + arq_vhd, 'w')
         destino_arq.write(self.vhdl_texto_aux)
         destino_arq.close()

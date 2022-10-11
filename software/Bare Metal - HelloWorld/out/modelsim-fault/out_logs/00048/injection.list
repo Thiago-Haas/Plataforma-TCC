@@ -1,0 +1,13 @@
+00000001043447 /ahx_tb/top_b/harv_soc_u/harv_u/event_handler_u/jal_log_r(14)(2)
+00000012286938 /ahx_tb/top_b/harv_soc_u/axi4l_top_u/axi4l_uart_slave_u/rec_fifo_u/fifo_r(9)(4)
+00000019155996 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(1)(12)
+00000025120409 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/mscratch_r(20)
+00000038615811 /ahx_tb/top_b/harv_soc_u/harv_u/event_handler_u/pc_r(4)
+00000040322592 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/minstret_r(30)
+00000042358212 /ahx_tb/top_b/harv_soc_u/harv_u/event_handler_u/jal_log_r(11)(20)
+00000042415242 /ahx_tb/top_b/harv_soc_u/axi4l_top_u/axi4l_uart_slave_u/rec_fifo_u/fifo_r(29)(3)
+00000042749325 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(26)(17)
+00000045224300 /ahx_tb/top_b/harv_soc_u/harv_u/regfile_u/ecc_regfile_g/regfile_r(15)(13)
+00000046785146 /ahx_tb/top_b/harv_soc_u/harv_u/csr_u/mcycle_r(16)
+00000050419509 /ahx_tb/top_b/harv_soc_u/harv_u/event_handler_u/mcycleh_r(16)
+00000002000891
