@@ -27,8 +27,8 @@ class Ui_Acelerador(object):
         if config['Acelerador']['check_customizavel'] == 'TRUE':
             self.checkBox_2.setChecked(True)
 
-        #self.spinBox_2.setPrefix(config['Acelerador']['qtd_hsi'])
-        #self.spinBox_3.setPrefix(config['Acelerador']['qtd_customizavel'])
+        self.spinBox_2.stepBy(int(config['Acelerador']['qtd_hsi'])-1)
+        self.spinBox_3.stepBy(int(config['Acelerador']['qtd_customizavel'])-1)
 
     def config_acelerador(self, Acelerador):
         caminho_arq = sys.argv[0]

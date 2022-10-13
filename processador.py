@@ -24,7 +24,7 @@ class Ui_Processador(object):
         if  config['Harv']['check_harv'] == 'TRUE':
             self.checkBox.setChecked(True)
         
-        #self.spinBox.setPrefix(config['Harv']['qtd_nucleos'])
+        self.spinBox.stepBy(int(config['Harv']['qtd_nucleos'])-1)
         self.comboBox.setCurrentText(config['Harv']['tipo'])
 
     def tipo_processador(self, Processador):
