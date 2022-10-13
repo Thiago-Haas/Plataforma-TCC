@@ -122,8 +122,8 @@ class Gerador_Vhdl(object):
         type8 = config['Generic']['type8']
 
         config.remove_option('Generic','nome8')
-        config.remove_option('Generic','valor8')
         config.remove_option('Generic','type8')
+        config.remove_option('Generic','valor8')
 
         for nome in config.sections():
             if nome == 'Generic':
@@ -146,8 +146,8 @@ class Gerador_Vhdl(object):
                 texto += temp
 
         config['Generic']['nome8'] = nome8
-        config['Generic']['valor8'] = valor8
         config['Generic']['type8'] = type8
+        config['Generic']['valor8'] = valor8
         with open('barramento.ini', 'w') as configfile:
             config.write(configfile)
             
@@ -605,7 +605,7 @@ class Gerador_Vhdl(object):
         if config['Barramento']['check_timeout'] == 'FALSE':
             config_axi['Map 58']['periph_timeout_i'] = config_axi['Sinal 35']['nome']
         else:
-            config_axi['Map 58']['periph_timeout_i'] = '0'
+            config_axi['Map 58']['periph_timeout_i'] = "'0'"
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)

@@ -259,7 +259,7 @@ class Ui_GPIO(object):
         self.Voltar.setText(_translate("GPIO", "Voltar"))
         self.label_3.setText(_translate("GPIO", "Definir largura"))
         self.label.setText(_translate("GPIO", "GPIO"))
-        self.label_5.setText(_translate("GPIO", "Definir tamanho"))
+        self.label_5.setText(_translate("GPIO", "Definir endereço"))
         self.checkBox.setText(_translate("GPIO", "Habilitar GPIO"))
 
 
