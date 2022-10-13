@@ -13,6 +13,19 @@ import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Memoria(object):
+    def inicia_interface(self):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+        config = configparser.ConfigParser()
+        config.read(caminho_dir + '/config.ini')
+
+        if  config['Memoria']['check_memoria']  == 'TRUE':
+            self.radioButton.setChecked(True)
+        
+        self.textEdit.setPlainText(config['Memoria']['endereco_memoria'])
+        self.textEdit_2.setPlainText(config['Memoria']['tamanho'])
+
     def config_memoria(self, Memoria):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
@@ -236,6 +249,8 @@ class Ui_Memoria(object):
 
         self.retranslateUi(Memoria)
         QtCore.QMetaObject.connectSlotsByName(Memoria)
+
+        self.inicia_interface()
 
     def retranslateUi(self, Memoria):
         _translate = QtCore.QCoreApplication.translate

@@ -58,19 +58,17 @@ class Ui_Plataforma(object):
         caminho_dir = os.path.dirname(caminho_arq)
         
         if not self.path:
-            nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
-            self.nome_arq = nomesave[0] + '.vhd'
+            self.nome_arq = str(QtWidgets.QFileDialog.getExistingDirectory())
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(self.nome_arq[24:31], caminho_dir + '/config.ini', None)
+            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', None)
         else:
-            nomesave = QFileDialog.getSaveFileName(None, 'Save a File', '', 'Vhd(*.vhd)')
-            self.nome_arq = nomesave[0] + '.vhd'
+            self.nome_arq = str(QtWidgets.QFileDialog.getExistingDirectory())
             self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(self.nome_arq[24:31], caminho_dir + '/config.ini', self.path)
+            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', self.path)
 
         msgBox = QMessageBox()
         msgBox.setIcon(QMessageBox.Information)
-        msgBox.setText("Arquivo VHDL salvo em: /SoC/" + self.nome_arq[24:31])
+        msgBox.setText(f"Arquivo VHDL salvo em: {self.nome_arq}/SoC/")
         msgBox.setWindowTitle("Aviso")
         msgBox.setStandardButtons(QMessageBox.Ok)
         msgBox.buttonClicked.connect(self.msgButtonClick)

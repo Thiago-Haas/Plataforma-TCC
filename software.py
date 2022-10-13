@@ -13,6 +13,18 @@ import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Software(object):
+    def inicia_interface(self):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+        config = configparser.ConfigParser()
+        config.read(caminho_dir + '/config.ini')
+
+        if  config['Software']['check_software'] == 'TRUE':
+            self.checkBox.setChecked(True)
+        
+        self.comboBox.setCurrentText(config['Software']['software_escolhido'])
+
     def config_software(self, Software):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
@@ -231,6 +243,8 @@ class Ui_Software(object):
 
         self.retranslateUi(Software)
         QtCore.QMetaObject.connectSlotsByName(Software)
+
+        self.inicia_interface()
 
     def retranslateUi(self, Software):
         _translate = QtCore.QCoreApplication.translate

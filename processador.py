@@ -14,6 +14,19 @@ import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Processador(object):
+    def inicia_interface(self):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+        config = configparser.ConfigParser()
+        config.read(caminho_dir + '/config.ini')
+
+        if  config['Harv']['check_harv'] == 'TRUE':
+            self.checkBox.setChecked(True)
+        
+        #self.spinBox.setPrefix(config['Harv']['qtd_nucleos'])
+        self.comboBox.setCurrentText(config['Harv']['tipo'])
+
     def tipo_processador(self, Processador):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
@@ -245,6 +258,8 @@ class Ui_Processador(object):
 
         self.retranslateUi(Processador)
         QtCore.QMetaObject.connectSlotsByName(Processador)
+
+        self.inicia_interface()
 
     def retranslateUi(self, Processador):
         _translate = QtCore.QCoreApplication.translate

@@ -849,8 +849,8 @@ class Gerador_Vhdl(object):
         config_axi['Map 66']['check'] = config['Acelerador']['check_hsi']
         config_axi['Map 66']['nome'] = str(config_axi['Map 66']['nome']).replace(" is","_u")
         config_axi['Map 66']['entity'] = str(config_axi['Map 66']['entity']).replace(" is","")
-        config_axi['Map 66']['generic c_s00_axi_data_width'] = 'x80000300'
-        config_axi['Map 66']['generic c_s00_axi_addr_width'] = 'x80000303'
+        config_axi['Map 66']['generic c_s00_axi_data_width'] = '32'
+        config_axi['Map 66']['generic c_s00_axi_addr_width'] = '4'
         config_axi['Map 66']['s00_axi_aclk'] = config_axi['Porta 2']['nome']
         config_axi['Map 66']['s00_axi_awvalid'] = 'axi_slave4_master_w.awvalid'
         config_axi['Map 66']['s00_axi_wvalid'] = 'axi_slave4_master_w.wvalid'
@@ -1121,13 +1121,13 @@ class Gerador_Vhdl(object):
 
         self.vhdl_texto_aux = self.criador_ext(self.vhdl_texto_aux, config_axi)
 
-        lista = os.listdir()
+        lista = os.listdir(arq_vhd)
         if self.pesquisar(lista, 'SoC'):
-            diretorio = caminho_dir + '/SoC/'
+            diretorio = arq_vhd + '/SoC/'
             diretorio_software = diretorio + 'software'
             shutil.rmtree(diretorio_software)
         else:
-            diretorio = caminho_dir + '/SoC/'
+            diretorio = arq_vhd + '/SoC/'
             diretorio_script = diretorio + 'script'
             diretorio_sim = diretorio + 'sim'
             diretorio_hdl = diretorio + 'hdl'
@@ -1146,6 +1146,6 @@ class Gerador_Vhdl(object):
         if config['Software']['check_software'] == 'TRUE':
             shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
 
-        destino_arq = open(diretorio + "hdl/" + arq_vhd, 'w')
+        destino_arq = open(diretorio + "hdl/top.vhd", 'w')
         destino_arq.write(self.vhdl_texto_aux)
         destino_arq.close()

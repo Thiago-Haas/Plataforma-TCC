@@ -13,6 +13,22 @@ import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Barramento(object):
+    def inicia_interface(self):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+        config = configparser.ConfigParser()
+        config.read(caminho_dir + '/config.ini')
+
+        if  config['Barramento']['check_wdt'] == 'TRUE':
+            self.checkBox.setChecked(True)
+
+        if config['Barramento']['check_timeout'] == 'TRUE':
+            self.checkBox_2.setChecked(True)
+        
+        self.comboBox.setCurrentText(config['Barramento']['reset'])
+        self.textEdit.setPlainText(config['Barramento']['endereco'])
+
     def config_barramento(self, Barramento):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
@@ -247,6 +263,8 @@ class Ui_Barramento(object):
 
         self.retranslateUi(Barramento)
         QtCore.QMetaObject.connectSlotsByName(Barramento)
+        
+        self.inicia_interface()
 
     def retranslateUi(self, Barramento):
         _translate = QtCore.QCoreApplication.translate

@@ -14,6 +14,22 @@ import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Acelerador(object):
+    def inicia_interface(self):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+        config = configparser.ConfigParser()
+        config.read(caminho_dir + '/config.ini')
+
+        if config['Acelerador']['check_hsi'] == 'TRUE':
+            self.checkBox.setChecked(True)
+
+        if config['Acelerador']['check_customizavel'] == 'TRUE':
+            self.checkBox_2.setChecked(True)
+
+        #self.spinBox_2.setPrefix(config['Acelerador']['qtd_hsi'])
+        #self.spinBox_3.setPrefix(config['Acelerador']['qtd_customizavel'])
+
     def config_acelerador(self, Acelerador):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
@@ -30,7 +46,7 @@ class Ui_Acelerador(object):
 
         else:
             config['Acelerador']['check_hsi'] = 'FALSE'
-            config['Acelerador']['qtd_hsi'] = '0'
+            config['Acelerador']['qtd_hsi'] = '1'
 
 
         if self.checkBox_2.isChecked():
@@ -41,7 +57,7 @@ class Ui_Acelerador(object):
 
         else:
             config['Acelerador']['check_customizavel'] = 'FALSE'
-            config['Acelerador']['qtd_customizavel'] = '0'
+            config['Acelerador']['qtd_customizavel'] = '1'
 
         with open('config.ini', 'w') as configfile:
             config.write(configfile)
@@ -214,12 +230,12 @@ class Ui_Acelerador(object):
         self.spinBox_2 = QtWidgets.QSpinBox(self.centralwidget)
         self.spinBox_2.setGeometry(QtCore.QRect(170, 60, 51, 26))
         self.spinBox_2.setMinimum(1)
-        self.spinBox_2.setMaximum(4)
+        self.spinBox_2.setMaximum(1)
         self.spinBox_2.setObjectName("spinBox_2")
         self.spinBox_3 = QtWidgets.QSpinBox(self.centralwidget)
         self.spinBox_3.setGeometry(QtCore.QRect(170, 90, 51, 26))
         self.spinBox_3.setMinimum(1)
-        self.spinBox_3.setMaximum(4)
+        self.spinBox_3.setMaximum(1)
         self.spinBox_3.setObjectName("spinBox_3")
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
         self.checkBox.setGeometry(QtCore.QRect(30, 60, 91, 23))
@@ -246,6 +262,8 @@ class Ui_Acelerador(object):
 
         self.retranslateUi(Acelerador)
         QtCore.QMetaObject.connectSlotsByName(Acelerador)
+
+        self.inicia_interface()
 
     def retranslateUi(self, Acelerador):
         _translate = QtCore.QCoreApplication.translate

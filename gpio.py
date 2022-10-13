@@ -14,6 +14,19 @@ import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_GPIO(object):
+    def inicia_interface(self):
+        caminho_arq = sys.argv[0]
+        caminho_arq = os.path.abspath(caminho_arq)
+        caminho_dir = os.path.dirname(caminho_arq)
+        config = configparser.ConfigParser()
+        config.read(caminho_dir + '/config.ini')
+
+        if  config['GPIO']['check_gpio'] == 'TRUE':
+            self.checkBox.setChecked(True)
+        
+        self.textEdit.setPlainText(config['GPIO']['largura'])
+        self.textEdit_3.setPlainText(config['GPIO']['tamanho'])
+
     def config_gpio(self, GPIO):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
@@ -237,6 +250,8 @@ class Ui_GPIO(object):
 
         self.retranslateUi(GPIO)
         QtCore.QMetaObject.connectSlotsByName(GPIO)
+
+        self.inicia_interface()
 
     def retranslateUi(self, GPIO):
         _translate = QtCore.QCoreApplication.translate
