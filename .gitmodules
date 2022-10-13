@@ -1,0 +1,3 @@
+[submodule "harv-soc"]
+	path = harv-soc
+	url = ssh://git@github.com/xarc/harv-soc.git
