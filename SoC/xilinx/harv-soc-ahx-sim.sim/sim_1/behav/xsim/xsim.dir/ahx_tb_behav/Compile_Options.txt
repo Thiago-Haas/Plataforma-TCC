@@ -1,1 +1,0 @@
--wto "752e496252dc437bb882993021b1f4a6" --incr --debug "off" --relax --mt "8" -generic_top "AHX_FILEPATH=/home/carlos/plataforma/SoC/software/out/app-sim.ahx" -generic_top "MEM_SIZE_MB=8" -L "xil_defaultlib" -L "secureip" --snapshot "ahx_tb_behav" "xil_defaultlib.ahx_tb" -log "elaborate.log" 
