@@ -27,7 +27,7 @@ class Gerador_Vhdl(object):
         return texto
 
     def criador_entidade(self, texto, config): # Criação da entidade do arquivo top
-        texto += f"\nentity {config['Entidade']['nome']} is\n"
+        texto += f"entity {config['Entidade']['nome']} is\n"
         return texto
 
     def criador_generic(self, texto, config): # Criação do Generic do arquivo top
@@ -526,7 +526,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Map {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" :
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:22] == "compressor_v1_1":
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -551,7 +551,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Elif {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:23] == "unaligned_memory" :
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:23] == "unaligned_memory" or linha[7:22] == "compressor_v1_1":
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -752,8 +752,8 @@ class Gerador_Vhdl(object):
             config_axi['Map 61']['master5_o'] = 'open'
             config_axi['Map 61']['slave5_i'] = 'AXI4L_S2M_DECERR'
 
-        config_axi['Map 61']['ext_master_o'] = 'open'
-        config_axi['Map 61']['ext_slave_i'] = 'AXI4L_S2M_DECERR'
+        config_axi['Map 61']['ext_master_o'] = config_axi['Porta 12']['nome']
+        config_axi['Map 61']['ext_slave_i'] = config_axi['Porta 13']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
             config_axi['Map 61']['rstn_i'] = config_axi['Porta 0']['nome']
