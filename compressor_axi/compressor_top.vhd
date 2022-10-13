@@ -5,14 +5,14 @@ use ieee.numeric_std.all;
 entity compressor_top is
   port (
     clk_i   : in std_logic;
-    awaddr  : in std_logic_vector(4 downto 0);
+    awaddr  : in std_logic_vector(31 downto 0);
     awvalid : in std_logic;
     awprot  : in std_logic_vector(2 downto 0);
     wdata   : in std_logic_vector(31 downto 0);
     wstrb   : in std_logic_vector(3 downto 0);
     wvalid  : in std_logic;
     bready  : in std_logic;
-    araddr  : in std_logic_vector(4 downto 0);
+    araddr  : in std_logic_vector(31 downto 0);
     arvalid : in std_logic;
     arprot  : in std_logic_vector(2 downto 0);
     rready  : in std_logic;
@@ -25,7 +25,8 @@ entity compressor_top is
     rresp   : out std_logic_vector(1 downto 0);
     rvalid  : out std_logic
   );
-  
+end compressor_top;
+
 architecture arch of compressor_top is
   signal periph_rstn_w : std_logic;
 
@@ -58,4 +59,4 @@ architecture arch of compressor_top is
     s00_axi_rready      =>  rready
   );
 
-end architecture
+end architecture;
