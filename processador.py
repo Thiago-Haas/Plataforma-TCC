@@ -62,7 +62,7 @@ class Ui_Processador(object):
 
     def setupUi(self, Processador):
         Processador.setObjectName("Processador")
-        Processador.resize(335, 252)
+        Processador.resize(340, 252)
         self.centralwidget = QtWidgets.QWidget(Processador)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -239,7 +239,7 @@ class Ui_Processador(object):
         self.Voltar.setGeometry(QtCore.QRect(20, 170, 291, 31))
         self.Voltar.setObjectName("Voltar")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(190, 130, 91, 25))
+        self.comboBox.setGeometry(QtCore.QRect(190, 130, 100, 25))
         self.comboBox.setPlaceholderText("")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
