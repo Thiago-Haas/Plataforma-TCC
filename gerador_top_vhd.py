@@ -526,7 +526,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Map {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:21] == "compressor_top":
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:22] == "compressor_v1_1":
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -551,7 +551,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Elif {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:23] == "unaligned_memory" or linha[7:21] == "compressor_top":
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:23] == "unaligned_memory" or linha[7:22] == "compressor_v1_1":
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -849,33 +849,33 @@ class Gerador_Vhdl(object):
         config_axi['Map 66']['check'] = config['Acelerador']['check_hsi']
         config_axi['Map 66']['nome'] = str(config_axi['Map 66']['nome']).replace(" is","_u")
         config_axi['Map 66']['entity'] = str(config_axi['Map 66']['entity']).replace(" is","")
-        #config_axi['Map 66']['generic c_s00_axi_data_width'] = '32'
-        #config_axi['Map 66']['generic c_s00_axi_addr_width'] = '4'
-        #config_axi['Map 66']['s00_axi_aclk'] = config_axi['Porta 2']['nome']
-        #config_axi['Map 66']['s00_axi_awvalid'] = 'axi_slave4_master_w.awvalid'
-        #config_axi['Map 66']['s00_axi_wvalid'] = 'axi_slave4_master_w.wvalid'
-        #config_axi['Map 66']['s00_axi_bvalid'] = 'axi_slave4_slave_w.bvalid'
-        #config_axi['Map 66']['s00_axi_arvalid'] = 'axi_slave4_master_w.arvalid'
-        #config_axi['Map 66']['s00_axi_rvalid'] = 'axi_slave4_slave_w.rvalid'
-        #config_axi['Map 66']['s00_axi_awready'] = 'axi_slave4_slave_w.awready'
-        #config_axi['Map 66']['s00_axi_wready'] = 'axi_slave4_slave_w.wready'
-        #config_axi['Map 66']['s00_axi_bready'] = 'axi_slave4_master_w.bready'
-        #config_axi['Map 66']['s00_axi_arready'] = 'axi_slave4_slave_w.arready'
-        #config_axi['Map 66']['s00_axi_rready'] = 'axi_slave4_master_w.rready'
-        #config_axi['Map 66']['s00_axi_awaddr'] = 'axi_slave4_master_w.awaddr'
-        #config_axi['Map 66']['s00_axi_awprot'] = 'axi_slave4_master_w.awprot'
-        #config_axi['Map 66']['s00_axi_wdata'] = 'axi_slave4_master_w.wdata'
-        #config_axi['Map 66']['s00_axi_wstrb'] = 'axi_slave4_master_w.wstrb'
-        #config_axi['Map 66']['s00_axi_bresp'] = 'axi_slave4_slave_w.bresp'
-        #config_axi['Map 66']['s00_axi_araddr'] = 'axi_slave4_master_w.araddr'
-        #config_axi['Map 66']['s00_axi_arprot'] = 'axi_slave4_master_w.arprot'
-        #config_axi['Map 66']['s00_axi_rdata'] = 'axi_slave4_slave_w.rdata'
-        #config_axi['Map 66']['s00_axi_rresp'] = 'axi_slave4_slave_w.rresp'
+        config_axi['Map 66']['generic c_s00_axi_data_width'] = '32'
+        config_axi['Map 66']['generic c_s00_axi_addr_width'] = '4'
+        config_axi['Map 66']['s00_axi_aclk'] = config_axi['Porta 2']['nome']
+        config_axi['Map 66']['s00_axi_awvalid'] = 'axi_slave4_master_w.awvalid'
+        config_axi['Map 66']['s00_axi_wvalid'] = 'axi_slave4_master_w.wvalid'
+        config_axi['Map 66']['s00_axi_bvalid'] = 'axi_slave4_slave_w.bvalid'
+        config_axi['Map 66']['s00_axi_arvalid'] = 'axi_slave4_master_w.arvalid'
+        config_axi['Map 66']['s00_axi_rvalid'] = 'axi_slave4_slave_w.rvalid'
+        config_axi['Map 66']['s00_axi_awready'] = 'axi_slave4_slave_w.awready'
+        config_axi['Map 66']['s00_axi_wready'] = 'axi_slave4_slave_w.wready'
+        config_axi['Map 66']['s00_axi_bready'] = 'axi_slave4_master_w.bready'
+        config_axi['Map 66']['s00_axi_arready'] = 'axi_slave4_slave_w.arready'
+        config_axi['Map 66']['s00_axi_rready'] = 'axi_slave4_master_w.rready'
+        config_axi['Map 66']['s00_axi_awaddr'] = 'axi_slave4_master_w.awaddr'
+        config_axi['Map 66']['s00_axi_awprot'] = 'axi_slave4_master_w.awprot'
+        config_axi['Map 66']['s00_axi_wdata'] = 'axi_slave4_master_w.wdata'
+        config_axi['Map 66']['s00_axi_wstrb'] = 'axi_slave4_master_w.wstrb'
+        config_axi['Map 66']['s00_axi_bresp'] = 'axi_slave4_slave_w.bresp'
+        config_axi['Map 66']['s00_axi_araddr'] = 'axi_slave4_master_w.araddr'
+        config_axi['Map 66']['s00_axi_arprot'] = 'axi_slave4_master_w.arprot'
+        config_axi['Map 66']['s00_axi_rdata'] = 'axi_slave4_slave_w.rdata'
+        config_axi['Map 66']['s00_axi_rresp'] = 'axi_slave4_slave_w.rresp'
 
-        #if config['Barramento']['reset'] == 'Padrão':
-        #    config_axi['Map 66']['s00_axi_aresetn'] = config_axi['Porta 0']['nome']
-        #else:
-        #    config_axi['Map 66']['s00_axi_aresetn'] = config_axi['Sinal 2']['nome']
+        if config['Barramento']['reset'] == 'Padrão':
+            config_axi['Map 66']['s00_axi_aresetn'] = config_axi['Porta 0']['nome']
+        else:
+            config_axi['Map 66']['s00_axi_aresetn'] = config_axi['Sinal 2']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
@@ -1065,9 +1065,9 @@ class Gerador_Vhdl(object):
         top_vhd = open(caminho_dir + config_path['Path']['acelerador'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
-        del vhdl_texto[29:]
-        #self.gera_ini_map_generic(vhdl_texto[:16], caminho_dir)
-        self.gera_ini_map_no_generic(vhdl_texto, caminho_dir)
+        del vhdl_texto[48:]
+        self.gera_ini_map_generic(vhdl_texto[:16], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[17:], caminho_dir)
 
         vhdl_texto.clear()
         top_vhd = open(caminho_dir + config_path['Path']['memoria'], 'r')
@@ -1137,6 +1137,7 @@ class Gerador_Vhdl(object):
             os.makedirs(diretorio_hdl)
             shutil.copytree('harv-soc', diretorio + 'harv-soc', dirs_exist_ok = True)
             shutil.copytree('compressor_axi', diretorio + 'compressor', dirs_exist_ok = True)
+            shutil.copytree('harv-soc/fpga/zedboard', diretorio + 'fgpa', dirs_exist_ok = True)
             shutil.copy('arquivos_topo/vivado-ahx-sim.tcl', diretorio_script)
             shutil.copy('arquivos_topo/vivado-open-static-simulation.tcl', diretorio_script)
             shutil.copy('arquivos_topo/ahx_tb.vhd', diretorio_sim)
