@@ -1,15 +1,18 @@
-SOFTWARE = $(abspath software/)
-AHX_FILEPATH = $(SOFTWARE)/out/app-sim.ahx
-TTY_PORT = /dev/ttyUSB0
-BAUDRATE = 115200
-PARITY = none
-RTSCTS = RTSCTS
-
-VIVADO = vivado
-VIVADO_AHX_SCRIPT = script/vivado-ahx-sim.tcl
-VIVADO_OPEN_SIM_SCRIPT = script/vivado-open-static-simulation.tcl
-
 BASE_DIR = $(abspath .)
+
+SOFTWARE     = $(BASE_DIR)/software
+AHX_FILEPATH = $(SOFTWARE)/out/app-sim.ahx
+
+FPGA_DIR      = $(BASE_DIR)/fpga
+FPGA_PORT_DIR = $(FPGA_DIR)/zedboard
+TTY_PORT      = /dev/ttyUSB0
+BAUDRATE      = 115200
+PARITY        = none
+RTSCTS        = RTSCTS
+
+VIVADO                 = vivado
+VIVADO_AHX_SCRIPT      = script/vivado-ahx-sim.tcl
+VIVADO_OPEN_SIM_SCRIPT = script/vivado-open-static-simulation.tcl
 
 WORK_DIR = .
 
@@ -24,6 +27,17 @@ vivado-open-sim:
 		-source $(VIVADO_OPEN_SIM_SCRIPT) \
 		-tclargs $(BASE_DIR) $(WORK_DIR)
 
-run-zedboard:
-	make -C software/ ahx upload boot PORT=zedboard FPGA_DIR=$(FPGA_DIR) ADD_FLAGS="-D RESET_ON_EXIT=1"
+## Prototipacao
+
+zedboard-create-project:
+	make -C $(FPGA_PORT_DIR) create-project
+
+zedboard-bitstream:
+	make -C $(FPGA_PORT_DIR) bitstream
+
+zedboard-program:
+	make -C $(FPGA_PORT_DIR) fpga
+
+zedboard-run:
+	make -C $(SOFTWARE) ahx upload boot PORT=zedboard FPGA_DIR=$(FPGA_DIR) ADD_FLAGS="-D RESET_ON_EXIT=1"
 

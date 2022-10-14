@@ -1137,7 +1137,7 @@ class Gerador_Vhdl(object):
             os.makedirs(diretorio_hdl)
             shutil.copytree('harv-soc', diretorio + 'harv-soc', dirs_exist_ok = True)
             shutil.copytree('compressor_axi', diretorio + 'compressor', dirs_exist_ok = True)
-            shutil.copytree('harv-soc/fpga/zedboard', diretorio + 'fgpa', dirs_exist_ok = True)
+            shutil.copytree('arquivos_topo/fpga', diretorio + 'fpga', dirs_exist_ok = True)
             shutil.copy('arquivos_topo/vivado-ahx-sim.tcl', diretorio_script)
             shutil.copy('arquivos_topo/vivado-open-static-simulation.tcl', diretorio_script)
             shutil.copy('arquivos_topo/ahx_tb.vhd', diretorio_sim)

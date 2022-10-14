@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi4l_pkg" />
+            <top_module name="axi4l_slaves_pkg" />
+            <top_module name="glbl" />
+            <top_module name="hamming_pkg" />
+            <top_module name="harv_pkg" />
+            <top_module name="memory_pkg" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,955.001 ns"></ZoomEndTime>
+      <Cursor1Time time="455.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="290"></NameColumnWidth>
+      <ValueColumnWidth column_width="118"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="31" />
+   <wvobject type="logic" fp_name="/top_tb/rstn">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/clk_wiz_u/clk_out1">
+      <obj_property name="ElementShortName">clk_out1</obj_property>
+      <obj_property name="ObjectShortName">clk_out1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_uart_rx">
+      <obj_property name="ElementShortName">top_uart_rx</obj_property>
+      <obj_property name="ObjectShortName">top_uart_rx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_uart_tx">
+      <obj_property name="ElementShortName">top_uart_tx</obj_property>
+      <obj_property name="ObjectShortName">top_uart_tx</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/send_data">
+      <obj_property name="ElementShortName">send_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">send_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/send_start">
+      <obj_property name="ElementShortName">send_start</obj_property>
+      <obj_property name="ObjectShortName">send_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/sender_done">
+      <obj_property name="ElementShortName">sender_done</obj_property>
+      <obj_property name="ObjectShortName">sender_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/rec_done">
+      <obj_property name="ElementShortName">rec_done</obj_property>
+      <obj_property name="ObjectShortName">rec_done</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/rec_data">
+      <obj_property name="ElementShortName">rec_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rec_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/top_tb/period">
+      <obj_property name="ElementShortName">period</obj_property>
+      <obj_property name="ObjectShortName">period</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider68" type="divider">
+      <obj_property name="label">HARV</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_soc_u/harv_u/if_pc_w">
+      <obj_property name="ElementShortName">if_pc_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">if_pc_w[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/ctl_update_pc_w">
+      <obj_property name="ElementShortName">ctl_update_pc_w</obj_property>
+      <obj_property name="ObjectShortName">ctl_update_pc_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider39" type="divider">
+      <obj_property name="label">mem access</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/imem_rden_o">
+      <obj_property name="ElementShortName">imem_rden_o</obj_property>
+      <obj_property name="ObjectShortName">imem_rden_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/imem_gnt_i">
+      <obj_property name="ElementShortName">imem_gnt_i</obj_property>
+      <obj_property name="ObjectShortName">imem_gnt_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/imem_err_i">
+      <obj_property name="ElementShortName">imem_err_i</obj_property>
+      <obj_property name="ObjectShortName">imem_err_i</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_soc_u/harv_u/imem_addr_o">
+      <obj_property name="ElementShortName">imem_addr_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imem_addr_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_soc_u/harv_u/imem_rdata_i">
+      <obj_property name="ElementShortName">imem_rdata_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imem_rdata_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_wren_o">
+      <obj_property name="ElementShortName">dmem_wren_o</obj_property>
+      <obj_property name="ObjectShortName">dmem_wren_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_rden_o">
+      <obj_property name="ElementShortName">dmem_rden_o</obj_property>
+      <obj_property name="ObjectShortName">dmem_rden_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_gnt_i">
+      <obj_property name="ElementShortName">dmem_gnt_i</obj_property>
+      <obj_property name="ObjectShortName">dmem_gnt_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_err_i">
+      <obj_property name="ElementShortName">dmem_err_i</obj_property>
+      <obj_property name="ObjectShortName">dmem_err_i</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_addr_o">
+      <obj_property name="ElementShortName">dmem_addr_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dmem_addr_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_wdata_o">
+      <obj_property name="ElementShortName">dmem_wdata_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dmem_wdata_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_wstrb_o">
+      <obj_property name="ElementShortName">dmem_wstrb_o[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dmem_wstrb_o[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_soc_u/harv_u/dmem_rdata_i">
+      <obj_property name="ElementShortName">dmem_rdata_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dmem_rdata_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider17" type="divider">
+      <obj_property name="label">BRAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/axi4l_bram_u/master_i">
+      <obj_property name="ElementShortName">master_i</obj_property>
+      <obj_property name="ObjectShortName">master_i</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/axi4l_bram_u/slave_o">
+      <obj_property name="ElementShortName">slave_o</obj_property>
+      <obj_property name="ObjectShortName">slave_o</obj_property>
+   </wvobject>
+</wave_config>
