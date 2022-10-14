@@ -23,3 +23,7 @@ vivado-open-sim:
 	$(VIVADO) -nojou -nolog -mode gui \
 		-source $(VIVADO_OPEN_SIM_SCRIPT) \
 		-tclargs $(BASE_DIR) $(WORK_DIR)
+
+run-zedboard:
+	make -C software/ ahx upload boot PORT=zedboard FPGA_DIR=$(FPGA_DIR) ADD_FLAGS="-D RESET_ON_EXIT=1"
+
