@@ -952,6 +952,31 @@ class Gerador_Vhdl(object):
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
+    def ajusta_arq_zed(self, diretorio, config, config_axi):
+        arq_zed = open(diretorio, 'r')
+        vhdl_zed = arq_zed.read()
+        arq_zed.close()
+
+        vhdl_zed = vhdl_zed.replace('PROGRAM_START_ADDR => x"00000000",','PROGRAM_START_ADDR => x"70000000",')
+        vhdl_zed = vhdl_zed.replace("HARV_TMR           => FALSE,",f"HARV_TMR           => {config['Harv']['harv_tmr']},")
+        vhdl_zed = vhdl_zed.replace("HARV_ECC           => FALSE,",f"HARV_ECC           => {config['Harv']['harv_ecc']},")
+        aux_1 = config['Memoria']['endereco_memoria']
+        aux_2 = config['Memoria']['tamanho']
+        vhdl_zed = vhdl_zed.replace('DMEM_BASE_ADDR     => x"08000000",',f'DMEM_BASE_ADDR     => {aux_1[:1]}"{aux_1[1:]}",')
+        vhdl_zed = vhdl_zed.replace('DMEM_HIGH_ADDR     => x"08000FFF",',f'DMEM_HIGH_ADDR     => {aux_2[:1]}"{aux_2[1:]}",')
+        vhdl_zed = vhdl_zed.replace("GPIO_SIZE          => 13",f"GPIO_SIZE          => {config['GPIO']['largura']}")
+
+        aux_1 = config['Barramento']['endereco']
+        aux_2 = config_axi['Map 61']['generic slave0_high_addr']
+        vhdl_zed = vhdl_zed.replace('SLAVE0_BASE_ADDR => x"70000000",',f'SLAVE0_BASE_ADDR => {aux_1[:1]}"{aux_1[1:]}",')
+        vhdl_zed = vhdl_zed.replace('SLAVE0_HIGH_ADDR => x"70007FFF"',f'SLAVE0_HIGH_ADDR => {aux_2[:1]}"{aux_2[1:]}"')
+        vhdl_zed = vhdl_zed.replace('BASE_ADDR => x"70000000",',f'BASE_ADDR => {aux_1[:1]}"{aux_1[1:]}",')
+        vhdl_zed = vhdl_zed.replace('HIGH_ADDR => x"70007FFF",',f'HIGH_ADDR => {aux_2[:1]}"{aux_2[1:]}",')
+
+        arq_zed = open(diretorio, 'w')
+        arq_zed.write(vhdl_zed)
+        arq_zed.close()
+
     def pesquisar(self, lista, pasta):
         for i in range(len(lista)):
             if lista[i] == pasta:
@@ -1147,6 +1172,8 @@ class Gerador_Vhdl(object):
         if config['Software']['check_software'] == 'TRUE':
             shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
 
+        self.ajusta_arq_zed(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', config, config_axi)
+        
         destino_arq = open(diretorio + "hdl/top.vhd", 'w')
         destino_arq.write(self.vhdl_texto_aux)
         destino_arq.close()
