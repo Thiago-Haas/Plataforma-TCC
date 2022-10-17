@@ -977,6 +977,39 @@ class Gerador_Vhdl(object):
         arq_zed.write(vhdl_zed)
         arq_zed.close()
 
+        arq_zed = open(diretorio, 'r')
+        vhdl_zed = arq_zed.readlines()
+        arq_zed.close()
+
+        del vhdl_zed[122:]
+
+        arq_zed = open(diretorio, 'w')
+        arq_zed.writelines(vhdl_zed)
+        arq_zed.close()
+
+    def criar_top(self, config_top, config, diretorio):
+        config_top['Map 69']['nome'] = str(config_top['Map 69']['nome']).replace(" is","_u")
+        config_top['Map 69']['entity'] = str(config_top['Map 69']['entity']).replace(" is","")
+        config_top['Map 69']['generic GPIO_SIZE'] = config['GPIO']['largura']
+        config_top['Map 69']['poweron_rstn_i'] = 'rstn_w'
+        config_top['Map 69']['btn_rstn_i'] = 'btn_rst_i'
+        config_top['Map 69']['clk_i'] = 'clk50_w'
+        config_top['Map 69']['start_i'] = 'rstn_w'
+        config_top['Map 69']['periph_rstn_o'] = 'periph_rstn_w'
+        config_top['Map 69']['uart_rx_i'] = 'uart_rx_i'
+        config_top['Map 69']['uart_tx_o'] = 'uart_tx_o'
+        config_top['Map 69']['uart_cts_i'] = 'uart_cts_i'
+        config_top['Map 69']['uart_rts_o'] = 'uart_rts_o'
+        config_top['Map 69']['gpio_tri_o'] = 'gpio_tri_w'
+        config_top['Map 69']['gpio_rd_i'] = 'gpio_rd_w'
+        config_top['Map 69']['gpio_wr_o'] = 'gpio_wr_w'
+        config_top['Map 69']['axi4l_master_o'] = 'axi4l_master_w'
+        config_top['Map 69']['axi4l_slave_i'] = 'axi4l_slave_w'
+        config_top['Map 69']['ext_event_i'] = "'0'"
+
+        with open(diretorio + 'barramento.ini', 'w') as configfile:
+            config_top.write(configfile)
+
     def pesquisar(self, lista, pasta):
         for i in range(len(lista)):
             if lista[i] == pasta:
@@ -1177,3 +1210,28 @@ class Gerador_Vhdl(object):
         destino_arq = open(diretorio + "hdl/top.vhd", 'w')
         destino_arq.write(self.vhdl_texto_aux)
         destino_arq.close()
+
+        self.criar_ini = ''
+        vhdl_texto.clear()
+        top_vhd = open(diretorio + "hdl/top.vhd", 'r')
+        vhdl_texto = top_vhd.readlines()
+        top_vhd.close()
+        del vhdl_texto[33:]
+        self.gera_ini_map_generic(vhdl_texto[:14], caminho_dir + "/arquivos_topo/")
+        self.gera_ini_map_no_generic(vhdl_texto[15:], caminho_dir + "/arquivos_topo/")
+
+        config_top = configparser.ConfigParser()
+        config_top.read(caminho_dir + "/arquivos_topo/barramento.ini")
+
+        self.vhdl_texto_aux = ''
+        self.criar_top(config_top, config, caminho_dir + "/arquivos_topo/")
+        self.vhdl_texto_aux = self.criador_map_customizavel(self.vhdl_texto_aux, config_top, config_axi)
+
+        vhdl_txt = ''
+        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'r')
+        vhdl_txt = arq_zed.read()
+        arq_zed.close()
+
+        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'w')
+        arq_zed.write(vhdl_txt + self.vhdl_texto_aux + "\nend arch;\n")
+        arq_zed.close()
