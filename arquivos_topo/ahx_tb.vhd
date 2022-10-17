@@ -13,7 +13,7 @@ use work.axi4l_pkg.all;
 entity ahx_tb is
   generic (
     MEM_SIZE_MB  : integer := 8;
-    AHX_FILEPATH : string;
+    AHX_FILEPATH : string  := "../../../../../src/helloworld/out/app-sim.ahx";
     OUT_FILE     : string := ""
   );
 end entity;
@@ -53,57 +53,36 @@ begin
     signal axi4l_master  : AXI4L_MASTER_TO_SLAVE;
     signal axi4l_slave   : AXI4L_SLAVE_TO_MASTER;
 
-    constant DMEM_BASE_ADDR    : std_logic_vector(31 downto 0) := x"08000000"; -- definidas pelo programa
-    constant DMEM_HIGH_ADDR    : std_logic_vector(31 downto 0) := x"08000FFF"; -- definidas pelo programa
-    constant EXT_RAM_BASE_ADDR : unsigned(31 downto 0)         := x"70000000";
-    constant EXT_RAM_HIGH_ADDR : unsigned(31 downto 0)         := unsigned(EXT_RAM_BASE_ADDR) + to_unsigned(MEM_SIZE_MB * 1024 * 1024, 32) - 1;
+    constant DMEM_BASE_ADDR : std_logic_vector(31 downto 0) := x"08000000";
+    constant DMEM_HIGH_ADDR : std_logic_vector(31 downto 0) := x"08000FFF";
+    constant BRAM_BASE_ADDR : std_logic_vector(31 downto 0) := x"70000000";
+    constant BRAM_HIGH_ADDR : std_logic_vector(31 downto 0) :=
+      std_logic_vector(unsigned(BRAM_BASE_ADDR) + to_unsigned(MEM_SIZE_MB * 1024 * 1024, 32) - 1);
+    constant MEH_BASE_ADDR  : std_logic_vector(31 downto 0) := x"70800000";
+    constant MEH_HIGH_ADDR  : std_logic_vector(31 downto 0) := x"7080001F";
 
     constant PROGRAM_START_ADDR : std_logic_vector(31 downto 0) := x"70000000";
 
-    type mem_t is array(natural range <>) of std_logic_vector(7 downto 0);
-    signal ext_ram : mem_t(to_integer(EXT_RAM_HIGH_ADDR) downto to_integer(EXT_RAM_BASE_ADDR));
-
-    procedure load_memory (
-        constant FILE_PATH : in string;
-        constant BASE_ADDR : in integer;
-        signal mem : out mem_t
-      ) is
-        file     file_v  : text;
-        variable line_v  : line;
-        variable addr_v  : std_logic_vector(31 downto 0);
-        variable sep_v   : character;
-        variable byte_v  : std_logic_vector(7 downto 0);
-        variable error_v : boolean;
-    begin
-      -- read ahx file
-      file_open(file_v, FILE_PATH, READ_MODE);
-      -- iterate through all lines in the file
-      while not endfile(file_v) loop
-        -- read line from file_v
-        readline(file_v, line_v);
-        -- ensure that the line is not empty
-        if line_v'length > 0 then
-          -- read hex address
-          hread(line_v, addr_v, error_v);
-          -- assert if the hread had an error
-          assert (error_v) report "Text I/O read error" severity FAILURE;
-          -- read separator
-          read(line_v, sep_v);
-          -- read hex byte
-          hread(line_v, byte_v, error_v);
-          -- assert if the hread had an error
-          assert (error_v) report "Text I/O read error" severity FAILURE;
-          -- write byte to memory
-          mem(to_integer(unsigned(addr_v)) + BASE_ADDR) <= byte_v;
-        end if;
-      end loop;
-      file_close(file_v);
-    end procedure;
   begin
 
-    top_u : entity work.top
+    harv_soc_u : entity work.harv_soc_bram
     generic map (
-      GPIO_SIZE     => 13
+      PROGRAM_START_ADDR => PROGRAM_START_ADDR,
+      HARV_TMR           => TRUE,
+      HARV_ECC           => TRUE,
+      ENABLE_ROM         => FALSE,
+      ENABLE_DMEM        => FALSE,
+      ENABLE_DMEM_ECC    => FALSE,
+      DMEM_BASE_ADDR     => DMEM_BASE_ADDR,
+      DMEM_HIGH_ADDR     => DMEM_HIGH_ADDR,
+      BRAM_BASE_ADDR     => BRAM_BASE_ADDR,
+      BRAM_HIGH_ADDR     => BRAM_HIGH_ADDR,
+      ENABLE_BRAM_ECC    => TRUE,
+      MEH_BASE_ADDR      => MEH_BASE_ADDR,
+      MEH_HIGH_ADDR      => MEH_HIGH_ADDR,
+      GPIO_SIZE          => 13,
+      IS_SIMULATION      => TRUE,
+      AHX_FILEPATH       => AHX_FILEPATH
     )
     port map (
       poweron_rstn_i => rstn,
@@ -126,121 +105,6 @@ begin
       -- external event
       ext_event_i => '0'
     );
-
-    -- External memory
-    process
-      variable addr_v  : unsigned(31 downto 0);
-      variable wdata_v : std_logic_vector(31 downto 0);
-    begin
-      report lf & "Initializing external memory from " & AHX_FILEPATH;
-      -- load memory from path
-      load_memory(AHX_FILEPATH, to_integer(EXT_RAM_BASE_ADDR), ext_ram);
-      report lf & "Memory loaded";
-
-      -- initialize signals
-      -- write op
-      axi4l_slave.awready <= '0';
-      axi4l_slave.wready  <= '0';
-      axi4l_slave.bresp   <= RESPONSE_DECERR;
-      axi4l_slave.bvalid  <= '0';
-      -- read op
-      axi4l_slave.arready <= '0';
-      axi4l_slave.rresp   <= RESPONSE_DECERR;
-      axi4l_slave.rvalid  <= '0';
-
-      -- wait reset
-      wait until rstn = '1';
-      -- infinite loop to listen to APB3 requests
-      loop
-        -- wait request
-        wait until rising_edge(clk) and (axi4l_master.awvalid or axi4l_master.arvalid) = '1';
-
-        -- verify if it's write operation
-        if axi4l_master.awvalid = '1' then
-          -- saves address
-          addr_v := unsigned(axi4l_master.awaddr);
-
-          -- gives ready signal
-          axi4l_slave.awready <= '1';
-          wait for period;
-          axi4l_slave.awready <= '0';
-          
-          -- waits data
-          wait until rising_edge(clk) and axi4l_master.wvalid = '1';
-          wdata_v := axi4l_master.wdata;
-          -- gives ready signal
-          axi4l_slave.wready <= '1';
-          wait for period;
-          axi4l_slave.wready <= '0';
-
-          -- if address is in range
-          if EXT_RAM_BASE_ADDR <= addr_v and addr_v <= EXT_RAM_HIGH_ADDR - 3 then
-            -- writes data to memory (respecting strobe)
-            for i in 0 to 3 loop
-              if axi4l_master.wstrb(i) = '1' then
-                ext_ram(to_integer(addr_v)+i) <= wdata_v((i+1)*8-1 downto i*8);
-              end if;
-            end loop;
-  
-            -- gives valid response signal
-            axi4l_slave.bvalid <= '1';
-            axi4l_slave.bresp  <= RESPONSE_OKAY;
-
-          else -- _else: address not in range
-            report "Invalid AMBA write access " & to_hstring(axi4l_master.awaddr) severity WARNING;
-            -- gives ERROR response signal
-            axi4l_slave.bvalid <= '1';
-            axi4l_slave.bresp  <= RESPONSE_DECERR;
-          end if;
-
-          -- wait until ready
-          wait until rising_edge(clk) and axi4l_master.bready = '1';
-          wait for period;
-          -- stops valid signal
-          axi4l_slave.bvalid <= '0';
-          axi4l_slave.bresp  <= RESPONSE_DECERR;
-
-        -- verify if it's read operation
-        elsif axi4l_master.arvalid = '1' then
-          -- saves address
-          addr_v := unsigned(axi4l_master.araddr);
-
-          -- gives ready signal
-          axi4l_slave.arready <= '1';
-          wait for period;
-          axi4l_slave.arready <= '0';
-          
-          -- if address is in range
-          if EXT_RAM_BASE_ADDR <= addr_v and addr_v <= EXT_RAM_HIGH_ADDR - 3 then
-            -- gives data response signal
-            axi4l_slave.rvalid <= '1';
-            axi4l_slave.rresp  <= RESPONSE_OKAY;
-            -- reads data from memory
-            for i in 0 to 3 loop
-              axi4l_slave.rdata((i+1)*8-1 downto i*8) <= ext_ram(to_integer(addr_v)+i);
-            end loop;
-
-          else -- _else: address not in range
-
-            report "Invalid AMBA read access " & to_hstring(axi4l_master.araddr) severity WARNING;
-            -- gives data ERROR response signal
-            axi4l_slave.rvalid <= '1';
-            axi4l_slave.rresp  <= RESPONSE_DECERR;
-            axi4l_slave.rdata  <= x"deadbeef";
-          end if;
-
-          -- wait until ready
-          wait until rising_edge(clk) and axi4l_master.rready = '1';
-          wait for period;
-          -- stops valid signal
-          axi4l_slave.rvalid <= '0';
-          axi4l_slave.rresp  <= RESPONSE_DECERR;
-          axi4l_slave.rdata  <= x"deadbeef";
-
-        end if;
-
-      end loop;
-    end process;
   end block;
 
   uart_u : entity work.uart
