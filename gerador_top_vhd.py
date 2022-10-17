@@ -1011,7 +1011,7 @@ class Gerador_Vhdl(object):
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
-    def ajusta_arq_zed(self, diretorio, config, config_axi):
+    def ajusta_arq_zed(self, diretorio, config, config_axi, diretorio_ahx):
         arq_zed = open(diretorio, 'r')
         vhdl_zed = arq_zed.read()
         arq_zed.close()
@@ -1032,6 +1032,8 @@ class Gerador_Vhdl(object):
         vhdl_zed = vhdl_zed.replace('BASE_ADDR => x"70000000",',f'BASE_ADDR => {aux_1[:1]}"{aux_1[1:]}",')
         vhdl_zed = vhdl_zed.replace('HIGH_ADDR => x"70007FFF",',f'HIGH_ADDR => {aux_2[:1]}"{aux_2[1:]}",')
 
+        vhdl_zed = vhdl_zed.replace('AHX_FILEPATH => "../../../../../src/helloworld/out/app-sim.ahx"',f'AHX_FILEPATH => "{diretorio_ahx}"')
+
         arq_zed = open(diretorio, 'w')
         arq_zed.write(vhdl_zed)
         arq_zed.close()
@@ -1040,7 +1042,7 @@ class Gerador_Vhdl(object):
         vhdl_zed = arq_zed.readlines()
         arq_zed.close()
 
-        del vhdl_zed[122:]
+        del vhdl_zed[139:]
 
         arq_zed = open(diretorio, 'w')
         arq_zed.writelines(vhdl_zed)
@@ -1277,7 +1279,7 @@ class Gerador_Vhdl(object):
         if config['Software']['check_software'] == 'TRUE':
             shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
 
-        self.ajusta_arq_zed(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', config, config_axi)
+        self.ajusta_arq_zed(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', config, config_axi, diretorio + "sim/ahx_tb.vhd")
         
         destino_arq = open(diretorio + "hdl/top.vhd", 'w')
         destino_arq.write(self.vhdl_texto_aux)

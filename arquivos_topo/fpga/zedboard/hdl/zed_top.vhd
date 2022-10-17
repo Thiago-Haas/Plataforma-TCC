@@ -37,7 +37,16 @@ architecture arch of zed_top is
   signal axi4l_slave_w   : AXI4L_SLAVE_TO_MASTER;
   signal axi4l_master0_w : AXI4L_MASTER_TO_SLAVE;
   signal axi4l_slave0_w  : AXI4L_SLAVE_TO_MASTER;
-
+  
+  signal bram_master_w          :  AXI4L_MASTER_TO_SLAVE;
+  signal bram_slave_w           :  AXI4L_MASTER_TO_SLAVE;
+  signal bram_ev_rdata_valid_w  :  std_logic;
+  signal bram_ev_sb_error_w     :  std_logic;
+  signal bram_ev_db_error_w     :  std_logic;
+  signal bram_ev_error_addr_w   :  std_logic_vector(31 downto 0);
+  signal bram_ev_ecc_addr_w     :  std_logic_vector(31 downto 0);
+  signal bram_ev_enc_data_w     :  std_logic_vector(38 downto 0);
+  
 begin
 
   clk_wiz_u : entity work.clk_wiz_0
@@ -110,15 +119,23 @@ begin
 
   axi4l_bram_u : entity work.axi4l_bram
   generic map (
-    BASE_ADDR => x"70000000",
-    HIGH_ADDR => x"70007FFF",
-    ECC => FALSE
+    BASE_ADDR 	 => x"70000000",
+    HIGH_ADDR 	 => x"70007FFF",
+    ECC 	 => FALSE,
+    SIM_INIT_AHX => TRUE,
+    AHX_FILEPATH => "../../../../../src/helloworld/out/app-sim.ahx"
   )
   port map (
-    rstn_i   => periph_rstn_w,
-    clk_i    => clk50_w,
-    master_i => axi4l_master0_w,
-    slave_o  => axi4l_slave0_w
+    rstn_i   		=> periph_rstn_w,
+    clk_i    		=> clk50_w,
+    master_i 		=> bram_master_w,
+    slave_o  		=> bram_slave_w
+    ev_rdata_valid_o    => bram_ev_rdata_valid_w, 
+    ev_sb_error_o       => bram_ev_sb_error_w, 
+    ev_db_error_o       => bram_ev_db_error_w, 
+    ev_error_addr_o     => bram_ev_error_addr_w, 
+    ev_ecc_addr_o       => bram_ev_ecc_addr_w, 
+    ev_enc_data_o       => bram_ev_enc_data_w
   );
 
 end arch;
