@@ -78,8 +78,6 @@ begin
       BRAM_BASE_ADDR     => BRAM_BASE_ADDR,
       BRAM_HIGH_ADDR     => BRAM_HIGH_ADDR,
       ENABLE_BRAM_ECC    => TRUE,
-      MEH_BASE_ADDR      => MEH_BASE_ADDR,
-      MEH_HIGH_ADDR      => MEH_HIGH_ADDR,
       GPIO_SIZE          => 13,
       IS_SIMULATION      => TRUE,
       AHX_FILEPATH       => AHX_FILEPATH
