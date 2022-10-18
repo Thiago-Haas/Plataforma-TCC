@@ -39,7 +39,7 @@ architecture arch of zed_top is
   signal axi4l_slave0_w  : AXI4L_SLAVE_TO_MASTER;
   
   signal bram_master_w          :  AXI4L_MASTER_TO_SLAVE;
-  signal bram_slave_w           :  AXI4L_MASTER_TO_SLAVE;
+  signal bram_slave_w           :  AXI4L_SLAVE_TO_MASTER;
   signal bram_ev_rdata_valid_w  :  std_logic;
   signal bram_ev_sb_error_w     :  std_logic;
   signal bram_ev_db_error_w     :  std_logic;
@@ -49,7 +49,7 @@ architecture arch of zed_top is
   
 begin
 
-  clk_wiz_u : entity work.clk_wiz_0
+  clk_wiz_0_u : entity work.clk_wiz_0
   port map (
     clk_in1  => clk_i,
     clk_out1 => clk50_w,
@@ -129,7 +129,7 @@ begin
     rstn_i   		=> periph_rstn_w,
     clk_i    		=> clk50_w,
     master_i 		=> bram_master_w,
-    slave_o  		=> bram_slave_w
+    slave_o  		=> bram_slave_w,
     ev_rdata_valid_o    => bram_ev_rdata_valid_w, 
     ev_sb_error_o       => bram_ev_sb_error_w, 
     ev_db_error_o       => bram_ev_db_error_w, 

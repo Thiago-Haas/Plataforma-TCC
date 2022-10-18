@@ -403,9 +403,9 @@ class Gerador_Vhdl(object):
         self.contador += 1
         self.criar_ini += f"nome{self.contador} = ENABLE_BRAM_ECC\ntype{self.contador} = boolean\n"
         self.contador += 1
-        self.criar_ini += f"nome{self.contador} = IS_SIMULATION\ntype{self.contador} = boolean\n" #valor{self.contador} = TRUE\n"
+        self.criar_ini += f"nome{self.contador} = IS_SIMULATION\ntype{self.contador} = boolean\nvalor{self.contador} = TRUE\n"
         self.contador += 1
-        self.criar_ini += f'nome{self.contador} = AHX_FILEPATH\ntype{self.contador} = string\n' #valor{self.contador} = "{diretorio}/SoC/sim/"\n'
+        self.criar_ini += f'nome{self.contador} = AHX_FILEPATH\ntype{self.contador} = string\nvalor{self.contador} = "{diretorio}/SoC/sim/"\n'
         self.contador += 1
         #self.criar_ini += f"nome{self.contador} = MEH_BASE_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\n"
         #self.contador += 1
@@ -541,7 +541,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Map {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:21] == "compressor_top" or linha[7:17] == "axi4l_bram":
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:21] == "compressor_top" or linha[7:17] == "axi4l_bram" or linha[7:10] == "top":
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -590,7 +590,7 @@ class Gerador_Vhdl(object):
     def gera_ini_bram(self, caminho_dir):
         self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_master_w\ntype= axim\n"
         self.contador +=1
-        self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_slave_w\ntype= axim\n"
+        self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_slave_w\ntype= axis\n"
         self.contador +=1
         self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_ev_rdata_valid_w\ntype= no vector\n"
         self.contador +=1
@@ -1048,10 +1048,23 @@ class Gerador_Vhdl(object):
         arq_zed.writelines(vhdl_zed)
         arq_zed.close()
 
-    def criar_top(self, config_top, config, diretorio):
+    def criar_top(self, config_top, config_axi, diretorio):
         config_top['Map 78']['nome'] = str(config_top['Map 78']['nome']).replace(" is","_u")
         config_top['Map 78']['entity'] = str(config_top['Map 78']['entity']).replace(" is","")
-        config_top['Map 78']['generic GPIO_SIZE'] = config['GPIO']['largura']
+        config_top['Map 78']['generic program_start_addr'] = config_axi['Generic']['valor0']
+        config_top['Map 78']['generic harv_tmr'] = config_axi['Generic']['valor1']
+        config_top['Map 78']['generic harv_ecc'] = config_axi['Generic']['valor2']
+        config_top['Map 78']['generic enable_rom'] = config_axi['Generic']['valor3']
+        config_top['Map 78']['generic enable_dmem'] = config_axi['Generic']['valor4']
+        config_top['Map 78']['generic enable_dmem_ecc'] = config_axi['Generic']['valor5']
+        config_top['Map 78']['generic dmem_base_addr'] = config_axi['Generic']['valor6']
+        config_top['Map 78']['generic dmem_high_addr'] = config_axi['Generic']['valor7']
+        config_top['Map 78']['generic gpio_size'] = config_axi['Generic']['valor8']
+        config_top['Map 78']['generic bram_base_addr'] = 'x70000000'
+        config_top['Map 78']['generic bram_high_addr'] = 'x70007FFF'
+        config_top['Map 78']['generic enable_bram_ecc'] = 'FALSE'
+        config_top['Map 78']['generic is_simulation'] = config_axi['Generic']['valor12']
+        config_top['Map 78']['generic ahx_filepath'] = config_axi['Generic']['valor13']
         config_top['Map 78']['poweron_rstn_i'] = 'rstn_w'
         config_top['Map 78']['btn_rstn_i'] = 'btn_rst_i'
         config_top['Map 78']['clk_i'] = 'clk50_w'
@@ -1234,10 +1247,10 @@ class Gerador_Vhdl(object):
 
         self.vhdl_texto_aux = self.criador_lib(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_entidade(self.vhdl_texto_aux, config_axi)
-        self.vhdl_texto_aux = self.criador_generic_2(self.vhdl_texto_aux, config_axi)
+        self.vhdl_texto_aux = self.criador_generic(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_portas(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_arq(self.vhdl_texto_aux, config_axi)
-        self.vhdl_texto_aux = self.criador_constant(self.vhdl_texto_aux, config_axi)
+        #self.vhdl_texto_aux = self.criador_constant(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_sinal(self.vhdl_texto_aux, config_axi)
         self.vhdl_texto_aux = self.criador_map(self.vhdl_texto_aux, config_axi, config)
 
@@ -1290,15 +1303,15 @@ class Gerador_Vhdl(object):
         top_vhd = open(diretorio + "hdl/top.vhd", 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
-        del vhdl_texto[33:]
-        self.gera_ini_map_generic(vhdl_texto[:14], caminho_dir + "/arquivos_topo/")
-        self.gera_ini_map_no_generic(vhdl_texto[15:], caminho_dir + "/arquivos_topo/")
+        del vhdl_texto[46:]
+        self.gera_ini_map_generic(vhdl_texto[:27], caminho_dir + "/arquivos_topo/")
+        self.gera_ini_map_no_generic(vhdl_texto[28:], caminho_dir + "/arquivos_topo/")
 
         config_top = configparser.ConfigParser()
         config_top.read(caminho_dir + "/arquivos_topo/barramento.ini")
 
         self.vhdl_texto_aux = ''
-        self.criar_top(config_top, config, caminho_dir + "/arquivos_topo/")
+        self.criar_top(config_top, config_axi, caminho_dir + "/arquivos_topo/")
         self.vhdl_texto_aux = self.criador_map_customizavel(self.vhdl_texto_aux, config_top, config_axi)
 
         vhdl_txt = ''
