@@ -4,8 +4,10 @@ use ieee.numeric_std.all;
 
 entity unaligned_memory is
   generic (
-    BASE_ADDR : std_logic_vector(31 downto 0);
-    HIGH_ADDR : std_logic_vector(31 downto 0)
+    BASE_ADDR    : std_logic_vector(31 downto 0);
+    HIGH_ADDR    : std_logic_vector(31 downto 0);
+    SIM_INIT_AHX : boolean : =TRUE;
+    AHX_FILEPATH : string := "/home/carlos/teste/SoC/sim/"
   );
   port (
     rstn_i : in std_logic;
@@ -61,21 +63,42 @@ begin
     m_rdata_i    => m_rdata_w
   );
 
-  memory_u : entity work.memory
-  generic map (
-    BASE_ADDR => BASE_ADDR,
-    HIGH_ADDR => HIGH_ADDR
-  )
-  port map (
-    rstn_i       => rstn_i,
-    clk_i        => clk_i,
-    wren_i       => m_wr_en_w,
-    rden_i       => m_rd_en_w,
-    gnt_o        => m_done_w,
-    outofrange_o => m_error_w,
-    addr_i       => m_addr_w,
-    wdata_i      => m_wdata_w,
-    rdata_o      => m_rdata_w
-  );
+  sim_mem_g : if SIM_INIT_AHX generate
+    memory_sim_inst : entity work.memory_sim
+    generic map (
+      BASE_ADDR    => BASE_ADDR,
+      HIGH_ADDR    => HIGH_ADDR,
+      AHX_FILEPATH => AHX_FILEPATH,
+      INIT_ECC     => FALSE
+    )
+    port map (
+      rstn_i       => rstn_i,
+      clk_i        => clk_i,
+      wren_i       => m_wr_en_w,
+      rden_i       => m_rd_en_w,
+      gnt_o        => m_done_w,
+      outofrange_o => m_error_w,
+      addr_i       => m_addr_w,
+      wdata_i      => m_wdata_w,
+      rdata_o      => m_rdata_w
+    );
+  else generate
+    memory_u : entity work.memory
+    generic map (
+      BASE_ADDR => BASE_ADDR,
+      HIGH_ADDR => HIGH_ADDR
+    )
+    port map (
+      rstn_i       => rstn_i,
+      clk_i        => clk_i,
+      wren_i       => m_wr_en_w,
+      rden_i       => m_rd_en_w,
+      gnt_o        => m_done_w,
+      outofrange_o => m_error_w,
+      addr_i       => m_addr_w,
+      wdata_i      => m_wdata_w,
+      rdata_o      => m_rdata_w
+    );
+  end generate;
 
 end architecture;
