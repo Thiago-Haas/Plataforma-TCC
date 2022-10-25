@@ -1046,7 +1046,7 @@ class Gerador_Vhdl(object):
         vhdl_zed = arq_zed.readlines()
         arq_zed.close()
 
-        del vhdl_zed[139:]
+        del vhdl_zed[129:]
 
         arq_zed = open(diretorio, 'w')
         arq_zed.writelines(vhdl_zed)
