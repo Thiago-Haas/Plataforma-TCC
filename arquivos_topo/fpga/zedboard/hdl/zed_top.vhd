@@ -28,13 +28,24 @@ architecture arch of zed_top is
   signal clk50_w       : std_logic;
   signal locked_w      : std_logic;
   signal periph_rstn_w : std_logic;
+  signal periph_rstn_w1: std_logic;
 
   signal gpio_tri_w : std_logic_vector(12 downto 0);
   signal gpio_rd_w  : std_logic_vector(12 downto 0);
   signal gpio_wr_w  : std_logic_vector(12 downto 0);
+  signal gpio_tri_w1: std_logic_vector(12 downto 0);
+  signal gpio_rd_w1 : std_logic_vector(12 downto 0);
+  signal gpio_wr_w1 : std_logic_vector(12 downto 0);
+  
+  signal uart_rx_i1  : std_logic;
+  signal uart_tx_o1  : std_logic;
+  signal uart_cts_i1 : std_logic;
+  signal uart_rts_o1 : std_logic;
 
   signal axi4l_master_w  : AXI4L_MASTER_TO_SLAVE;
+  signal axi4l_master_w1 : AXI4L_MASTER_TO_SLAVE;
   signal axi4l_slave_w   : AXI4L_SLAVE_TO_MASTER;
+  signal axi4l_slave_w1  : AXI4L_SLAVE_TO_MASTER;
   signal axi4l_master0_w : AXI4L_MASTER_TO_SLAVE;
   signal axi4l_slave0_w  : AXI4L_SLAVE_TO_MASTER;
   
@@ -122,7 +133,7 @@ begin
     BASE_ADDR 	 => x"70000000",
     HIGH_ADDR 	 => x"70007FFF",
     ECC 	 => FALSE,
-    SIM_INIT_AHX => TRUE,
+    SIM_INIT_AHX => FALSE,
     AHX_FILEPATH => "../../../../../src/helloworld/out/app-sim.ahx"
   )
   port map (

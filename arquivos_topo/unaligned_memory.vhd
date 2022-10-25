@@ -6,7 +6,7 @@ entity unaligned_memory is
   generic (
     BASE_ADDR    : std_logic_vector(31 downto 0);
     HIGH_ADDR    : std_logic_vector(31 downto 0);
-    SIM_INIT_AHX : boolean : =TRUE;
+    SIM_INIT_AHX : boolean := FALSE;
     AHX_FILEPATH : string := "/home/carlos/teste/SoC/sim/"
   );
   port (

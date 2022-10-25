@@ -403,7 +403,7 @@ class Gerador_Vhdl(object):
         self.contador += 1
         self.criar_ini += f"nome{self.contador} = ENABLE_BRAM_ECC\ntype{self.contador} = boolean\n"
         self.contador += 1
-        self.criar_ini += f"nome{self.contador} = IS_SIMULATION\ntype{self.contador} = boolean\nvalor{self.contador} = TRUE\n"
+        self.criar_ini += f"nome{self.contador} = IS_SIMULATION\ntype{self.contador} = boolean\nvalor{self.contador} = FALSE\n"
         self.contador += 1
         self.criar_ini += f'nome{self.contador} = AHX_FILEPATH\ntype{self.contador} = string\nvalor{self.contador} = "{diretorio}/SoC/sim/"\n'
         self.contador += 1
@@ -1073,16 +1073,16 @@ class Gerador_Vhdl(object):
         config_top['Map 78']['btn_rstn_i'] = 'btn_rst_i'
         config_top['Map 78']['clk_i'] = 'clk50_w'
         config_top['Map 78']['start_i'] = 'rstn_w'
-        config_top['Map 78']['periph_rstn_o'] = 'periph_rstn_w'
-        config_top['Map 78']['uart_rx_i'] = 'uart_rx_i'
-        config_top['Map 78']['uart_tx_o'] = 'uart_tx_o'
-        config_top['Map 78']['uart_cts_i'] = 'uart_cts_i'
-        config_top['Map 78']['uart_rts_o'] = 'uart_rts_o'
-        config_top['Map 78']['gpio_tri_o'] = 'gpio_tri_w'
-        config_top['Map 78']['gpio_rd_i'] = 'gpio_rd_w'
-        config_top['Map 78']['gpio_wr_o'] = 'gpio_wr_w'
-        config_top['Map 78']['axi4l_master_o'] = 'axi4l_master_w'
-        config_top['Map 78']['axi4l_slave_i'] = 'axi4l_slave_w'
+        config_top['Map 78']['periph_rstn_o'] = 'periph_rstn_w1'
+        config_top['Map 78']['uart_rx_i'] = 'uart_rx_i1'
+        config_top['Map 78']['uart_tx_o'] = 'uart_tx_o1'
+        config_top['Map 78']['uart_cts_i'] = 'uart_cts_i1'
+        config_top['Map 78']['uart_rts_o'] = 'uart_rts_o1'
+        config_top['Map 78']['gpio_tri_o'] = 'gpio_tri_w1'
+        config_top['Map 78']['gpio_rd_i'] = 'gpio_rd_w1'
+        config_top['Map 78']['gpio_wr_o'] = 'gpio_wr_w1'
+        config_top['Map 78']['axi4l_master_o'] = 'axi4l_master_w1'
+        config_top['Map 78']['axi4l_slave_i'] = 'axi4l_slave_w1'
         config_top['Map 78']['ext_event_i'] = "'0'"
 
         with open(diretorio + 'barramento.ini', 'w') as configfile:
