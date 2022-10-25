@@ -8,6 +8,7 @@ library work;
 use work.harv_pkg.all;
 use work.axi4l_pkg.all;
 use work.memory_pkg.all;
+use work.axi4l_slaves_pkg.all;
 
 entity harv_soc is
   generic (

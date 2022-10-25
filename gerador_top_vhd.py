@@ -566,7 +566,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Elif {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "unaligned_memory": 
+                if linha[7:23] == "unaligned_memory" or linha[7:27] == "unaligned_ecc_memory" : 
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -948,8 +948,8 @@ class Gerador_Vhdl(object):
             config_axi.write(configfile)
 
     def criar_memory2(self, config_axi, config):
-        config_axi['Elif 70']['nome'] = str(config_axi['Elif 70']['nome']).replace("unaligned_memory is","unaligned_ecc_memory_u")
-        config_axi['Elif 70']['entity'] = str(config_axi['Elif 70']['entity']).replace("unaligned_memory is","unaligned_ecc_memory")
+        config_axi['Elif 70']['nome'] = str(config_axi['Elif 70']['nome']).replace("unaligned_ecc_memory is","unaligned_ecc_memory_u")
+        config_axi['Elif 70']['entity'] = str(config_axi['Elif 70']['entity']).replace("unaligned_ecc_memory is","unaligned_ecc_memory")
         config_axi['Elif 70']['generic base_addr'] = config_axi['Generic']['nome6']
         config_axi['Elif 70']['generic high_addr'] = config_axi['Generic']['nome7']
         config_axi['Elif 70']['generic sim_init_ahx'] = 'FALSE'
@@ -1120,14 +1120,14 @@ class Gerador_Vhdl(object):
         vhdl_axi = top_vhd_aux.readlines()
         top_vhd_aux.close()
 
-        del vhdl_texto[115:]
+        del vhdl_texto[116:]
         del vhdl_axi[:65]
         del vhdl_axi[26:]
 
-        self.gera_ini_library(vhdl_texto[:12], caminho_dir)
-        self.gera_ini_generic(vhdl_texto[12:26], config, caminho_dir, arq_vhd)
-        self.gera_ini_port(vhdl_texto[27:56], caminho_dir)
-        self.gera_ini_signal(vhdl_texto[56:], caminho_dir)
+        self.gera_ini_library(vhdl_texto[:13], caminho_dir)
+        self.gera_ini_generic(vhdl_texto[13:27], config, caminho_dir, arq_vhd)
+        self.gera_ini_port(vhdl_texto[28:57], caminho_dir)
+        self.gera_ini_signal(vhdl_texto[57:], caminho_dir)
         self.gera_ini_signal_bus(vhdl_axi, caminho_dir)
         #self.gera_ini_signal_manual(caminho_dir)
 
