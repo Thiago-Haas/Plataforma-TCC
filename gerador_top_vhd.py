@@ -628,7 +628,7 @@ class Gerador_Vhdl(object):
         config_axi['Map 60']['imem_err_i'] = config_axi['Sinal 7']['nome']
         config_axi['Map 60']['imem_addr_o'] = config_axi['Sinal 5']['nome']
         config_axi['Map 60']['imem_rdata_i'] = config_axi['Sinal 8']['nome']
-        config_axi['Map 60']['hard_dmem_o'] = config_axi['Sinal 9']['nome']
+        #config_axi['Map 60']['hard_dmem_o'] = config_axi['Sinal 9']['nome']
         config_axi['Map 60']['dmem_wren_o'] = config_axi['Sinal 10']['nome']
         config_axi['Map 60']['dmem_rden_o'] = config_axi['Sinal 11']['nome']
         config_axi['Map 60']['dmem_gnt_i'] = config_axi['Sinal 12']['nome']
