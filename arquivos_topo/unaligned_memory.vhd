@@ -2,12 +2,15 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library work;
+use work.memory_pkg.all;
+
 entity unaligned_memory is
   generic (
     BASE_ADDR    : std_logic_vector(31 downto 0);
     HIGH_ADDR    : std_logic_vector(31 downto 0);
-    SIM_INIT_AHX : boolean := FALSE;
-    AHX_FILEPATH : string := "/home/carlos/teste/SoC/sim/"
+    SIM_INIT_AHX : boolean;
+    AHX_FILEPATH : string
   );
   port (
     rstn_i : in std_logic;
@@ -64,7 +67,7 @@ begin
   );
 
   sim_mem_g : if SIM_INIT_AHX generate
-    memory_sim_inst : entity work.memory_sim
+    memory_sim_inst : memory_sim
     generic map (
       BASE_ADDR    => BASE_ADDR,
       HIGH_ADDR    => HIGH_ADDR,
@@ -82,8 +85,9 @@ begin
       wdata_i      => m_wdata_w,
       rdata_o      => m_rdata_w
     );
-  else generate
-    memory_u : entity work.memory
+  end generate;
+  mem_g : if not SIM_INIT_AHX generate
+    memory_u : memory
     generic map (
       BASE_ADDR => BASE_ADDR,
       HIGH_ADDR => HIGH_ADDR

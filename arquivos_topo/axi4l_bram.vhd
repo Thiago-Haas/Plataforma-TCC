@@ -5,6 +5,7 @@ use ieee.numeric_std.all;
 library work;
 use work.axi4l_pkg.all;
 use work.axi4l_slaves_pkg.axi4l_slave;
+use work.memory_pkg.all;
 
 entity axi4l_bram is
   generic (
@@ -21,6 +22,9 @@ entity axi4l_bram is
     -- AXI interface
     master_i : in  AXI4L_MASTER_TO_SLAVE;
     slave_o  : out AXI4L_SLAVE_TO_MASTER;
+
+    -- hardening
+    correct_error_i : in std_logic;
 
     -- events
     ev_rdata_valid_o : out std_logic;
@@ -73,7 +77,7 @@ begin
   );
 
   ecc_g : if ECC generate
-    unaligned_ecc_memory_u : entity work.unaligned_ecc_memory
+    unaligned_ecc_memory_u : unaligned_ecc_memory
     generic map (
       BASE_ADDR => x"00000000",
       HIGH_ADDR => std_logic_vector(to_unsigned(SIZE-1, 32)),
@@ -81,18 +85,19 @@ begin
       AHX_FILEPATH => AHX_FILEPATH
     )
     port map (
-      rstn_i        => rstn_i,
-      clk_i         => clk_i,
-      s_wr_ready_o  => mem_wr_ready_w,
-      s_rd_ready_o  => mem_rd_ready_w,
-      s_wr_en_i     => mem_wr_en_w,
-      s_rd_en_i     => mem_rd_en_w,
-      s_done_o      => mem_done_w,
-      s_error_o     => mem_error_w,
-      s_addr_i      => mem_addr_w,
-      s_wdata_i     => mem_wdata_w,
-      s_wstrb_i     => mem_wstrb_w,
-      s_rdata_o     => mem_rdata_w,
+      rstn_i          => rstn_i,
+      clk_i           => clk_i,
+      correct_error_i => correct_error_i,
+      s_wr_ready_o    => mem_wr_ready_w,
+      s_rd_ready_o    => mem_rd_ready_w,
+      s_wr_en_i       => mem_wr_en_w,
+      s_rd_en_i       => mem_rd_en_w,
+      s_done_o        => mem_done_w,
+      s_error_o       => mem_error_w,
+      s_addr_i        => mem_addr_w,
+      s_wdata_i       => mem_wdata_w,
+      s_wstrb_i       => mem_wstrb_w,
+      s_rdata_o       => mem_rdata_w,
       -- events information
       ev_rdata_valid_o => ev_rdata_valid_o,
       ev_sb_error_o    => ev_sb_error_o,
@@ -103,7 +108,7 @@ begin
     );
 
   else generate
-    unaligned_memory_u : entity work.unaligned_memory
+    unaligned_memory_u : unaligned_memory
     generic map (
       BASE_ADDR    => x"00000000",
       HIGH_ADDR    => std_logic_vector(to_unsigned(SIZE-1, 32)),
