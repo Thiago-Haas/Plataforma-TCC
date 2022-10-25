@@ -58,3 +58,4 @@ begin
   gpio_rd_w(10) <= pmod_io(1);
   gpio_rd_w( 9) <= pmod_io(0);
 
+end arch;

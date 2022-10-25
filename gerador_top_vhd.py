@@ -1020,6 +1020,16 @@ class Gerador_Vhdl(object):
             config_axi.write(configfile)
 
     def ajusta_arq_zed(self, diretorio, vhdl_texto, caminho_dir, config_axi):
+        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'r')
+        vhdl_zed = arq_zed.readlines()
+        arq_zed.close()
+
+        del vhdl_zed[60:]
+
+        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'w')
+        arq_zed.writelines(vhdl_zed)
+        arq_zed.close()
+
         self.criar_ini = ''
         vhdl_texto.clear()
         top_vhd = open(diretorio + "hdl/top.vhd", 'r')
