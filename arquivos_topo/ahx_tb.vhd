@@ -79,7 +79,7 @@ begin
       BRAM_HIGH_ADDR     => BRAM_HIGH_ADDR,
       ENABLE_BRAM_ECC    => TRUE,
       GPIO_SIZE          => 13,
-      IS_SIMULATION      => TRUE,
+      IS_SIMULATION      => FALSE,
       AHX_FILEPATH       => AHX_FILEPATH
     )
     port map (
