@@ -925,7 +925,7 @@ class Gerador_Vhdl(object):
         config_axi['Elif 69']['entity'] = str(config_axi['Elif 69']['entity']).replace(" is","")
         config_axi['Elif 69']['generic base_addr'] = config_axi['Generic']['nome6']
         config_axi['Elif 69']['generic high_addr'] = config_axi['Generic']['nome7']
-        config_axi['Elif 69']['generic sim_init_ahx'] = config_axi['Generic']['nome12']
+        #config_axi['Elif 69']['generic sim_init_ahx'] = config_axi['Generic']['nome12']
         config_axi['Elif 69']['generic ahx_filepath'] = config_axi['Generic']['nome13']
         config_axi['Elif 69']['clk_i'] = config_axi['Porta 2']['nome']
         config_axi['Elif 69']['s_wr_ready_o'] = 'open'
@@ -952,7 +952,7 @@ class Gerador_Vhdl(object):
         config_axi['Elif 70']['entity'] = str(config_axi['Elif 70']['entity']).replace("unaligned_memory is","unaligned_ecc_memory")
         config_axi['Elif 70']['generic base_addr'] = config_axi['Generic']['nome6']
         config_axi['Elif 70']['generic high_addr'] = config_axi['Generic']['nome7']
-        config_axi['Elif 70']['generic sim_init_ahx'] = config_axi['Generic']['nome12']
+        #config_axi['Elif 70']['generic sim_init_ahx'] = config_axi['Generic']['nome12']
         config_axi['Elif 70']['generic ahx_filepath'] = config_axi['Generic']['nome13']
         config_axi['Elif 70']['clk_i'] = config_axi['Porta 2']['nome']
         config_axi['Elif 70']['correct_error_i'] = config_axi['Sinal 9']['nome']
@@ -1215,17 +1215,17 @@ class Gerador_Vhdl(object):
         top_vhd = open(caminho_dir + config_path['Path']['memoria'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
-        del vhdl_texto[31:]
-        self.gera_ini_map_memory(vhdl_texto[:14], caminho_dir)
-        self.gera_ini_map_no_generic(vhdl_texto[15:], caminho_dir)
+        del vhdl_texto[30:]
+        self.gera_ini_map_memory(vhdl_texto[:13], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[14:], caminho_dir)
 
         vhdl_texto.clear()
         top_vhd = open(caminho_dir + config_path['Path']['memoria2'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
-        del vhdl_texto[43:]
-        self.gera_ini_map_memory(vhdl_texto[:14], caminho_dir)
-        self.gera_ini_map_no_generic(vhdl_texto[15:], caminho_dir)
+        del vhdl_texto[42:]
+        self.gera_ini_map_memory(vhdl_texto[:13], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[14:], caminho_dir)
 
         vhdl_texto.clear()
         top_vhd = open(caminho_dir + config_path['Path']['bram'], 'r')
