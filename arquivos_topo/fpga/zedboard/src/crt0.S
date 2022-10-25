@@ -76,22 +76,7 @@ _start:
     mv      x28, zero
     mv      x29, zero
     mv      x30, zero
-    mv      x31, zero    
-
-    /* initialize CSRs */
-#ifndef APP_TRAP_HANDLER 
-    la     a0, _trap_entry
-    csrw   mtvec, a0
-#endif
-    csrw   mstatus, zero
-    csrw   mie, zero                 # clear mie (interruptions)
-
-    li      t0, 0x37                 # set fully hardened conf
-    csrw    CSR_HARDEN_CONF_ADDR, t0 # set hardening CSR
-
-    # /* disable memory event handler */
-    # li      s0, MEM_EH_ADDR
-    # sw      x0, 16(s0)
+    mv      x31, zero
 
     /* initialize UART baud rate */
     li      s0, UART_BAUD_REG_ADDR   # set UART baud rate div register address
@@ -123,6 +108,10 @@ init_wait_uart:
     li      s0, GPIO_BASE_ADDR
     sw      zero, 0(s0)
 
+    # /* disable memory event handler */
+    # li      s0, MEM_EH_ADDR
+    # sw      x0, 16(s0)
+
 # #ifndef IS_SIMULATION
 #     /* initialize memory */
 # init_mem:
@@ -135,10 +124,59 @@ init_wait_uart:
 # #endif
 
 enable_seh:
-    /* enable memory event handler */
+    # /* enable memory event handler */
     # li      s0, MEM_EH_ADDR
     # li      t0, 1
     # sw      t0, 16(s0)
+
+    /* initialize CSRs */
+#ifdef APP_TRAP_ENTRY
+    #if (APP_TRAP_ENTRY != 1)
+        la     a0, APP_TRAP_ENTRY    # get APP_TRAP_ENTRY function address
+        csrw   mtvec, a0             # set MTVEC
+    #endif
+#else
+    la      a0, _trap_entry           # get address of default trap entry
+    csrw    mtvec, a0                 # set MTVEC
+#endif
+    csrw    mstatus, zero
+    csrw    mie, zero                 # clear mie (interruptions)
+
+    /* initialize reset cause */
+    la      s0, harvsoc_rstcause      # load reset cause variable address
+    csrr    a0, CSR_RSTCAUSE_ADDR     # read reset cause from CSR
+    sw      a0, 0(s0)                 # set reset cause global variable
+    csrw    CSR_RSTCAUSE_ADDR, zero   # clear reset cause CSR
+
+// definition for experiment that cycles when a reset has happened
+#ifdef CYCLING_EXPERIMENT
+cycle_hardening:
+    /* cycle error correction */
+    la      s0, harvsoc_rstcause         # load rstcause variable address
+    lw      s0, 0(s0)                    # read reset cause
+    csrr    s1, CSR_HARDEN_CONF_ADDR     # read hardening configuration
+    li      t0, 0x2                      # t0 = 2
+    beq     s0, t0, cycle_set_conf       # if reset cause is wdt reset, cycle configuration
+    j       set_hardened                 # _else set hardened
+cycle_set_conf:
+    li      t0, 0x37                     # load hardened configuration
+    beq     s1, t0, set_unhardened       # if it is hardened, branch to unhardened
+set_hardened:                            # _else set hardened
+    li      t0, 0x37                     # set fully hardened conf
+    csrw    CSR_HARDEN_CONF_ADDR, t0     # write CSR
+    j       continue
+set_unhardened:
+    li      t0, 0x04                     # set unhardened conf (only memory ECC)
+    csrw    CSR_HARDEN_CONF_ADDR, t0     # write CSR
+continue:
+#else
+    #ifdef HARV_CONFIG
+        li      t0, HARV_CONFIG      # set fully parameterized configuration
+    #else
+        li      t0, 0x37             # set fully hardened conf
+    #endif
+    csrw    CSR_HARDEN_CONF_ADDR, t0 # set hardening CSR
+#endif
 
     /* print INIT */
     li      a0, 0x49
@@ -152,7 +190,8 @@ enable_seh:
     li      a0, 0xA
     call    asm_putchar
     # print reset cause as hex
-    csrr    a0, CSR_RSTCAUSE_ADDR
+    la      a0, harvsoc_rstcause         # load rstcause variable address
+    lw      a0, 0(a0)                    # read reset cause
     li      a1, 8
     call    asm_write_hex
     # print hardening configuration as hex
@@ -205,11 +244,12 @@ enable_seh:
     .cfi_endproc
 
 /*** TRAP HANDLER ***/
+#ifndef APP_TRAP_ENTRY
 .altmacro
 .align 4
 .macro SAVE_CONTEXT
     addi sp, sp, -32*4
-    .set i, 0
+    .set i, 1
     .rept 31
           save_gp %i
           .set i, i+1
@@ -231,9 +271,15 @@ enable_seh:
     lw x\i, ((\i)*4)(\basereg)
 .endm
 
-#ifndef APP_TRAP_HANDLER
 _trap_entry:
     SAVE_CONTEXT
+
+    /* check if it is ecall or interruption to skip event printing  */
+    csrr    a0, mcause                       # read trap cause CSR
+    li      a1, 0x0000000B                   # load ecall trap cause value
+    beq     a0, a1, handle_trap              # branch if trap is ecall
+    srl     a0, a0, 31                       # get most significant bit of data
+    bne     a0, x0, handle_trap              # branch if trap is interrupt
 
     /* print TRAP */
     li      a0, 0x0A
@@ -248,6 +294,10 @@ _trap_entry:
     call    asm_putchar
     li      a0, 0x0A
     call    asm_putchar
+
+    csrr    a0, CSR_HARDEN_CONF_ADDR
+    li      a1, 8
+    call    asm_write_hex
 
     csrr    a0, mepc
     li      a1, 8
@@ -369,35 +419,51 @@ loop_jallog:
 # skip_correction:
 
 handle_trap:
+#ifdef APP_TRAP_HANDLER
+    # load TRAP data from CSRs
+    csrr    a0, mepc                         # read mepc to argument 0
+    csrr    a1, mtval                        # read mtval to argument 1
+    csrr    a2, mcause                       # read mcause to argument 2
+    csrr    a3, mhartid                      # read mhardid to argument 3
+    csrr    a4, mstatus                      # read mstatus to argument 4
+    mv      a5, sp                           # read sp to argument 5
+    lw      a6, 32(sp)                       # read fp to argument 6
+    call    APP_TRAP_HANDLER                 # call application trap handler
+    csrw    mepc, a0                         # set returned value to mepc
+#else
     csrr    a0, mcause                       # read trap cause CSR
     li      a1, 0x0000000B                   # load ecall trap cause value
     bne     a0, a1, trap_return              # branch if trap is not ecall
-exception_inc_pc:                            # _else: increment mepc to skip instruction
+ecall_inc_pc:                                # _else: increment mepc to skip instruction
     csrr    a0, mepc                         # read mepc CSR
     addi    a0, a0, 4                        # increment mepc
     csrw    mepc, a0                         # write new value to mepc CSR
+#endif
 
 trap_return:
-    li      a0, EH_EVENT_ID                  # load HARV event handler identifier address
-    sw      x0, 0(a0)                        # clear HARV event handler
-    li      a0, MEM_EH_EVENT_ID              # load HARV-SoC event handler identifier address
-    sw      x0, 0(a0)                        # clear HARV-SoC event handler
-
     RESTORE_CONTEXT
     mret
 #endif
 
 ##################################
 asm_putchar:
-    li      t0, UART_INTERFACE_ADDR
-    sb      a0, 0(t0)
-wait_uart:
+wait_uart0:
     li      t0, UART_STATUS_ADDR     # load UART status address
     lw      t1, 0(t0)                # load status into t1
     srl     t1, t1, 1                # shift t1 right by one bit
     and     t1, t1, 1                # filter uart ready status code
     li      t2, 1                    # load comparison value
-    beq     t1, t2, wait_uart        # branch if status is not ready
+    beq     t1, t2, wait_uart0       # branch if status is not ready
+write_uart_byte:
+    li      t0, UART_INTERFACE_ADDR
+    sb      a0, 0(t0)
+wait_uart1:
+    li      t0, UART_STATUS_ADDR     # load UART status address
+    lw      t1, 0(t0)                # load status into t1
+    srl     t1, t1, 1                # shift t1 right by one bit
+    and     t1, t1, 1                # filter uart ready status code
+    li      t2, 1                    # load comparison value
+    beq     t1, t2, wait_uart1       # branch if status is not ready
     ret                              # _else: return
 
 ##################################
