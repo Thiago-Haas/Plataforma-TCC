@@ -1019,41 +1019,30 @@ class Gerador_Vhdl(object):
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
-    def ajusta_arq_zed(self, diretorio, config, config_axi, diretorio_ahx):
-        arq_zed = open(diretorio, 'r')
-        vhdl_zed = arq_zed.read()
+    def ajusta_arq_zed(self, diretorio, vhdl_texto, caminho_dir, config_axi):
+        self.criar_ini = ''
+        vhdl_texto.clear()
+        top_vhd = open(diretorio + "hdl/top.vhd", 'r')
+        vhdl_texto = top_vhd.readlines()
+        top_vhd.close()
+        del vhdl_texto[48:]
+        self.gera_ini_map_generic(vhdl_texto[:29], caminho_dir + "/arquivos_topo/")
+        self.gera_ini_map_no_generic(vhdl_texto[30:], caminho_dir + "/arquivos_topo/")
+
+        config_top = configparser.ConfigParser()
+        config_top.read(caminho_dir + "/arquivos_topo/barramento.ini")
+
+        self.vhdl_texto_aux = ''
+        self.criar_top(config_top, config_axi, caminho_dir + "/arquivos_topo/")
+        self.vhdl_texto_aux = self.criador_map_customizavel(self.vhdl_texto_aux, config_top, config_axi)
+
+        vhdl_txt = ''
+        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'r')
+        vhdl_txt = arq_zed.read()
         arq_zed.close()
 
-        vhdl_zed = vhdl_zed.replace('PROGRAM_START_ADDR => x"00000000",','PROGRAM_START_ADDR => x"70000000",')
-        vhdl_zed = vhdl_zed.replace("HARV_TMR           => FALSE,",f"HARV_TMR           => {config['Harv']['harv_tmr']},")
-        vhdl_zed = vhdl_zed.replace("HARV_ECC           => FALSE,",f"HARV_ECC           => {config['Harv']['harv_ecc']},")
-        aux_1 = config['Memoria']['endereco_memoria']
-        aux_2 = config['Memoria']['tamanho']
-        vhdl_zed = vhdl_zed.replace('DMEM_BASE_ADDR     => x"08000000",',f'DMEM_BASE_ADDR     => {aux_1[:1]}"{aux_1[1:]}",')
-        vhdl_zed = vhdl_zed.replace('DMEM_HIGH_ADDR     => x"08000FFF",',f'DMEM_HIGH_ADDR     => {aux_2[:1]}"{aux_2[1:]}",')
-        vhdl_zed = vhdl_zed.replace("GPIO_SIZE          => 13",f"GPIO_SIZE          => {config['GPIO']['largura']}")
-
-        aux_1 = config['Barramento']['endereco']
-        aux_2 = config_axi['Map 63']['generic slave0_high_addr']
-        vhdl_zed = vhdl_zed.replace('SLAVE0_BASE_ADDR => x"70000000",',f'SLAVE0_BASE_ADDR => {aux_1[:1]}"{aux_1[1:]}",')
-        vhdl_zed = vhdl_zed.replace('SLAVE0_HIGH_ADDR => x"70007FFF"',f'SLAVE0_HIGH_ADDR => {aux_2[:1]}"{aux_2[1:]}"')
-        vhdl_zed = vhdl_zed.replace('BASE_ADDR => x"70000000",',f'BASE_ADDR => {aux_1[:1]}"{aux_1[1:]}",')
-        vhdl_zed = vhdl_zed.replace('HIGH_ADDR => x"70007FFF",',f'HIGH_ADDR => {aux_2[:1]}"{aux_2[1:]}",')
-
-        vhdl_zed = vhdl_zed.replace('AHX_FILEPATH => "../../../../../src/helloworld/out/app-sim.ahx"',f'AHX_FILEPATH => "{diretorio_ahx}"')
-
-        arq_zed = open(diretorio, 'w')
-        arq_zed.write(vhdl_zed)
-        arq_zed.close()
-
-        arq_zed = open(diretorio, 'r')
-        vhdl_zed = arq_zed.readlines()
-        arq_zed.close()
-
-        del vhdl_zed[129:]
-
-        arq_zed = open(diretorio, 'w')
-        arq_zed.writelines(vhdl_zed)
+        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'w')
+        arq_zed.write(vhdl_txt + self.vhdl_texto_aux + "\nend arch;\n")
         arq_zed.close()
 
     def criar_top(self, config_top, config_axi, diretorio):
@@ -1077,16 +1066,16 @@ class Gerador_Vhdl(object):
         config_top['Map 80']['btn_rstn_i'] = 'btn_rst_i'
         config_top['Map 80']['clk_i'] = 'clk50_w'
         config_top['Map 80']['start_i'] = 'rstn_w'
-        config_top['Map 80']['periph_rstn_o'] = 'periph_rstn_w1'
-        config_top['Map 80']['uart_rx_i'] = 'uart_rx_i1'
-        config_top['Map 80']['uart_tx_o'] = 'uart_tx_o1'
-        config_top['Map 80']['uart_cts_i'] = 'uart_cts_i1'
-        config_top['Map 80']['uart_rts_o'] = 'uart_rts_o1'
-        config_top['Map 80']['gpio_tri_o'] = 'gpio_tri_w1'
-        config_top['Map 80']['gpio_rd_i'] = 'gpio_rd_w1'
-        config_top['Map 80']['gpio_wr_o'] = 'gpio_wr_w1'
-        config_top['Map 80']['axi4l_master_o'] = 'axi4l_master_w1'
-        config_top['Map 80']['axi4l_slave_i'] = 'axi4l_slave_w1'
+        config_top['Map 80']['periph_rstn_o'] = 'periph_rstn_w'
+        config_top['Map 80']['uart_rx_i'] = 'uart_rx_i'
+        config_top['Map 80']['uart_tx_o'] = 'uart_tx_o'
+        config_top['Map 80']['uart_cts_i'] = 'uart_cts_i'
+        config_top['Map 80']['uart_rts_o'] = 'uart_rts_o'
+        config_top['Map 80']['gpio_tri_o'] = 'gpio_tri_w'
+        config_top['Map 80']['gpio_rd_i'] = 'gpio_rd_w'
+        config_top['Map 80']['gpio_wr_o'] = 'gpio_wr_w'
+        config_top['Map 80']['axi4l_master_o'] = 'open'
+        config_top['Map 80']['axi4l_slave_i'] = 'AXI4L_S2M_DECERR'
         config_top['Map 80']['ext_event_i'] = "'0'"
 
         with open(diretorio + 'barramento.ini', 'w') as configfile:
@@ -1300,43 +1289,16 @@ class Gerador_Vhdl(object):
         if config['Software']['check_software'] == 'TRUE':
             shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
 
-        self.ajusta_arq_zed(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', config, config_axi, diretorio + "sim/ahx_tb.vhd")
-        
         destino_arq = open(diretorio + "hdl/top.vhd", 'w')
         destino_arq.write(self.vhdl_texto_aux)
         destino_arq.close()
-
-        self.criar_ini = ''
-        vhdl_texto.clear()
-        top_vhd = open(diretorio + "hdl/top.vhd", 'r')
-        vhdl_texto = top_vhd.readlines()
-        top_vhd.close()
-        del vhdl_texto[46:]
-        self.gera_ini_map_generic(vhdl_texto[:27], caminho_dir + "/arquivos_topo/")
-        self.gera_ini_map_no_generic(vhdl_texto[28:], caminho_dir + "/arquivos_topo/")
-
-        config_top = configparser.ConfigParser()
-        config_top.read(caminho_dir + "/arquivos_topo/barramento.ini")
-
-        self.vhdl_texto_aux = ''
-        self.criar_top(config_top, config_axi, caminho_dir + "/arquivos_topo/")
-        self.vhdl_texto_aux = self.criador_map_customizavel(self.vhdl_texto_aux, config_top, config_axi)
-
-        vhdl_txt = ''
-        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'r')
-        vhdl_txt = arq_zed.read()
-        arq_zed.close()
-
-        arq_zed = open(diretorio + 'fpga/zedboard/hdl/zed_top.vhd', 'w')
-        arq_zed.write(vhdl_txt + self.vhdl_texto_aux + "\nend arch;\n")
-        arq_zed.close()
+        
+        self.ajusta_arq_zed(diretorio, vhdl_texto, caminho_dir, config_axi)
 
         arq_ahx = open(diretorio + 'sim/ahx_tb.vhd', 'r')
         vhdl_ahx = arq_ahx.read()
         arq_ahx.close()
-
         vhdl_ahx = vhdl_ahx.replace("../../../../../src/helloworld/out/app-sim.ahx", f"{diretorio}sim/ahx_tb.vhd")
-
         arq_ahx = open(diretorio + 'sim/ahx_tb.vhd', 'w')
         arq_ahx.write(vhdl_ahx)
         arq_ahx.close()
