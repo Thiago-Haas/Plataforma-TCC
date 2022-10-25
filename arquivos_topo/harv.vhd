@@ -38,7 +38,6 @@ entity harv is
     dmem_rdata_i : in  std_logic_vector(31 downto 0);
     -- interrupt signals
     ext_interrupt_i  : in std_logic_vector(7 downto 0);
-    clr_ext_event_o  : out std_logic;
     ext_event_i      : in std_logic;
     periph_timeout_i : in std_logic
   );

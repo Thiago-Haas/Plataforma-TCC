@@ -637,7 +637,7 @@ class Gerador_Vhdl(object):
         config_axi['Map 60']['dmem_wdata_o'] = config_axi['Sinal 15']['nome']
         config_axi['Map 60']['dmem_wstrb_o'] = config_axi['Sinal 16']['nome']
         config_axi['Map 60']['dmem_rdata_i'] = config_axi['Sinal 17']['nome']
-        config_axi['Map 60']['clr_ext_event_o'] = 'open'
+        #config_axi['Map 60']['clr_ext_event_o'] = 'open'
         config_axi['Map 60']['ext_interrupt_i'] = 'x00'
         config_axi['Map 60']['ext_event_i'] = config_axi['Sinal 33']['nome']
 
@@ -1141,7 +1141,7 @@ class Gerador_Vhdl(object):
         top_vhd = open(caminho_dir + config_path['Path']['harv_u'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
-        del vhdl_texto[47:]
+        del vhdl_texto[45:]
         self.gera_ini_map_generic(vhdl_texto[:15], caminho_dir)
         self.gera_ini_map_no_generic(vhdl_texto[16:], caminho_dir)
 
