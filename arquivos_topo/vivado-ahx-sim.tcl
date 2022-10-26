@@ -12,7 +12,6 @@ create_project -force harv-soc-ahx-sim $WORK_DIR/xilinx -part xc7z020clg484-1
 # add all files from HDL folders
 add_files $BASE_DIR/harv-soc/harv/hdl/
 add_files $BASE_DIR/harv-soc/hdl/
-add_files $BASE_DIR/compressor/
 add_files $BASE_DIR/hdl/
 
 # add simulation files
