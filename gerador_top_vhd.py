@@ -1274,38 +1274,40 @@ class Gerador_Vhdl(object):
         self.vhdl_texto_aux = self.criador_ext(self.vhdl_texto_aux, config_axi)
 
         lista = os.listdir(arq_vhd)
-        if self.pesquisar(lista, 'SoC'):
-            diretorio = arq_vhd + '/SoC/'
-            diretorio_software = diretorio + 'software'
-            shutil.rmtree(diretorio_software)
-        else:
-            diretorio = arq_vhd + '/SoC/'
-            diretorio_script = diretorio + 'script'
-            diretorio_sim = diretorio + 'sim'
-            diretorio_hdl = diretorio + 'hdl'
-            os.makedirs(diretorio)
-            os.makedirs(diretorio_script)
-            os.makedirs(diretorio_sim)
-            os.makedirs(diretorio_hdl)
-            shutil.copytree('harv-soc', diretorio + 'harv-soc', dirs_exist_ok = True)
-            shutil.copytree('compressor_axi', diretorio + 'compressor', dirs_exist_ok = True)
-            shutil.copytree('arquivos_topo/fpga', diretorio + 'fpga', dirs_exist_ok = True)
-            shutil.copy('arquivos_topo/vivado-ahx-sim.tcl', diretorio_script)
-            shutil.copy('arquivos_topo/vivado-open-static-simulation.tcl', diretorio_script)
-            shutil.copy('arquivos_topo/ahx_tb.vhd', diretorio_sim)
-            shutil.copy('arquivos_topo/Makefile', diretorio)
-            diretorio_software = diretorio + 'software'
+        diretorio = os.path.join(arq_vhd, 'SoC') + os.path.sep
+        # se diretorio existe
+        if os.path.isdir(diretorio):
+            # TODO: Adicionar prompt para confirmar antes de deletar pasta
+            # apaga diretorio
+            shutil.rmtree(diretorio)
+
+        diretorio_script = os.path.join(diretorio, 'script')
+        diretorio_sim = os.path.join(diretorio, 'sim')
+        diretorio_hdl = os.path.join(diretorio, 'hdl')
+        os.makedirs(diretorio)
+        os.makedirs(diretorio_script)
+        os.makedirs(diretorio_sim)
+        os.makedirs(diretorio_hdl)
+        shutil.copytree('harv-soc', os.path.join(diretorio, 'harv-soc'), dirs_exist_ok = True)
+        shutil.copytree('compressor_axi', os.path.join(diretorio, 'compressor'), dirs_exist_ok = True)
+        shutil.copytree('arquivos_topo/fpga', os.path.join(diretorio, 'fpga'), dirs_exist_ok = True)
+        shutil.copy('arquivos_topo/vivado-ahx-sim.tcl', diretorio_script)
+        shutil.copy('arquivos_topo/vivado-open-static-simulation.tcl', diretorio_script)
+        shutil.copy('arquivos_topo/top_tb.vhd', diretorio_sim)
+        shutil.copy('arquivos_topo/top_tb_behav.wcfg', diretorio_sim)
+        shutil.copy('arquivos_topo/Makefile', diretorio)
+        diretorio_software = os.path.join(diretorio, 'software')
 
         if config['Software']['check_software'] == 'TRUE':
             shutil.copytree(config['Software']['caminho'], diretorio_software, dirs_exist_ok = True)
 
-        destino_arq = open(diretorio + "hdl/top.vhd", 'w')
+        destino_arq = open(os.path.join(diretorio, "hdl", "top.vhd"), 'w')
         destino_arq.write(self.vhdl_texto_aux)
         destino_arq.close()
         
         self.ajusta_arq_zed(diretorio, vhdl_texto, caminho_dir, config_axi)
 
-        arq_ahx = open(diretorio + 'sim/ahx_tb.vhd', 'r')
+        arq_ahx = open(os.path.join(diretorio, 'sim', 'top_tb.vhd'), 'r')
         vhdl_ahx = arq_ahx.read()
         arq_ahx.close()
         vhdl_ahx = vhdl_ahx.replace("../../../../../src/helloworld/out/app-sim.ahx", f"{diretorio}software/out/app-sim.ahx")
