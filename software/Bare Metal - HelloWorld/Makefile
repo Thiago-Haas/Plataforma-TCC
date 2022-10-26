@@ -46,7 +46,7 @@ LINKER_SCRIPT = $(UTILS)/script/simulation/ahxtb-linker.ld
 endif
 
 LINKER_FLAG      = -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_MAP)
-LINKER_GHDL_FLAG = -Wl,--defsym=RAM_HIGH_ADDR=0x7007FFFF -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_SIM_MAP)
+LINKER_GHDL_FLAG = -Wl,--defsym=RAM_HIGH_ADDR=0x7005FFFF -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_SIM_MAP)
 PROC_FLAGS       = -march=rv32i -mabi=ilp32 --specs=nano.specs -nostartfiles
 PROC_SOURCES     = $(CRT0_S) $(UTILS)/lib/syscalls.c -I$(UTILS)/lib/ $(UTILS)/lib/harvsoc.c $(UTILS)/lib/csr.c
 
