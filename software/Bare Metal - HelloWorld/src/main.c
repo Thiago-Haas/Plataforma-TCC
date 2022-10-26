@@ -1,35 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 #include <harvsoc.h>
 #include <csr.h>
-
-extern void _putchar(char);
-extern int _write(int, char*, int);
-extern void _write_hex(unsigned long, int);
-
-unsigned long trap_handler(
-    unsigned long mepc,
-    unsigned long mtval,
-    unsigned long mcause,
-    unsigned long mhartid,
-    unsigned long mstatus,
-    unsigned long sp
-) {
-    if (mcause >> 31) {
-      // is interrupt
-      _write(1, "interrupt 0x", 12);
-      _write_hex(mcause, 8);
-      _putchar('\n');
-    } else {
-      // is exception
-      _write(1, "except 0x", 9);
-      _write_hex(mcause, 8);
-      _putchar('\n');
-    }
-    
-    return mepc;
-}
 
 int main() {
 
