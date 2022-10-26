@@ -2,6 +2,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library work;
+use work.axi4l_pkg.AXI4L_S2M_DECERR;
+
 entity top_tb is
 end entity;
 
@@ -10,12 +13,7 @@ architecture arch of top_tb is
   signal rstn : std_logic := '0';
   signal clk  : std_logic := '0';
 
-  signal top_uart_rx : std_logic;
   signal top_uart_tx : std_logic;
-
-  signal send_data   : std_logic_vector(7 downto 0);
-  signal send_start  : std_logic;
-  signal sender_done : std_logic;
 
   signal rec_done : std_logic;
   signal rec_data : std_logic_vector(7 downto 0);
@@ -24,40 +22,30 @@ begin
   rstn <= '1' after period;
   clk  <= not clk after period/2;
 
-  process
-    variable tdata : string(1 to 28) := "170000000CAFECAFE" & lf & "270000000" & lf;
-    variable size  : integer := 28;
-  begin
-    send_start <= '0';
-    wait for 1 ms;
-
-    for i in 1 to size loop
-      send_data <= std_logic_vector(to_unsigned(character'pos(tdata(i)), 8));
-      send_start <= '1';
-      wait for period;
-      send_start <= '0';
-      while sender_done = '0' loop
-        wait until rising_edge(clk);
-      end loop;
-      wait for period;
-      -- wait for 9 us;
-      -- wait for 1 ms;
-
-    end loop;
-
-  end process;
-
   top_u : entity work.top
+  generic map (
+    PROGRAM_START_ADDR => x"{{ PROGRAM_START_ADDR }}",
+    IS_SIMULATION      => TRUE,
+    AHX_FILEPATH       => "{{ AHX_FILEPATH }}"
+  )
   port map (
-    btn_rst_i  => '0',
-    clk_i      => clk,
-    uart_rx_i  => top_uart_rx,
-    uart_tx_o  => top_uart_tx,
-    uart_cts_i => '0',
-    uart_rts_o => open,
-    user_btn_i => '0',
-    leds_o     => open,
-    pmod_io    => open
+    poweron_rstn_i => rstn,
+    clk_i          => clk,
+    btn_rstn_i     => '1',
+    start_i        => '1',
+    periph_rstn_o  => open,
+    -- uart
+    uart_rx_i      => '1',
+    uart_tx_o      => top_uart_tx,
+    uart_cts_i     => '0',
+    uart_rts_o     => open,
+    -- gpio
+    gpio_tri_o     => open,
+    gpio_rd_i      => (others => '0'),
+    gpio_wr_o      => open,
+    -- AXI
+    axi4l_master_o => open,
+    axi4l_slave_i  => AXI4L_S2M_DECERR
   );
 
   uart_u : entity work.uart
@@ -65,9 +53,9 @@ begin
     baud_div_i => x"0364", -- 115200
     parity_i   => '0',
     rtscts_i   => '1',
-    tstart_i   => send_start,
-    tdata_i    => send_data,
-    tdone_o    => sender_done,
+    tstart_i   => '0',
+    tdata_i    => x"00",
+    tdone_o    => open,
     rready_i   => '1',
     rdone_o    => rec_done,
     rdata_o    => rec_data,
@@ -75,7 +63,7 @@ begin
     rstn_i     => rstn,
     clk_i      => clk,
     uart_rx_i  => top_uart_tx,
-    uart_tx_o  => top_uart_rx,
+    uart_tx_o  => open,
     uart_cts_i => '0',
     uart_rts_o => open
  );

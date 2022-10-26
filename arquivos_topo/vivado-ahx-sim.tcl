@@ -1,8 +1,7 @@
 set BASE_DIR     [lindex $argv 0]
-set AHX_FILEPATH [lindex $argv 1]
-set WORK_DIR     [lindex $argv 2]
-if {$argc == 4} {
-    set DUMP_ALL [lindex $argv 3]
+set WORK_DIR     [lindex $argv 1]
+if {$argc == 3} {
+    set DUMP_ALL [lindex $argv 2]
 } else {
     set DUMP_ALL 0
 }
@@ -29,10 +28,7 @@ update_compile_order -fileset sim_1
 # set top entity as top
 set_property top harv_soc [current_fileset]
 # set testbench entity as top
-set_property top ahx_tb [get_filesets sim_1]
-
-# set simulation parameters
-set_property generic "AHX_FILEPATH=$AHX_FILEPATH MEM_SIZE_MB=8" [get_filesets sim_1]
+set_property top top_tb [get_filesets sim_1]
 
 # set maximum simulation time
 set_property -name {xsim.simulate.runtime} -value {60s} -objects [get_filesets sim_1]

@@ -1,7 +1,6 @@
 BASE_DIR = $(abspath .)
 
 SOFTWARE     = $(BASE_DIR)/software
-AHX_FILEPATH = $(SOFTWARE)/out/app-sim.ahx
 
 FPGA_DIR      = $(BASE_DIR)/fpga
 FPGA_PORT_DIR = $(FPGA_DIR)/zedboard
@@ -20,7 +19,7 @@ vivado-ahx-sim:
 	make -C $(SOFTWARE) ahx-sim
 	$(VIVADO) -nojou -nolog -mode tcl \
 		-source $(VIVADO_AHX_SCRIPT) \
-		-tclargs $(BASE_DIR) $(AHX_FILEPATH) $(WORK_DIR) $(DUMP_ALL)
+		-tclargs $(BASE_DIR) $(WORK_DIR) $(DUMP_ALL)
 
 vivado-open-sim:
 	$(VIVADO) -nojou -nolog -mode gui \

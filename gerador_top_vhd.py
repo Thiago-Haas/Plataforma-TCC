@@ -1310,7 +1310,8 @@ class Gerador_Vhdl(object):
         arq_ahx = open(os.path.join(diretorio, 'sim', 'top_tb.vhd'), 'r')
         vhdl_ahx = arq_ahx.read()
         arq_ahx.close()
-        vhdl_ahx = vhdl_ahx.replace("../../../../../src/helloworld/out/app-sim.ahx", f"{diretorio}software/out/app-sim.ahx")
-        arq_ahx = open(diretorio + 'sim/ahx_tb.vhd', 'w')
+        vhdl_ahx = vhdl_ahx.replace("{{ PROGRAM_START_ADDR }}", "70000000") # TODO: mudar para o endereço base da BRAM
+        vhdl_ahx = vhdl_ahx.replace("{{ AHX_FILEPATH }}", f"{diretorio}software/out/app-sim.ahx")
+        arq_ahx = open(os.path.join(diretorio, 'sim', 'top_tb.vhd'), 'w')
         arq_ahx.write(vhdl_ahx)
         arq_ahx.close()
