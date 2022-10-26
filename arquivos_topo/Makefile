@@ -16,7 +16,7 @@ VIVADO_OPEN_SIM_SCRIPT = script/vivado-open-static-simulation.tcl
 WORK_DIR = .
 
 vivado-ahx-sim:
-	make -C $(SOFTWARE) ahx-sim
+	make -C $(SOFTWARE) ahx-sim PORT=zedboard FPGA_DIR=$(FPGA_DIR)
 	$(VIVADO) -nojou -nolog -mode tcl \
 		-source $(VIVADO_AHX_SCRIPT) \
 		-tclargs $(BASE_DIR) $(WORK_DIR) $(DUMP_ALL)

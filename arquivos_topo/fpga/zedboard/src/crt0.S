@@ -9,7 +9,6 @@
 .equ UART_STATUS_ADDR,    0x80000010
 .equ WDT_ADDR,            0x80000100 # WDT base address in AMBA bus
 .equ GPIO_BASE_ADDR,      0x80000204 # GPIO pins address in AMBA bus
-.equ MEM_EH_ADDR,         0x70800000 # memory event handler address in AMBA bus
 # event handler addresses
 .equ EH_EVENT_ID,          0x01000000
 .equ EH_PC,                0x01000004

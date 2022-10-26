@@ -541,7 +541,7 @@ class Gerador_Vhdl(object):
         for linha in vhdl_texto:
             if linha[:6] == 'entity':
                 self.criar_ini += f"[Map {self.contador}]\nnome: {linha[7:]}"
-                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_6" or linha[7:21] == "compressor_top" or linha[7:17] == "axi4l_bram" or linha[7:10] == "top":
+                if linha[7:23] == "reset_controller" or linha[7:23] == "mem_interconnect" or linha[7:27] == "axi4l_interconnect_7" or linha[7:21] == "compressor_top" or linha[7:17] == "axi4l_bram" or linha[7:10] == "top":
                     self.criar_ini += f"entity: yes {linha[7:]}"
                 else:
                     self.criar_ini += f"entity: no {linha[7:]}"
@@ -739,6 +739,7 @@ class Gerador_Vhdl(object):
         config_axi['Map 63']['nome'] = str(config_axi['Map 63']['nome']).replace(" is","_u")
         config_axi['Map 63']['entity'] = str(config_axi['Map 63']['entity']).replace(" is","")
         config_axi['Map 63']['generic slave0_base_addr'] = config['Barramento']['endereco']
+        # TODO: pegar endereços configurados pela interface
         config_axi['Map 63']['generic slave0_high_addr'] = 'x00000FFF'
         config_axi['Map 63']['generic slave1_base_addr'] = config['UART']['endereco']
         config_axi['Map 63']['generic slave1_high_addr'] = 'x8000001F'
@@ -750,6 +751,8 @@ class Gerador_Vhdl(object):
         config_axi['Map 63']['generic slave4_high_addr'] = 'x80000303'
         config_axi['Map 63']['generic slave5_base_addr'] = 'x80000400'
         config_axi['Map 63']['generic slave5_high_addr'] = 'x80000403'
+        config_axi['Map 63']['generic slave6_base_addr'] = 'x70000000'
+        config_axi['Map 63']['generic slave6_high_addr'] = 'x7007FFFF'
         config_axi['Map 63']['clk_i'] = config_axi['Porta 2']['nome']
         config_axi['Map 63']['master_i'] = config_axi['Sinal 45']['nome']
         config_axi['Map 63']['slave_o'] = config_axi['Sinal 46']['nome']
@@ -787,6 +790,14 @@ class Gerador_Vhdl(object):
         if config['Acelerador']['check_customizavel'] == 'TRUE':
             config_axi['Map 63']['master5_o'] = config_axi['Sinal 57']['nome']
             config_axi['Map 63']['slave5_i'] = config_axi['Sinal 58']['nome']
+        else:
+            config_axi['Map 63']['master5_o'] = 'open'
+            config_axi['Map 63']['slave5_i'] = 'AXI4L_S2M_DECERR'
+
+        # TODO: set position for BRAM
+        if config['BRAM']['check_bram'] == 'TRUE':
+            config_axi['Map 63']['master6_o'] = config_axi['Sinal 59']['nome']
+            config_axi['Map 63']['slave6_i'] = config_axi['Sinal 60']['nome']
         else:
             config_axi['Map 63']['master5_o'] = 'open'
             config_axi['Map 63']['slave5_i'] = 'AXI4L_S2M_DECERR'
@@ -991,15 +1002,15 @@ class Gerador_Vhdl(object):
         config_axi['Map 71']['generic ahx_filepath'] = config_axi['Generic']['nome13']
         config_axi['Map 71']['rstn_i'] = config_axi['Sinal 2']['nome']
         config_axi['Map 71']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 71']['master_i'] = config_axi['Sinal 72']['nome']
+        config_axi['Map 71']['master_i'] = config_axi['Sinal 59']['nome']
+        config_axi['Map 71']['slave_o'] = config_axi['Sinal 60']['nome']
         config_axi['Map 71']['correct_error_i'] = config_axi['Sinal 9']['nome']
-        config_axi['Map 71']['slave_o'] = config_axi['Sinal 73']['nome']
-        config_axi['Map 71']['ev_rdata_valid_o'] = config_axi['Sinal 74']['nome']
-        config_axi['Map 71']['ev_sb_error_o'] = config_axi['Sinal 75']['nome']
-        config_axi['Map 71']['ev_db_error_o'] = config_axi['Sinal 76']['nome']
-        config_axi['Map 71']['ev_error_addr_o'] = config_axi['Sinal 77']['nome']
-        config_axi['Map 71']['ev_ecc_addr_o'] = config_axi['Sinal 78']['nome']
-        config_axi['Map 71']['ev_enc_data_o'] = config_axi['Sinal 79']['nome']
+        config_axi['Map 71']['ev_rdata_valid_o'] = config_axi['Sinal 72']['nome']
+        config_axi['Map 71']['ev_sb_error_o'] = config_axi['Sinal 73']['nome']
+        config_axi['Map 71']['ev_db_error_o'] = config_axi['Sinal 74']['nome']
+        config_axi['Map 71']['ev_error_addr_o'] = config_axi['Sinal 75']['nome']
+        config_axi['Map 71']['ev_ecc_addr_o'] = config_axi['Sinal 76']['nome']
+        config_axi['Map 71']['ev_enc_data_o'] = config_axi['Sinal 77']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
@@ -1311,7 +1322,7 @@ class Gerador_Vhdl(object):
         vhdl_ahx = arq_ahx.read()
         arq_ahx.close()
         vhdl_ahx = vhdl_ahx.replace("{{ PROGRAM_START_ADDR }}", "70000000") # TODO: mudar para o endereço base da BRAM
-        vhdl_ahx = vhdl_ahx.replace("{{ AHX_FILEPATH }}", f"{diretorio}software/out/app-sim.ahx")
+        vhdl_ahx = vhdl_ahx.replace("{{ AHX_FILEPATH }}", f"{diretorio}software/out/app-sim-zedboard.ahx")
         arq_ahx = open(os.path.join(diretorio, 'sim', 'top_tb.vhd'), 'w')
         arq_ahx.write(vhdl_ahx)
         arq_ahx.close()
