@@ -122,7 +122,7 @@ architecture arch_imp of compressor_v1_1_S00_AXI is
 	
 	-- compressor component
 	signal w_mapped_out : std_logic_vector(SAMPLE_SIZE-1 downto 0);
-	component top is
+	component p_top is
     port ( i_clk          : in  std_logic; 
          i_rst          : in  std_logic;
          i_start        : in  std_logic;
@@ -400,7 +400,7 @@ begin
 
 
 	-- Add user logic here
-    u_compressor : top 
+    u_compressor : p_top 
     port map(  i_clk  => S_AXI_ACLK,
                i_rst  => slv_reg0(31),
                i_start  => slv_reg0(30),

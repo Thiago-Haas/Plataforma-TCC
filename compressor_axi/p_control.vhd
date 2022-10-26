@@ -10,7 +10,7 @@ use IEEE.NUMERIC_STD.ALL;
 library work;
 use work.ccsds123_b2_package.all;
 
-entity control is
+entity p_control is
   port ( i_clk              : in  std_logic;
          i_rst              : in  std_logic;
          i_start            : in  std_logic;
@@ -29,9 +29,9 @@ entity control is
          o_en_update_weight : out std_logic;
          o_en_ldiff_vec     : out std_logic;
          o_en_weight_vec    : out std_logic);
-end control;
+end p_control;
 
-architecture Behavioral of control is
+architecture Behavioral of p_control is
 
 type t_STATE is (s_first_mem, s_first_mem_aux, s_mem_init, s_mem_init_aux, s_init, s_ls, s_first_central, s_ldiff_central, s_central_aux, s_high, s_double, s_qnt, s_mapped, s_update_weights); -- new FSM type
 signal r_STATE : t_STATE; -- state register

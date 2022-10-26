@@ -10,7 +10,7 @@ use IEEE.NUMERIC_STD.ALL;
 library work;
 use work.ccsds123_b2_package.all;
 
-entity top is
+entity p_top is
   port ( i_clk          : in  std_logic; 
          i_rst          : in  std_logic;
          i_start        : in  std_logic;
@@ -19,12 +19,12 @@ entity top is
          i_sample       : in  std_logic_vector(SAMPLE_SIZE-1 downto 0);
          i_neighboor    : in  std_logic_vector(SAMPLE_SIZE-1 downto 0);
          o_mapped       : out std_logic_vector(SAMPLE_SIZE-1 downto 0));
-end top;
+end p_top;
 
 
-architecture Behavioral of top is
+architecture Behavioral of p_top is
 -- control block
-component control is
+component p_control is
   port ( i_clk              : in  std_logic; 
          i_rst              : in  std_logic;
          i_start            : in  std_logic;
@@ -74,7 +74,7 @@ signal w_enable_ls, w_enable_ldiff, w_enable_central, w_enable_high, w_enable_do
 
 begin
 
-control_block : control 
+control_block : p_control 
   port map ( i_clk              => i_clk,
              i_rst              => i_rst,
              i_start            => i_start,
