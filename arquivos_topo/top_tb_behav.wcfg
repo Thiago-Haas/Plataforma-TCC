@@ -16,18 +16,22 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
-      <ZoomEndTime time="46.800000001 ms"></ZoomEndTime>
-      <Cursor1Time time="0.000000000 ms"></Cursor1Time>
+      <ZoomStartTime time="1,125,393.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,127,273.001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,125,425.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="214"></NameColumnWidth>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="20" />
    <wvobject type="array" fp_name="/top_tb/top_u/AHX_FILEPATH">
-      <obj_property name="ElementShortName">AHX_FILEPATH[1:50]</obj_property>
-      <obj_property name="ObjectShortName">AHX_FILEPATH[1:50]</obj_property>
+      <obj_property name="ElementShortName">AHX_FILEPATH[1:59]</obj_property>
+      <obj_property name="ObjectShortName">AHX_FILEPATH[1:59]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/rstn">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -41,12 +45,64 @@
       <obj_property name="ElementShortName">if_pc_w[31:0]</obj_property>
       <obj_property name="ObjectShortName">if_pc_w[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/top_u/harv_u/gen_ft_control/control_u/\gen_TMR(0)\/control_u/proc_status_r">
-      <obj_property name="ElementShortName">proc_status_r[2:0]</obj_property>
-      <obj_property name="ObjectShortName">proc_status_r[2:0]</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/top_u/harv_u/ctl_regwr_w">
+      <obj_property name="ElementShortName">ctl_regwr_w</obj_property>
+      <obj_property name="ObjectShortName">ctl_regwr_w</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/top_u/harv_u/gen_ft_control/control_u/\gen_TMR(0)\/control_u/start_i">
-      <obj_property name="ElementShortName">start_i</obj_property>
-      <obj_property name="ObjectShortName">start_i</obj_property>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_u/rd_w">
+      <obj_property name="ElementShortName">rd_w[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_w[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_u/data_wr_w">
+      <obj_property name="ElementShortName">data_wr_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_wr_w[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_u/reg_data1_w">
+      <obj_property name="ElementShortName">reg_data1_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_data1_w[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/harv_u/reg_data2_w">
+      <obj_property name="ElementShortName">reg_data2_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_data2_w[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider10" type="divider">
+      <obj_property name="label">MEM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/mem1_wren_w">
+      <obj_property name="ElementShortName">mem1_wren_w</obj_property>
+      <obj_property name="ObjectShortName">mem1_wren_w</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/mem1_rden_w">
+      <obj_property name="ElementShortName">mem1_rden_w</obj_property>
+      <obj_property name="ObjectShortName">mem1_rden_w</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/mem1_gnt_w">
+      <obj_property name="ElementShortName">mem1_gnt_w</obj_property>
+      <obj_property name="ObjectShortName">mem1_gnt_w</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top_u/mem1_err_w">
+      <obj_property name="ElementShortName">mem1_err_w</obj_property>
+      <obj_property name="ObjectShortName">mem1_err_w</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/mem1_prot_w">
+      <obj_property name="ElementShortName">mem1_prot_w[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mem1_prot_w[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/mem1_addr_w">
+      <obj_property name="ElementShortName">mem1_addr_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem1_addr_w[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/mem1_wdata_w">
+      <obj_property name="ElementShortName">mem1_wdata_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem1_wdata_w[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/mem1_wstrb_w">
+      <obj_property name="ElementShortName">mem1_wstrb_w[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mem1_wstrb_w[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top_u/mem1_rdata_w">
+      <obj_property name="ElementShortName">mem1_rdata_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem1_rdata_w[31:0]</obj_property>
    </wvobject>
 </wave_config>
