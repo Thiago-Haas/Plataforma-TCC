@@ -337,7 +337,7 @@ class Gerador_Vhdl(object):
                     texto += f"{' '*2}{enable_dmem_ecc_g} : if {enable_dmem} and {enable_dmem_ecc} generate\n{' '*2}begin"
                 else:
                     texto += f"{' '*2}end generate;\n"
-                    texto += "end architecture;\n"
+        texto += "end architecture;\n"
         return texto
 
     def gera_ini_library(self, vhdl_texto, caminho_dir):
