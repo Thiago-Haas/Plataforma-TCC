@@ -1081,7 +1081,7 @@ class Gerador_Vhdl(object):
         config_top['Map 80']['generic dmem_high_addr'] = config_axi['Generic']['valor7']
         config_top['Map 80']['generic gpio_size'] = config_axi['Generic']['valor8']
         config_top['Map 80']['generic bram_base_addr'] = 'x70000000'
-        config_top['Map 80']['generic bram_high_addr'] = 'x70007FFF'
+        config_top['Map 80']['generic bram_high_addr'] = 'x7007FFFF'
         config_top['Map 80']['generic enable_bram_ecc'] = 'FALSE'
         config_top['Map 80']['generic is_simulation'] = config_axi['Generic']['valor12']
         config_top['Map 80']['generic ahx_filepath'] = config_axi['Generic']['valor13']
