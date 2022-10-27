@@ -1099,7 +1099,6 @@ class Gerador_Vhdl(object):
         config_top['Map 80']['gpio_wr_o'] = 'gpio_wr_w'
         config_top['Map 80']['axi4l_master_o'] = 'open'
         config_top['Map 80']['axi4l_slave_i'] = 'AXI4L_S2M_DECERR'
-        config_top['Map 80']['ext_event_i'] = "'0'"
 
         with open(diretorio + 'barramento.ini', 'w') as configfile:
             config_top.write(configfile)
