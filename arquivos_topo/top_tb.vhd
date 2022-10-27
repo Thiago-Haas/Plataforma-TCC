@@ -50,7 +50,7 @@ begin
 
   uart_u : entity work.uart
   port map (
-    baud_div_i => x"0364", -- 115200
+    baud_div_i => x"01B2", -- 115200 @ 50 MHz
     parity_i   => '0',
     rtscts_i   => '1',
     tstart_i   => '0',
@@ -81,9 +81,18 @@ begin
       rchar := character'val(to_integer(unsigned(rec_data)));
       size := size + 1;
       rdata(size) := rchar;
+      -- check if it is line break
       if rchar = lf then
-        report "Processor wrote: " & rdata(1 to size);
+        -- print line
+        report lf & "[HARV] " & rdata(1 to size-1);
+        -- reset string size
         size := 0;
+        -- check simulation stop commands
+        if rdata(1 to 6) = "Exited" then -- stop simulation on exit
+          std.env.finish;
+        elsif rdata(1 to 8) = "halt-sim" then -- stop simulation on stop-sim print
+          std.env.finish;
+        end if;
       end if;
     end loop;
   end process;
