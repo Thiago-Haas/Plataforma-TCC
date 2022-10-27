@@ -30,6 +30,7 @@ end compressor_top;
 
 architecture arch of compressor_top is
   signal periph_rstn_w : std_logic;
+begin
 
   compressor_v1_1_u    : entity work.compressor_v1_1
   generic map ( 
