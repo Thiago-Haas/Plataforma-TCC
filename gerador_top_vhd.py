@@ -293,8 +293,10 @@ class Gerador_Vhdl(object):
         temp = "\n"
         temp += f"{' '*2}{disabled_ecc} : if not {enable_dmem} generate\n"
         temp += f"{' '*2}begin\n"
-        temp += f"{' '*4}{config['Sinal 19']['nome']} <= '0';\n"
-        temp += f"{' '*4}{config['Sinal 20']['nome']} <= '1';\n"
+        temp += f"{' '*4}{config['Sinal 20']['nome']} <= '0';\n" # mem0_gnt_w
+        temp += f"{' '*4}{config['Sinal 21']['nome']} <= '1';\n" # mem0_err_w
+        temp += f"{' '*4}{config['Sinal 26']['nome']} <= x\"deadbeef\";\n" # mem0_rdata_w
+        temp += f"{' '*4}{config['Sinal 33']['nome']} <= '0';\n" # mem_ev_event_w
         temp += f"{' '*2}end generate;\n"
         temp += f"{' '*2}{enable_ecc} : if {enable_dmem} and not {enable_dmem_ecc} generate\n{' '*2}begin"
 
