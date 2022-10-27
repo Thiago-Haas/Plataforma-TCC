@@ -9,7 +9,7 @@ entity top_tb is
 end entity;
 
 architecture arch of top_tb is
-  constant period : time := 10 ns;
+  constant period : time := 20 ns;
   signal rstn : std_logic := '0';
   signal clk  : std_logic := '0';
 
