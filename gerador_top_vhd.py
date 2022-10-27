@@ -399,15 +399,15 @@ class Gerador_Vhdl(object):
         self.criar_ini = self.criar_ini.replace("  ", "")
         self.criar_ini = self.criar_ini.replace(":=", "")
 
-        self.criar_ini += f"nome{self.contador} = BRAM_BASE_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\n"
+        self.criar_ini += f"nome{self.contador} = BRAM_BASE_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\nvalor{self.contador} = x700000000\n"
         self.contador += 1
-        self.criar_ini += f"nome{self.contador} = BRAM_HIGH_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\n"
+        self.criar_ini += f"nome{self.contador} = BRAM_HIGH_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\nvalor{self.contador} = x7007FFFF\n"
         self.contador += 1
-        self.criar_ini += f"nome{self.contador} = ENABLE_BRAM_ECC\ntype{self.contador} = boolean\n"
+        self.criar_ini += f"nome{self.contador} = ENABLE_BRAM_ECC\ntype{self.contador} = boolean\nvalor{self.contador} = TRUE\n"
         self.contador += 1
         self.criar_ini += f"nome{self.contador} = IS_SIMULATION\ntype{self.contador} = boolean\nvalor{self.contador} = FALSE\n"
         self.contador += 1
-        self.criar_ini += f'nome{self.contador} = AHX_FILEPATH\ntype{self.contador} = string\nvalor{self.contador} = "{diretorio}/SoC/sim/"\n'
+        self.criar_ini += f'nome{self.contador} = AHX_FILEPATH\ntype{self.contador} = string\nvalor{self.contador} = ""\n'
         self.contador += 1
         #self.criar_ini += f"nome{self.contador} = MEH_BASE_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\n"
         #self.contador += 1
