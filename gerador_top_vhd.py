@@ -590,9 +590,9 @@ class Gerador_Vhdl(object):
         destino_arq.close()
 
     def gera_ini_bram(self, caminho_dir):
-        self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_master_w\ntype= axim\n"
+        self.criar_ini += f"[Sinal {self.contador}]\nnome: axi_slave6_master_w\ntype= axim\n"
         self.contador +=1
-        self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_slave_w\ntype= axis\n"
+        self.criar_ini += f"[Sinal {self.contador}]\nnome: axi_slave6_slave_w\ntype= axis\n"
         self.contador +=1
         self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_ev_rdata_valid_w\ntype= no vector\n"
         self.contador +=1
@@ -639,7 +639,7 @@ class Gerador_Vhdl(object):
         config_axi['Map 62']['dmem_wdata_o'] = config_axi['Sinal 15']['nome']
         config_axi['Map 62']['dmem_wstrb_o'] = config_axi['Sinal 16']['nome']
         config_axi['Map 62']['dmem_rdata_i'] = config_axi['Sinal 17']['nome']
-        #config_axi['Map 62']['clr_ext_event_o'] = 'open'
+        config_axi['Map 62']['clr_ext_event_o'] = 'clr_ext_event_w'
         config_axi['Map 62']['ext_interrupt_i'] = 'x00'
         config_axi['Map 62']['ext_event_i'] = config_axi['Sinal 33']['nome']
 
@@ -1004,15 +1004,15 @@ class Gerador_Vhdl(object):
         config_axi['Map 73']['generic ahx_filepath'] = config_axi['Generic']['nome13']
         config_axi['Map 73']['rstn_i'] = config_axi['Sinal 2']['nome']
         config_axi['Map 73']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 73']['master_i'] = config_axi['Sinal 74']['nome']
-        config_axi['Map 73']['slave_o'] = config_axi['Sinal 75']['nome']
+        config_axi['Map 73']['master_i'] = config_axi['Sinal 59']['nome']
+        config_axi['Map 73']['slave_o'] = config_axi['Sinal 60']['nome']
         config_axi['Map 73']['correct_error_i'] = config_axi['Sinal 9']['nome']
-        config_axi['Map 73']['ev_rdata_valid_o'] = config_axi['Sinal 76']['nome']
-        config_axi['Map 73']['ev_sb_error_o'] = config_axi['Sinal 77']['nome']
-        config_axi['Map 73']['ev_db_error_o'] = config_axi['Sinal 78']['nome']
-        config_axi['Map 73']['ev_error_addr_o'] = config_axi['Sinal 79']['nome']
-        config_axi['Map 73']['ev_ecc_addr_o'] = config_axi['Sinal 80']['nome']
-        config_axi['Map 73']['ev_enc_data_o'] = config_axi['Sinal 81']['nome']
+        config_axi['Map 73']['ev_rdata_valid_o'] = config_axi['Sinal 74']['nome']
+        config_axi['Map 73']['ev_sb_error_o'] = config_axi['Sinal 75']['nome']
+        config_axi['Map 73']['ev_db_error_o'] = config_axi['Sinal 76']['nome']
+        config_axi['Map 73']['ev_error_addr_o'] = config_axi['Sinal 77']['nome']
+        config_axi['Map 73']['ev_ecc_addr_o'] = config_axi['Sinal 78']['nome']
+        config_axi['Map 73']['ev_enc_data_o'] = config_axi['Sinal 79']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
@@ -1099,7 +1099,6 @@ class Gerador_Vhdl(object):
         config_top['Map 82']['gpio_wr_o'] = 'gpio_wr_w'
         config_top['Map 82']['axi4l_master_o'] = 'open'
         config_top['Map 82']['axi4l_slave_i'] = 'AXI4L_S2M_DECERR'
-        config_top['Map 82']['ext_event_i'] = "'0'"
 
         with open(diretorio + 'barramento.ini', 'w') as configfile:
             config_top.write(configfile)
