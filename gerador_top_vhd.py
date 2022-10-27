@@ -175,25 +175,15 @@ class Gerador_Vhdl(object):
     def criador_map(self, texto, config, config_2): # Criação do Port Map do arquivo top
         temp = ""
 
-        if config['Map 60']['check'] == 'FALSE':
-            config.remove_section('Map 60')
+        if config['Map 62']['check'] == 'FALSE':
+            config.remove_section('Map 62')
         else:
-            config.remove_option('Map 60','check')
+            config.remove_option('Map 62','check')
 
-        if config['Map 61']['check'] == 'FALSE':
-            config.remove_section('Map 61')
+        if config['Map 63']['check'] == 'FALSE':
+            config.remove_section('Map 63')
         else:
-            config.remove_option('Map 61','check')
-        
-        if config['Map 65']['check'] == 'FALSE':
-            config.remove_section('Map 65')
-        else:
-            config.remove_option('Map 65','check')
-
-        if config['Map 66']['check'] == 'FALSE':
-            config.remove_section('Map 66')
-        else:
-            config.remove_option('Map 66','check')
+            config.remove_option('Map 63','check')
         
         if config['Map 67']['check'] == 'FALSE':
             config.remove_section('Map 67')
@@ -204,12 +194,22 @@ class Gerador_Vhdl(object):
             config.remove_section('Map 68')
         else:
             config.remove_option('Map 68','check')
-
-        if config['Elif 69']['check'] == 'FALSE':
-            config.remove_section('Elif 69')
-            config.remove_section('Elif 70')
+        
+        if config['Map 69']['check'] == 'FALSE':
+            config.remove_section('Map 69')
         else:
-            config.remove_option('Elif 69','check')
+            config.remove_option('Map 69','check')
+
+        if config['Map 70']['check'] == 'FALSE':
+            config.remove_section('Map 70')
+        else:
+            config.remove_option('Map 70','check')
+
+        if config['Elif 71']['check'] == 'FALSE':
+            config.remove_section('Elif 71')
+            config.remove_section('Elif 72')
+        else:
+            config.remove_option('Elif 71','check')
 
         for nome in config.sections():
             if nome[:3] == 'Map':
@@ -332,7 +332,7 @@ class Gerador_Vhdl(object):
                 temp = ""
                 texto = texto[:-4] + "\n"
                 texto += f"{' '*4});\n"
-                if aux == 'Elif 69':
+                if aux == 'Elif 71':
                     texto += f"{' '*2}end generate;\n"
                     texto += f"{' '*2}{enable_dmem_ecc_g} : if {enable_dmem} and {enable_dmem_ecc} generate\n{' '*2}begin"
                 else:
@@ -612,240 +612,200 @@ class Gerador_Vhdl(object):
         destino_arq.close()
 
     def criar_processador(self, config_axi, config):
-        config_axi['Map 60']['check'] = config['Harv']['check_harv']
-        config_axi['Map 60']['nome'] = str(config_axi['Map 60']['nome']).replace(" is","_u")
-        config_axi['Map 60']['entity'] = str(config_axi['Map 60']['entity']).replace(" is","")
-        config_axi['Map 60']['generic PROGRAM_START_ADDR'] = config_axi['Generic']['nome0']
-        config_axi['Map 60']['generic TMR_CONTROL'] = config_axi['Generic']['nome1']
-        config_axi['Map 60']['generic TMR_ALU'] = config_axi['Generic']['nome1']
-        config_axi['Map 60']['generic ECC_REGFILE'] = config_axi['Generic']['nome2']
-        config_axi['Map 60']['generic ECC_PC'] = config_axi['Generic']['nome2']
-        config_axi['Map 60']['rstn_i'] = config_axi['Sinal 1']['nome']
-        config_axi['Map 60']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 60']['start_i'] = config_axi['Porta 3']['nome']
-        config_axi['Map 60']['poweron_rstn_i'] = config_axi['Porta 0']['nome']
-        config_axi['Map 60']['wdt_rstn_i'] = config_axi['Sinal 3']['nome']
-        config_axi['Map 60']['imem_rden_o'] = config_axi['Sinal 4']['nome']
-        config_axi['Map 60']['imem_gnt_i'] = config_axi['Sinal 6']['nome']
-        config_axi['Map 60']['imem_err_i'] = config_axi['Sinal 7']['nome']
-        config_axi['Map 60']['imem_addr_o'] = config_axi['Sinal 5']['nome']
-        config_axi['Map 60']['imem_rdata_i'] = config_axi['Sinal 8']['nome']
-        #config_axi['Map 60']['hard_dmem_o'] = config_axi['Sinal 9']['nome']
-        config_axi['Map 60']['dmem_wren_o'] = config_axi['Sinal 10']['nome']
-        config_axi['Map 60']['dmem_rden_o'] = config_axi['Sinal 11']['nome']
-        config_axi['Map 60']['dmem_gnt_i'] = config_axi['Sinal 12']['nome']
-        config_axi['Map 60']['dmem_err_i'] = config_axi['Sinal 13']['nome']
-        config_axi['Map 60']['dmem_addr_o'] = config_axi['Sinal 14']['nome']
-        config_axi['Map 60']['dmem_wdata_o'] = config_axi['Sinal 15']['nome']
-        config_axi['Map 60']['dmem_wstrb_o'] = config_axi['Sinal 16']['nome']
-        config_axi['Map 60']['dmem_rdata_i'] = config_axi['Sinal 17']['nome']
-        #config_axi['Map 60']['clr_ext_event_o'] = 'open'
-        config_axi['Map 60']['ext_interrupt_i'] = 'x00'
-        config_axi['Map 60']['ext_event_i'] = config_axi['Sinal 33']['nome']
+        config_axi['Map 62']['check'] = config['Harv']['check_harv']
+        config_axi['Map 62']['nome'] = str(config_axi['Map 62']['nome']).replace(" is","_u")
+        config_axi['Map 62']['entity'] = str(config_axi['Map 62']['entity']).replace(" is","")
+        config_axi['Map 62']['generic PROGRAM_START_ADDR'] = config_axi['Generic']['nome0']
+        config_axi['Map 62']['generic TMR_CONTROL'] = config_axi['Generic']['nome1']
+        config_axi['Map 62']['generic TMR_ALU'] = config_axi['Generic']['nome1']
+        config_axi['Map 62']['generic ECC_REGFILE'] = config_axi['Generic']['nome2']
+        config_axi['Map 62']['generic ECC_PC'] = config_axi['Generic']['nome2']
+        config_axi['Map 62']['rstn_i'] = config_axi['Sinal 1']['nome']
+        config_axi['Map 62']['clk_i'] = config_axi['Porta 2']['nome']
+        config_axi['Map 62']['start_i'] = config_axi['Porta 3']['nome']
+        config_axi['Map 62']['poweron_rstn_i'] = config_axi['Porta 0']['nome']
+        config_axi['Map 62']['wdt_rstn_i'] = config_axi['Sinal 3']['nome']
+        config_axi['Map 62']['imem_rden_o'] = config_axi['Sinal 4']['nome']
+        config_axi['Map 62']['imem_gnt_i'] = config_axi['Sinal 6']['nome']
+        config_axi['Map 62']['imem_err_i'] = config_axi['Sinal 7']['nome']
+        config_axi['Map 62']['imem_addr_o'] = config_axi['Sinal 5']['nome']
+        config_axi['Map 62']['imem_rdata_i'] = config_axi['Sinal 8']['nome']
+        #config_axi['Map 62']['hard_dmem_o'] = config_axi['Sinal 9']['nome']
+        config_axi['Map 62']['dmem_wren_o'] = config_axi['Sinal 10']['nome']
+        config_axi['Map 62']['dmem_rden_o'] = config_axi['Sinal 11']['nome']
+        config_axi['Map 62']['dmem_gnt_i'] = config_axi['Sinal 12']['nome']
+        config_axi['Map 62']['dmem_err_i'] = config_axi['Sinal 13']['nome']
+        config_axi['Map 62']['dmem_addr_o'] = config_axi['Sinal 14']['nome']
+        config_axi['Map 62']['dmem_wdata_o'] = config_axi['Sinal 15']['nome']
+        config_axi['Map 62']['dmem_wstrb_o'] = config_axi['Sinal 16']['nome']
+        config_axi['Map 62']['dmem_rdata_i'] = config_axi['Sinal 17']['nome']
+        #config_axi['Map 62']['clr_ext_event_o'] = 'open'
+        config_axi['Map 62']['ext_interrupt_i'] = 'x00'
+        config_axi['Map 62']['ext_event_i'] = config_axi['Sinal 33']['nome']
 
         if config['Barramento']['check_timeout'] == 'FALSE':
-            config_axi['Map 60']['periph_timeout_i'] = config_axi['Sinal 44']['nome']
+            config_axi['Map 62']['periph_timeout_i'] = config_axi['Sinal 44']['nome']
         else:
-            config_axi['Map 60']['periph_timeout_i'] = "'0'"
+            config_axi['Map 62']['periph_timeout_i'] = "'0'"
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
     def criar_reset(self, config_axi):
-        config_axi['Map 59']['nome'] = str(config_axi['Map 59']['nome']).replace(" is","_u")
-        config_axi['Map 59']['entity'] = str(config_axi['Map 59']['entity']).replace(" is","")
-        config_axi['Map 59']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 59']['poweron_rstn_i'] = config_axi['Porta 0']['nome']
-        config_axi['Map 59']['btn_rstn_i'] = config_axi['Porta 1']['nome']
-        config_axi['Map 59']['wdt_rstn_i'] = config_axi['Sinal 3']['nome']
-        config_axi['Map 59']['periph_timeout_i'] = config_axi['Sinal 44']['nome']
-        config_axi['Map 59']['ext_rstn_o'] = config_axi['Sinal 0']['nome']
-        config_axi['Map 59']['proc_rstn_o'] = config_axi['Sinal 1']['nome']
-        config_axi['Map 59']['periph_rstn_o'] = config_axi['Sinal 2']['nome']
-        config_axi['Map 59']['ext_periph_rstn_o'] = config_axi['Porta 4']['nome']
+        config_axi['Map 61']['nome'] = str(config_axi['Map 61']['nome']).replace(" is","_u")
+        config_axi['Map 61']['entity'] = str(config_axi['Map 61']['entity']).replace(" is","")
+        config_axi['Map 61']['clk_i'] = config_axi['Porta 2']['nome']
+        config_axi['Map 61']['poweron_rstn_i'] = config_axi['Porta 0']['nome']
+        config_axi['Map 61']['btn_rstn_i'] = config_axi['Porta 1']['nome']
+        config_axi['Map 61']['wdt_rstn_i'] = config_axi['Sinal 3']['nome']
+        config_axi['Map 61']['periph_timeout_i'] = config_axi['Sinal 44']['nome']
+        config_axi['Map 61']['ext_rstn_o'] = config_axi['Sinal 0']['nome']
+        config_axi['Map 61']['proc_rstn_o'] = config_axi['Sinal 1']['nome']
+        config_axi['Map 61']['periph_rstn_o'] = config_axi['Sinal 2']['nome']
+        config_axi['Map 61']['ext_periph_rstn_o'] = config_axi['Porta 4']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
     def criar_mem_interconnect(self, config_axi, config):
-        config_axi['Map 61']['check'] = config['Harv']['check_harv']
-        config_axi['Map 61']['nome'] = str(config_axi['Map 61']['nome']).replace(" is","_u")
-        config_axi['Map 61']['entity'] = str(config_axi['Map 61']['entity']).replace(" is","")
-        config_axi['Map 61']['generic mem0_base_addr'] = config_axi['Generic']['nome6']
-        config_axi['Map 61']['generic mem0_high_addr'] = config_axi['Generic']['nome7']
-        config_axi['Map 61']['imem_rden_i'] = config_axi['Sinal 4']['nome']
-        config_axi['Map 61']['imem_addr_i'] = config_axi['Sinal 5']['nome']
-        config_axi['Map 61']['imem_gnt_o'] = config_axi['Sinal 6']['nome']
-        config_axi['Map 61']['imem_err_o'] = config_axi['Sinal 7']['nome']
-        config_axi['Map 61']['imem_rdata_o'] = config_axi['Sinal 8']['nome']
-        config_axi['Map 61']['dmem_wren_i'] = config_axi['Sinal 10']['nome']
-        config_axi['Map 61']['dmem_rden_i'] = config_axi['Sinal 11']['nome']
-        config_axi['Map 61']['dmem_gnt_o'] = config_axi['Sinal 12']['nome']
-        config_axi['Map 61']['dmem_err_o'] = config_axi['Sinal 13']['nome']
-        config_axi['Map 61']['dmem_addr_i'] = config_axi['Sinal 14']['nome']
-        config_axi['Map 61']['dmem_wdata_i'] = config_axi['Sinal 15']['nome']
-        config_axi['Map 61']['dmem_wstrb_i'] = config_axi['Sinal 16']['nome']
-        config_axi['Map 61']['dmem_rdata_o'] = config_axi['Sinal 17']['nome']
-        config_axi['Map 61']['mem0_wren_o'] = config_axi['Sinal 18']['nome']
-        config_axi['Map 61']['mem0_rden_o'] = config_axi['Sinal 19']['nome']
-        config_axi['Map 61']['mem0_gnt_i'] = config_axi['Sinal 20']['nome']
-        config_axi['Map 61']['mem0_err_i'] = config_axi['Sinal 21']['nome']
-        config_axi['Map 61']['mem0_prot_o'] = config_axi['Sinal 22']['nome']
-        config_axi['Map 61']['mem0_addr_o'] = config_axi['Sinal 23']['nome']
-        config_axi['Map 61']['mem0_wdata_o'] = config_axi['Sinal 24']['nome']
-        config_axi['Map 61']['mem0_wstrb_o'] = config_axi['Sinal 25']['nome']
-        config_axi['Map 61']['mem0_rdata_i'] = config_axi['Sinal 26']['nome']
-        config_axi['Map 61']['mem1_wren_o'] = config_axi['Sinal 35']['nome']
-        config_axi['Map 61']['mem1_rden_o'] = config_axi['Sinal 36']['nome']
-        config_axi['Map 61']['mem1_gnt_i'] = config_axi['Sinal 37']['nome']
-        config_axi['Map 61']['mem1_err_i'] = config_axi['Sinal 38']['nome']
-        config_axi['Map 61']['mem1_prot_o'] = config_axi['Sinal 39']['nome']
-        config_axi['Map 61']['mem1_addr_o'] = config_axi['Sinal 40']['nome']
-        config_axi['Map 61']['mem1_wdata_o'] = config_axi['Sinal 41']['nome']
-        config_axi['Map 61']['mem1_wstrb_o'] = config_axi['Sinal 42']['nome']
-        config_axi['Map 61']['mem1_rdata_i'] = config_axi['Sinal 43']['nome']
+        config_axi['Map 63']['check'] = config['Harv']['check_harv']
+        config_axi['Map 63']['nome'] = str(config_axi['Map 63']['nome']).replace(" is","_u")
+        config_axi['Map 63']['entity'] = str(config_axi['Map 63']['entity']).replace(" is","")
+        config_axi['Map 63']['generic mem0_base_addr'] = config_axi['Generic']['nome6']
+        config_axi['Map 63']['generic mem0_high_addr'] = config_axi['Generic']['nome7']
+        config_axi['Map 63']['imem_rden_i'] = config_axi['Sinal 4']['nome']
+        config_axi['Map 63']['imem_addr_i'] = config_axi['Sinal 5']['nome']
+        config_axi['Map 63']['imem_gnt_o'] = config_axi['Sinal 6']['nome']
+        config_axi['Map 63']['imem_err_o'] = config_axi['Sinal 7']['nome']
+        config_axi['Map 63']['imem_rdata_o'] = config_axi['Sinal 8']['nome']
+        config_axi['Map 63']['dmem_wren_i'] = config_axi['Sinal 10']['nome']
+        config_axi['Map 63']['dmem_rden_i'] = config_axi['Sinal 11']['nome']
+        config_axi['Map 63']['dmem_gnt_o'] = config_axi['Sinal 12']['nome']
+        config_axi['Map 63']['dmem_err_o'] = config_axi['Sinal 13']['nome']
+        config_axi['Map 63']['dmem_addr_i'] = config_axi['Sinal 14']['nome']
+        config_axi['Map 63']['dmem_wdata_i'] = config_axi['Sinal 15']['nome']
+        config_axi['Map 63']['dmem_wstrb_i'] = config_axi['Sinal 16']['nome']
+        config_axi['Map 63']['dmem_rdata_o'] = config_axi['Sinal 17']['nome']
+        config_axi['Map 63']['mem0_wren_o'] = config_axi['Sinal 18']['nome']
+        config_axi['Map 63']['mem0_rden_o'] = config_axi['Sinal 19']['nome']
+        config_axi['Map 63']['mem0_gnt_i'] = config_axi['Sinal 20']['nome']
+        config_axi['Map 63']['mem0_err_i'] = config_axi['Sinal 21']['nome']
+        config_axi['Map 63']['mem0_prot_o'] = config_axi['Sinal 22']['nome']
+        config_axi['Map 63']['mem0_addr_o'] = config_axi['Sinal 23']['nome']
+        config_axi['Map 63']['mem0_wdata_o'] = config_axi['Sinal 24']['nome']
+        config_axi['Map 63']['mem0_wstrb_o'] = config_axi['Sinal 25']['nome']
+        config_axi['Map 63']['mem0_rdata_i'] = config_axi['Sinal 26']['nome']
+        config_axi['Map 63']['mem1_wren_o'] = config_axi['Sinal 35']['nome']
+        config_axi['Map 63']['mem1_rden_o'] = config_axi['Sinal 36']['nome']
+        config_axi['Map 63']['mem1_gnt_i'] = config_axi['Sinal 37']['nome']
+        config_axi['Map 63']['mem1_err_i'] = config_axi['Sinal 38']['nome']
+        config_axi['Map 63']['mem1_prot_o'] = config_axi['Sinal 39']['nome']
+        config_axi['Map 63']['mem1_addr_o'] = config_axi['Sinal 40']['nome']
+        config_axi['Map 63']['mem1_wdata_o'] = config_axi['Sinal 41']['nome']
+        config_axi['Map 63']['mem1_wstrb_o'] = config_axi['Sinal 42']['nome']
+        config_axi['Map 63']['mem1_rdata_i'] = config_axi['Sinal 43']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
     def criar_axi4l_master(self, config_axi, config):
-        config_axi['Map 62']['nome'] = str(config_axi['Map 62']['nome']).replace(" is","_u")
-        config_axi['Map 62']['entity'] = str(config_axi['Map 62']['entity']).replace(" is","")
-        config_axi['Map 62']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 62']['wren_i'] = config_axi['Sinal 35']['nome']
-        config_axi['Map 62']['rden_i'] = config_axi['Sinal 36']['nome']
-        config_axi['Map 62']['gnt_o'] = config_axi['Sinal 37']['nome']
-        config_axi['Map 62']['err_o'] = config_axi['Sinal 38']['nome']
-        config_axi['Map 62']['prot_i'] = config_axi['Sinal 39']['nome']
-        config_axi['Map 62']['addr_i'] = config_axi['Sinal 40']['nome']
-        config_axi['Map 62']['wdata_i'] = config_axi['Sinal 41']['nome']
-        config_axi['Map 62']['wstrb_i'] = config_axi['Sinal 42']['nome']
-        config_axi['Map 62']['rdata_o'] = config_axi['Sinal 43']['nome']
-        config_axi['Map 62']['master_o'] = config_axi['Sinal 45']['nome']
-        config_axi['Map 62']['slave_i'] = config_axi['Sinal 46']['nome']
-
-        if config['Barramento']['reset'] == 'Padrão':
-            config_axi['Map 62']['rstn_i'] = config_axi['Porta 0']['nome']
-        else:
-            config_axi['Map 62']['rstn_i'] = config_axi['Sinal 2']['nome']
-
-        if config['Barramento']['check_timeout'] == 'FALSE':
-            config_axi['Map 62']['timeout_o'] = config_axi['Sinal 44']['nome']
-        else:
-            config_axi['Map 62']['timeout_o'] = 'open'
-
-        with open('barramento.ini', 'w') as configfile:
-            config_axi.write(configfile)
-
-    def criar_axi4l_interconnect(self, config_axi, config):
-        config_axi['Map 63']['nome'] = str(config_axi['Map 63']['nome']).replace(" is","_u")
-        config_axi['Map 63']['entity'] = str(config_axi['Map 63']['entity']).replace(" is","")
-        config_axi['Map 63']['generic slave0_base_addr'] = config['Barramento']['endereco']
-        # TODO: pegar endereços configurados pela interface
-        config_axi['Map 63']['generic slave0_high_addr'] = 'x00000FFF'
-        config_axi['Map 63']['generic slave1_base_addr'] = config['UART']['endereco']
-        config_axi['Map 63']['generic slave1_high_addr'] = 'x8000001F'
-        config_axi['Map 63']['generic slave2_base_addr'] = 'x80000100'
-        config_axi['Map 63']['generic slave2_high_addr'] = 'x80000103'
-        config_axi['Map 63']['generic slave3_base_addr'] = config['GPIO']['tamanho']
-        config_axi['Map 63']['generic slave3_high_addr'] = 'x80000207'
-        config_axi['Map 63']['generic slave4_base_addr'] = 'x80000300'
-        config_axi['Map 63']['generic slave4_high_addr'] = 'x80000303'
-        config_axi['Map 63']['generic slave5_base_addr'] = 'x80000400'
-        config_axi['Map 63']['generic slave5_high_addr'] = 'x80000403'
-        config_axi['Map 63']['generic slave6_base_addr'] = 'x70000000'
-        config_axi['Map 63']['generic slave6_high_addr'] = 'x7007FFFF'
-        config_axi['Map 63']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 63']['master_i'] = config_axi['Sinal 45']['nome']
-        config_axi['Map 63']['slave_o'] = config_axi['Sinal 46']['nome']
-        config_axi['Map 63']['master0_o'] = config_axi['Sinal 47']['nome']
-        config_axi['Map 63']['slave0_i'] = config_axi['Sinal 48']['nome']
-
-        if config['UART']['check_uart'] == 'TRUE':
-            config_axi['Map 63']['master1_o'] = config_axi['Sinal 49']['nome']
-            config_axi['Map 63']['slave1_i'] = config_axi['Sinal 50']['nome']
-        else:
-            config_axi['Map 63']['master1_o'] = 'open'
-            config_axi['Map 63']['slave1_i'] = 'AXI4L_S2M_DECERR'
-
-        if config['Barramento']['check_wdt'] == 'TRUE':
-            config_axi['Map 63']['master2_o'] = config_axi['Sinal 51']['nome']
-            config_axi['Map 63']['slave2_i'] = config_axi['Sinal 52']['nome']
-        else:
-            config_axi['Map 63']['master2_o'] = 'open'
-            config_axi['Map 63']['slave2_i'] = 'AXI4L_S2M_DECERR'
-        
-        if config['GPIO']['check_gpio'] == 'TRUE':
-            config_axi['Map 63']['master3_o'] = config_axi['Sinal 53']['nome']
-            config_axi['Map 63']['slave3_i'] = config_axi['Sinal 54']['nome']
-        else:
-            config_axi['Map 63']['master3_o'] = 'open'
-            config_axi['Map 63']['slave3_i'] = 'AXI4L_S2M_DECERR'
-
-        if config['Acelerador']['check_hsi'] == 'TRUE':
-            config_axi['Map 63']['master4_o'] = config_axi['Sinal 55']['nome']
-            config_axi['Map 63']['slave4_i'] = config_axi['Sinal 56']['nome']
-        else:
-            config_axi['Map 63']['master4_o'] = 'open'
-            config_axi['Map 63']['slave4_i'] = 'AXI4L_S2M_DECERR'
-
-        if config['Acelerador']['check_customizavel'] == 'TRUE':
-            config_axi['Map 63']['master5_o'] = config_axi['Sinal 57']['nome']
-            config_axi['Map 63']['slave5_i'] = config_axi['Sinal 58']['nome']
-        else:
-            config_axi['Map 63']['master5_o'] = 'open'
-            config_axi['Map 63']['slave5_i'] = 'AXI4L_S2M_DECERR'
-
-        # TODO: set position for BRAM
-        if config['BRAM']['check_bram'] == 'TRUE':
-            config_axi['Map 63']['master6_o'] = config_axi['Sinal 59']['nome']
-            config_axi['Map 63']['slave6_i'] = config_axi['Sinal 60']['nome']
-        else:
-            config_axi['Map 63']['master5_o'] = 'open'
-            config_axi['Map 63']['slave5_i'] = 'AXI4L_S2M_DECERR'
-
-        config_axi['Map 63']['ext_master_o'] = config_axi['Porta 12']['nome']
-        config_axi['Map 63']['ext_slave_i'] = config_axi['Porta 13']['nome']
-
-        if config['Barramento']['reset'] == 'Padrão':
-            config_axi['Map 63']['rstn_i'] = config_axi['Porta 0']['nome']
-        else:
-            config_axi['Map 63']['rstn_i'] = config_axi['Sinal 2']['nome']
-
-        with open('barramento.ini', 'w') as configfile:
-            config_axi.write(configfile)
-
-    def criar_axi4l_rom(self, config_axi, config):
         config_axi['Map 64']['nome'] = str(config_axi['Map 64']['nome']).replace(" is","_u")
         config_axi['Map 64']['entity'] = str(config_axi['Map 64']['entity']).replace(" is","")
-        config_axi['Map 64']['generic base_addr'] = config['Barramento']['endereco']
-        config_axi['Map 64']['generic high_addr'] = 'x00000FFF'
         config_axi['Map 64']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 64']['master_i'] = config_axi['Sinal 47']['nome']
-        config_axi['Map 64']['slave_o'] = config_axi['Sinal 48']['nome']
+        config_axi['Map 64']['wren_i'] = config_axi['Sinal 35']['nome']
+        config_axi['Map 64']['rden_i'] = config_axi['Sinal 36']['nome']
+        config_axi['Map 64']['gnt_o'] = config_axi['Sinal 37']['nome']
+        config_axi['Map 64']['err_o'] = config_axi['Sinal 38']['nome']
+        config_axi['Map 64']['prot_i'] = config_axi['Sinal 39']['nome']
+        config_axi['Map 64']['addr_i'] = config_axi['Sinal 40']['nome']
+        config_axi['Map 64']['wdata_i'] = config_axi['Sinal 41']['nome']
+        config_axi['Map 64']['wstrb_i'] = config_axi['Sinal 42']['nome']
+        config_axi['Map 64']['rdata_o'] = config_axi['Sinal 43']['nome']
+        config_axi['Map 64']['master_o'] = config_axi['Sinal 45']['nome']
+        config_axi['Map 64']['slave_i'] = config_axi['Sinal 46']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
             config_axi['Map 64']['rstn_i'] = config_axi['Porta 0']['nome']
         else:
             config_axi['Map 64']['rstn_i'] = config_axi['Sinal 2']['nome']
 
+        if config['Barramento']['check_timeout'] == 'FALSE':
+            config_axi['Map 64']['timeout_o'] = config_axi['Sinal 44']['nome']
+        else:
+            config_axi['Map 64']['timeout_o'] = 'open'
+
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
-    def criar_uart(self, config_axi, config):
-        config_axi['Map 65']['check'] = config['UART']['check_uart']
+    def criar_axi4l_interconnect(self, config_axi, config):
         config_axi['Map 65']['nome'] = str(config_axi['Map 65']['nome']).replace(" is","_u")
         config_axi['Map 65']['entity'] = str(config_axi['Map 65']['entity']).replace(" is","")
-        config_axi['Map 65']['generic base_addr'] = config['UART']['endereco']
-        config_axi['Map 65']['generic high_addr'] = 'x8000001F'
-        config_axi['Map 65']['generic rx_fifo_size'] = config['UART']['profundidade_fifo']
-        config_axi['Map 65']['master_i'] = config_axi['Sinal 49']['nome']
-        config_axi['Map 65']['slave_o'] = config_axi['Sinal 50']['nome']
+        config_axi['Map 65']['generic slave0_base_addr'] = config['Barramento']['endereco']
+        # TODO: pegar endereços configurados pela interface
+        config_axi['Map 65']['generic slave0_high_addr'] = 'x00000FFF'
+        config_axi['Map 65']['generic slave1_base_addr'] = config['UART']['endereco']
+        config_axi['Map 65']['generic slave1_high_addr'] = 'x8000001F'
+        config_axi['Map 65']['generic slave2_base_addr'] = 'x80000100'
+        config_axi['Map 65']['generic slave2_high_addr'] = 'x80000103'
+        config_axi['Map 65']['generic slave3_base_addr'] = config['GPIO']['tamanho']
+        config_axi['Map 65']['generic slave3_high_addr'] = 'x80000207'
+        config_axi['Map 65']['generic slave4_base_addr'] = 'x80000300'
+        config_axi['Map 65']['generic slave4_high_addr'] = 'x80000303'
+        config_axi['Map 65']['generic slave5_base_addr'] = 'x80000400'
+        config_axi['Map 65']['generic slave5_high_addr'] = 'x80000403'
+        config_axi['Map 65']['generic slave6_base_addr'] = 'x70000000'
+        config_axi['Map 65']['generic slave6_high_addr'] = 'x7007FFFF'
         config_axi['Map 65']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 65']['uart_rx_i'] = config_axi['Porta 5']['nome']
-        config_axi['Map 65']['uart_tx_o'] = config_axi['Porta 6']['nome']
-        config_axi['Map 65']['uart_cts_i'] = config_axi['Porta 7']['nome']
-        config_axi['Map 65']['uart_rts_o'] = config_axi['Porta 8']['nome']
+        config_axi['Map 65']['master_i'] = config_axi['Sinal 45']['nome']
+        config_axi['Map 65']['slave_o'] = config_axi['Sinal 46']['nome']
+        config_axi['Map 65']['master0_o'] = config_axi['Sinal 47']['nome']
+        config_axi['Map 65']['slave0_i'] = config_axi['Sinal 48']['nome']
+
+        if config['UART']['check_uart'] == 'TRUE':
+            config_axi['Map 65']['master1_o'] = config_axi['Sinal 49']['nome']
+            config_axi['Map 65']['slave1_i'] = config_axi['Sinal 50']['nome']
+        else:
+            config_axi['Map 65']['master1_o'] = 'open'
+            config_axi['Map 65']['slave1_i'] = 'AXI4L_S2M_DECERR'
+
+        if config['Barramento']['check_wdt'] == 'TRUE':
+            config_axi['Map 65']['master2_o'] = config_axi['Sinal 51']['nome']
+            config_axi['Map 65']['slave2_i'] = config_axi['Sinal 52']['nome']
+        else:
+            config_axi['Map 65']['master2_o'] = 'open'
+            config_axi['Map 65']['slave2_i'] = 'AXI4L_S2M_DECERR'
+        
+        if config['GPIO']['check_gpio'] == 'TRUE':
+            config_axi['Map 65']['master3_o'] = config_axi['Sinal 53']['nome']
+            config_axi['Map 65']['slave3_i'] = config_axi['Sinal 54']['nome']
+        else:
+            config_axi['Map 65']['master3_o'] = 'open'
+            config_axi['Map 65']['slave3_i'] = 'AXI4L_S2M_DECERR'
+
+        if config['Acelerador']['check_hsi'] == 'TRUE':
+            config_axi['Map 65']['master4_o'] = config_axi['Sinal 55']['nome']
+            config_axi['Map 65']['slave4_i'] = config_axi['Sinal 56']['nome']
+        else:
+            config_axi['Map 65']['master4_o'] = 'open'
+            config_axi['Map 65']['slave4_i'] = 'AXI4L_S2M_DECERR'
+
+        if config['Acelerador']['check_customizavel'] == 'TRUE':
+            config_axi['Map 65']['master5_o'] = config_axi['Sinal 57']['nome']
+            config_axi['Map 65']['slave5_i'] = config_axi['Sinal 58']['nome']
+        else:
+            config_axi['Map 65']['master5_o'] = 'open'
+            config_axi['Map 65']['slave5_i'] = 'AXI4L_S2M_DECERR'
+
+        # TODO: set position for BRAM
+        if config['BRAM']['check_bram'] == 'TRUE':
+            config_axi['Map 65']['master6_o'] = config_axi['Sinal 59']['nome']
+            config_axi['Map 65']['slave6_i'] = config_axi['Sinal 60']['nome']
+        else:
+            config_axi['Map 65']['master5_o'] = 'open'
+            config_axi['Map 65']['slave5_i'] = 'AXI4L_S2M_DECERR'
+
+        config_axi['Map 65']['ext_master_o'] = config_axi['Porta 12']['nome']
+        config_axi['Map 65']['ext_slave_i'] = config_axi['Porta 13']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
             config_axi['Map 65']['rstn_i'] = config_axi['Porta 0']['nome']
@@ -855,39 +815,37 @@ class Gerador_Vhdl(object):
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
-    def criar_wdt(self, config_axi, config):
-        config_axi['Map 66']['check'] = config['Barramento']['check_wdt']
+    def criar_axi4l_rom(self, config_axi, config):
         config_axi['Map 66']['nome'] = str(config_axi['Map 66']['nome']).replace(" is","_u")
         config_axi['Map 66']['entity'] = str(config_axi['Map 66']['entity']).replace(" is","")
-        config_axi['Map 66']['generic base_addr'] = 'x80000100'
-        config_axi['Map 66']['generic high_addr'] = 'x80000103'
-        config_axi['Map 66']['master_i'] = config_axi['Sinal 51']['nome']
-        config_axi['Map 66']['slave_o'] = config_axi['Sinal 52']['nome']
-        config_axi['Map 66']['ext_rstn_i'] = config_axi['Sinal 0']['nome']
+        config_axi['Map 66']['generic base_addr'] = config['Barramento']['endereco']
+        config_axi['Map 66']['generic high_addr'] = 'x00000FFF'
         config_axi['Map 66']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 66']['wdt_rstn_o'] = config_axi['Sinal 3']['nome']
+        config_axi['Map 66']['master_i'] = config_axi['Sinal 47']['nome']
+        config_axi['Map 66']['slave_o'] = config_axi['Sinal 48']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
-            config_axi['Map 66']['periph_rstn_i'] = config_axi['Porta 0']['nome']
+            config_axi['Map 66']['rstn_i'] = config_axi['Porta 0']['nome']
         else:
-            config_axi['Map 66']['periph_rstn_i'] = config_axi['Sinal 2']['nome']
+            config_axi['Map 66']['rstn_i'] = config_axi['Sinal 2']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
-    def criar_gpio(self, config_axi, config):
-        config_axi['Map 67']['check'] = config['GPIO']['check_gpio']
+    def criar_uart(self, config_axi, config):
+        config_axi['Map 67']['check'] = config['UART']['check_uart']
         config_axi['Map 67']['nome'] = str(config_axi['Map 67']['nome']).replace(" is","_u")
         config_axi['Map 67']['entity'] = str(config_axi['Map 67']['entity']).replace(" is","")
-        config_axi['Map 67']['generic base_addr'] = config['GPIO']['tamanho']
-        config_axi['Map 67']['generic high_addr'] = 'x80000207'
-        config_axi['Map 67']['generic gpio_size'] = config_axi['Generic']['nome8']
-        config_axi['Map 67']['master_i'] = config_axi['Sinal 53']['nome']
-        config_axi['Map 67']['slave_o'] = config_axi['Sinal 54']['nome']
+        config_axi['Map 67']['generic base_addr'] = config['UART']['endereco']
+        config_axi['Map 67']['generic high_addr'] = 'x8000001F'
+        config_axi['Map 67']['generic rx_fifo_size'] = config['UART']['profundidade_fifo']
+        config_axi['Map 67']['master_i'] = config_axi['Sinal 49']['nome']
+        config_axi['Map 67']['slave_o'] = config_axi['Sinal 50']['nome']
         config_axi['Map 67']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 67']['tri_o'] = config_axi['Porta 9']['nome']
-        config_axi['Map 67']['rports_i'] = config_axi['Porta 10']['nome']
-        config_axi['Map 67']['wports_o'] = config_axi['Porta 11']['nome']
+        config_axi['Map 67']['uart_rx_i'] = config_axi['Porta 5']['nome']
+        config_axi['Map 67']['uart_tx_o'] = config_axi['Porta 6']['nome']
+        config_axi['Map 67']['uart_cts_i'] = config_axi['Porta 7']['nome']
+        config_axi['Map 67']['uart_rts_o'] = config_axi['Porta 8']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
             config_axi['Map 67']['rstn_i'] = config_axi['Porta 0']['nome']
@@ -897,122 +855,164 @@ class Gerador_Vhdl(object):
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
-    def criar_acelerador(self, config_axi, config):
-        config_axi['Map 68']['check'] = config['Acelerador']['check_hsi']
+    def criar_wdt(self, config_axi, config):
+        config_axi['Map 68']['check'] = config['Barramento']['check_wdt']
         config_axi['Map 68']['nome'] = str(config_axi['Map 68']['nome']).replace(" is","_u")
         config_axi['Map 68']['entity'] = str(config_axi['Map 68']['entity']).replace(" is","")
-        #config_axi['Map 68']['generic c_s00_axi_data_width'] = '32'
-        #config_axi['Map 68']['generic c_s00_axi_addr_width'] = '4'
+        config_axi['Map 68']['generic base_addr'] = 'x80000100'
+        config_axi['Map 68']['generic high_addr'] = 'x80000103'
+        config_axi['Map 68']['master_i'] = config_axi['Sinal 51']['nome']
+        config_axi['Map 68']['slave_o'] = config_axi['Sinal 52']['nome']
+        config_axi['Map 68']['ext_rstn_i'] = config_axi['Sinal 0']['nome']
         config_axi['Map 68']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 68']['awvalid'] = 'axi_slave4_master_w.awvalid'
-        config_axi['Map 68']['wvalid'] = 'axi_slave4_master_w.wvalid'
-        config_axi['Map 68']['bvalid'] = 'axi_slave4_slave_w.bvalid'
-        config_axi['Map 68']['arvalid'] = 'axi_slave4_master_w.arvalid'
-        config_axi['Map 68']['rvalid'] = 'axi_slave4_slave_w.rvalid'
-        config_axi['Map 68']['awready'] = 'axi_slave4_slave_w.awready'
-        config_axi['Map 68']['wready'] = 'axi_slave4_slave_w.wready'
-        config_axi['Map 68']['bready'] = 'axi_slave4_master_w.bready'
-        config_axi['Map 68']['arready'] = 'axi_slave4_slave_w.arready'
-        config_axi['Map 68']['rready'] = 'axi_slave4_master_w.rready'
-        config_axi['Map 68']['awaddr'] = 'axi_slave4_master_w.awaddr'
-        config_axi['Map 68']['awprot'] = 'axi_slave4_master_w.awprot'
-        config_axi['Map 68']['wdata'] = 'axi_slave4_master_w.wdata'
-        config_axi['Map 68']['wstrb'] = 'axi_slave4_master_w.wstrb'
-        config_axi['Map 68']['bresp'] = 'axi_slave4_slave_w.bresp'
-        config_axi['Map 68']['araddr'] = 'axi_slave4_master_w.araddr'
-        config_axi['Map 68']['arprot'] = 'axi_slave4_master_w.arprot'
-        config_axi['Map 68']['rdata'] = 'axi_slave4_slave_w.rdata'
-        config_axi['Map 68']['rresp'] = 'axi_slave4_slave_w.rresp'
+        config_axi['Map 68']['wdt_rstn_o'] = config_axi['Sinal 3']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
-            config_axi['Map 68']['aresetn'] = config_axi['Porta 0']['nome']
+            config_axi['Map 68']['periph_rstn_i'] = config_axi['Porta 0']['nome']
         else:
-            config_axi['Map 68']['aresetn'] = config_axi['Sinal 2']['nome']
+            config_axi['Map 68']['periph_rstn_i'] = config_axi['Sinal 2']['nome']
+
+        with open('barramento.ini', 'w') as configfile:
+            config_axi.write(configfile)
+
+    def criar_gpio(self, config_axi, config):
+        config_axi['Map 69']['check'] = config['GPIO']['check_gpio']
+        config_axi['Map 69']['nome'] = str(config_axi['Map 69']['nome']).replace(" is","_u")
+        config_axi['Map 69']['entity'] = str(config_axi['Map 69']['entity']).replace(" is","")
+        config_axi['Map 69']['generic base_addr'] = config['GPIO']['tamanho']
+        config_axi['Map 69']['generic high_addr'] = 'x80000207'
+        config_axi['Map 69']['generic gpio_size'] = config_axi['Generic']['nome8']
+        config_axi['Map 69']['master_i'] = config_axi['Sinal 53']['nome']
+        config_axi['Map 69']['slave_o'] = config_axi['Sinal 54']['nome']
+        config_axi['Map 69']['clk_i'] = config_axi['Porta 2']['nome']
+        config_axi['Map 69']['tri_o'] = config_axi['Porta 9']['nome']
+        config_axi['Map 69']['rports_i'] = config_axi['Porta 10']['nome']
+        config_axi['Map 69']['wports_o'] = config_axi['Porta 11']['nome']
+
+        if config['Barramento']['reset'] == 'Padrão':
+            config_axi['Map 69']['rstn_i'] = config_axi['Porta 0']['nome']
+        else:
+            config_axi['Map 69']['rstn_i'] = config_axi['Sinal 2']['nome']
+
+        with open('barramento.ini', 'w') as configfile:
+            config_axi.write(configfile)
+
+    def criar_acelerador(self, config_axi, config):
+        config_axi['Map 70']['check'] = config['Acelerador']['check_hsi']
+        config_axi['Map 70']['nome'] = str(config_axi['Map 70']['nome']).replace(" is","_u")
+        config_axi['Map 70']['entity'] = str(config_axi['Map 70']['entity']).replace(" is","")
+        #config_axi['Map 70']['generic c_s00_axi_data_width'] = '32'
+        #config_axi['Map 70']['generic c_s00_axi_addr_width'] = '4'
+        config_axi['Map 70']['clk_i'] = config_axi['Porta 2']['nome']
+        config_axi['Map 70']['awvalid'] = 'axi_slave4_master_w.awvalid'
+        config_axi['Map 70']['wvalid'] = 'axi_slave4_master_w.wvalid'
+        config_axi['Map 70']['bvalid'] = 'axi_slave4_slave_w.bvalid'
+        config_axi['Map 70']['arvalid'] = 'axi_slave4_master_w.arvalid'
+        config_axi['Map 70']['rvalid'] = 'axi_slave4_slave_w.rvalid'
+        config_axi['Map 70']['awready'] = 'axi_slave4_slave_w.awready'
+        config_axi['Map 70']['wready'] = 'axi_slave4_slave_w.wready'
+        config_axi['Map 70']['bready'] = 'axi_slave4_master_w.bready'
+        config_axi['Map 70']['arready'] = 'axi_slave4_slave_w.arready'
+        config_axi['Map 70']['rready'] = 'axi_slave4_master_w.rready'
+        config_axi['Map 70']['awaddr'] = 'axi_slave4_master_w.awaddr'
+        config_axi['Map 70']['awprot'] = 'axi_slave4_master_w.awprot'
+        config_axi['Map 70']['wdata'] = 'axi_slave4_master_w.wdata'
+        config_axi['Map 70']['wstrb'] = 'axi_slave4_master_w.wstrb'
+        config_axi['Map 70']['bresp'] = 'axi_slave4_slave_w.bresp'
+        config_axi['Map 70']['araddr'] = 'axi_slave4_master_w.araddr'
+        config_axi['Map 70']['arprot'] = 'axi_slave4_master_w.arprot'
+        config_axi['Map 70']['rdata'] = 'axi_slave4_slave_w.rdata'
+        config_axi['Map 70']['rresp'] = 'axi_slave4_slave_w.rresp'
+
+        if config['Barramento']['reset'] == 'Padrão':
+            config_axi['Map 70']['aresetn'] = config_axi['Porta 0']['nome']
+        else:
+            config_axi['Map 70']['aresetn'] = config_axi['Sinal 2']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
     def criar_memory(self, config_axi, config):
-        config_axi['Elif 69']['check'] = config['Memoria']['check_memoria']
-        config_axi['Elif 69']['nome'] = str(config_axi['Elif 69']['nome']).replace(" is","_u")
-        config_axi['Elif 69']['entity'] = str(config_axi['Elif 69']['entity']).replace(" is","")
-        config_axi['Elif 69']['generic base_addr'] = config_axi['Generic']['nome6']
-        config_axi['Elif 69']['generic high_addr'] = config_axi['Generic']['nome7']
-        config_axi['Elif 69']['generic sim_init_ahx'] = 'FALSE'
-        config_axi['Elif 69']['generic ahx_filepath'] = config_axi['Generic']['nome13']
-        config_axi['Elif 69']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Elif 69']['s_wr_ready_o'] = 'open'
-        config_axi['Elif 69']['s_rd_ready_o'] = 'open'
-        config_axi['Elif 69']['s_wr_en_i'] = config_axi['Sinal 18']['nome']
-        config_axi['Elif 69']['s_rd_en_i'] = config_axi['Sinal 19']['nome']
-        config_axi['Elif 69']['s_done_o'] = config_axi['Sinal 20']['nome']
-        config_axi['Elif 69']['s_error_o'] = config_axi['Sinal 21']['nome']
-        config_axi['Elif 69']['s_addr_i'] = config_axi['Sinal 23']['nome']
-        config_axi['Elif 69']['s_wdata_i'] = config_axi['Sinal 24']['nome']
-        config_axi['Elif 69']['s_wstrb_i'] = config_axi['Sinal 25']['nome']
-        config_axi['Elif 69']['s_rdata_o'] = config_axi['Sinal 26']['nome']
+        config_axi['Elif 71']['check'] = config['Memoria']['check_memoria']
+        config_axi['Elif 71']['nome'] = str(config_axi['Elif 71']['nome']).replace(" is","_u")
+        config_axi['Elif 71']['entity'] = str(config_axi['Elif 71']['entity']).replace(" is","")
+        config_axi['Elif 71']['generic base_addr'] = config_axi['Generic']['nome6']
+        config_axi['Elif 71']['generic high_addr'] = config_axi['Generic']['nome7']
+        config_axi['Elif 71']['generic sim_init_ahx'] = 'FALSE'
+        config_axi['Elif 71']['generic ahx_filepath'] = config_axi['Generic']['nome13']
+        config_axi['Elif 71']['clk_i'] = config_axi['Porta 2']['nome']
+        config_axi['Elif 71']['s_wr_ready_o'] = 'open'
+        config_axi['Elif 71']['s_rd_ready_o'] = 'open'
+        config_axi['Elif 71']['s_wr_en_i'] = config_axi['Sinal 18']['nome']
+        config_axi['Elif 71']['s_rd_en_i'] = config_axi['Sinal 19']['nome']
+        config_axi['Elif 71']['s_done_o'] = config_axi['Sinal 20']['nome']
+        config_axi['Elif 71']['s_error_o'] = config_axi['Sinal 21']['nome']
+        config_axi['Elif 71']['s_addr_i'] = config_axi['Sinal 23']['nome']
+        config_axi['Elif 71']['s_wdata_i'] = config_axi['Sinal 24']['nome']
+        config_axi['Elif 71']['s_wstrb_i'] = config_axi['Sinal 25']['nome']
+        config_axi['Elif 71']['s_rdata_o'] = config_axi['Sinal 26']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
-            config_axi['Elif 69']['rstn_i'] = config_axi['Porta 0']['nome']
+            config_axi['Elif 71']['rstn_i'] = config_axi['Porta 0']['nome']
         else:
-            config_axi['Elif 69']['rstn_i'] = config_axi['Sinal 2']['nome']
+            config_axi['Elif 71']['rstn_i'] = config_axi['Sinal 2']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
     def criar_memory2(self, config_axi, config):
-        config_axi['Elif 70']['nome'] = str(config_axi['Elif 70']['nome']).replace("unaligned_ecc_memory is","unaligned_ecc_memory_u")
-        config_axi['Elif 70']['entity'] = str(config_axi['Elif 70']['entity']).replace("unaligned_ecc_memory is","unaligned_ecc_memory")
-        config_axi['Elif 70']['generic base_addr'] = config_axi['Generic']['nome6']
-        config_axi['Elif 70']['generic high_addr'] = config_axi['Generic']['nome7']
-        config_axi['Elif 70']['generic sim_init_ahx'] = 'FALSE'
-        config_axi['Elif 70']['generic ahx_filepath'] = config_axi['Generic']['nome13']
-        config_axi['Elif 70']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Elif 70']['correct_error_i'] = config_axi['Sinal 9']['nome']
-        config_axi['Elif 70']['s_wr_ready_o'] = 'open'
-        config_axi['Elif 70']['s_rd_ready_o'] = 'open'
-        config_axi['Elif 70']['s_wr_en_i'] = config_axi['Sinal 18']['nome']
-        config_axi['Elif 70']['s_rd_en_i'] = config_axi['Sinal 19']['nome']
-        config_axi['Elif 70']['s_done_o'] = config_axi['Sinal 20']['nome']
-        config_axi['Elif 70']['s_error_o'] = config_axi['Sinal 21']['nome']
-        config_axi['Elif 70']['s_addr_i'] = config_axi['Sinal 23']['nome']
-        config_axi['Elif 70']['s_wdata_i'] = config_axi['Sinal 24']['nome']
-        config_axi['Elif 70']['s_wstrb_i'] = config_axi['Sinal 25']['nome']
-        config_axi['Elif 70']['s_rdata_o'] = config_axi['Sinal 26']['nome']
-        config_axi['Elif 70']['ev_rdata_valid_o'] = config_axi['Sinal 27']['nome']
-        config_axi['Elif 70']['ev_sb_error_o'] = config_axi['Sinal 28']['nome']
-        config_axi['Elif 70']['ev_db_error_o'] = config_axi['Sinal 29']['nome']
-        config_axi['Elif 70']['ev_error_addr_o'] = config_axi['Sinal 30']['nome']
-        config_axi['Elif 70']['ev_ecc_addr_o'] = config_axi['Sinal 31']['nome']
-        config_axi['Elif 70']['ev_enc_data_o'] = config_axi['Sinal 32']['nome']
+        config_axi['Elif 72']['nome'] = str(config_axi['Elif 72']['nome']).replace("unaligned_ecc_memory is","unaligned_ecc_memory_u")
+        config_axi['Elif 72']['entity'] = str(config_axi['Elif 72']['entity']).replace("unaligned_ecc_memory is","unaligned_ecc_memory")
+        config_axi['Elif 72']['generic base_addr'] = config_axi['Generic']['nome6']
+        config_axi['Elif 72']['generic high_addr'] = config_axi['Generic']['nome7']
+        config_axi['Elif 72']['generic sim_init_ahx'] = 'FALSE'
+        config_axi['Elif 72']['generic ahx_filepath'] = config_axi['Generic']['nome13']
+        config_axi['Elif 72']['clk_i'] = config_axi['Porta 2']['nome']
+        config_axi['Elif 72']['correct_error_i'] = config_axi['Sinal 9']['nome']
+        config_axi['Elif 72']['s_wr_ready_o'] = 'open'
+        config_axi['Elif 72']['s_rd_ready_o'] = 'open'
+        config_axi['Elif 72']['s_wr_en_i'] = config_axi['Sinal 18']['nome']
+        config_axi['Elif 72']['s_rd_en_i'] = config_axi['Sinal 19']['nome']
+        config_axi['Elif 72']['s_done_o'] = config_axi['Sinal 20']['nome']
+        config_axi['Elif 72']['s_error_o'] = config_axi['Sinal 21']['nome']
+        config_axi['Elif 72']['s_addr_i'] = config_axi['Sinal 23']['nome']
+        config_axi['Elif 72']['s_wdata_i'] = config_axi['Sinal 24']['nome']
+        config_axi['Elif 72']['s_wstrb_i'] = config_axi['Sinal 25']['nome']
+        config_axi['Elif 72']['s_rdata_o'] = config_axi['Sinal 26']['nome']
+        config_axi['Elif 72']['ev_rdata_valid_o'] = config_axi['Sinal 27']['nome']
+        config_axi['Elif 72']['ev_sb_error_o'] = config_axi['Sinal 28']['nome']
+        config_axi['Elif 72']['ev_db_error_o'] = config_axi['Sinal 29']['nome']
+        config_axi['Elif 72']['ev_error_addr_o'] = config_axi['Sinal 30']['nome']
+        config_axi['Elif 72']['ev_ecc_addr_o'] = config_axi['Sinal 31']['nome']
+        config_axi['Elif 72']['ev_enc_data_o'] = config_axi['Sinal 32']['nome']
 
         if config['Barramento']['reset'] == 'Padrão':
-            config_axi['Elif 70']['rstn_i'] = config_axi['Porta 0']['nome']
+            config_axi['Elif 72']['rstn_i'] = config_axi['Porta 0']['nome']
         else:
-            config_axi['Elif 70']['rstn_i'] = config_axi['Sinal 2']['nome']
+            config_axi['Elif 72']['rstn_i'] = config_axi['Sinal 2']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
 
     def criar_bram(self, config_axi, config):
-        config_axi['Map 71']['nome'] = str(config_axi['Map 71']['nome']).replace(" is","_u")
-        config_axi['Map 71']['entity'] = str(config_axi['Map 71']['entity']).replace(" is","")
-        config_axi['Map 71']['generic base_addr'] = config_axi['Generic']['nome9']
-        config_axi['Map 71']['generic high_addr'] = config_axi['Generic']['nome10']
-        config_axi['Map 71']['generic ecc'] = config_axi['Generic']['nome11']
-        config_axi['Map 71']['generic sim_init_ahx'] = config_axi['Generic']['nome12']
-        config_axi['Map 71']['generic ahx_filepath'] = config_axi['Generic']['nome13']
-        config_axi['Map 71']['rstn_i'] = config_axi['Sinal 2']['nome']
-        config_axi['Map 71']['clk_i'] = config_axi['Porta 2']['nome']
-        config_axi['Map 71']['master_i'] = config_axi['Sinal 59']['nome']
-        config_axi['Map 71']['slave_o'] = config_axi['Sinal 60']['nome']
-        config_axi['Map 71']['correct_error_i'] = config_axi['Sinal 9']['nome']
-        config_axi['Map 71']['ev_rdata_valid_o'] = config_axi['Sinal 72']['nome']
-        config_axi['Map 71']['ev_sb_error_o'] = config_axi['Sinal 73']['nome']
-        config_axi['Map 71']['ev_db_error_o'] = config_axi['Sinal 74']['nome']
-        config_axi['Map 71']['ev_error_addr_o'] = config_axi['Sinal 75']['nome']
-        config_axi['Map 71']['ev_ecc_addr_o'] = config_axi['Sinal 76']['nome']
-        config_axi['Map 71']['ev_enc_data_o'] = config_axi['Sinal 77']['nome']
+        config_axi['Map 73']['nome'] = str(config_axi['Map 73']['nome']).replace(" is","_u")
+        config_axi['Map 73']['entity'] = str(config_axi['Map 73']['entity']).replace(" is","")
+        config_axi['Map 73']['generic base_addr'] = config_axi['Generic']['nome9']
+        config_axi['Map 73']['generic high_addr'] = config_axi['Generic']['nome10']
+        config_axi['Map 73']['generic ecc'] = config_axi['Generic']['nome11']
+        config_axi['Map 73']['generic sim_init_ahx'] = config_axi['Generic']['nome12']
+        config_axi['Map 73']['generic ahx_filepath'] = config_axi['Generic']['nome13']
+        config_axi['Map 73']['rstn_i'] = config_axi['Sinal 2']['nome']
+        config_axi['Map 73']['clk_i'] = config_axi['Porta 2']['nome']
+        config_axi['Map 73']['master_i'] = config_axi['Sinal 74']['nome']
+        config_axi['Map 73']['slave_o'] = config_axi['Sinal 75']['nome']
+        config_axi['Map 73']['correct_error_i'] = config_axi['Sinal 9']['nome']
+        config_axi['Map 73']['ev_rdata_valid_o'] = config_axi['Sinal 76']['nome']
+        config_axi['Map 73']['ev_sb_error_o'] = config_axi['Sinal 77']['nome']
+        config_axi['Map 73']['ev_db_error_o'] = config_axi['Sinal 78']['nome']
+        config_axi['Map 73']['ev_error_addr_o'] = config_axi['Sinal 79']['nome']
+        config_axi['Map 73']['ev_ecc_addr_o'] = config_axi['Sinal 80']['nome']
+        config_axi['Map 73']['ev_enc_data_o'] = config_axi['Sinal 81']['nome']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
@@ -1022,12 +1022,12 @@ class Gerador_Vhdl(object):
         config_axi['Generic']['valor1'] = config['Harv']['harv_tmr']
         config_axi['Generic']['valor2'] = config['Harv']['harv_ecc']
         config_axi['Generic']['valor8'] = config['GPIO']['largura']
-        config_axi['Map 67']['generic base_addr'] = config['GPIO']['tamanho']
+        config_axi['Map 69']['generic base_addr'] = config['GPIO']['tamanho']
         config_axi['Generic']['valor6'] = config['Memoria']['endereco_memoria']
         config_axi['Generic']['valor7'] = config['Memoria']['tamanho']
-        config_axi['Map 65']['generic rx_fifo_size'] = config['UART']['profundidade_fifo']
-        config_axi['Map 65']['generic base_addr'] = config['UART']['endereco']
-        config_axi['Map 64']['generic base_addr'] = config['Barramento']['endereco']
+        config_axi['Map 67']['generic rx_fifo_size'] = config['UART']['profundidade_fifo']
+        config_axi['Map 67']['generic base_addr'] = config['UART']['endereco']
+        config_axi['Map 66']['generic base_addr'] = config['Barramento']['endereco']
 
         with open('barramento.ini', 'w') as configfile:
             config_axi.write(configfile)
@@ -1069,6 +1069,7 @@ class Gerador_Vhdl(object):
         arq_zed.close()
 
     def criar_top(self, config_top, config_axi, diretorio):
+<<<<<<< HEAD
         config_top['Map 80']['nome'] = str(config_top['Map 80']['nome']).replace(" is","_u")
         config_top['Map 80']['entity'] = str(config_top['Map 80']['entity']).replace(" is","")
         config_top['Map 80']['generic program_start_addr'] = config_axi['Generic']['valor0']
@@ -1099,6 +1100,39 @@ class Gerador_Vhdl(object):
         config_top['Map 80']['gpio_wr_o'] = 'gpio_wr_w'
         config_top['Map 80']['axi4l_master_o'] = 'open'
         config_top['Map 80']['axi4l_slave_i'] = 'AXI4L_S2M_DECERR'
+=======
+        config_top['Map 82']['nome'] = str(config_top['Map 82']['nome']).replace(" is","_u")
+        config_top['Map 82']['entity'] = str(config_top['Map 82']['entity']).replace(" is","")
+        config_top['Map 82']['generic program_start_addr'] = config_axi['Generic']['valor0']
+        config_top['Map 82']['generic harv_tmr'] = config_axi['Generic']['valor1']
+        config_top['Map 82']['generic harv_ecc'] = config_axi['Generic']['valor2']
+        config_top['Map 82']['generic enable_rom'] = config_axi['Generic']['valor3']
+        config_top['Map 82']['generic enable_dmem'] = config_axi['Generic']['valor4']
+        config_top['Map 82']['generic enable_dmem_ecc'] = config_axi['Generic']['valor5']
+        config_top['Map 82']['generic dmem_base_addr'] = config_axi['Generic']['valor6']
+        config_top['Map 82']['generic dmem_high_addr'] = config_axi['Generic']['valor7']
+        config_top['Map 82']['generic gpio_size'] = config_axi['Generic']['valor8']
+        config_top['Map 82']['generic bram_base_addr'] = 'x70000000'
+        config_top['Map 82']['generic bram_high_addr'] = 'x7007FFFF'
+        config_top['Map 82']['generic enable_bram_ecc'] = 'FALSE'
+        config_top['Map 82']['generic is_simulation'] = config_axi['Generic']['valor12']
+        config_top['Map 82']['generic ahx_filepath'] = config_axi['Generic']['valor13']
+        config_top['Map 82']['poweron_rstn_i'] = 'rstn_w'
+        config_top['Map 82']['btn_rstn_i'] = 'btn_rst_i'
+        config_top['Map 82']['clk_i'] = 'clk50_w'
+        config_top['Map 82']['start_i'] = 'rstn_w'
+        config_top['Map 82']['periph_rstn_o'] = 'periph_rstn_w'
+        config_top['Map 82']['uart_rx_i'] = 'uart_rx_i'
+        config_top['Map 82']['uart_tx_o'] = 'uart_tx_o'
+        config_top['Map 82']['uart_cts_i'] = 'uart_cts_i'
+        config_top['Map 82']['uart_rts_o'] = 'uart_rts_o'
+        config_top['Map 82']['gpio_tri_o'] = 'gpio_tri_w'
+        config_top['Map 82']['gpio_rd_i'] = 'gpio_rd_w'
+        config_top['Map 82']['gpio_wr_o'] = 'gpio_wr_w'
+        config_top['Map 82']['axi4l_master_o'] = 'open'
+        config_top['Map 82']['axi4l_slave_i'] = 'AXI4L_S2M_DECERR'
+        config_top['Map 82']['ext_event_i'] = "'0'"
+>>>>>>> a471ae1 (ajuste na plataforma)
 
         with open(diretorio + 'barramento.ini', 'w') as configfile:
             config_top.write(configfile)
@@ -1133,7 +1167,7 @@ class Gerador_Vhdl(object):
 
         del vhdl_texto[116:]
         del vhdl_axi[:65]
-        del vhdl_axi[26:]
+        del vhdl_axi[30:]
 
         self.gera_ini_library(vhdl_texto[:13], caminho_dir)
         self.gera_ini_generic(vhdl_texto[13:27], config, caminho_dir, arq_vhd)
@@ -1176,9 +1210,9 @@ class Gerador_Vhdl(object):
         top_vhd = open(caminho_dir + config_path['Path']['axi4l_interconnect_6'], 'r')
         vhdl_texto = top_vhd.readlines()
         top_vhd.close()
-        del vhdl_texto[59:]
-        self.gera_ini_map_generic(vhdl_texto[:22], caminho_dir)
-        self.gera_ini_map_no_generic(vhdl_texto[23:], caminho_dir)
+        del vhdl_texto[63:]
+        self.gera_ini_map_generic(vhdl_texto[:24], caminho_dir)
+        self.gera_ini_map_no_generic(vhdl_texto[25:], caminho_dir)
 
         vhdl_texto.clear()
         top_vhd = open(caminho_dir + config_path['Path']['axi4l_rom'], 'r')

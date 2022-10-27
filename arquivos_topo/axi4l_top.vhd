@@ -89,6 +89,10 @@ architecture arch of axi4l_top is
     -- slave 5
   signal axi_slave5_master_w : AXI4L_MASTER_TO_SLAVE;
   signal axi_slave5_slave_w  : AXI4L_SLAVE_TO_MASTER;
+  
+  -- slave 6
+  signal axi_slave6_master_w : AXI4L_MASTER_TO_SLAVE;
+  signal axi_slave6_slave_w  : AXI4L_SLAVE_TO_MASTER;
 
 begin
 
