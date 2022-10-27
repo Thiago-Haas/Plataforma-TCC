@@ -10,7 +10,7 @@ add_files {\
 }
 
 # add simulation files
-add_files -fileset sim_1 sim/
+add_files -fileset sim_1 ../../sim/
 
 # set VHDL 2008 to all files
 set_property file_type {VHDL 2008} [get_files -filter {FILE_TYPE == VHDL}]
@@ -36,6 +36,6 @@ update_compile_order -fileset sim_1
 # set top entity as top
 set_property top zed_top [current_fileset]
 # set testbench entity as top
-# set_property top top_tb [get_filesets sim_1]
+set_property top top_tb [get_filesets sim_1]
 
 exit
