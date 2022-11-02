@@ -211,6 +211,11 @@ class Gerador_Vhdl(object):
         else:
             config.remove_option('Elif 71','check')
 
+        if config['Map 73']['check'] == 'FALSE':
+            config.remove_section('Map 73')
+        else:
+            config.remove_option('Map 73','check')
+
         for nome in config.sections():
             if nome[:3] == 'Map':
                 for n, v in config.items(nome):
@@ -995,6 +1000,7 @@ class Gerador_Vhdl(object):
             config_axi.write(configfile)
 
     def criar_bram(self, config_axi, config):
+        config_axi['Map 73']['check'] = config['Memoria']['check_bram']
         config_axi['Map 73']['nome'] = str(config_axi['Map 73']['nome']).replace(" is","_u")
         config_axi['Map 73']['entity'] = str(config_axi['Map 73']['entity']).replace(" is","")
         config_axi['Map 73']['generic base_addr'] = config_axi['Generic']['nome9']
