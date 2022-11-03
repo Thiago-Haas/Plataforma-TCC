@@ -40,7 +40,7 @@ begin
   port map ( 
     s00_axi_aclk        =>  clk_i, 
     s00_axi_aresetn     =>  periph_rstn_w, 
-    s00_axi_awaddr      =>  awaddr, 
+    s00_axi_awaddr      =>  awaddr(3 downto 0), 
     s00_axi_awprot      =>  awprot, 
     s00_axi_awvalid     =>  awvalid, 
     s00_axi_awready     =>  awready, 
@@ -51,7 +51,7 @@ begin
     s00_axi_bresp       =>  bresp, 
     s00_axi_bvalid      =>  bvalid, 
     s00_axi_bready      =>  bready, 
-    s00_axi_araddr      =>  araddr, 
+    s00_axi_araddr      =>  araddr(3 downto 0), 
     s00_axi_arprot      =>  arprot, 
     s00_axi_arvalid     =>  arvalid, 
     s00_axi_arready     =>  arready, 
