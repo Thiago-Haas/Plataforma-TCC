@@ -404,7 +404,7 @@ class Gerador_Vhdl(object):
         self.criar_ini = self.criar_ini.replace("  ", "")
         self.criar_ini = self.criar_ini.replace(":=", "")
 
-        self.criar_ini += f"nome{self.contador} = BRAM_BASE_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\nvalor{self.contador} = x700000000\n"
+        self.criar_ini += f"nome{self.contador} = BRAM_BASE_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\nvalor{self.contador} = x70000000\n"
         self.contador += 1
         self.criar_ini += f"nome{self.contador} = BRAM_HIGH_ADDR\ntype{self.contador} = std_logic_vector\nvector{self.contador} = 32\nvalor{self.contador} = x7007FFFF\n"
         self.contador += 1
@@ -595,10 +595,10 @@ class Gerador_Vhdl(object):
         destino_arq.close()
 
     def gera_ini_bram(self, caminho_dir):
-        self.criar_ini += f"[Sinal {self.contador}]\nnome: axi_slave6_master_w\ntype= axim\n"
-        self.contador +=1
-        self.criar_ini += f"[Sinal {self.contador}]\nnome: axi_slave6_slave_w\ntype= axis\n"
-        self.contador +=1
+        #self.criar_ini += f"[Sinal {self.contador}]\nnome: axi_slave6_master_w\ntype= axim\n"
+        #self.contador +=1
+        #self.criar_ini += f"[Sinal {self.contador}]\nnome: axi_slave6_slave_w\ntype= axis\n"
+        #self.contador +=1
         self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_ev_rdata_valid_w\ntype= no vector\n"
         self.contador +=1
         self.criar_ini += f"[Sinal {self.contador}]\nnome: bram_ev_sb_error_w\ntype= no vector\n"
@@ -1075,36 +1075,37 @@ class Gerador_Vhdl(object):
         arq_zed.close()
 
     def criar_top(self, config_top, config_axi, diretorio):
-        config_top['Map 82']['nome'] = str(config_top['Map 82']['nome']).replace(" is","_u")
-        config_top['Map 82']['entity'] = str(config_top['Map 82']['entity']).replace(" is","")
-        config_top['Map 82']['generic program_start_addr'] = config_axi['Generic']['valor0']
-        config_top['Map 82']['generic harv_tmr'] = config_axi['Generic']['valor1']
-        config_top['Map 82']['generic harv_ecc'] = config_axi['Generic']['valor2']
-        config_top['Map 82']['generic enable_rom'] = config_axi['Generic']['valor3']
-        config_top['Map 82']['generic enable_dmem'] = config_axi['Generic']['valor4']
-        config_top['Map 82']['generic enable_dmem_ecc'] = config_axi['Generic']['valor5']
-        config_top['Map 82']['generic dmem_base_addr'] = config_axi['Generic']['valor6']
-        config_top['Map 82']['generic dmem_high_addr'] = config_axi['Generic']['valor7']
-        config_top['Map 82']['generic gpio_size'] = config_axi['Generic']['valor8']
-        config_top['Map 82']['generic bram_base_addr'] = 'x70000000'
-        config_top['Map 82']['generic bram_high_addr'] = 'x7007FFFF'
-        config_top['Map 82']['generic enable_bram_ecc'] = 'FALSE'
-        config_top['Map 82']['generic is_simulation'] = config_axi['Generic']['valor12']
-        config_top['Map 82']['generic ahx_filepath'] = config_axi['Generic']['valor13']
-        config_top['Map 82']['poweron_rstn_i'] = 'rstn_w'
-        config_top['Map 82']['btn_rstn_i'] = 'btn_rst_i'
-        config_top['Map 82']['clk_i'] = 'clk50_w'
-        config_top['Map 82']['start_i'] = 'rstn_w'
-        config_top['Map 82']['periph_rstn_o'] = 'periph_rstn_w'
-        config_top['Map 82']['uart_rx_i'] = 'uart_rx_i'
-        config_top['Map 82']['uart_tx_o'] = 'uart_tx_o'
-        config_top['Map 82']['uart_cts_i'] = 'uart_cts_i'
-        config_top['Map 82']['uart_rts_o'] = 'uart_rts_o'
-        config_top['Map 82']['gpio_tri_o'] = 'gpio_tri_w'
-        config_top['Map 82']['gpio_rd_i'] = 'gpio_rd_w'
-        config_top['Map 82']['gpio_wr_o'] = 'gpio_wr_w'
-        config_top['Map 82']['axi4l_master_o'] = 'open'
-        config_top['Map 82']['axi4l_slave_i'] = 'AXI4L_S2M_DECERR'
+        config_top['Map 80']['nome'] = str(config_top['Map 80']['nome']).replace(" is","_u")
+        config_top['Map 80']['entity'] = str(config_top['Map 80']['entity']).replace(" is","")
+        config_top['Map 80']['generic program_start_addr'] = config_axi['Generic']['valor0']
+        config_top['Map 80']['generic harv_tmr'] = config_axi['Generic']['valor1']
+        config_top['Map 80']['generic harv_ecc'] = config_axi['Generic']['valor2']
+        config_top['Map 80']['generic enable_rom'] = config_axi['Generic']['valor3']
+        config_top['Map 80']['generic enable_dmem'] = config_axi['Generic']['valor4']
+        config_top['Map 80']['generic enable_dmem_ecc'] = config_axi['Generic']['valor5']
+        config_top['Map 80']['generic dmem_base_addr'] = config_axi['Generic']['valor6']
+        config_top['Map 80']['generic dmem_high_addr'] = config_axi['Generic']['valor7']
+        config_top['Map 80']['generic gpio_size'] = config_axi['Generic']['valor8']
+        config_top['Map 80']['generic bram_base_addr'] = 'x70000000'
+        config_top['Map 80']['generic bram_high_addr'] = 'x7007FFFF'
+        config_top['Map 80']['generic enable_bram_ecc'] = 'FALSE'
+        config_top['Map 80']['generic is_simulation'] = config_axi['Generic']['valor12']
+        config_top['Map 80']['generic ahx_filepath'] = config_axi['Generic']['valor13']
+        config_top['Map 80']['poweron_rstn_i'] = 'rstn_w'
+        config_top['Map 80']['btn_rstn_i'] = 'btn_rst_i'
+        config_top['Map 80']['clk_i'] = 'clk50_w'
+        config_top['Map 80']['start_i'] = 'rstn_w'
+        config_top['Map 80']['periph_rstn_o'] = 'periph_rstn_w'
+        config_top['Map 80']['uart_rx_i'] = 'uart_rx_i'
+        config_top['Map 80']['uart_tx_o'] = 'uart_tx_o'
+        config_top['Map 80']['uart_cts_i'] = 'uart_cts_i'
+        config_top['Map 80']['uart_rts_o'] = 'uart_rts_o'
+        config_top['Map 80']['gpio_tri_o'] = 'gpio_tri_w'
+        config_top['Map 80']['gpio_rd_i'] = 'gpio_rd_w'
+        config_top['Map 80']['gpio_wr_o'] = 'gpio_wr_w'
+        config_top['Map 80']['axi4l_master_o'] = 'open'
+        config_top['Map 80']['axi4l_slave_i'] = 'AXI4L_S2M_DECERR'
+        config_top['Map 80']['ext_event_i'] = "'0'"
 
         with open(diretorio + 'barramento.ini', 'w') as configfile:
             config_top.write(configfile)

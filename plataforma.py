@@ -56,26 +56,36 @@ class Ui_Plataforma(object):
         caminho_arq = sys.argv[0]
         caminho_arq = os.path.abspath(caminho_arq)
         caminho_dir = os.path.dirname(caminho_arq)
-        
-        if not self.path:
-            self.nome_arq = str(QtWidgets.QFileDialog.getExistingDirectory())
-            self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', None)
+        self.nome_arq = str(QtWidgets.QFileDialog.getExistingDirectory())
+        self.vhdl = Gerador_Vhdl()
+
+        if not self.nome_arq:
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Information)
+            msgBox.setText("Nenhuma Pasta foi selecionada")
+            msgBox.setWindowTitle("Aviso")
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.buttonClicked.connect(self.msgButtonClick)
+
+            returnValue = msgBox.exec()
+            if returnValue == QMessageBox.Ok:
+                print('Finalizado sem sucesso!')
         else:
-            self.nome_arq = str(QtWidgets.QFileDialog.getExistingDirectory())
-            self.vhdl = Gerador_Vhdl()
-            self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', self.path)
+            if not self.path:
+                self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', None)
+            else:
+                self.vhdl.gera_vhdl(self.nome_arq, caminho_dir + '/config.ini', self.path)
 
-        msgBox = QMessageBox()
-        msgBox.setIcon(QMessageBox.Information)
-        msgBox.setText(f"Arquivo VHDL salvo em: {self.nome_arq}/SoC/")
-        msgBox.setWindowTitle("Aviso")
-        msgBox.setStandardButtons(QMessageBox.Ok)
-        msgBox.buttonClicked.connect(self.msgButtonClick)
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Information)
+            msgBox.setText(f"Arquivo VHDL salvo em: {self.nome_arq}/SoC/")
+            msgBox.setWindowTitle("Aviso")
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.buttonClicked.connect(self.msgButtonClick)
 
-        returnValue = msgBox.exec()
-        if returnValue == QMessageBox.Ok:
-            print('Finalizado com sucesso!')
+            returnValue = msgBox.exec()
+            if returnValue == QMessageBox.Ok:
+                print('Finalizado com sucesso!')
 
         Plataforma.close()
 
