@@ -45,7 +45,8 @@ begin
     gpio_wr_o      => open,
     -- AXI
     axi4l_master_o => open,
-    axi4l_slave_i  => AXI4L_S2M_DECERR
+    axi4l_slave_i  => AXI4L_S2M_DECERR,
+    ext_event_i    => '0'
   );
 
   uart_u : entity work.uart
