@@ -18,6 +18,15 @@ architecture arch of top_tb is
   signal rec_done : std_logic;
   signal rec_data : std_logic_vector(7 downto 0);
 
+  constant GPIO_SIZE : integer := 13;
+  signal gpio_tri_o : std_logic_vector(GPIO_SIZE-1 downto 0);
+  signal gpio_rd_i  : std_logic_vector(GPIO_SIZE-1 downto 0);
+  signal gpio_wr_o  : std_logic_vector(GPIO_SIZE-1 downto 0);
+
+  signal user_btn_i : std_logic;
+  signal leds_o     : std_logic_vector(7 downto 0);
+  signal pmod_io    : std_logic_vector(3 downto 0);
+
 begin
   rstn <= '1' after period;
   clk  <= not clk after period/2;
@@ -40,14 +49,28 @@ begin
     uart_cts_i     => '0',
     uart_rts_o     => open,
     -- gpio
-    gpio_tri_o     => open,
-    gpio_rd_i      => (others => '0'),
-    gpio_wr_o      => open,
+    gpio_tri_o     => gpio_tri_o,
+    gpio_rd_i      => gpio_rd_i,
+    gpio_wr_o      => gpio_wr_o,
     -- AXI
     axi4l_master_o => open,
     axi4l_slave_i  => AXI4L_S2M_DECERR,
     ext_event_i    => '0'
   );
+  -- fixed in or out pins
+  gpio_rd_i(0) <= '0';
+  leds_o <= gpio_wr_o(8 downto 1);
+  gpio_rd_i(8 downto 1) <= gpio_wr_o(8 downto 1);
+  -- configurable pins
+  pmod_io(3) <= 'Z' when gpio_tri_o(12) = '1' else gpio_wr_o(12);
+  pmod_io(2) <= 'Z' when gpio_tri_o(11) = '1' else gpio_wr_o(11);
+  pmod_io(1) <= 'Z' when gpio_tri_o(10) = '1' else gpio_wr_o(10);
+  pmod_io(0) <= 'Z' when gpio_tri_o( 9) = '1' else gpio_wr_o(9);
+  gpio_rd_i(12) <= pmod_io(3);
+  gpio_rd_i(11) <= pmod_io(2);
+  gpio_rd_i(10) <= pmod_io(1);
+  gpio_rd_i( 9) <= pmod_io(0);
+
 
   uart_u : entity work.uart
   port map (
@@ -96,6 +119,24 @@ begin
         end if;
       end if;
     end loop;
+  end process;
+
+  -- print leds modifications to console
+  process
+    variable last_leds_v : std_logic_vector(7 downto 0);
+  begin
+    last_leds_v := leds_o;
+    -- wait modification
+    wait until rising_edge(clk) and leds_o /= last_leds_v;
+    -- report new value
+    report lf & "[LEDS] " & std_logic'image(leds_o(7))
+                          & std_logic'image(leds_o(6))
+                          & std_logic'image(leds_o(5))
+                          & std_logic'image(leds_o(4))
+                          & std_logic'image(leds_o(3))
+                          & std_logic'image(leds_o(2))
+                          & std_logic'image(leds_o(1))
+                          & std_logic'image(leds_o(0));
   end process;
 
 end architecture;
