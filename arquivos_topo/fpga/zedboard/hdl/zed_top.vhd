@@ -24,7 +24,6 @@ entity zed_top is
 end zed_top;
 
 architecture arch of zed_top is
-  signal rstn_w        : std_logic;
   signal clk50_w       : std_logic;
   signal locked_w      : std_logic;
   signal periph_rstn_w : std_logic;
@@ -44,8 +43,6 @@ begin
     clk_out1 => clk50_w,
     locked   => locked_w
   );
-
-  rstn_w <= locked_w and not btn_rst_i;
 
   -- fixed in or out pins
   gpio_rd_w(0) <= user_btn_i;
