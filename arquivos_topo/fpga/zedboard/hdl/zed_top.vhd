@@ -31,7 +31,10 @@ architecture arch of zed_top is
   signal gpio_tri_w : std_logic_vector(12 downto 0);
   signal gpio_rd_w  : std_logic_vector(12 downto 0);
   signal gpio_wr_w  : std_logic_vector(12 downto 0);
-  
+
+  attribute keep_hierarchy : string;
+  attribute keep_hierarchy of top_u : label is "yes";
+
 begin
 
   clk_wiz_0_u : entity work.clk_wiz_0
@@ -54,9 +57,5 @@ begin
   gpio_rd_w(11) <= pmod_io(2);
   gpio_rd_w(10) <= pmod_io(1);
   gpio_rd_w( 9) <= pmod_io(0);
-
-
-
-
 
 end arch;
