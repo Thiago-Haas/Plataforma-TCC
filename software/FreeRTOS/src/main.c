@@ -84,12 +84,12 @@ void vAssertCalled( void ) {
 }
 
 static void prvSetupHardware( void ) {
-	#if mainVECTOR_MODE_DIRECT == 1
-			__asm__ volatile( "csrw mtvec, %0" :: "r"( freertos_risc_v_trap_handler ) );
-	#else
+#if mainVECTOR_MODE_DIRECT == 1
+	__asm__ volatile( "csrw mtvec, %0" :: "r"( freertos_risc_v_trap_handler ) );
+#else
 	#error "Not yet supported.."
 	__asm__ volatile( "csrw mtvec, %0" :: "r"( ( uintptr_t )freertos_vector_table | 0x1 ) );
-	#endif
+#endif
 }
 
 
@@ -99,7 +99,11 @@ static void prvSetupHardware( void ) {
 
 /* The rate at which data is sent to the queue.  The 200ms value is converted
 to ticks using the pdMS_TO_TICKS() macro. */
+#ifndef IS_SIMULATION
 #define mainQUEUE_SEND_FREQUENCY_MS			pdMS_TO_TICKS( 500 )
+#else
+#define mainQUEUE_SEND_FREQUENCY_MS			pdMS_TO_TICKS( 50 )
+#endif
 
 /* The maximum number items the queue can hold.  The priority of the receiving
 task is above the priority of the sending task, so the receiving task will
@@ -183,6 +187,10 @@ static void prvQueueReceiveTask( void *pvParameters ) {
 		} else {
 			vSendString( pcFailMessage );
 		}
+#ifdef IS_SIMULATION
+		// stop simulation when message is received
+		vSendString("halt-sim");
+#endif
 	}
 }
 
