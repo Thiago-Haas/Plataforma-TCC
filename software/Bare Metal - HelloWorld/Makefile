@@ -4,14 +4,14 @@ OBJDUMP  = $(BIN_PATH)objdump
 OBJCOPY  = $(BIN_PATH)objcopy
 RUN      = $(BIN_PATH)run
 
-CFLAGS =
-DEPS   =
-SRC    = src/main.c
+CFLAGS   =
+DEPS     =
+SRC      = src/main.c
 
 TTY_PORT = /dev/ttyUSB0
 BAUDRATE = 115200
-PARITY = none
-RTSCTS = RTSCTS
+PARITY   = none
+RTSCTS   = RTSCTS
 
 ###########################################################
 ###########################################################

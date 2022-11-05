@@ -10,35 +10,54 @@ SRC      = src/main.c
 
 TTY_PORT = /dev/ttyUSB0
 BAUDRATE = 115200
-PARITY = none
-RTSCTS = RTSCTS
+PARITY   = none
+RTSCTS   = RTSCTS
 
-OUT_DIR        = out
-OUT_OBJECT     = $(OUT_DIR)/app.o
-OUT_MAP        = $(OUT_DIR)/app.map
-OUT_BIN        = $(OUT_DIR)/app.bin
-OUT_AHX        = $(OUT_DIR)/app.ahx
-OUT_MIF        = $(OUT_DIR)/app.mif
-OUT_SIM_OBJECT = $(OUT_DIR)/sim-app.o
+###########################################################
+###########################################################
 
-UTILS = ../../utils
-LINKER_SCRIPT         = script/linker.ld
+UTILS = $(abspath ../harv-soc/utils)
+
+OUT_DIR        = $(abspath out)
+OUT_OBJECT     = $(OUT_DIR)/app$(APP_SUFFIX).o
+OUT_MAP        = $(OUT_DIR)/app$(APP_SUFFIX).map
+OUT_BIN        = $(OUT_DIR)/app$(APP_SUFFIX).bin
+OUT_AHX        = $(OUT_DIR)/app$(APP_SUFFIX).ahx
+OUT_MIF        = $(OUT_DIR)/app$(APP_SUFFIX).mif
+OUT_SIM_OBJECT = $(OUT_DIR)/app-sim$(APP_SUFFIX).o
+OUT_SIM_MAP    = $(OUT_DIR)/app-sim$(APP_SUFFIX).map
+OUT_SIM_BIN    = $(OUT_DIR)/app-sim$(APP_SUFFIX).bin
+OUT_SIM_AHX    = $(OUT_DIR)/app-sim$(APP_SUFFIX).ahx
+OUT_SIM_MIF    = $(OUT_DIR)/app-sim$(APP_SUFFIX).mif
+
 BIN2AHX_PYTHON_SCRIPT = $(UTILS)/script/bin2ahx.py
 BIN2MIF_PYTHON_SCRIPT = $(UTILS)/script/bin2mif.py
 
-LINKER_FLAG      = -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_MAP)
-LINKER_GHDL_FLAG = -Xlinker --defsym=STACK_SIZE=32K -T$(LINKER_SCRIPT) -Wl,--defsym=RAM_SIZE=1M,--print-memory-usage -Wl,-Map=$(OUT_MAP)
+# if compilation is for specific porting
+ifdef PORT
+FPGA_DIR      = $(abspath ../../fpga)
+APP_SUFFIX    = -$(PORT)
+CRT0_S        = $(FPGA_DIR)/$(PORT)/src/crt0.S
+LINKER_SCRIPT = $(FPGA_DIR)/$(PORT)/script/linker.ld
+else
+APP_SUFFIX    =
+CRT0_S        = $(UTILS)/lib/ahxtb-crt0.S
+LINKER_SCRIPT = $(UTILS)/script/simulation/ahxtb-linker.ld
+endif
+
+LINKER_FLAGS     = -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_MAP)
+LINKER_SIM_FLAGS = -Wl,--defsym=RAM_HIGH_ADDR=0x7007FFFF -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_SIM_MAP)
 PROC_FLAGS       = -march=rv32i -mabi=ilp32 --specs=nano.specs -nostartfiles
-PROC_SOURCES     = src/crt0.S $(UTILS)/lib/syscalls.c -I$(UTILS)/lib/ $(UTILS)/lib/harvsoc.c $(UTILS)/lib/csr.c
+PROC_SOURCES     = $(CRT0_S) $(UTILS)/lib/syscalls.c -I$(UTILS)/lib/ $(UTILS)/lib/harvsoc.c $(UTILS)/lib/csr.c
 
 all: clean app bin ahx
 
 clean:
-	rm -rf out/
+	rm -rf $(OUT_DIR)
 
 app:
 	mkdir -p $(OUT_DIR)
-	$(GCC) $(LINKER_FLAG) $(PROC_FLAGS) $(CFLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) -o $(OUT_OBJECT)
+	$(GCC) $(ADD_LDFLAGS) $(LINKER_FLAGS) $(PROC_FLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) $(CFLAGS) $(ADD_FLAGS) -o $(OUT_OBJECT)
 
 bin: app
 	$(OBJCOPY) -O binary $(OUT_OBJECT) $(OUT_BIN)
@@ -51,7 +70,7 @@ mif: app bin
 
 # Makefile commands from utils
 upload:
-	make -C $(UTILS) upload TTY_PORT=$(TTY_PORT) BAUDRATE=$(BAUDRATE) RTSCTS=$(RTSCTS) UPLOAD_AHX=$(CURDIR)/$(OUT_AHX)
+	make -C $(UTILS) upload TTY_PORT=$(TTY_PORT) BAUDRATE=$(BAUDRATE) RTSCTS=$(RTSCTS) UPLOAD_AHX=$(OUT_AHX)
 
 boot:
 	make -C $(UTILS) boot TTY_PORT=$(TTY_PORT) BAUDRATE=$(BAUDRATE) RTSCTS=$(RTSCTS)
@@ -61,7 +80,28 @@ run:
 
 ahx-sim:
 	mkdir -p $(OUT_DIR)
-	$(GCC) $(LINKER_GHDL_FLAG) $(PROC_FLAGS) $(CFLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) -o $(OUT_OBJECT)
-	$(OBJCOPY) -O binary $(OUT_OBJECT) $(OUT_BIN)
-	$(BIN2AHX_PYTHON_SCRIPT) $(OUT_BIN) $(OUT_AHX) $(OUT_MAP)
-	make -C $(UTILS) ghdl-ahx-sim AHX_FILEPATH=$(CURDIR)/$(OUT_AHX) VCD_DUMP=$(abspath $(VCD_DUMP)) WORK_DIR=$(CURDIR)/out
+	$(GCC) $(ADD_SIM_LDFLAGS) $(LINKER_SIM_FLAGS) $(PROC_FLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) -D IS_SIMULATION=1 $(CFLAGS) $(ADD_FLAGS) -o $(OUT_SIM_OBJECT)
+	$(OBJCOPY) -O binary $(OUT_SIM_OBJECT) $(OUT_SIM_BIN)
+	$(BIN2AHX_PYTHON_SCRIPT) $(OUT_SIM_BIN) $(OUT_SIM_AHX) $(OUT_SIM_MAP)
+
+OUT_GHDL_SIM = $(OUT_DIR)/ghdl
+ghdl-sim: ahx-sim
+	mkdir -p $(OUT_GHDL_SIM)
+	make -C $(UTILS) ghdl-ahx-sim AHX_FILEPATH=$(OUT_SIM_AHX) VCD_DUMP=$(abspath $(VCD_DUMP)) WORK_DIR=$(OUT_GHDL_SIM)
+
+vivado-sim: ahx-sim
+	mkdir -p $(OUT_DIR)
+	make -C $(UTILS) vivado-ahx-sim AHX_FILEPATH=$(OUT_SIM_AHX) WORK_DIR=$(OUT_DIR) DUMP_ALL=$(DUMP_ALL)
+
+vivado-open-sim:
+	make -C $(UTILS) vivado-open-sim WORK_DIR=$(OUT_DIR)
+
+OUT_MODELSIM_SIM = $(OUT_DIR)/modelsim
+modelsim-sim: ahx-sim
+	mkdir -p $(OUT_MODELSIM_SIM)
+	make -C $(UTILS) modelsim-ahx-sim AHX_FILEPATH=$(OUT_SIM_AHX) WORK_DIR=$(OUT_MODELSIM_SIM)
+
+OUT_MODELSIM_SIM_FAULT = $(OUT_DIR)/modelsim-fault
+NUM_RUNS = 5
+modelsim-sim-fault: ahx-sim
+	make -C $(UTILS) modelsim-ahx-sim-fault AHX_FILEPATH=$(OUT_SIM_AHX) WORK_DIR=$(OUT_MODELSIM_SIM_FAULT) NUM_RUNS=$(NUM_RUNS)

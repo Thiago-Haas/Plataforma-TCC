@@ -8,11 +8,6 @@ CFLAGS =
 DEPS   = -Isrc/
 SRC    = src/main.c src/riscv-virt.c
 
-TTY_PORT = /dev/ttyUSB0
-BAUDRATE = 115200
-PARITY = none
-RTSCTS = RTSCTS
-
 RTOS_SOURCE_DIR = $(UTILS)/lib/freertos
 RTOS_CFLAGS = -D APP_TRAP_ENTRY=1 \
               -D __riscv_float_abi_soft \
@@ -41,10 +36,15 @@ RTOS_SRC = $(RTOS_SOURCE_DIR)/event_groups.c \
 CFLAGS += $(RTOS_CFLAGS)
 SRC    += $(RTOS_SRC)
 
+TTY_PORT = /dev/ttyUSB0
+BAUDRATE = 115200
+PARITY   = none
+RTSCTS   = RTSCTS
+
 ###########################################################
 ###########################################################
 
-UTILS = $(abspath ../../utils)
+UTILS = $(abspath ../harv-soc/utils)
 
 OUT_DIR        = $(abspath out)
 OUT_OBJECT     = $(OUT_DIR)/app$(APP_SUFFIX).o
@@ -73,8 +73,8 @@ CRT0_S        = $(UTILS)/lib/ahxtb-crt0.S
 LINKER_SCRIPT = $(UTILS)/script/simulation/ahxtb-linker.ld
 endif
 
-LINKER_FLAG      = -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_MAP)
-LINKER_GHDL_FLAG = -Wl,--defsym=RAM_HIGH_ADDR=0x7005FFFF -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_SIM_MAP)
+LINKER_FLAGS     = -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_MAP)
+LINKER_SIM_FLAGS = -Wl,--defsym=RAM_HIGH_ADDR=0x7007FFFF -Xlinker -T$(LINKER_SCRIPT) -Wl,--print-memory-usage -Wl,-Map=$(OUT_SIM_MAP)
 PROC_FLAGS       = -march=rv32i -mabi=ilp32 --specs=nano.specs -nostartfiles
 PROC_SOURCES     = $(CRT0_S) $(UTILS)/lib/syscalls.c -I$(UTILS)/lib/ $(UTILS)/lib/harvsoc.c $(UTILS)/lib/csr.c
 
@@ -85,7 +85,7 @@ clean:
 
 app:
 	mkdir -p $(OUT_DIR)
-	$(GCC) $(LINKER_FLAG) $(PROC_FLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) $(CFLAGS) -o $(OUT_OBJECT)
+	$(GCC) $(ADD_LDFLAGS) $(LINKER_FLAGS) $(PROC_FLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) $(CFLAGS) $(ADD_FLAGS) -o $(OUT_OBJECT)
 
 bin: app
 	$(OBJCOPY) -O binary $(OUT_OBJECT) $(OUT_BIN)
@@ -108,7 +108,7 @@ run:
 
 ahx-sim:
 	mkdir -p $(OUT_DIR)
-	$(GCC) $(LINKER_GHDL_FLAG) $(PROC_FLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) -D IS_SIMULATION=1 $(CFLAGS) -o $(OUT_SIM_OBJECT)
+	$(GCC) $(ADD_SIM_LDFLAGS) $(LINKER_SIM_FLAGS) $(PROC_FLAGS) $(PROC_SOURCES) $(SRC) $(DEPS) -D IS_SIMULATION=1 $(CFLAGS) $(ADD_FLAGS) -o $(OUT_SIM_OBJECT)
 	$(OBJCOPY) -O binary $(OUT_SIM_OBJECT) $(OUT_SIM_BIN)
 	$(BIN2AHX_PYTHON_SCRIPT) $(OUT_SIM_BIN) $(OUT_SIM_AHX) $(OUT_SIM_MAP)
 
