@@ -1077,7 +1077,8 @@ class Gerador_Vhdl(object):
     def criar_top(self, config_top, config_axi, diretorio):
         config_top['Map 80']['nome'] = str(config_top['Map 80']['nome']).replace(" is","_u")
         config_top['Map 80']['entity'] = str(config_top['Map 80']['entity']).replace(" is","")
-        config_top['Map 80']['generic program_start_addr'] = config_axi['Generic']['valor0']
+        # TODO: Mudar o PROGRAM_START_ADDR valor para o endereço base da ROM, mas somente para síntese
+        config_top['Map 80']['generic program_start_addr'] = "x00000000" # Removi o valor: config_axi['Generic']['valor0']
         config_top['Map 80']['generic harv_tmr'] = config_axi['Generic']['valor1']
         config_top['Map 80']['generic harv_ecc'] = config_axi['Generic']['valor2']
         config_top['Map 80']['generic enable_rom'] = config_axi['Generic']['valor3']
@@ -1091,10 +1092,10 @@ class Gerador_Vhdl(object):
         config_top['Map 80']['generic enable_bram_ecc'] = 'FALSE'
         config_top['Map 80']['generic is_simulation'] = config_axi['Generic']['valor12']
         config_top['Map 80']['generic ahx_filepath'] = config_axi['Generic']['valor13']
-        config_top['Map 80']['poweron_rstn_i'] = 'rstn_w'
-        config_top['Map 80']['btn_rstn_i'] = 'btn_rst_i'
+        config_top['Map 80']['poweron_rstn_i'] = 'locked_w'
+        config_top['Map 80']['btn_rstn_i'] = 'not btn_rst_i'
         config_top['Map 80']['clk_i'] = 'clk50_w'
-        config_top['Map 80']['start_i'] = 'rstn_w'
+        config_top['Map 80']['start_i'] = 'locked_w'
         config_top['Map 80']['periph_rstn_o'] = 'periph_rstn_w'
         config_top['Map 80']['uart_rx_i'] = 'uart_rx_i'
         config_top['Map 80']['uart_tx_o'] = 'uart_tx_o'
