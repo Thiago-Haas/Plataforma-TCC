@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>509</width>
-    <height>313</height>
+    <height>401</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -95,10 +95,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>250</y>
-      <width>431</width>
-      <height>17</height>
+      <x>10</x>
+      <y>330</y>
+      <width>481</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="font">
@@ -108,6 +108,35 @@
     </property>
     <property name="text">
      <string>As configurações estão sendo salvas no arquivo &quot;config.ini&quot; </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sim">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Simulação</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Sint">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>250</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sintetização</string>
     </property>
    </widget>
   </widget>
