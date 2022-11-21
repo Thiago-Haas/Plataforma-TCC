@@ -154,11 +154,11 @@ class Ui_Plataforma(object):
         self.Barramento.setText(_translate("Plataforma", "Configurações do Barramento"))
         self.Perifericos.setText(_translate("Plataforma", "Configurações dos Periféricos"))
         self.Software.setText(_translate("Plataforma", "Configurações do Software"))
-        self.save_load.setText(_translate("Plataforma", "Salvar/Carregar Alterações"))
+        self.save_load.setText(_translate("Plataforma", "Carregar Arquivo"))
         self.Sair.setText(_translate("Plataforma", "Gerar Vhdl"))
         self.label.setText(_translate("Plataforma", "As configurações estão sendo salvas no arquivo \"config.ini\" "))
         self.Sim.setText(_translate("Plataforma", "Simulação"))
-        self.Sint.setText(_translate("Plataforma", "Sintetização"))
+        self.Sint.setText(_translate("Plataforma", "Sintetizar"))
 
 
 if __name__ == "__main__":
